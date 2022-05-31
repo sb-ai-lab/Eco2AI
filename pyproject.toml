@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "emission tracking library"
 authors = ["AI Lab, Sber",
             "Vladimir Lazarev <lazarev@airi.net>",
-            "Nikita Zakharenko <nnzakharenko@sberbank.ru>"
+            "Nikita Zakharenko <nnzakharenko@sberbank.ru>",
             "Semyon Budyonny  <sanbudenny@sberbank.ru>",
             "leonid zhukov <lezhukov@sberbank.ru>"]
 
