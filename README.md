@@ -4,16 +4,16 @@ eco2ai - is a python library which helps to calculate power consumption and  CO2
 
 every single usage adds a line in emission.csv file with collumns below:
 
-+ ul project_name
-+ ul experiment_description
-+ ul start_time
-+ ul duration(s)
-+ ul power_consumption(kWTh)
-+ ul CO2_emissions(kg)
-+ ul CPU_name
-+ ul GPU_name
-+ ul OS
-+ ul country
++ project_name
++ experiment_description
++ start_time
++ duration(s)
++ power_consumption(kWTh)
++ CO2_emissions(kg)
++ CPU_name
++ GPU_name
++ OS
++ country
 
 ##  Installation
 To install eco2ai library run next command:

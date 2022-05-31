@@ -7,8 +7,8 @@ authors = ["AI Lab, Sber",
             "Semyon Budyonny  <sanbudenny@sberbank.ru>",
             "leonid zhukov <lezhukov@sberbank.ru>"]
 
-homepage = "https://sberbank-ai-lab.github.io/RePlay/"
-repository = "https://github.com/sberbank-ai-lab/RePlay"
+homepage = "https://github.com/sb-ai-lab/Eco2AI"
+repository = "https://github.com/sb-ai-lab/Eco2AI"
 
 classifiers = [
     "Programming Language :: Python :: 3.8",
