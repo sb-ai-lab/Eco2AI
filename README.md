@@ -1,4 +1,4 @@
-# eco2ai
+# Eco2AI
 
 Eco2AI - is a python library which calculates power consumption and CO2 emission during running code.
 Emission information is written to file. Every single run of tracker creates line in this file with following items:
