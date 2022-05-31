@@ -1,0 +1,3280 @@
+,Model,TDP
+0,AMD Ryzen 3 3250U,15
+1,AMD Athlon 320GE,35
+2,AMD Athlon 300GE,35
+3,AMD Ryzen 3 3200U,15
+4,AMD Athlon Gold 3150U,15
+5,AMD Ryzen 3 3250C,15
+6,AMD Athlon 300U,15
+7,AMD Athlon Silver 3050U,15
+8,AMD Athlon Silver 3050e,6
+9,AMD Athlon Gold 3150C,15
+10,AMD Athlon Silver 3050C,15
+11,AMD 3020e,6
+12,AMD 3015e,6
+13,AMD Athlon Silver 3050GE (OEM Only),35
+14,AMD 3015Ce,6
+15,AMD Ryzen 3 2200U,15
+16,AMD Athlon Silver PRO 3125GE,35
+17,AMD Athlon PRO 300GE,35
+18,AMD Athlon PRO 3145B,15
+19,AMD Athlon PRO 3045B,15
+20,AMD Athlon PRO 300U Mobile Processor with Radeon Vega 3 Graphics,15
+21,7th Gen AMD PRO A4-5350B APU,15
+22,7th Gen AMD PRO A4-4350B APU,15
+23,7th Gen AMD PRO A6-8350B APU,15
+24,7th Gen AMD PRO A6-7350B APU,15
+25,7th Gen A6-9550 APU,65
+26,7th Gen A6-9500 APU,65
+27,7th Gen A6-9500E APU,35
+28,7th Gen A9-9425 APU,15
+29,7th Gen A9-9420 APU,15
+30,7th Gen A9-9410 APU,25
+31,7th Gen A6-9225 APU,15
+32,7th Gen A6-9220 APU,15
+33,7th Gen A6-9220C APU,6
+34,7th Gen A6-9210 APU,15
+35,7th Gen A4-9125 APU,15
+36,7th Gen A4-9120 APU,15
+37,7th Gen A4-9120C APU,6
+38,7th Gen AMD PRO A6-9500 APU,65
+39,7th Gen AMD PRO A6-9500E APU,35
+40,7th Gen AMD PRO A6-9500B APU,15
+41,7th Gen E2-9010 APU,15
+42,6th Gen AMD PRO A6-8570 APU,65
+43,6th Gen AMD PRO A6-8570E APU,35
+44,6th Gen AMD PRO A6-8550B APU,65
+45,6th Gen AMD PRO A4-8350B APU,65
+46,6th Gen AMD PRO A6-8500B APU,15
+47,A6-7470K with Radeon R5 Series,65
+48,A6-7400K with Radeon R5 Series,65
+49,A6-6420K with Radeon HD 8470D,65
+50,A6-6400K with Radeon HD 8470D,65
+51,A4-7300 with Radeon HD 8470D,65
+52,A4-6320 with Radeon HD 8370D,65
+53,A4-6300 with Radeon HD 8370D,65
+54,A6-8500P with Radeon R5 Graphics,15
+55,A6-7000 with Radeon R4 Graphics,17
+56,A6-5350M with Radeon HD 8450G,35
+57,570,80
+58,565,80
+59,555,80
+60,565,80
+61,N660,35
+62,P650,35
+63,N640,35
+64,B60,80
+65,B59,80
+66,B57,80
+67,255e,45
+68,A6-6420B with Radeon HD 8470D,65
+69,A6-6400B with Radeon HD 8470D,65
+70,A6 PRO-7400B with Radeon R5 Graphics,65
+71,A4 PRO-7350B with Radeon R5 Graphics,65
+72,A4 PRO-7300B with Radeon HD 8470D,65
+73,A6 PRO-7050B with Radeon R4 Graphics,100
+74,AMD Athlon 3000G,35
+75,AMD Athlon 240GE,35
+76,AMD Athlon 220GE,35
+77,AMD Athlon 200GE,35
+78,AMD Athlon PRO 200U Mobile Processor with Radeon Vega 3 Graphics,15
+79,AMD Athlon PRO 200GE,35
+80,Sempron 2650 APU with Radeon R3 Series,25
+81,E2-3000 with Radeon HD 8280,15
+82,E1-7010 with Radeon R2 Graphics,10
+83,E1 Micro-6200T with Radeon R2 Graphics,3.95
+84,E1-6010 with Radeon R2 Graphics,10
+85,E1-2500 with Radeon HD 8240,15
+86,E1-2200 with Radeon HD 8210,9
+87,E1-2100 with Radeon HD 8210,9
+88,TL-64,35
+89,TL-60,31
+90,TL-52,31
+91,N870,35
+92,P860,35
+93,B77,95
+94,B75,95
+95,460,95
+96,425e,45
+97,AMD Ryzen 3 5400U,15
+98,AMD Ryzen 3 5300U,15
+99,AMD Ryzen 3 5300G (OEM Only),65
+100,AMD Ryzen 3 5300GE (OEM Only),35
+101,AMD Ryzen 3 3300X,65
+102,AMD Ryzen 3 3100,65
+103,AMD Ryzen 3 4300G (OEM Only),65
+104,AMD Ryzen 3 4300GE (OEM Only),35
+105,AMD Ryzen 3 4300U,15
+106,AMD Ryzen 5 3400G with Radeon RX Vega 11 Graphics,65
+107,AMD Ryzen 5 3400GE (OEM Only),35
+108,AMD Ryzen 7 3780U Microsoft Surface® Edition,15
+109,AMD Ryzen 3 3200G with Radeon Vega 8 Graphics,65
+110,AMD Ryzen 3 3200GE (OEM Only),35
+111,AMD Ryzen 7 3750H,35
+112,AMD Ryzen 5 3550H,35
+113,AMD Ryzen 7 3700U,15
+114,AMD Ryzen 5 3500U,15
+115,AMD Ryzen 3 3350U,15
+116,AMD Ryzen 5 3450U,15
+117,AMD Ryzen 3 3300U,15
+118,AMD Ryzen 5 3580U Microsoft Surface® Edition,15
+119,AMD Ryzen 7 3700C,15
+120,AMD Ryzen 5 3500C,15
+121,AMD Athlon Gold 3150GE (OEM Only),35
+122,AMD Athlon Gold 3150G (OEM Only),65
+123,AMD Ryzen 5 2500X,65
+124,AMD Ryzen 5 2400G with Radeon RX Vega 11 Graphics,65
+125,AMD Ryzen 5 2400GE with Radeon RX Vega 11 Graphics,35
+126,AMD Ryzen 3 2300X,65
+127,AMD Ryzen 3 2200G with Radeon Vega 8 Graphics,65
+128,AMD Ryzen 3 2200GE with Radeon Vega 8 Graphics,35
+129,AMD Ryzen 7 2800H,45
+130,AMD Ryzen 5 2600H,45
+131,AMD Ryzen 7 2700U,15
+132,AMD Ryzen 5 2500U,15
+133,AMD Ryzen 3 2300U,15
+134,AMD Ryzen 3 PRO 5450U,15
+135,AMD Ryzen 3 PRO 5350G,65
+136,AMD Ryzen 3 PRO 5350GE,35
+137,AMD Ryzen 3 PRO 4350G,65
+138,AMD Ryzen 3 PRO 4350GE,35
+139,AMD Ryzen 5 PRO 3400G,65
+140,AMD Ryzen 5 1500X,65
+141,AMD Ryzen 5 PRO 3400GE,35
+142,AMD Ryzen 5 PRO 3350G,65
+143,AMD Ryzen 5 PRO 3350GE,35
+144,AMD Ryzen 5 1400,65
+145,AMD Ryzen 3 PRO 3200G,65
+146,AMD Ryzen 3 PRO 3200GE,35
+147,AMD Ryzen 3 1300X,65
+148,AMD Athlon Gold PRO 3150G,65
+149,AMD Athlon Gold PRO 3150GE,35
+150,AMD Ryzen 3 1200,65
+151,AMD Ryzen 3 PRO 4450U,15
+152,AMD Ryzen 7 PRO 3700U,15
+153,AMD Ryzen 5 PRO 3500U,15
+154,AMD Ryzen 3 PRO 3300U,15
+155,AMD Ryzen 7 PRO 2700U,15
+156,AMD Ryzen 5 PRO 1500,65
+157,AMD Ryzen 5 PRO 2400G with Radeon Vega 11 Graphics,65
+158,AMD Ryzen 5 PRO 2400GE with Radeon Vega 11 Graphics,35
+159,AMD Ryzen 3 PRO 1300,65
+160,AMD Ryzen 5 PRO 2500U,15
+161,AMD Ryzen 3 PRO 2200G with Radeon Vega 8 Graphics,65
+162,AMD Ryzen 3 PRO 2200GE with Radeon Vega 8 Graphics,35
+163,AMD Ryzen 3 PRO 1200,65
+164,AMD Ryzen 3 PRO 2300U,15
+165,7th Gen A12-9800 APU,65
+166,7th Gen A12-9800E APU,35
+167,7th Gen A10-9700 APU,65
+168,7th Gen A10-9700E APU,35
+169,7th Gen A8-9600 APU,65
+170,7th Gen A12-9730P APU,35
+171,7th Gen A12-9700P APU,15
+172,7th Gen A10-9630P APU,35
+173,7th Gen A10-9600P APU,15
+174,7th Gen AMD PRO A12-9800 APU,65
+175,7th Gen AMD PRO A12-9800E APU,35
+176,7th Gen AMD PRO A10-9700 APU,65
+177,7th Gen AMD PRO A10-9700E APU,35
+178,7th Gen AMD PRO A8-9600 APU,65
+179,7th Gen AMD PRO A12-9830B APU,35
+180,7th Gen AMD PRO A12-9800B APU,15
+181,7th Gen AMD PRO A10-9730B APU,35
+182,7th Gen AMD PRO A10-9700B APU,15
+183,7th Gen AMD PRO A8-9630B,35
+184,7th Gen AMD PRO A8-9600B APU,15
+185,7th Gen FX 9830P APU,35
+186,7th Gen FX 9800P APU,15
+187,6th Gen A10-8700P APU,15
+188,6th Gen A8-8600P APU,15
+189,6th Gen AMD PRO A12-8870 APU,65
+190,6th Gen AMD PRO A12-8870E APU,35
+191,6th Gen AMD PRO A10-8850B APU,95
+192,6th Gen AMD PRO A10-8770 APU,65
+193,6th Gen AMD PRO A10-8770E APU,35
+194,6th Gen AMD PRO A10-8750B APU,65
+195,6th Gen AMD PRO A8-8650B APU,65
+196,6th Gen AMD PRO A12-8800B APU,15
+197,6th Gen AMD PRO A10-8700B APU,15
+198,6th Gen AMD PRO A8-8600B APU,15
+199,6th Gen FX-8800P APU,15
+200,A10-7890K with Radeon R7 Graphics and Wraith cooler,95
+201,A10-7870K with Radeon R7 Series,95
+202,A10-7870K with Radeon R7 Graphics and Near Silent Thermal Solution,95
+203,A10-7860K with Radeon R7 Series,65
+204,A10-7860K with Radeon R7 Graphics and Near Silent Thermal Solution,65
+205,A10-7850K with Radeon R7 Series,95
+206,A10-6800K with Radeon HD 8670D,100
+207,A10-6790K with Radeon HD 8670D,100
+208,A10-6700 with Radeon HD 8670D,65
+209,A10-6700T with Radeon HD 8650D,45
+210,A8-7670K with Radeon R7 Graphics and Near Silent Thermal Solution,95
+211,A8-7650K with Radeon R7 Series,95
+212,A8-7650K with Radeon R7 Graphics and Near Silent Thermal Solution,95
+213,A8-7600 with Radeon R7 Series,65
+214,A8-6600K with Radeon HD 8570D,65
+215,A8-6500 with Radeon HD 8570D,65
+216,A8-6500T with Radeon HD 8550D,45
+217,A6-6310 with Radeon R4 Graphics,25
+218,A6-5200 with Radeon HD 8400,25
+219,A4-5100 with Radeon HD 8330,15
+220,A4-5000 with Radeon HD 8330,15
+221,A10-7400P with Radeon R6 Graphics,35
+222,A10-7300 with Radeon R6 Graphics,20
+223,A10 Micro-6700T with Radeon R6 Graphics,4.5
+224,A8-7410 with Radeon R5 Graphics,15
+225,A8-7200P with Radeon R5 Graphics,100
+226,A8-7100 with Radeon R5 Graphics,20
+227,A8-6410 with Radeon R5 Graphics,15
+228,FX-4350,125
+229,FX-4320,95
+230,FX-4300,95
+231,FX-4170,125
+232,FX-4130,125
+233,FX-4100,95
+234,980,125
+235,A6-7310 with Radeon R4 Graphics,15
+236,975,125
+237,A6-7310 with Radeon R4 Graphics,15
+238,965,80
+239,960T,95
+240,A6-6310 with Radeon R4 Graphics,15
+241,850,95
+242,840,95
+243,A6-5200M with Radeon HD 8400,25
+244,X940,45
+245,N970,35
+246,N960,35
+247,A4-7210 with Radeon R3 Graphics,65
+248,A4 Micro-6400T with Radeon R3 Graphics,4.5
+249,A4-6210 with Radeon R3 Graphics,15
+250,B99,95
+251,B97,95
+252,A4-5100 with Radeon HD 8330,15
+253,A4-5000 with Radeon HD 8330,15
+254,641,100
+255,638,65
+256,631,100
+257,631,65
+258,620e,45
+259,7th Gen AMD Athlon X4 970,65
+260,880K with Near Silent Thermal Solution,95
+261,A4-7210 with Radeon R3 Graphics,65
+262,870K with Near Silent Thermal Solution,95
+263,A10-6800B with Radeon HD 8670D,45
+264,860K,95
+265,A10-6790B with Radeon HD 8670D,45
+266,860K with Near Silent Thermal Solution,95
+267,A8-6500B with Radeon HD 8570D,65
+268,760K,100
+269,750,65
+270,750K,100
+271,740,65
+272,X1150,17
+273,A10 PRO-7850B with Radeon R7 Graphics,95
+274,A10 PRO-7800B with Radeon R7 Graphics,65
+275,A8 PRO-7600B with Radeon R7 Graphics,65
+276,A10 PRO-7350B with Radeon R6 Graphics,19
+277,A8 PRO-7150B with Radeon R5 Graphics,100
+278,A4 PRO-3350B with Radeon R4 Graphics,15
+279,6308,115
+280,A4 PRO-3340B with Radeon HD 8240 Graphics,25
+281,FX-7600P with Radeon R7 Graphics,35
+282,FX-7500 with Radeon R7 Graphics,20
+283,Athlon 5370 APU with Radeon R3 Series,25
+284,Athlon 5350 APU with Radeon R3 Series,25
+285,Athlon 5150 APU with Radeon R3 Series,25
+286,Sempron 3850 APU with Radeon R3 Series,25
+287,E2-7110 with Radeon R2 Graphics,65
+288,E2-7110 with Radeon R2 Graphics,65
+289,E2-6110 with Radeon R2 Graphics,15
+290,E2-3800 with Radeon HD 8280,15
+291,6204,115
+292,E2-7110 with Radeon R2 Graphics,65
+293,3350 HE,45
+294,3320 EE,25
+295,3260 HE,45
+296,AMD Opteron X2170,25
+297,AMD Opteron X2150 APU,22
+298,AMD Ryzen 5 5600X,65
+299,AMD Ryzen 5 3600XT,95
+300,AMD Ryzen 5 5600H,45
+301,AMD Ryzen 5 5600HS,35
+302,AMD Ryzen 5 5600U,15
+303,AMD Ryzen 5 5500U,15
+304,AMD Ryzen 5 3600X,95
+305,AMD Ryzen 5 5600G,65
+306,AMD Ryzen 5 5600GE,35
+307,AMD Ryzen 5 3600,65
+308,AMD Ryzen 5 4600G (OEM Only),65
+309,AMD Ryzen 5 3500 Processor (OEM Only),65
+310,AMD Ryzen 5 4600GE (OEM Only),35
+311,AMD Ryzen 5 4600H,45
+312,AMD Ryzen 5 4600U,15
+313,AMD Ryzen 5 4500U,15
+314,AMD Ryzen 5 4680U Microsoft Surface® Edition,15
+315,AMD Ryzen 5 2600X,95
+316,AMD Ryzen 5 2600,65
+317,AMD Ryzen 5 2600E,45
+318,AMD Ryzen 5 PRO 5650G,65
+319,AMD Ryzen 5 PRO 5650GE,35
+320,AMD Ryzen 5 PRO 5650U,15
+321,AMD Ryzen 5 PRO 3600,65
+322,AMD Ryzen 5 1600X,95
+323,AMD Ryzen 5 PRO 4650G,65
+324,AMD Ryzen 5 PRO 4650GE,35
+325,AMD Ryzen 5 1600,65
+326,AMD Ryzen 5 1600 (AF),65
+327,AMD Ryzen 5 PRO 4650U,15
+328,AMD Ryzen 5 PRO 2600,65
+329,AMD Ryzen 5 PRO 1600,65
+330,FX-6350 with Wraith cooler,125
+331,FX-6350,125
+332,FX-6300,95
+333,FX-6200,125
+334,FX 6100,95
+335,1075T,95
+336,4340,95
+337,4334,95
+338,4332 HE,65
+339,4310 EE,35
+340,4240,95
+341,4238,95
+342,4234,95
+343,4230 HE,65
+344,4228 HE,65
+345,4226,95
+346,AMD Ryzen 7 5800X,105
+347,AMD Ryzen 7 5800 (OEM Only),65
+348,AMD Ryzen 7 3800XT,105
+349,AMD Ryzen 9 5980HX,45+
+350,AMD Ryzen 9 5980HS,35
+351,AMD Ryzen 9 5900HX,45+
+352,AMD Ryzen 9 5900HS,35
+353,AMD Ryzen 7 5800H,45
+354,AMD Ryzen 7 5800HS,35
+355,AMD Ryzen 7 5800U,15
+356,AMD Ryzen 7 5700U,15
+357,AMD Ryzen 7 3800X,105
+358,AMD Ryzen 7 3700X,65
+359,AMD Ryzen 7 5700G,65
+360,AMD Ryzen 7 5700GE,35
+361,AMD Ryzen 7 4700G (OEM Only),65
+362,AMD Ryzen 7 4700GE (OEM Only),35
+363,AMD Ryzen 9 4900H,54
+364,AMD Ryzen 9 4900HS,35
+365,AMD Ryzen 7 4800HS,45
+366,AMD Ryzen 7 4800H,45
+367,AMD Ryzen 7 4800U,15
+368,AMD Ryzen 7 4700U,15
+369,AMD Ryzen 7 4980U Microsoft Surface® Edition,15
+370,AMD Ryzen 7 2700X,105
+371,AMD Ryzen 7 2700,65
+372,AMD Ryzen 7 2700E Processor,45
+373,AMD Ryzen Threadripper 1900X,180
+374,AMD Ryzen 7 1800X,95
+375,AMD Ryzen 7 1700X,95
+376,AMD Ryzen 7 PRO 3700,65
+377,AMD Ryzen 7 1700 Processor,65
+378,AMD Ryzen 7 PRO 5850U,15
+379,AMD Ryzen 7 PRO 5750G,65
+380,AMD Ryzen 7 PRO 5750GE,35
+381,AMD Ryzen 7 PRO 4750G,65
+382,AMD Ryzen 7 PRO 4750GE,35
+383,AMD Ryzen 7 PRO 2700X,95
+384,AMD Ryzen 7 PRO 2700,65
+385,AMD Ryzen 7 PRO 4750U,15
+386,AMD Ryzen 7 PRO 1700X Processor,95
+387,AMD Ryzen 7 PRO 1700,65
+388,AMD EPYC 72F3,180
+389,AMD EPYC 7F32,180
+390,AMD EPYC 7262,155
+391,AMD EPYC 7252,120
+392,AMD EPYC 7232P,120
+393,AMD EPYC 7261,170
+394,AMD EPYC 7251,120
+395,FX-9590,220
+396,FX-9370,220
+397,FX-8370 with Wraith cooler,125
+398,FX-8370E,95
+399,FX-8370,125
+400,FX-8350 with Wraith cooler,125
+401,FX-8350,125
+402,FX-8320E,95
+403,FX-8320,125
+404,FX-8310,95
+405,FX-8300,95
+406,FX-8150,125
+407,FX-8120,125
+408,6328,115
+409,6320,115
+410,6220,115
+411,6212,115
+412,6140,115
+413,6132 HE,85
+414,4386,95
+415,4376 HE,65
+416,4365,40
+417,4284,95
+418,4280,95
+419,4276 HE,65
+420,4274 HE,65
+421,4256 EE,35
+422,3380,65
+423,3365,65
+424,3280,65
+425,AMD Ryzen 9 5900X,105
+426,AMD Ryzen 9 5900 (OEM Only),65
+427,AMD Ryzen 9 3900XT,105
+428,AMD Ryzen Threadripper PRO 3945WX,280
+429,AMD Ryzen 9 3900X,105
+430,AMD Ryzen 9 3900 Processor (OEM Only),65
+431,AMD Ryzen Threadripper 2920X,180
+432,AMD Ryzen Threadripper 1920X,180
+433,AMD Ryzen 9 PRO 3900,65
+434,AMD EPYC 7272,120
+435,6348,115
+436,6344,115
+437,6338P,99
+438,6238,115
+439,6234,115
+440,6180 SE,140
+441,6176,115
+442,6166 HE,85
+443,AMD Ryzen 9 5950X,105
+444,AMD Ryzen Threadripper PRO 3955WX,280
+445,AMD Ryzen 9 3950X,105
+446,AMD Ryzen Threadripper 2950X,180
+447,AMD Ryzen Threadripper 1950X,180
+448,AMD EPYC 73F3,240
+449,AMD EPYC 7343,190
+450,AMD EPYC 7313P,155
+451,AMD EPYC 7313,155
+452,AMD EPYC 7F52,240
+453,AMD EPYC 7302,155
+454,AMD EPYC 7302P,155
+455,AMD EPYC 7282,120
+456,AMD EPYC 7371,200
+457,AMD EPYC 7351P,170
+458,AMD EPYC 7351,170
+459,AMD EPYC 7301,170
+460,AMD EPYC 7281,170
+461,6386 SE,140
+462,6380,115
+463,6378,115
+464,6376,115
+465,6370P,99
+466,6366 HE,85
+467,6284 SE,140
+468,6282 SE,140
+469,6278,115
+470,6276,115
+471,6274,115
+472,6272,115
+473,6262 HE,85
+474,AMD Ryzen Threadripper 3960X,280
+475,AMD Ryzen Threadripper 2970WX,250
+476,AMD EPYC 74F3,240
+477,AMD EPYC 7443P,200
+478,AMD EPYC 7443,200
+479,AMD EPYC 7413,180
+480,AMD EPYC 7F72,240
+481,AMD EPYC 7402,180
+482,AMD EPYC 7402P,180
+483,AMD EPYC 7352,155
+484,AMD EPYC 7451,180
+485,AMD EPYC 7401P,170
+486,AMD EPYC 7401,170
+487,AMD EPYC 7453,225
+488,AMD Ryzen Threadripper PRO 3975WX,280
+489,AMD Ryzen Threadripper 3970X,280
+490,AMD Ryzen Threadripper 2990WX,250
+491,AMD EPYC 75F3,280
+492,AMD EPYC 7543P,225
+493,AMD EPYC 7543,225
+494,AMD EPYC 7513,200
+495,AMD EPYC 7542,225
+496,AMD EPYC 7532,200
+497,AMD EPYC 7502,180
+498,AMD EPYC 7502P,180
+499,AMD EPYC 7452,155
+500,AMD EPYC 7601,180
+501,AMD EPYC 7551P,180
+502,AMD EPYC 7551,180
+503,AMD EPYC 7501,170
+504,AMD EPYC 7643,225
+505,AMD EPYC 7642,225
+506,AMD EPYC 7552,200
+507,AMD EPYC 7663,240
+508,AMD Ryzen Threadripper PRO 3995WX,280
+509,AMD Ryzen Threadripper 3990X,280
+510,AMD EPYC 7763,280
+511,AMD EPYC 7713P,225
+512,AMD EPYC 7713,225
+513,AMD EPYC 7H12,280
+514,AMD EPYC 7742,225
+515,AMD EPYC 7702,200
+516,AMD EPYC 7702P,200
+517,AMD EPYC 7662,225
+518,Intel Xeon 1.4,56
+519,Intel Xeon 1.5,59.2
+520,Intel Xeon 1.7,65.8
+521,Intel Xeon 2.0,77.5
+522,Intel Xeon 1.8,55
+523,Intel Xeon 2.0A,58
+524,Intel Xeon 2.0B,58
+525,Intel Xeon 2.2,61
+526,Intel Xeon 2.4,65
+527,Intel Xeon 2.4B,65
+528,Intel Xeon 2.6,60
+529,Intel Xeon 2.66,77
+530,Intel Xeon 2.8,74
+531,Intel Xeon 2.8B,74
+532,Intel Xeon 3.0,85
+533,Intel Xeon 3.06,85
+534,Intel Xeon LV 1.6,30
+535,Intel Xeon LV 2.0,35
+536,Intel Xeon LV 2.4,40
+537,Intel Xeon 2.4B,77
+538,Intel Xeon 2.8B,77
+539,Intel Xeon 3.06,87
+540,Intel Xeon 3.2,92
+541,Intel Xeon 3.2,92
+542,Intel Xeon 2.8,103
+543,Intel Xeon 2.8D,103
+544,Intel Xeon 3.0,103
+545,Intel Xeon 3.0D,103
+546,Intel Xeon 3.2,103
+547,Intel Xeon 3.4,103
+548,Intel Xeon 3.6,103
+549,Intel Xeon LV 2.8,55
+550,Intel Xeon 2.8,110
+551,Intel Xeon 2.8E,110
+552,Intel Xeon 3.0,110
+553,Intel Xeon 3.0E,110
+554,Intel Xeon 3.2,110
+555,Intel Xeon 3.2E,110
+556,Intel Xeon 3.4,110
+557,Intel Xeon 3.4E,110
+558,Intel Xeon 3.6,110
+559,Intel Xeon 3.6E,110
+560,Intel Xeon 3.8,110
+561,Intel Xeon 3.8E,110
+562,Intel Xeon MV 3.2,90
+563,Intel Xeon LV 3.0,55
+564,Intel Xeon 2.8,135
+565,Intel Xeon 5020,95
+566,Intel Xeon 5030,95
+567,Intel Xeon 5040,95
+568,Intel Xeon 5050,95
+569,Intel Xeon 5060,130
+570,Intel Xeon 5070,130
+571,Intel Xeon 5080,130
+572,Intel Xeon MV 5063,95
+573,Intel Xeon MP 1.4,64
+574,Intel Xeon MP 1.5,68
+575,Intel Xeon MP 1.6,72
+576,Intel Xeon MP 1.5,48
+577,Intel Xeon MP 1.9,55
+578,Intel Xeon MP 2.0,57
+579,Intel Xeon MP 2.0,57
+580,Intel Xeon MP 2.2,65
+581,Intel Xeon MP 2.5,66
+582,Intel Xeon MP 2.7,80
+583,Intel Xeon MP 2.8,72
+584,Intel Xeon MP 3.0,85
+585,Intel Xeon MP 3.16,110
+586,Intel Xeon MP 3.66,110
+587,Intel Xeon MP 2.83,129
+588,Intel Xeon MP 3.0,129
+589,Intel Xeon MP 3.33,129
+590,Intel Xeon 7020,165
+591,Intel Xeon 7030,165
+592,Intel Xeon 7040,165
+593,Intel Xeon 7041,165
+594,Intel Xeon X5365,150
+595,Intel Xeon 7110N,95
+596,Intel Xeon 7110M,95
+597,Intel Xeon 7120N,95
+598,Intel Xeon 7120M,95
+599,Intel Xeon 7130N,150
+600,Intel Xeon 7130M,150
+601,Intel Xeon 7140N,150
+602,Intel Xeon 7140M,150
+603,Intel Xeon 7150N,150
+604,Intel Pentium II Xeon 400,30.8
+605,Intel Pentium II Xeon 400,38.1
+606,Intel Pentium II Xeon 450,34.5
+607,Intel Pentium II Xeon 450,42.8
+608,Intel Pentium II Xeon 450,46.7
+609,Intel Pentium III Xeon 500,36
+610,Intel Pentium III Xeon 500,44
+611,Intel Pentium III Xeon 500,36.2
+612,Intel Pentium III Xeon 550,34
+613,Intel Pentium III Xeon 550,34
+614,Intel Pentium III Xeon 550,34
+615,Intel Pentium III Xeon 600,19.2
+616,Intel Pentium III Xeon 667,21.3
+617,Intel Pentium III Xeon 700,29.6
+618,Intel Pentium III Xeon 700,29.6
+619,Intel Pentium III Xeon 733,23.3
+620,Intel Pentium III Xeon 800,25.4
+621,Intel Pentium III Xeon 866,29.6
+622,Intel Pentium III Xeon 900,39.3
+623,Intel Pentium III Xeon 933,29.6
+624,Intel Pentium III Xeon 1.00,30.8
+625,Intel Xeon Gold 6208U,150
+626,Intel Xeon Gold 6209U,125
+627,Intel Xeon Gold 6210U,150
+628,Intel Xeon Gold 6212U,165
+629,Intel Xeon Bronze 3204,85
+630,Intel Xeon Bronze 3206R,85
+631,Intel Xeon Silver 4208,85
+632,Intel Xeon Silver 4209T,70
+633,Intel Xeon Silver 4210,85
+634,Intel Xeon Silver 4210R,100
+635,Intel Xeon Silver 4210T,95
+636,Intel Xeon Silver 4211W,100
+637,Intel Xeon Silver 4213W,115
+638,Intel Xeon Silver 4214,85
+639,Intel Xeon Silver 4214R,100
+640,Intel Xeon Silver 4214Y,85
+641,Intel Xeon Silver 4215,85
+642,Intel Xeon Silver 4215R,130
+643,Intel Xeon Silver 4216,100
+644,Intel Xeon Silver 4216R,125
+645,Intel Xeon Gold 5215R,100
+646,Intel Xeon Gold 5218R,125
+647,Intel Xeon Gold 5219Y,125
+648,Intel Xeon Gold 5220R,150
+649,Intel Xeon Gold 6222,115
+650,Intel Xeon Gold 6226R,150
+651,Intel Xeon Gold 6230R,150
+652,Intel Xeon Gold 6238R,165
+653,Intel Xeon Gold 6240R,165
+654,Intel Xeon Gold 6242R,205
+655,Intel Xeon Gold 6246R,205
+656,Intel Xeon Gold 6248R,205
+657,Intel Xeon Gold 6258R,205
+658,Intel Xeon Gold 6262,135
+659,Intel Xeon Gold 6269Y,240
+660,Intel Xeon Gold 5213W,100
+661,Intel Xeon Gold 5215,85
+662,Intel Xeon Gold 5215L,85
+663,Intel Xeon Gold 5215M,85
+664,Intel Xeon Gold 5216W,160
+665,Intel Xeon Gold 5217,115
+666,Intel Xeon Gold 5218,125
+667,Intel Xeon Gold 5218B,125
+668,Intel Xeon Gold 5218N,110
+669,Intel Xeon Gold 5218T,105
+670,Intel Xeon Gold 5220,125
+671,Intel Xeon Gold 5220S,125
+672,Intel Xeon Gold 5220T,105
+673,Intel Xeon Gold 5222,105
+674,Intel Xeon Gold 6222V,115
+675,Intel Xeon Gold 6226,125
+676,Intel Xeon Gold 6230,125
+677,Intel Xeon Gold 6230N,125
+678,Intel Xeon Gold 6230T,125
+679,Intel Xeon Gold 6231,185
+680,Intel Xeon Gold 6231C,185
+681,Intel Xeon Gold 6233,165
+682,Intel Xeon Gold 6234,130
+683,Intel Xeon Gold 6238,140
+684,Intel Xeon Gold 6238L,140
+685,Intel Xeon Gold 6238M,140
+686,Intel Xeon Gold 6238T,125
+687,Intel Xeon Gold 6240,150
+688,Intel Xeon Gold 6240L,150
+689,Intel Xeon Gold 6240M,150
+690,Intel Xeon Gold 6240Y,150
+691,Intel Xeon Gold 6240C,150
+692,Intel Xeon Gold 6241W,205
+693,Intel Xeon Gold 6242,150
+694,Intel Xeon Gold 6244,150
+695,Intel Xeon Gold 6245W,180
+696,Intel Xeon Gold 6246,165
+697,Intel Xeon Gold 6248,150
+698,Intel Xeon Gold 6250,185
+699,Intel Xeon Gold 6250L,185
+700,Intel Xeon Gold 6252,150
+701,Intel Xeon Gold 6252N,150
+702,Intel Xeon Gold 6253W,200
+703,Intel Xeon Gold 6253CL,205
+704,Intel Xeon Gold 6254,200
+705,Intel Xeon Gold 6256,205
+706,Intel Xeon Gold 6261,205
+707,Intel Xeon Gold 6262V,135
+708,Intel Xeon Gold 6263CY,205
+709,Intel Xeon Gold 6266C,205
+710,Intel Xeon Gold 6267,165
+711,Intel Xeon Gold 6267C,165
+712,Intel Xeon Gold 6268CL,205
+713,Intel Xeon Gold 6271C,165
+714,Intel Xeon Gold 6273C,165
+715,Intel Xeon Gold 6278C,185
+716,Intel Xeon Gold 6290,240
+717,Intel Xeon Platinum 8222L,200
+718,Intel Xeon Platinum 8249C,150
+719,Intel Xeon Platinum 8251,240
+720,Intel Xeon Platinum 8253,125
+721,Intel Xeon Platinum 8255C,165
+722,Intel Xeon Platinum 8256,105
+723,Intel Xeon Platinum 8259L,210
+724,Intel Xeon Platinum 8259CL,210
+725,Intel Xeon Platinum 8260,165
+726,Intel Xeon Platinum 8260L,165
+727,Intel Xeon Platinum 8260M,165
+728,Intel Xeon Platinum 8260Y,165
+729,Intel Xeon Platinum 8263C,165
+730,Intel Xeon Platinum 8267W,205
+731,Intel Xeon Platinum 8268,205
+732,Intel Xeon Platinum 8269CY,205
+733,Intel Xeon Platinum 8270,205
+734,Intel Xeon Platinum 8272L,195
+735,Intel Xeon Platinum 8272CL,195
+736,Intel Xeon Platinum 8273CL,165
+737,Intel Xeon Platinum 8274,240
+738,Intel Xeon Platinum 8275CL,240
+739,Intel Xeon Platinum 8276,165
+740,Intel Xeon Platinum 8276L,165
+741,Intel Xeon Platinum 8276M,165
+742,Intel Xeon Platinum 8279W,205
+743,Intel Xeon Platinum 8280,205
+744,Intel Xeon Platinum 8280L,205
+745,Intel Xeon Platinum 8280M,205
+746,Intel Xeon Platinum 8284,240
+747,Intel Xeon Platinum 9221,250
+748,Intel Xeon Platinum 9222,250
+749,Intel Xeon Platinum 9242,350
+750,Intel Xeon Platinum 9282,400
+751,Intel Xeon W-2223,120
+752,Intel Xeon W-2225,105
+753,Intel Xeon W-2235,130
+754,Intel Xeon W-2245,155
+755,Intel Xeon W-2255,165
+756,Intel Xeon W-2265,165
+757,Intel Xeon W-2275,165
+758,Intel Xeon W-2295,165
+759,Intel Xeon W-3223,160
+760,Intel Xeon W-3225,160
+761,Intel Xeon W-3235,180
+762,Intel Xeon W-3245,205
+763,Intel Xeon W-3245M,205
+764,Intel Xeon W-3265,205
+765,Intel Xeon W-3265M,205
+766,Intel Xeon W-3275,205
+767,Intel Xeon W-3275M,205
+768,Intel Xeon W-1250,80
+769,Intel Xeon W-1270,80
+770,Intel Xeon W-1290,80
+771,Intel Xeon W-1250E,80
+772,Intel Xeon W-1270E,80
+773,Intel Xeon W-1290E,95
+774,Intel Xeon W-1250P,125
+775,Intel Xeon W-1270P,125
+776,Intel Xeon W-1290P,125
+777,Intel Xeon W-1290T,35
+778,Intel Xeon W-1250TE,35
+779,Intel Xeon W-1270TE,35
+780,Intel Xeon W-1290TE,35
+781,Intel Xeon W-10855M,45
+782,Intel Xeon W-10885M,45
+783,Intel Xeon W-1350,80
+784,Intel Xeon W-1370,80
+785,Intel Xeon W-1390,80
+786,Intel Xeon W-1350P,125
+787,Intel Xeon W-1370P,125
+788,Intel Xeon W-1390P,125
+789,Intel Xeon W-1390T,35
+790,Intel Xeon E-2314,65
+791,Intel Xeon E-2324G,65
+792,Intel Xeon E-2334,65
+793,Intel Xeon E-2336,65
+794,Intel Xeon E-2356G,80
+795,Intel Xeon E-2374G,80
+796,Intel Xeon E-2378,65
+797,Intel Xeon E-2378G,80
+798,Intel Xeon E-2386G,95
+799,Intel Xeon E-2388G,95
+800,Intel Xeon Gold 6312U,185
+801,Intel Xeon Gold 6314U,205
+802,Intel Xeon Silver 4309Y,105
+803,Intel Xeon Silver 4310T,105
+804,Intel Xeon Silver 4310,120
+805,Intel Xeon Silver 4314,135
+806,Intel Xeon Silver 4316,150
+807,Intel Xeon Gold 5315Y,140
+808,Intel Xeon Gold 5317,150
+809,Intel Xeon Gold 5318N,150
+810,Intel Xeon Gold 5318S,165
+811,Intel Xeon Gold 5318Y,165
+812,Intel Xeon Gold 5320T,150
+813,Intel Xeon Gold 5320,185
+814,Intel Xeon Gold 6326,185
+815,Intel Xeon Gold 6330,205
+816,Intel Xeon Gold 6330N,165
+817,Intel Xeon Gold 6334,165
+818,Intel Xeon Gold 6336Y,185
+819,Intel Xeon Gold 6338T,165
+820,Intel Xeon Gold 6338,205
+821,Intel Xeon Gold 6338N,185
+822,Intel Xeon Gold 6342,230
+823,Intel Xeon Gold 6346,205
+824,Intel Xeon Gold 6348,235
+825,Intel Xeon Gold 6354,205
+826,Intel Xeon Platinum 8347C,210
+827,Intel Xeon Platinum 8351N,225
+828,Intel Xeon Platinum 8352M,185
+829,Intel Xeon Platinum 8352S,205
+830,Intel Xeon Platinum 8352V,195
+831,Intel Xeon Platinum 8352Y,205
+832,Intel Xeon Platinum 8357C,240
+833,Intel Xeon Platinum 8358,250
+834,Intel Xeon Platinum 8358P,240
+835,Intel Xeon Platinum 8360Y,250
+836,Intel Xeon Platinum 8362,265
+837,Intel Xeon Platinum 8368,270
+838,Intel Xeon Platinum 8368Q,270
+839,Intel Xeon Platinum 8372C,300
+840,Intel Xeon Platinum 8373C,300
+841,Intel Xeon Platinum 8375C,300
+842,Intel Xeon Platinum 8380,270
+843,Intel Xeon W-3323,220
+844,Intel Xeon W-3335,250
+845,Intel Xeon W-3345,250
+846,Intel Xeon W-3365,270
+847,Intel Xeon W-3375,270
+848,Intel Xeon Gold 5318H,150
+849,Intel Xeon Gold 5320H,150
+850,Intel Xeon Gold 6328H,165
+851,Intel Xeon Gold 6328HL,165
+852,Intel Xeon Gold 6330H,150
+853,Intel Xeon Gold 6348H,165
+854,Intel Xeon Platinum 8353H,150
+855,Intel Xeon Platinum 8354H,205
+856,Intel Xeon Platinum 8356H,190
+857,Intel Xeon Platinum 8360H,225
+858,Intel Xeon Platinum 8360HL,225
+859,Intel Xeon Platinum 8376H,205
+860,Intel Xeon Platinum 8376HL,205
+861,Intel Xeon Platinum 8380H,250
+862,Intel Xeon Platinum 8380HL,250
+863,Intel Xeon X3430,95
+864,Intel Xeon X3440,95
+865,Intel Xeon X3450,95
+866,Intel Xeon X3460,95
+867,Intel Xeon X3470,95
+868,Intel Xeon X3480,95
+869,Intel Xeon L3426,45
+870,Intel Xeon W3503,130
+871,Intel Xeon W3505,130
+872,Intel Xeon W3520,130
+873,Intel Xeon W3530,130
+874,Intel Xeon W3540,130
+875,Intel Xeon W3550,130
+876,Intel Xeon W3565,130
+877,Intel Xeon W3570,130
+878,Intel Xeon W3580,130
+879,Intel Xeon LC3518,23
+880,Intel Xeon LC3528,35
+881,Intel Xeon EC3539,65
+882,Intel Xeon L3403,30
+883,Intel Xeon L3406,30
+884,Intel Xeon W3670,130
+885,Intel Xeon W3680,130
+886,Intel Xeon W3690,130
+887,Intel Xeon E5502,80
+888,Intel Xeon E5503,80
+889,Intel Xeon L5508,38
+890,Intel Xeon E5504,80
+891,Intel Xeon E5506,80
+892,Intel Xeon E5507,80
+893,Intel Xeon E5520,80
+894,Intel Xeon E5530,80
+895,Intel Xeon E5540,80
+896,Intel Xeon X5550,95
+897,Intel Xeon X5560,95
+898,Intel Xeon X5570,95
+899,Intel Xeon W5580,130
+900,Intel Xeon W5590,130
+901,Intel Xeon L5506,60
+902,Intel Xeon L5518,60
+903,Intel Xeon L5520,60
+904,Intel Xeon L5530,60
+905,Intel Xeon EC5539,65
+906,Intel Xeon EC5509,85
+907,Intel Xeon EC5549,85
+908,Intel Xeon LC5518,48
+909,Intel Xeon LC5528,60
+910,Intel Xeon X5698,130
+911,Intel Xeon E5603,80
+912,Intel Xeon E5606,80
+913,Intel Xeon E5607,80
+914,Intel Xeon E5620,80
+915,Intel Xeon E5630,80
+916,Intel Xeon E5640,80
+917,Intel Xeon X5647,130
+918,Intel Xeon X5667,95
+919,Intel Xeon X5672,95
+920,Intel Xeon X5677,130
+921,Intel Xeon X5687,130
+922,Intel Xeon L5609,40
+923,Intel Xeon L5618,40
+924,Intel Xeon L5630,40
+925,Intel Xeon E5645,80
+926,Intel Xeon E5649,80
+927,Intel Xeon X5650,95
+928,Intel Xeon X5660,95
+929,Intel Xeon X5670,95
+930,Intel Xeon X5675,95
+931,Intel Xeon X5679,115
+932,Intel Xeon X5680,130
+933,Intel Xeon X5690,130
+934,Intel Xeon L5638,60
+935,Intel Xeon L5639,60
+936,Intel Xeon L5640,60
+937,Intel Xeon L5645,60
+938,Intel Xeon E6510,105
+939,Intel Xeon E7520,105
+940,Intel Xeon E7530,105
+941,Intel Xeon E6540,105
+942,Intel Xeon E7540,105
+943,Intel Xeon X7542,130
+944,Intel Xeon L7545,95
+945,Intel Xeon X6550,130
+946,Intel Xeon X7550,130
+947,Intel Xeon X7560,130
+948,Intel Xeon L7555,95
+949,Intel Xeon E7-2803,105
+950,Intel Xeon E7-4807,95
+951,Intel Xeon E7-2820,105
+952,Intel Xeon E7-2830,105
+953,Intel Xeon E7-4820,105
+954,Intel Xeon E7-4830,105
+955,Intel Xeon E7-8830,105
+956,Intel Xeon E7-8837,130
+957,Intel Xeon E7-2850,130
+958,Intel Xeon E7-2860,130
+959,Intel Xeon E7-2870,130
+960,Intel Xeon E7-4850,130
+961,Intel Xeon E7-4860,130
+962,Intel Xeon E7-4870,130
+963,Intel Xeon E7-8850,130
+964,Intel Xeon E7-8860,130
+965,Intel Xeon E7-8870,130
+966,Intel Xeon E7-8867L,105
+967,Intel Xeon 3040,65
+968,Intel Xeon 3050,65
+969,Intel Xeon 3040,65
+970,Intel Xeon 3050,65
+971,Intel Xeon 3060,65
+972,Intel Xeon 3065,65
+973,Intel Xeon 3070,65
+974,Intel Xeon 3075,65
+975,Intel Xeon 3085,65
+976,Intel Xeon 5110,65
+977,Intel Xeon 5120,65
+978,Intel Xeon 5130,65
+979,Intel Xeon 5140,65
+980,Intel Xeon 5150,65
+981,Intel Xeon 5160,80
+982,Intel Xeon LV 5113,40
+983,Intel Xeon LV 5128,40
+984,Intel Xeon LV 5133,40
+985,Intel Xeon LV 5138,35
+986,Intel Xeon LV 5148,40
+987,Intel Xeon L3014,30
+988,Intel Xeon E3113,65
+989,Intel Xeon E3110,65
+990,Intel Xeon E3120,65
+991,Intel Xeon L3110,45
+992,Intel Xeon E5205,65
+993,Intel Xeon E5220,65
+994,Intel Xeon E5240,65
+995,Intel Xeon X5260,80
+996,Intel Xeon X5270,80
+997,Intel Xeon X5272,80
+998,Intel Xeon L5215,20
+999,Intel Xeon L5238,35
+1000,Intel Xeon L5240,40
+1001,Intel Xeon L5248,55
+1002,Intel Xeon X3210,100
+1003,Intel Xeon X3220,100
+1004,Intel Xeon X3230,100
+1005,Intel Xeon X3320,95
+1006,Intel Xeon X3330,95
+1007,Intel Xeon X3350,95
+1008,Intel Xeon X3360,95
+1009,Intel Xeon X3370,95
+1010,Intel Xeon X3380,95
+1011,Intel Xeon L3360,65
+1012,Intel Xeon X3323,80
+1013,Intel Xeon X3353,80
+1014,Intel Xeon X3363,80
+1015,Intel Xeon E5310,80
+1016,Intel Xeon E5320,80
+1017,Intel Xeon E5330,80
+1018,Intel Xeon E5335,80
+1019,Intel Xeon E5340,80
+1020,Intel Xeon E5345,80
+1021,Intel Xeon E5350,120
+1022,Intel Xeon X5355,120
+1023,Intel Xeon X5365,120
+1024,Intel Xeon L5310,50
+1025,Intel Xeon L5318,40
+1026,Intel Xeon L5320,50
+1027,Intel Xeon L5335,50
+1028,Intel Xeon E5405,80
+1029,Intel Xeon E5410,80
+1030,Intel Xeon E5420,80
+1031,Intel Xeon E5430,80
+1032,Intel Xeon E5440,80
+1033,Intel Xeon E5450,80
+1034,Intel Xeon X5450,120
+1035,Intel Xeon X5460,120
+1036,Intel Xeon E5462,80
+1037,Intel Xeon X5470,120
+1038,Intel Xeon E5472,80
+1039,Intel Xeon X5472,120
+1040,Intel Xeon X5482,150
+1041,Intel Xeon X5492,150
+1042,Intel Xeon L5408,40
+1043,Intel Xeon L5410,50
+1044,Intel Xeon L5420,50
+1045,Intel Xeon L5430,50
+1046,Intel Xeon E7210,80
+1047,Intel Xeon E7220,80
+1048,Intel Xeon E7310,80
+1049,Intel Xeon E7320,80
+1050,Intel Xeon E7330,80
+1051,Intel Xeon E7340,80
+1052,Intel Xeon X7350,130
+1053,Intel Xeon L7345,50
+1054,Intel Xeon E7420,90
+1055,Intel Xeon E7430,90
+1056,Intel Xeon E7440,90
+1057,Intel Xeon L7445,50
+1058,Intel Xeon E7450,90
+1059,Intel Xeon E7458,90
+1060,Intel Xeon X7460,130
+1061,Intel Xeon L7455,65
+1062,Intel Xeon E3-1105C,25
+1063,Intel Xeon E3-1125C,40
+1064,Intel Xeon E3-1220L,20
+1065,Intel Xeon E3-1220,80
+1066,Intel Xeon E3-1225,95
+1067,Intel Xeon E3-1230,80
+1068,Intel Xeon E3-1235,95
+1069,Intel Xeon E3-1240,80
+1070,Intel Xeon E3-1245,95
+1071,Intel Xeon E3-1270,80
+1072,Intel Xeon E3-1275,95
+1073,Intel Xeon E3-1280,95
+1074,Intel Xeon E3-1290,95
+1075,Intel Xeon E3-1260L,45
+1076,Intel Xeon E3-1265L,45
+1077,Intel Xeon E5-1410,80
+1078,Intel Xeon E5-1428L,60
+1079,Intel Xeon E5-2403,80
+1080,Intel Xeon E5-2407,80
+1081,Intel Xeon E5-2418L,50
+1082,Intel Xeon E5-2420,95
+1083,Intel Xeon E5-2430,95
+1084,Intel Xeon E5-2440,95
+1085,Intel Xeon E5-2428L,60
+1086,Intel Xeon E5-2430L,60
+1087,Intel Xeon E5-2450,95
+1088,Intel Xeon E5-2470,95
+1089,Intel Xeon E5-2448L,70
+1090,Intel Xeon E5-2449L,50
+1091,Intel Xeon E5-2450L,70
+1092,Intel Xeon E5-1603,130
+1093,Intel Xeon E5-1607,130
+1094,Intel Xeon E5-1620,130
+1095,Intel Xeon E5-1650,130
+1096,Intel Xeon E5-1660,130
+1097,Intel Xeon E5-2637,80
+1098,Intel Xeon E5-2603,80
+1099,Intel Xeon E5-2609,80
+1100,Intel Xeon E5-2643,130
+1101,Intel Xeon E5-2618L,40
+1102,Intel Xeon E5-2620,95
+1103,Intel Xeon E5-2630,95
+1104,Intel Xeon E5-2640,95
+1105,Intel Xeon E5-2667,130
+1106,Intel Xeon E5-2628L,60
+1107,Intel Xeon E5-2630L,60
+1108,Intel Xeon E5-2650,95
+1109,Intel Xeon E5-2658,95
+1110,Intel Xeon E5-2660,95
+1111,Intel Xeon E5-2665,115
+1112,Intel Xeon E5-2670,115
+1113,Intel Xeon E5-2689,115
+1114,Intel Xeon E5-2680,130
+1115,Intel Xeon E5-2690,135
+1116,Intel Xeon E5-2687W,150
+1117,Intel Xeon E5-2648L,70
+1118,Intel Xeon E5-2650L,70
+1119,Intel Xeon E5-4603,95
+1120,Intel Xeon E5-4607,95
+1121,Intel Xeon E5-4610,95
+1122,Intel Xeon E5-4617,130
+1123,Intel Xeon E5-4620,95
+1124,Intel Xeon E5-4640,95
+1125,Intel Xeon E5-4650,130
+1126,Intel Xeon E5-4650L,115
+1127,Intel Xeon E3-1105C v2,25
+1128,Intel Xeon E3-1125C v2,40
+1129,Intel Xeon E3-1135C v2,55
+1130,Intel Xeon E3-1220L v2,17
+1131,Intel Xeon E3-1220 v2,69
+1132,Intel Xeon E3-1225 v2,77
+1133,Intel Xeon E3-1230 v2,69
+1134,Intel Xeon E3-1240 v2,69
+1135,Intel Xeon E3-1245 v2,77
+1136,Intel Xeon E3-1270 v2,69
+1137,Intel Xeon E3-1275 v2,77
+1138,Intel Xeon E3-1280 v2,69
+1139,Intel Xeon E3-1285 v2,77
+1140,Intel Xeon E3-1290 v2,87
+1141,Intel Xeon E3-1265L v2,45
+1142,Intel Xeon E3-1285L v2,65
+1143,Intel Xeon E5-1410 v2,80
+1144,Intel Xeon E5-1428L v2,60
+1145,Intel Xeon E5-2403 v2,80
+1146,Intel Xeon E5-2407 v2,80
+1147,Intel Xeon E5-2420 v2,80
+1148,Intel Xeon E5-2430 v2,80
+1149,Intel Xeon E5-2418L v2,50
+1150,Intel Xeon E5-2430L v2,60
+1151,Intel Xeon E5-2440 v2,95
+1152,Intel Xeon E5-2450 v2,95
+1153,Intel Xeon E5-2428L v2,60
+1154,Intel Xeon E5-2470 v2,95
+1155,Intel Xeon E5-2448L v2,70
+1156,Intel Xeon E5-2450L v2,60
+1157,Intel Xeon E5-1607 v2,130
+1158,Intel Xeon E5-1620 v2,130
+1159,Intel Xeon E5-1650 v2,130
+1160,Intel Xeon E5-1660 v2,130
+1161,Intel Xeon E5-1680 v2,130
+1162,Intel Xeon E5-2603 v2,80
+1163,Intel Xeon E5-2609 v2,80
+1164,Intel Xeon E5-2637 v2,130
+1165,Intel Xeon E5-2620 v2,80
+1166,Intel Xeon E5-2630 v2,80
+1167,Intel Xeon E5-2643 v2,130
+1168,Intel Xeon E5-2618L v2,50
+1169,Intel Xeon E5-2630L v2,60
+1170,Intel Xeon E5-2640 v2,95
+1171,Intel Xeon E5-2650 v2,95
+1172,Intel Xeon E5-2667 v2,130
+1173,Intel Xeon E5-2673 v2,110
+1174,Intel Xeon E5-2687W v2,150
+1175,Intel Xeon E5-2628L v2,70
+1176,Intel Xeon E5-2658 v2,95
+1177,Intel Xeon E5-2660 v2,95
+1178,Intel Xeon E5-2670 v2,115
+1179,Intel Xeon E5-2680 v2,115
+1180,Intel Xeon E5-2690 v2,130
+1181,Intel Xeon E5-2648L v2,70
+1182,Intel Xeon E5-2650L v2,70
+1183,Intel Xeon E5-2651 v2,105
+1184,Intel Xeon E5-2692 v2,115
+1185,Intel Xeon E5-2695 v2,115
+1186,Intel Xeon E5-2696 v2,120
+1187,Intel Xeon E5-2697 v2,130
+1188,Intel Xeon E5-4603 v2,95
+1189,Intel Xeon E5-4607 v2,95
+1190,Intel Xeon E5-4610 v2,95
+1191,Intel Xeon E5-4620 v2,95
+1192,Intel Xeon E5-4627 v2,130
+1193,Intel Xeon E5-4624L v2,70
+1194,Intel Xeon E5-4640 v2,95
+1195,Intel Xeon E5-4650 v2,95
+1196,Intel Xeon E5-4657L v2,115
+1197,Intel Xeon E7-2850 v2,105
+1198,Intel Xeon E7-2870 v2,130
+1199,Intel Xeon E7-2880 v2,130
+1200,Intel Xeon E7-2890 v2,155
+1201,Intel Xeon E7-4809 v2,105
+1202,Intel Xeon E7-4820 v2,105
+1203,Intel Xeon E7-4830 v2,105
+1204,Intel Xeon E7-4850 v2,105
+1205,Intel Xeon E7-4860 v2,130
+1206,Intel Xeon E7-4870 v2,130
+1207,Intel Xeon E7-4880 v2,130
+1208,Intel Xeon E7-4890 v2,155
+1209,Intel Xeon E7-8893 v2,155
+1210,Intel Xeon E7-8891 v2,155
+1211,Intel Xeon E7-8850 v2,105
+1212,Intel Xeon E7-8857 v2,130
+1213,Intel Xeon E7-8870 v2,130
+1214,Intel Xeon E7-8880 v2,130
+1215,Intel Xeon E7-8880L v2,105
+1216,Intel Xeon E7-8890 v2,155
+1217,Intel Xeon E7-8895 v2,155
+1218,Intel Xeon E-2104G,65
+1219,Intel Xeon E-2124,71
+1220,Intel Xeon E-2124G,71
+1221,Intel Xeon E-2126G,80
+1222,Intel Xeon E-2134,71
+1223,Intel Xeon E-2136,80
+1224,Intel Xeon E-2144G,71
+1225,Intel Xeon E-2146G,80
+1226,Intel Xeon E-2174G,71
+1227,Intel Xeon E-2176G,80
+1228,Intel Xeon E-2186G,95
+1229,Intel Xeon E-2224,71
+1230,Intel Xeon E-2224G,71
+1231,Intel Xeon E-2226G,80
+1232,Intel Xeon E-2234,71
+1233,Intel Xeon E-2236,80
+1234,Intel Xeon E-2244G,71
+1235,Intel Xeon E-2246G,80
+1236,Intel Xeon E-2274G,83
+1237,Intel Xeon E-2276G,80
+1238,Intel Xeon E-2278G,80
+1239,Intel Xeon E-2286G,95
+1240,Intel Xeon E-2288G,95
+1241,Intel Xeon E-2226GE,80
+1242,Intel Xeon E-2278GE,80
+1243,Intel Xeon E-2278GEL,35
+1244,Intel Xeon E-2176M,45
+1245,Intel Xeon E-2186M,45
+1246,Intel Xeon E-2276M,45
+1247,Intel Xeon E-2286M,45
+1248,Intel Xeon E-2254ME,45
+1249,Intel Xeon E-2276ME,45
+1250,Intel Xeon E-2254ML,25
+1251,Intel Xeon E-2276ML,25
+1252,Intel Xeon E3-1205 v6,65
+1253,Intel Xeon E3-1220 v6,72
+1254,Intel Xeon E3-1225 v6,73
+1255,Intel Xeon E3-1230 v6,72
+1256,Intel Xeon E3-1240 v6,72
+1257,Intel Xeon E3-1245 v6,73
+1258,Intel Xeon E3-1270 v6,72
+1259,Intel Xeon E3-1275 v6,73
+1260,Intel Xeon E3-1280 v6,72
+1261,Intel Xeon E3-1285 v6,79
+1262,Intel Xeon E3-1505M v6,45
+1263,Intel Xeon E3-1535M v6,45
+1264,Intel Xeon E3-1501M v6,45
+1265,Intel Xeon E3-1501L v6,25
+1266,Intel Xeon E3-1505L v6,25
+1267,Intel Xeon D-1513N,35
+1268,Intel Xeon D-1518,35
+1269,Intel Xeon D-1520,45
+1270,Intel Xeon D-1521,45
+1271,Intel Xeon D-1523N,45
+1272,Intel Xeon D-1527,35
+1273,Intel Xeon D-1529,20
+1274,Intel Xeon D-1528,35
+1275,Intel Xeon D-1531,45
+1276,Intel Xeon D-1533N,45
+1277,Intel Xeon D-1537,35
+1278,Intel Xeon D-1539,35
+1279,Intel Xeon D-1540,45
+1280,Intel Xeon D-1541,45
+1281,Intel Xeon D-1543N,45
+1282,Intel Xeon D-1548,45
+1283,Intel Xeon D-1553N,65
+1284,Intel Xeon D-1557,45
+1285,Intel Xeon D-1559,45
+1286,Intel Xeon D-1567,65
+1287,Intel Xeon D-1571,45
+1288,Intel Xeon D-1577,45
+1289,Intel Xeon D-1581,65
+1290,Intel Xeon D-1587,65
+1291,Intel Xeon D-1602,27
+1292,Intel Xeon D-1622,40
+1293,Intel Xeon D-1627,45
+1294,Intel Xeon D-1637,55
+1295,Intel Xeon D-1623N,35
+1296,Intel Xeon D-1633N,45
+1297,Intel Xeon D-1649N,45
+1298,Intel Xeon D-1653N,65
+1299,Intel Xeon E3-1285 v4,95
+1300,Intel Xeon E3-1258L v4,47
+1301,Intel Xeon E3-1265L v4,35
+1302,Intel Xeon E3-1270L v4,45
+1303,Intel Xeon E3-1278L v4,47
+1304,Intel Xeon E3-1283L v4,47
+1305,Intel Xeon E3-1284L v4,47
+1306,Intel Xeon E3-1285L v4,65
+1307,Intel Xeon E5-1603 v4,140
+1308,Intel Xeon E5-1607 v4,140
+1309,Intel Xeon E5-1620 v4,140
+1310,Intel Xeon E5-1630 v4,140
+1311,Intel Xeon E5-1650 v4,140
+1312,Intel Xeon E5-1660 v4,140
+1313,Intel Xeon E5-1680 v4,140
+1314,Intel Xeon E5-2623 v4,85
+1315,Intel Xeon E5-2637 v4,135
+1316,Intel Xeon E5-2603 v4,85
+1317,Intel Xeon E5-2643 v4,135
+1318,Intel Xeon E5-2608L v4,50
+1319,Intel Xeon E5-2609 v4,85
+1320,Intel Xeon E5-2620 v4,85
+1321,Intel Xeon E5-2667 v4,135
+1322,Intel Xeon E5-2689A v4,145
+1323,Intel Xeon E5-2618L v4,75
+1324,Intel Xeon E5-2630 v4,85
+1325,Intel Xeon E5-2630L v4,55
+1326,Intel Xeon E5-2640 v4,90
+1327,Intel Xeon E5-2689 v4,165
+1328,Intel Xeon E5-2628L v4,75
+1329,Intel Xeon E5-2650 v4,105
+1330,Intel Xeon E5-2666 v4,145
+1331,Intel Xeon E5-2687W v4,160
+1332,Intel Xeon E5-2648L v4,75
+1333,Intel Xeon E5-2650L v4,65
+1334,Intel Xeon E5-2658 v4,105
+1335,Intel Xeon E5-2660 v4,105
+1336,Intel Xeon E5-2680 v4,120
+1337,Intel Xeon E5-2690 v4,135
+1338,Intel Xeon AWS-1100 v4,145
+1339,Intel Xeon E5-2676 v4,145
+1340,Intel Xeon E5-2682 v4,120
+1341,Intel Xeon E5-2683 v4,120
+1342,Intel Xeon E5-2697A v4,145
+1343,Intel Xeon E5-2686 v4,145
+1344,Intel Xeon E5-2695 v4,120
+1345,Intel Xeon E5-2697 v4,145
+1346,Intel Xeon E5-2673 v4,135
+1347,Intel Xeon E5-2679 v4,200
+1348,Intel Xeon E5-2698 v4,135
+1349,Intel Xeon E5-2696 v4,150
+1350,Intel Xeon E5-2699 v4,145
+1351,Intel Xeon E5-2699A v4,145
+1352,Intel Xeon E5-2699C v4,145
+1353,Intel Xeon E5-2699R v4,145
+1354,Intel Xeon E5-2699P v4,300
+1355,Intel Xeon E5-4610 v4,105
+1356,Intel Xeon E5-4620 v4,105
+1357,Intel Xeon E5-4627 v4,135
+1358,Intel Xeon E5-4628L v4,75
+1359,Intel Xeon E5-4640 v4,105
+1360,Intel Xeon E5-4650 v4,105
+1361,Intel Xeon E5-4655 v4,135
+1362,Intel Xeon E5-4660 v4,120
+1363,Intel Xeon E5-4667 v4,135
+1364,Intel Xeon E5-4669 v4,135
+1365,Intel Xeon E7-4809 v4,115
+1366,Intel Xeon E7-4820 v4,115
+1367,Intel Xeon E7-4830 v4,115
+1368,Intel Xeon E7-4850 v4,115
+1369,Intel Xeon E7-8855 v4,140
+1370,Intel Xeon E7-8860 v4,140
+1371,Intel Xeon E7-8867 v4,165
+1372,Intel Xeon E7-8870 v4,140
+1373,Intel Xeon E7-8880 v4,150
+1374,Intel Xeon E7-8890 v4,165
+1375,Intel Xeon E7-8891 v4,165
+1376,Intel Xeon E7-8893 v4,140
+1377,Intel Xeon E7-8894 v4,165
+1378,Intel Xeon D-2141I,65
+1379,Intel Xeon D-2161I,90
+1380,Intel Xeon D-2191,86
+1381,Intel Xeon D-2123IT,60
+1382,Intel Xeon D-2142IT,65
+1383,Intel Xeon D-2143IT,65
+1384,Intel Xeon D-2163IT,75
+1385,Intel Xeon D-2173IT,70
+1386,Intel Xeon D-2183IT,100
+1387,Intel Xeon D-2145NT,65
+1388,Intel Xeon D-2146NT,80
+1389,Intel Xeon D-2166NT,85
+1390,Intel Xeon D-2177NT,105
+1391,Intel Xeon D-2187NT,110
+1392,Intel Xeon E3-1220 v5,80
+1393,Intel Xeon E3-1225 v5,80
+1394,Intel Xeon E3-1230 v5,80
+1395,Intel Xeon E3-1240 v5,80
+1396,Intel Xeon E3-1245 v5,80
+1397,Intel Xeon E3-1270 v5,80
+1398,Intel Xeon E3-1275 v5,80
+1399,Intel Xeon E3-1280 v5,80
+1400,Intel Xeon E3-1260L v5,45
+1401,Intel Xeon E3-1268L v5,35
+1402,Intel Xeon E3-1235L v5,25
+1403,Intel Xeon E3-1240L v5,25
+1404,Intel Xeon E3-1585 v5,65
+1405,Intel Xeon E3-1505M v5,45
+1406,Intel Xeon E3-1515M v5,45
+1407,Intel Xeon E3-1535M v5,45
+1408,Intel Xeon E3-1545M v5,45
+1409,Intel Xeon E3-1575M v5,45
+1410,Intel Xeon E3-1565L v5,35
+1411,Intel Xeon E3-1585L v5,45
+1412,Intel Xeon E3-1505L v5,25
+1413,Intel Xeon E3-1558L v5,45
+1414,Intel Xeon E3-1578L v5,45
+1415,Intel Xeon W-2102,120
+1416,Intel Xeon W-2104,120
+1417,Intel Xeon W-2123,120
+1418,Intel Xeon W-2125,120
+1419,Intel Xeon W-2133,140
+1420,Intel Xeon W-2135,140
+1421,Intel Xeon W-2140B,120
+1422,Intel Xeon W-2145,140
+1423,Intel Xeon W-2150B,120
+1424,Intel Xeon W-2155,140
+1425,Intel Xeon W-2175,140
+1426,Intel Xeon W-2191B,140
+1427,Intel Xeon W-2195,140
+1428,Intel Xeon W-3175X,255
+1429,Intel Xeon Bronze 3104,85
+1430,Intel Xeon Bronze 3106,85
+1431,Intel Xeon Silver 4106H,85
+1432,Intel Xeon Silver 4108,85
+1433,Intel Xeon Silver 4109T,70
+1434,Intel Xeon Silver 4110,85
+1435,Intel Xeon Silver 4112,85
+1436,Intel Xeon Silver 4114,85
+1437,Intel Xeon Silver 4114T,85
+1438,Intel Xeon Silver 4116,85
+1439,Intel Xeon Silver 4116T,85
+1440,Intel Xeon Silver 4123,105
+1441,Intel Xeon Gold 5115,85
+1442,Intel Xeon Gold 5117,105
+1443,Intel Xeon Gold 5117F,113
+1444,Intel Xeon Gold 5118,105
+1445,Intel Xeon Gold 5119T,85
+1446,Intel Xeon Gold 5120,105
+1447,Intel Xeon Gold 5120T,105
+1448,Intel Xeon Gold 5122,105
+1449,Intel Xeon Gold 6122,120
+1450,Intel Xeon Gold 6126,125
+1451,Intel Xeon Gold 6126F,135
+1452,Intel Xeon Gold 6126T,125
+1453,Intel Xeon Gold 6127M,145
+1454,Intel Xeon Gold 6128,115
+1455,Intel Xeon Gold 6130,125
+1456,Intel Xeon Gold 6130F,135
+1457,Intel Xeon Gold 6130T,125
+1458,Intel Xeon Gold 6130H,125
+1459,Intel Xeon Gold 6131,205
+1460,Intel Xeon Gold 6132,140
+1461,Intel Xeon Gold 6133,150
+1462,Intel Xeon Gold 6134,130
+1463,Intel Xeon Gold 6134M,130
+1464,Intel Xeon Gold 6135,155
+1465,Intel Xeon Gold 6135M,155
+1466,Intel Xeon Gold 6136,150
+1467,Intel Xeon Gold 6137,205
+1468,Intel Xeon Gold 6137M,205
+1469,Intel Xeon Gold 6138,125
+1470,Intel Xeon Gold 6138F,135
+1471,Intel Xeon Gold 6138P,195
+1472,Intel Xeon Gold 6138T,125
+1473,Intel Xeon Gold 6139,135
+1474,Intel Xeon Gold 6139M,135
+1475,Intel Xeon Gold 6140,140
+1476,Intel Xeon Gold 6140M,140
+1477,Intel Xeon Gold 6142,150
+1478,Intel Xeon Gold 6142F,160
+1479,Intel Xeon Gold 6142M,150
+1480,Intel Xeon Gold 6143,165
+1481,Intel Xeon Gold 6144,150
+1482,Intel Xeon Gold 6145,145
+1483,Intel Xeon Gold 6146,165
+1484,Intel Xeon Gold 6147M,150
+1485,Intel Xeon Gold 6148,150
+1486,Intel Xeon Gold 6148F,150
+1487,Intel Xeon Gold 6149,205
+1488,Intel Xeon Gold 6150,165
+1489,Intel Xeon Gold 6151,205
+1490,Intel Xeon Gold 6152,140
+1491,Intel Xeon Gold 6154,200
+1492,Intel Xeon Gold 6155,200
+1493,Intel Xeon Gold 6159,145
+1494,Intel Xeon Gold 6161,165
+1495,Intel Xeon Gold 6162,150
+1496,Intel Xeon Gold 6164,150
+1497,Intel Xeon Platinum P-8124,240
+1498,Intel Xeon Platinum 8124M,240
+1499,Intel Xeon Platinum P-8136,165
+1500,Intel Xeon Platinum 8151,240
+1501,Intel Xeon Platinum 8153,125
+1502,Intel Xeon Platinum 8156,105
+1503,Intel Xeon Platinum 8157M,145
+1504,Intel Xeon Platinum 8158,150
+1505,Intel Xeon Platinum 8160,150
+1506,Intel Xeon Platinum 8160F,160
+1507,Intel Xeon Platinum 8160H,150
+1508,Intel Xeon Platinum 8160M,150
+1509,Intel Xeon Platinum 8160T,150
+1510,Intel Xeon Platinum 8163,165
+1511,Intel Xeon Platinum 8164,150
+1512,Intel Xeon Platinum 8165,165
+1513,Intel Xeon Platinum 8167M,165
+1514,Intel Xeon Platinum 8168,205
+1515,Intel Xeon Platinum 8170,165
+1516,Intel Xeon Platinum 8170M,165
+1517,Intel Xeon Platinum 8171M,185
+1518,Intel Xeon Platinum 8172M,205
+1519,Intel Xeon Platinum 8173M,165
+1520,Intel Xeon Platinum 8174,240
+1521,Intel Xeon Platinum 8175M,240
+1522,Intel Xeon Platinum 8176,165
+1523,Intel Xeon Platinum 8176F,173
+1524,Intel Xeon Platinum 8176M,165
+1525,Intel Xeon Platinum 8179M,240
+1526,Intel Xeon Platinum 8180,205
+1527,Intel Xeon Platinum 8180M,205
+1528,Intel Core i3-530,73
+1529,Intel Core i3-540,73
+1530,Intel Core i3-550,73
+1531,Intel Core i3-560,73
+1532,Intel Core i3-2100,65
+1533,Intel Core i3-2102,65
+1534,Intel Core i3-2105,65
+1535,Intel Core i3-2125,65
+1536,Intel Core i3-2130,65
+1537,Intel Core i3-2120,65
+1538,Intel Core i3-2100T,35
+1539,Intel Core i3-2120T,35
+1540,Intel Core i3-3210,55
+1541,Intel Core i3-3225,55
+1542,Intel Core i3-3240,55
+1543,Intel Core i3-3245,55
+1544,Intel Core i3-3250,55
+1545,Intel Core i3-3220,55
+1546,Intel Core i3-3220T,35
+1547,Intel Core i3-3240T,35
+1548,Intel Core i3-3250T,35
+1549,Intel Core i3-4130,54
+1550,Intel Core i3-4150,54
+1551,Intel Core i3-4160,54
+1552,Intel Core i3-4170,54
+1553,Intel Core i3-4340,54
+1554,Intel Core i3-4350,54
+1555,Intel Core i3-4370,54
+1556,Intel Core i3-4330,54
+1557,Intel Core i3-4360,54
+1558,Intel Core i3-4130T,35
+1559,Intel Core i3-4150T,35
+1560,Intel Core i3-4160T,35
+1561,Intel Core i3-4170T,35
+1562,Intel Core i3-4330T,35
+1563,Intel Core i3-4360T,35
+1564,Intel Core i3-4370T,35
+1565,Intel Core i3-4350T,35
+1566,Intel Core i3-4330TE,35
+1567,Intel Core i3-4340TE,35
+1568,Intel Core i3-6098P,54
+1569,Intel Core i3-6100,51
+1570,Intel Core i3-6300,51
+1571,Intel Core i3-6320,51
+1572,Intel Core i3-6100T,35
+1573,Intel Core i3-6300T,35
+1574,Intel Core i3-6100TE,35
+1575,Intel Core i3-7100,51
+1576,Intel Core i3-7300,51
+1577,Intel Core i3-7320,51
+1578,Intel Core i3-7350K,60
+1579,Intel Core i3-7100T,35
+1580,Intel Core i3-7300T,35
+1581,Intel Core i3-7101E,54
+1582,Intel Core i3-7101TE,35
+1583,Intel Core i3-8100,65
+1584,Intel Core i3-8100F,65
+1585,Intel Core i3-8300,62
+1586,Intel Core i3-8350K,91
+1587,Intel Core i3-9100,65
+1588,Intel Core i3-9100F,65
+1589,Intel Core i3-9300,62
+1590,Intel Core i3-9320,62
+1591,Intel Core i3-9350K,91
+1592,Intel Core i3-9350KF,91
+1593,Intel Core i3-8100T,35
+1594,Intel Core i3-8300T,35
+1595,Intel Core i3-9100T,35
+1596,Intel Core i3-9300T,35
+1597,Intel Core i3-9100E,65
+1598,Intel Core i3-9100TE,35
+1599,Intel Core i3-9100HL,25
+1600,Intel Core i3-10100,65
+1601,Intel Core i3-10100F,65
+1602,Intel Core i3-10105,65
+1603,Intel Core i3-10105F,65
+1604,Intel Core i3-10300,65
+1605,Intel Core i3-10305,65
+1606,Intel Core i3-10320,65
+1607,Intel Core i3-10325,65
+1608,Intel Core i3-10100E,65
+1609,Intel Core i3-10100T,35
+1610,Intel Core i3-10105T,35
+1611,Intel Core i3-10300T,35
+1612,Intel Core i3-10305T,35
+1613,Intel Core i3-10100TE,35
+1614,Intel Core i3-330M,35
+1615,Intel Core i3-350M,35
+1616,Intel Core i3-370M,35
+1617,Intel Core i3-380M,35
+1618,Intel Core i3-390M,35
+1619,Intel Core i3-330E,35
+1620,Intel Core i3-330UM,18
+1621,Intel Core i3-380UM,18
+1622,Intel Core i3-2308M,35
+1623,Intel Core i3-2310M,35
+1624,Intel Core i3-2312M,35
+1625,Intel Core i3-2328M,35
+1626,Intel Core i3-2330M,35
+1627,Intel Core i3-2332M,35
+1628,Intel Core i3-2348M,35
+1629,Intel Core i3-2350M,35
+1630,Intel Core i3-2370M,35
+1631,Intel Core i3-2310E,35
+1632,Intel Core i3-2330E,35
+1633,Intel Core i3-2357M,17
+1634,Intel Core i3-2365M,17
+1635,Intel Core i3-2367M,17
+1636,Intel Core i3-2375M,17
+1637,Intel Core i3-2377M,17
+1638,Intel Core i3-2340UE,17
+1639,Intel Core i3-3110M,35
+1640,Intel Core i3-3120M,35
+1641,Intel Core i3-3130M,35
+1642,Intel Core i3-3120ME,35
+1643,Intel Core i3-3217U,17
+1644,Intel Core i3-3227U,17
+1645,Intel Core i3-3217UE,17
+1646,Intel Core i3-3229Y,13
+1647,Intel Core i3-4000M,37
+1648,Intel Core i3-4010M,37
+1649,Intel Core i3-4100M,37
+1650,Intel Core i3-4110M,37
+1651,Intel Core i3-4158U,28
+1652,Intel Core i3-4005U,15
+1653,Intel Core i3-4010U,15
+1654,Intel Core i3-4025U,15
+1655,Intel Core i3-4030U,15
+1656,Intel Core i3-4100U,15
+1657,Intel Core i3-4120U,15
+1658,Intel Core i3-4010Y,11.5
+1659,Intel Core i3-4012Y,11.5
+1660,Intel Core i3-4020Y,11.5
+1661,Intel Core i3-4030Y,11.5
+1662,Intel Core i3-4100E,37
+1663,Intel Core i3-4110E,37
+1664,Intel Core i3-4102E,25
+1665,Intel Core i3-4112E,25
+1666,Intel Core i3-5157U,28
+1667,Intel Core i3-5005U,15
+1668,Intel Core i3-5010U,15
+1669,Intel Core i3-5015U,15
+1670,Intel Core i3-5020U,15
+1671,Intel Core i3-6100H,35
+1672,Intel Core i3-6100E,35
+1673,Intel Core i3-6102E,25
+1674,Intel Core i3-6157U,28
+1675,Intel Core i3-6167U,28
+1676,Intel Core i3-6006U,15
+1677,Intel Core i3-6100U,15
+1678,Intel Core i3-7100H,35
+1679,Intel Core i3-7100E,35
+1680,Intel Core i3-7102E,25
+1681,Intel Core i3-7167U,28
+1682,Intel Core i3-7020U,15
+1683,Intel Core i3-7100U,15
+1684,Intel Core i3-7130U,15
+1685,Intel Core i3-8130U,15
+1686,Intel Core i3-10100Y,5
+1687,Intel Core i3-8100B,65
+1688,Intel Core i3-8100H,45
+1689,Intel Core i3-8109U,28
+1690,Intel Core i3-8140U,15
+1691,Intel Core i3-8145U,15
+1692,Intel Core i3-8145UE,15
+1693,Intel Core i3-10110Y,7
+1694,Intel Core i3-8121U,15
+1695,Intel Core i3-10110U,15
+1696,Intel Core i3-1005G1,15
+1697,Intel Core i3-1000G1,9
+1698,Intel Core i3-1000G4,9
+1699,Intel Core i3-1000NG4,9
+1700,Intel Core i3-11100HE ,45
+1701,Intel Core i3-1115G4,15
+1702,Intel Core i3-1125G4,15
+1703,Intel Core i3-1115G4E,15
+1704,Intel Core i3-1115GRE,15
+1705,Intel Core i3-1110G4,15
+1706,Intel Core i3-1120G4,15
+1707,Intel Core i3-2115C,25
+1708,Intel Core i3-3115C,25
+1709,Intel Core 2 Duo E4300,65
+1710,Intel Core 2 Duo E4400,65
+1711,Intel Core 2 Duo E4500,65
+1712,Intel Core 2 Duo E4600,65
+1713,Intel Core 2 Duo E4700,65
+1714,Intel Core 2 Duo E6300,65
+1715,Intel Core 2 Duo E6320,65
+1716,Intel Core 2 Duo E6400,65
+1717,Intel Core 2 Duo E6420,65
+1718,Intel Core 2 Duo E6600,65
+1719,Intel Core 2 Duo E6700,65
+1720,Intel Core 2 Duo E6540,65
+1721,Intel Core 2 Duo E6550,65
+1722,Intel Core 2 Duo E6750,65
+1723,Intel Core 2 Duo E6850,65
+1724,Intel Core 2 Duo E6305,65
+1725,Intel Core 2 Duo E6405,65
+1726,Intel Core 2 Duo E7200,65
+1727,Intel Core 2 Duo E7300,65
+1728,Intel Core 2 Duo E7400,65
+1729,Intel Core 2 Duo E7500,65
+1730,Intel Core 2 Duo E7600,65
+1731,Intel Core 2 Duo E8190,65
+1732,Intel Core 2 Duo E8200,65
+1733,Intel Core 2 Duo E8290,65
+1734,Intel Core 2 Duo E8300,65
+1735,Intel Core 2 Duo E8400,65
+1736,Intel Core 2 Duo E8500,65
+1737,Intel Core 2 Duo E8600,65
+1738,Intel Core 2 Duo E8700,65
+1739,Intel Core 2 Extreme X6800,75
+1740,Intel Core 2 Extreme X6900,75
+1741,Intel Core 2 Quad Q6400,105
+1742,Intel Core 2 Quad Q6700,95
+1743,Intel Core 2 Quad Q8200,95
+1744,Intel Core 2 Quad Q8200S,65
+1745,Intel Core 2 Quad Q8300,95
+1746,Intel Core 2 Quad Q8400,95
+1747,Intel Core 2 Quad Q8400S,65
+1748,Intel Core 2 Quad Q9300,95
+1749,Intel Core 2 Quad Q9400,95
+1750,Intel Core 2 Quad Q9400S,65
+1751,Intel Core 2 Quad Q9500,95
+1752,Intel Core 2 Quad Q9505,95
+1753,Intel Core 2 Quad Q9505S,65
+1754,Intel Core 2 Quad Q9450,95
+1755,Intel Core 2 Quad Q9550,95
+1756,Intel Core 2 Quad Q9550S,65
+1757,Intel Core 2 Quad Q9650,95
+1758,Intel Core 2 Extreme QX6700,130
+1759,Intel Core 2 Extreme QX6800,130
+1760,Intel Core 2 Extreme QX6850,130
+1761,Intel Core 2 Extreme QX9650,130
+1762,Intel Core 2 Extreme QX9750,130
+1763,Intel Core 2 Extreme QX9770,136
+1764,Intel Core 2 Extreme QX9775,150
+1765,Intel Core 2 Solo ULV U2100,5.5
+1766,Intel Core 2 Solo ULV U2200,5.5
+1767,Intel Core 2 Solo SU3300,5.5
+1768,Intel Core 2 Solo SU3500,5.5
+1769,Intel Core 2 Duo T5200,34
+1770,Intel Core 2 Duo T5250,35
+1771,Intel Core 2 Duo T5270,35
+1772,Intel Core 2 Duo T5300,34
+1773,Intel Core 2 Duo T5450,35
+1774,Intel Core 2 Duo T5470,35
+1775,Intel Core 2 Duo T5500,34
+1776,Intel Core 2 Duo T5500,34
+1777,Intel Core 2 Duo T5550,35
+1778,Intel Core 2 Duo T5600,34
+1779,Intel Core 2 Duo T5600,34
+1780,Intel Core 2 Duo T5670,35
+1781,Intel Core 2 Duo T5750,35
+1782,Intel Core 2 Duo T5800,35
+1783,Intel Core 2 Duo T5850,35
+1784,Intel Core 2 Duo T5870,35
+1785,Intel Core 2 Duo T5900,35
+1786,Intel Core 2 Duo T7100,35
+1787,Intel Core 2 Duo T7100,35
+1788,Intel Core 2 Duo T7200,34
+1789,Intel Core 2 Duo T7200,34
+1790,Intel Core 2 Duo T7250,35
+1791,Intel Core 2 Duo T7250,35
+1792,Intel Core 2 Duo T7300,35
+1793,Intel Core 2 Duo T7300,35
+1794,Intel Core 2 Duo T7400,34
+1795,Intel Core 2 Duo T7400,34
+1796,Intel Core 2 Duo T7500,35
+1797,Intel Core 2 Duo T7500,35
+1798,Intel Core 2 Duo T7600,34
+1799,Intel Core 2 Duo T7600,34
+1800,Intel Core 2 Duo T7600G,34
+1801,Intel Core 2 Duo T7700,35
+1802,Intel Core 2 Duo T7700,35
+1803,Intel Core 2 Duo T7800,35
+1804,Intel Core 2 Duo T7800,35
+1805,Intel Core 2 Duo SL7100,12
+1806,Intel Core 2 Duo L7200,17
+1807,Intel Core 2 Duo L7300,17
+1808,Intel Core 2 Duo L7400,17
+1809,Intel Core 2 Duo L7500,17
+1810,Intel Core 2 Duo SP7500,20
+1811,Intel Core 2 Duo L7700,17
+1812,Intel Core 2 Duo SP7700,20
+1813,Intel Core 2 Duo U7500,10
+1814,Intel Core 2 Duo U7500,10
+1815,Intel Core 2 Duo U7600,10
+1816,Intel Core 2 Duo U7600,10
+1817,Intel Core 2 Duo U7700,10
+1818,Intel Core 2 Duo U7700,10
+1819,Intel Core 2 Duo E8135,44
+1820,Intel Core 2 Duo E8135,44
+1821,Intel Core 2 Duo E8135,35
+1822,Intel Core 2 Duo E8235,44
+1823,Intel Core 2 Duo E8335,44
+1824,Intel Core 2 Duo E8335,35
+1825,Intel Core 2 Duo E8435,55
+1826,Intel Core 2 Duo E8435,44
+1827,Intel Core 2 Duo T6400,35
+1828,Intel Core 2 Duo T6500,35
+1829,Intel Core 2 Duo T6570,35
+1830,Intel Core 2 Duo T6600,35
+1831,Intel Core 2 Duo T6670,35
+1832,Intel Core 2 Duo T6900,35
+1833,Intel Core 2 Duo T6970,35
+1834,Intel Core 2 Duo T8100,35
+1835,Intel Core 2 Duo T8100,35
+1836,Intel Core 2 Duo T8300,35
+1837,Intel Core 2 Duo T8300,35
+1838,Intel Core 2 Duo T9300,35
+1839,Intel Core 2 Duo T9300,35
+1840,Intel Core 2 Duo T9400,35
+1841,Intel Core 2 Duo T9400,35
+1842,Intel Core 2 Duo T9500,35
+1843,Intel Core 2 Duo T9500,35
+1844,Intel Core 2 Duo T9550,35
+1845,Intel Core 2 Duo T9550,35
+1846,Intel Core 2 Duo T9600,35
+1847,Intel Core 2 Duo T9600,35
+1848,Intel Core 2 Duo T9800,35
+1849,Intel Core 2 Duo T9800,35
+1850,Intel Core 2 Duo T9900,35
+1851,Intel Core 2 Duo T9900,35
+1852,Intel Core 2 Duo P7350,25
+1853,Intel Core 2 Duo P7350,25
+1854,Intel Core 2 Duo P7370,25
+1855,Intel Core 2 Duo P7450,25
+1856,Intel Core 2 Duo P7450,25
+1857,Intel Core 2 Duo P7550,25
+1858,Intel Core 2 Duo P7570,25
+1859,Intel Core 2 Duo P8400,25
+1860,Intel Core 2 Duo P8400,25
+1861,Intel Core 2 Duo P8600,25
+1862,Intel Core 2 Duo P8600,25
+1863,Intel Core 2 Duo P8700,25
+1864,Intel Core 2 Duo P8700,25
+1865,Intel Core 2 Duo P8800,25
+1866,Intel Core 2 Duo P8800,25
+1867,Intel Core 2 Duo P9500,25
+1868,Intel Core 2 Duo P9600,25
+1869,Intel Core 2 Duo P9700,28
+1870,Intel Core 2 Duo SP9300,25
+1871,Intel Core 2 Duo SP9400,25
+1872,Intel Core 2 Duo SP9600,25
+1873,Intel Core 2 Duo SL9300,17
+1874,Intel Core 2 Duo SL9380,17
+1875,Intel Core 2 Duo SL9400,17
+1876,Intel Core 2 Duo SL9600,17
+1877,Intel Core 2 Duo SU7300,10
+1878,Intel Core 2 Duo SU9300,10
+1879,Intel Core 2 Duo SU9400,10
+1880,Intel Core 2 Duo SU9600,10
+1881,Intel Core 2 Extreme X7800,44
+1882,Intel Core 2 Extreme X7900,44
+1883,Intel Core 2 Extreme X9000,44
+1884,Intel Core 2 Extreme X9100,44
+1885,Intel Core 2 Quad Q9000,45
+1886,Intel Core 2 Quad Q9100,45
+1887,Intel Core 2 Extreme QX9300,45
+1888,Intel Core i5-750,95
+1889,Intel Core i5-760,95
+1890,Intel Core i5-750S,82
+1891,Intel Core i5-650,73
+1892,Intel Core i5-655K,73
+1893,Intel Core i5-660,73
+1894,Intel Core i5-661,87
+1895,Intel Core i5-670,73
+1896,Intel Core i5-680,73
+1897,Intel Core i5-2390T,35
+1898,Intel Core i5-2300,95
+1899,Intel Core i5-2310,95
+1900,Intel Core i5-2320,95
+1901,Intel Core i5-2380P,95
+1902,Intel Core i5-2400,95
+1903,Intel Core i5-2450P,95
+1904,Intel Core i5-2500,95
+1905,Intel Core i5-2500K,95
+1906,Intel Core i5-2550K,95
+1907,Intel Core i5-2400S,65
+1908,Intel Core i5-2405S,65
+1909,Intel Core i5-2500S,65
+1910,Intel Core i5-2500T,45
+1911,Intel Core i5-3470T,35
+1912,Intel Core i5-3330,77
+1913,Intel Core i5-3340,77
+1914,Intel Core i5-3350P,69
+1915,Intel Core i5-3450,77
+1916,Intel Core i5-3470,77
+1917,Intel Core i5-3550,77
+1918,Intel Core i5-3570,77
+1919,Intel Core i5-3570K,77
+1920,Intel Core i5-3330S,65
+1921,Intel Core i5-3335S,65
+1922,Intel Core i5-3340S,65
+1923,Intel Core i5-3450S,65
+1924,Intel Core i5-3470S,65
+1925,Intel Core i5-3475S,65
+1926,Intel Core i5-3550S,65
+1927,Intel Core i5-3570S,65
+1928,Intel Core i5-3570T,45
+1929,Intel Core i5-4570T,35
+1930,Intel Core i5-4570TE,35
+1931,Intel Core i5-4430,84
+1932,Intel Core i5-4440,84
+1933,Intel Core i5-4460,84
+1934,Intel Core i5-4570,84
+1935,Intel Core i5-4590,84
+1936,Intel Core i5-4670,84
+1937,Intel Core i5-4670K,84
+1938,Intel Core i5-4690,84
+1939,Intel Core i5-4690K,88
+1940,Intel Core i5-4430S,65
+1941,Intel Core i5-4440S,65
+1942,Intel Core i5-4460S,65
+1943,Intel Core i5-4570S,65
+1944,Intel Core i5-4590S,65
+1945,Intel Core i5-4670S,65
+1946,Intel Core i5-4690S,65
+1947,Intel Core i5-4460T,35
+1948,Intel Core i5-4590T,35
+1949,Intel Core i5-4670T,45
+1950,Intel Core i5-4690T,45
+1951,Intel Core i5-4570R,65
+1952,Intel Core i5-4670R,65
+1953,Intel Core i5-5575R,65
+1954,Intel Core i5-5675C,65
+1955,Intel Core i5-5675R,65
+1956,Intel Core i5-6400,65
+1957,Intel Core i5-6402P,65
+1958,Intel Core i5-6500,65
+1959,Intel Core i5-6600,65
+1960,Intel Core i5-6600K,91
+1961,Intel Core i5-6400T,35
+1962,Intel Core i5-6500T,35
+1963,Intel Core i5-6600T,35
+1964,Intel Core i5-6500TE,35
+1965,Intel Core i5-6585R,65
+1966,Intel Core i5-6685R,65
+1967,Intel Core i5-7400,65
+1968,Intel Core i5-7500,65
+1969,Intel Core i5-7600,65
+1970,Intel Core i5-7600K,91
+1971,Intel Core i5-7400T,35
+1972,Intel Core i5-7500T,35
+1973,Intel Core i5-7600T,35
+1974,Intel Core i5-7640X,112
+1975,Intel Core i5-8400,65
+1976,Intel Core i5-8500,65
+1977,Intel Core i5-8600,65
+1978,Intel Core i5-8600K,95
+1979,Intel Core i5-9400,65
+1980,Intel Core i5-9400F,65
+1981,Intel Core i5-9500,65
+1982,Intel Core i5-9500F,65
+1983,Intel Core i5-9600,65
+1984,Intel Core i5-9600K,95
+1985,Intel Core i5-9600KF,95
+1986,Intel Core i5-8400T,35
+1987,Intel Core i5-8500T,35
+1988,Intel Core i5-8600T,35
+1989,Intel Core i5-9400T,35
+1990,Intel Core i5-9500T,35
+1991,Intel Core i5-9600T,35
+1992,Intel Core i5-9500E,65
+1993,Intel Core i5-9500TE,35
+1994,Intel Core i5-10400,65
+1995,Intel Core i5-10400F,65
+1996,Intel Core i5-10500,65
+1997,Intel Core i5-10600,65
+1998,Intel Core i5-10600K,125
+1999,Intel Core i5-10600KF,125
+2000,Intel Core i5-10500E,65
+2001,Intel Core i5-10400T,35
+2002,Intel Core i5-10500T,35
+2003,Intel Core i5-10600T,35
+2004,Intel Core i5-10500TE,35
+2005,Intel Core i5-11400,65
+2006,Intel Core i5-11400F,65
+2007,Intel Core i5-11500,65
+2008,Intel Core i5-11600,65
+2009,Intel Core i5-11600K,125
+2010,Intel Core i5-11600KF,125
+2011,Intel Core i5-11400T,35
+2012,Intel Core i5-11500T,35
+2013,Intel Core i5-11600T,35
+2014,Intel Core i5-430M,35
+2015,Intel Core i5-450M,35
+2016,Intel Core i5-460M,35
+2017,Intel Core i5-480M,35
+2018,Intel Core i5-520M,35
+2019,Intel Core i5-540M,35
+2020,Intel Core i5-560M,35
+2021,Intel Core i5-580M,35
+2022,Intel Core i5-520E,35
+2023,Intel Core i5-430UM,18
+2024,Intel Core i5-470UM,18
+2025,Intel Core i5-520UM,18
+2026,Intel Core i5-540UM,18
+2027,Intel Core i5-560UM,18
+2028,Intel Core i5-2410M,35
+2029,Intel Core i5-2415M,35
+2030,Intel Core i5-2430M,35
+2031,Intel Core i5-2435M,35
+2032,Intel Core i5-2450M,35
+2033,Intel Core i5-2520M,35
+2034,Intel Core i5-2540M,35
+2035,Intel Core i5-2510E,35
+2036,Intel Core i5-2515E,35
+2037,Intel Core i5-2467M,17
+2038,Intel Core i5-2537M,17
+2039,Intel Core i5-2557M,17
+2040,Intel Core i5-3210M,35
+2041,Intel Core i5-3230M,35
+2042,Intel Core i5-3320M,35
+2043,Intel Core i5-3340M,35
+2044,Intel Core i5-3360M,35
+2045,Intel Core i5-3380M,35
+2046,Intel Core i5-3610ME,35
+2047,Intel Core i5-3317U,17
+2048,Intel Core i5-3337U,17
+2049,Intel Core i5-3427U,17
+2050,Intel Core i5-3437U,17
+2051,Intel Core i5-3339Y,13
+2052,Intel Core i5-3439Y,13
+2053,Intel Core i5-4200M,37
+2054,Intel Core i5-4210M,37
+2055,Intel Core i5-4300M,37
+2056,Intel Core i5-4310M,37
+2057,Intel Core i5-4330M,37
+2058,Intel Core i5-4340M,37
+2059,Intel Core i5-4258U,28
+2060,Intel Core i5-4278U,28
+2061,Intel Core i5-4288U,28
+2062,Intel Core i5-4308U,28
+2063,Intel Core i5-4200U,15
+2064,Intel Core i5-4210U,15
+2065,Intel Core i5-4250U,15
+2066,Intel Core i5-4260U,15
+2067,Intel Core i5-4300U,15
+2068,Intel Core i5-4310U,15
+2069,Intel Core i5-4350U,15
+2070,Intel Core i5-4360U,15
+2071,Intel Core i5-4200Y,11.5
+2072,Intel Core i5-4202Y,11.5
+2073,Intel Core i5-4210Y,11.5
+2074,Intel Core i5-4220Y,11.5
+2075,Intel Core i5-4300Y,11.5
+2076,Intel Core i5-4302Y,11.5
+2077,Intel Core i5-4200H,47
+2078,Intel Core i5-4210H,47
+2079,Intel Core i5-4400E,37
+2080,Intel Core i5-4410E,37
+2081,Intel Core i5-4402E,25
+2082,Intel Core i5-4402EC,27
+2083,Intel Core i5-4422E,25
+2084,Intel Core i5-5350H,47
+2085,Intel Core i5-5257U,28
+2086,Intel Core i5-5287U,28
+2087,Intel Core i5-5200U,15
+2088,Intel Core i5-5250U,15
+2089,Intel Core i5-5300U,15
+2090,Intel Core i5-5350U,15
+2091,Intel Core i5-6300HQ,45
+2092,Intel Core i5-6350HQ,45
+2093,Intel Core i5-6440HQ,45
+2094,Intel Core i5-6440EQ,45
+2095,Intel Core i5-6442EQ,25
+2096,Intel Core i5-6267U,28
+2097,Intel Core i5-6287U,28
+2098,Intel Core i5-6198DU,15
+2099,Intel Core i5-6200U,15
+2100,Intel Core i5-6260U,15
+2101,Intel Core i5-6300U,15
+2102,Intel Core i5-6360U,15
+2103,Intel Core i5-7300HQ,45
+2104,Intel Core i5-7440HQ,45
+2105,Intel Core i5-7440EQ,45
+2106,Intel Core i5-7442EQ,25
+2107,Intel Core i5-7267U,28
+2108,Intel Core i5-7287U,28
+2109,Intel Core i5-7200U,15
+2110,Intel Core i5-7260U,15
+2111,Intel Core i5-7300U,15
+2112,Intel Core i5-7360U,15
+2113,Intel Core i5-7Y54,4.5
+2114,Intel Core i5-7Y57,4.5
+2115,Intel Core i5-8250U,15
+2116,Intel Core i5-8350U,15
+2117,Intel Core i5-8305G,65
+2118,Intel Core i5-8200Y,5
+2119,Intel Core i5-8210Y,7
+2120,Intel Core i5-8310Y,7
+2121,Intel Core i5-8300H,45
+2122,Intel Core i5-8400H,45
+2123,Intel Core i5-9300H,45
+2124,Intel Core i5-9300HF,45
+2125,Intel Core i5-9400H,45
+2126,Intel Core i5-8259U,28
+2127,Intel Core i5-8269U,28
+2128,Intel Core i5-8279U,28
+2129,Intel Core i5-8257U,15
+2130,Intel Core i5-8260U,15
+2131,Intel Core i5-8400B,65
+2132,Intel Core i5-8500B,65
+2133,Intel Core i5-8265U,15
+2134,Intel Core i5-8365U,15
+2135,Intel Core i5-8365UE,15
+2136,Intel Core i5-10210Y,7
+2137,Intel Core i5-10310Y,7
+2138,Intel Core i5-10200H,45
+2139,Intel Core i5-10300H,45
+2140,Intel Core i5-10400H,45
+2141,Intel Core i5-10500H,45
+2142,Intel Core i5-10210U,15
+2143,Intel Core i5-10310U,15
+2144,Intel Core i5-1038NG7,28
+2145,Intel Core i5-1035G1,15
+2146,Intel Core i5-1035G4,15
+2147,Intel Core i5-1035G7,15
+2148,Intel Core i5-1030G4,9
+2149,Intel Core i5-1030G7,9
+2150,Intel Core i5-1030NG7,10
+2151,Intel Core i5-11260H,45
+2152,Intel Core i5-11400H,45
+2153,Intel Core i5-11500H,45
+2154,Intel Core i5-11500HE,45
+2155,Intel Core i5-11300H,35
+2156,Intel Core i5-11320H,35
+2157,Intel Core i5-1135G7,28
+2158,Intel Core i5-1145G7,28
+2159,Intel Core i5-1155G7,28
+2160,Intel Core i5-1145G7E,15
+2161,Intel Core i5-1145GRE,15
+2162,Intel Core i5-1130G7,15
+2163,Intel Core i5-1140G7,15
+2164,Intel Core i7-920,130
+2165,Intel Core i7-930,130
+2166,Intel Core i7-940,130
+2167,Intel Core i7-950,130
+2168,Intel Core i7-960,130
+2169,Intel Core i7-965 Extreme Edition,130
+2170,Intel Core i7-975 Extreme Edition,130
+2171,Intel Core i7-860,95
+2172,Intel Core i7-870,95
+2173,Intel Core i7-875K,95
+2174,Intel Core i7-880,95
+2175,Intel Core i7-860S,82
+2176,Intel Core i7-870S,82
+2177,Intel Core i7-970,130
+2178,Intel Core i7-980,130
+2179,Intel Core i7-980X,130
+2180,Intel Core i7-990X,130
+2181,Intel Core i7-2600K,95
+2182,Intel Core i7-2700K,95
+2183,Intel Core i7-2600,95
+2184,Intel Core i7-2600S,65
+2185,Intel Core i7-3820,130
+2186,Intel Core i7-3930K,130
+2187,Intel Core i7-3960X,130
+2188,Intel Core i7-3970X,150
+2189,Intel Core i7-3770K,77
+2190,Intel Core i7-3770,77
+2191,Intel Core i7-3770S,65
+2192,Intel Core i7-3770T,45
+2193,Intel Core i7-4820K,130
+2194,Intel Core i7-4930K,130
+2195,Intel Core i7-4960X,130
+2196,Intel Core i7-4770,84
+2197,Intel Core i7-4770K,84
+2198,Intel Core i7-4771,84
+2199,Intel Core i7-4790,84
+2200,Intel Core i7-4790K,88
+2201,Intel Core i7-4770S,65
+2202,Intel Core i7-4790S,65
+2203,Intel Core i7-4765T,35
+2204,Intel Core i7-4770T,45
+2205,Intel Core i7-4785T,35
+2206,Intel Core i7-4790T,45
+2207,Intel Core i7-4770TE,45
+2208,Intel Core i7-4770R,65
+2209,Intel Core i7-5820K,140
+2210,Intel Core i7-5930K,140
+2211,Intel Core i7-5960X,140
+2212,Intel Core i7-5775C,65
+2213,Intel Core i7-5775R,65
+2214,Intel Core i7-6800K,140
+2215,Intel Core i7-6850K,140
+2216,Intel Core i7-6900K,140
+2217,Intel Core i7-6950X,140
+2218,Intel Core i7-6700,65
+2219,Intel Core i7-6700K,91
+2220,Intel Core i7-6700T,35
+2221,Intel Core i7-6700TE,35
+2222,Intel Core i7-6785R,65
+2223,Intel Core i7-7800X,140
+2224,Intel Core i7-7820X,140
+2225,Intel Core i7-9800X,165
+2226,Intel Core i7-7700,65
+2227,Intel Core i7-7700K,91
+2228,Intel Core i7-7700T,35
+2229,Intel Core i7-7740X,112
+2230,Intel Core i7-8086K,95
+2231,Intel Core i7-8700,65
+2232,Intel Core i7-8700K,95
+2233,Intel Core i7-9700,65
+2234,Intel Core i7-9700F,65
+2235,Intel Core i7-9700K,95
+2236,Intel Core i7-9700KF,95
+2237,Intel Core i7-8700T,35
+2238,Intel Core i7-9700T,35
+2239,Intel Core i7-9700E,65
+2240,Intel Core i7-9700TE,35
+2241,Intel Core i7-10700,65
+2242,Intel Core i7-10700F,65
+2243,Intel Core i7-10700K,125
+2244,Intel Core i7-10700KF,125
+2245,Intel Core i7-10700E,65
+2246,Intel Core i7-10700T,35
+2247,Intel Core i7-10700TE,35
+2248,Intel Core i7-11700,65
+2249,Intel Core i7-11700F,65
+2250,Intel Core i7-11700K,125
+2251,Intel Core i7-11700KF,125
+2252,Intel Core i7-11700T,35
+2253,Intel Core i7-720QM,45
+2254,Intel Core i7-740QM,45
+2255,Intel Core i7-820QM,45
+2256,Intel Core i7-840QM,45
+2257,Intel Core i7-920XM,55
+2258,Intel Core i7-940XM,55
+2259,Intel Core i7-620M,35
+2260,Intel Core i7-640M,35
+2261,Intel Core i7-610E,35
+2262,Intel Core i7-620LM,25
+2263,Intel Core i7-640LM,25
+2264,Intel Core i7-660LM,25
+2265,Intel Core i7-620LE,25
+2266,Intel Core i7-620UM,18
+2267,Intel Core i7-640UM,18
+2268,Intel Core i7-660UM,18
+2269,Intel Core i7-680UM,18
+2270,Intel Core i7-620UE,18
+2271,Intel Core i7-660UE,18
+2272,Intel Core i7-2620M,35
+2273,Intel Core i7-2640M,35
+2274,Intel Core i7-2629M,25
+2275,Intel Core i7-2649M,25
+2276,Intel Core i7-2655LE,25
+2277,Intel Core i7-2617M,17
+2278,Intel Core i7-2637M,17
+2279,Intel Core i7-2657M,17
+2280,Intel Core i7-2677M,17
+2281,Intel Core i7-2610UE,17
+2282,Intel Core i7-2630QM,45
+2283,Intel Core i7-2635QM,45
+2284,Intel Core i7-2670QM,45
+2285,Intel Core i7-2675QM,45
+2286,Intel Core i7-2720QM,45
+2287,Intel Core i7-2760QM,45
+2288,Intel Core i7-2820QM,45
+2289,Intel Core i7-2860QM,45
+2290,Intel Core i7-2920XM,55
+2291,Intel Core i7-2960XM,55
+2292,Intel Core i7-2710QE,45
+2293,Intel Core i7-2715QE,45
+2294,Intel Core i7-3520M,35
+2295,Intel Core i7-3540M,35
+2296,Intel Core i7-3555LE,25
+2297,Intel Core i7-3517U,17
+2298,Intel Core i7-3537U,17
+2299,Intel Core i7-3667U,17
+2300,Intel Core i7-3687U,17
+2301,Intel Core i7-3689Y,13
+2302,Intel Core i7-3517UE,17
+2303,Intel Core i7-3610QM,45
+2304,Intel Core i7-3615QM,45
+2305,Intel Core i7-3630QM,45
+2306,Intel Core i7-3635QM,45
+2307,Intel Core i7-3720QM,45
+2308,Intel Core i7-3740QM,45
+2309,Intel Core i7-3820QM,45
+2310,Intel Core i7-3840QM,45
+2311,Intel Core i7-3920XM,55
+2312,Intel Core i7-3940XM,55
+2313,Intel Core i7-3610QE,45
+2314,Intel Core i7-3615QE,45
+2315,Intel Core i7-3612QM,35
+2316,Intel Core i7-3632QM,35
+2317,Intel Core i7-3612QE,35
+2318,Intel Core i7-4600M,37
+2319,Intel Core i7-4610M,37
+2320,Intel Core i7-4558U,28
+2321,Intel Core i7-4578U,28
+2322,Intel Core i7-4500U,15
+2323,Intel Core i7-4510U,15
+2324,Intel Core i7-4550U,15
+2325,Intel Core i7-4600U,15
+2326,Intel Core i7-4650U,15
+2327,Intel Core i7-4610Y,11.5
+2328,Intel Core i7-4700MQ,47
+2329,Intel Core i7-4702MQ,37
+2330,Intel Core i7-4710MQ,47
+2331,Intel Core i7-4712MQ,37
+2332,Intel Core i7-4800MQ,47
+2333,Intel Core i7-4810MQ,47
+2334,Intel Core i7-4900MQ,47
+2335,Intel Core i7-4910MQ,47
+2336,Intel Core i7-4930MX,57
+2337,Intel Core i7-4940MX,57
+2338,Intel Core i7-4700HQ,47
+2339,Intel Core i7-4702HQ,37
+2340,Intel Core i7-4710HQ,47
+2341,Intel Core i7-4712HQ,37
+2342,Intel Core i7-4720HQ,47
+2343,Intel Core i7-4722HQ,37
+2344,Intel Core i7-4750HQ,47
+2345,Intel Core i7-4760HQ,47
+2346,Intel Core i7-4770HQ,47
+2347,Intel Core i7-4850HQ,47
+2348,Intel Core i7-4860HQ,47
+2349,Intel Core i7-4870HQ,47
+2350,Intel Core i7-4950HQ,47
+2351,Intel Core i7-4960HQ,47
+2352,Intel Core i7-4980HQ,47
+2353,Intel Core i7-4700EC,43
+2354,Intel Core i7-4700EQ,47
+2355,Intel Core i7-4701EQ,47
+2356,Intel Core i7-4850EQ,47
+2357,Intel Core i7-4860EQ,47
+2358,Intel Core i7-4702EC,27
+2359,Intel Core i7-5700HQ,47
+2360,Intel Core i7-5750HQ,47
+2361,Intel Core i7-5850HQ,47
+2362,Intel Core i7-5950HQ,47
+2363,Intel Core i7-5700EQ,47
+2364,Intel Core i7-5850EQ,47
+2365,Intel Core i7-5557U,28
+2366,Intel Core i7-5500U,15
+2367,Intel Core i7-5550U,15
+2368,Intel Core i7-5600U,15
+2369,Intel Core i7-5650U,15
+2370,Intel Core i7-6700HQ,45
+2371,Intel Core i7-6770HQ,45
+2372,Intel Core i7-6820HK,45
+2373,Intel Core i7-6820HQ,45
+2374,Intel Core i7-6870HQ,45
+2375,Intel Core i7-6920HQ,45
+2376,Intel Core i7-6970HQ,45
+2377,Intel Core i7-6820EQ,45
+2378,Intel Core i7-6822EQ,25
+2379,Intel Core i7-6567U,28
+2380,Intel Core i7-6498DU,15
+2381,Intel Core i7-6500U,15
+2382,Intel Core i7-6560U,15
+2383,Intel Core i7-6600U,15
+2384,Intel Core i7-6650U,15
+2385,Intel Core i7-6660U,15
+2386,Intel Core i7-7700HQ,45
+2387,Intel Core i7-7820HQ,45
+2388,Intel Core i7-7820HK,45
+2389,Intel Core i7-7920HQ,45
+2390,Intel Core i7-7820EQ,45
+2391,Intel Core i7-7567U,28
+2392,Intel Core i7-7500U,15
+2393,Intel Core i7-7560U,15
+2394,Intel Core i7-7600U,15
+2395,Intel Core i7-7660U,15
+2396,Intel Core i7-7Y75,4.5
+2397,Intel Core i7-8550U,15
+2398,Intel Core i7-8650U,15
+2399,Intel Core i7-8705G,65
+2400,Intel Core i7-8706G,65
+2401,Intel Core i7-8709G,100
+2402,Intel Core i7-8809G,100
+2403,Intel Core i7-8500Y,5
+2404,Intel Core i7-8559U,28
+2405,Intel Core i7-8569U,28
+2406,Intel Core i7-8557U,15
+2407,Intel Core i7-8750H,45
+2408,Intel Core i7-8850H,45
+2409,Intel Core i7-9750H,45
+2410,Intel Core i7-9750HF,45
+2411,Intel Core i7-9850H,45
+2412,Intel Core i7-9850HE,45
+2413,Intel Core i7-9850HL,25
+2414,Intel Core i7-8700B,65
+2415,Intel Core i7-8565U,15
+2416,Intel Core i7-8665U,15
+2417,Intel Core i7-8665UE,15
+2418,Intel Core i7-10510Y,7
+2419,Intel Core i7-10750H,45
+2420,Intel Core i7-10850H,45
+2421,Intel Core i7-10870H,45
+2422,Intel Core i7-10875H,45
+2423,Intel Core i7-10510U,15
+2424,Intel Core i7-10610U,15
+2425,Intel Core i7-10710U,15
+2426,Intel Core i7-10810U,15
+2427,Intel Core i7-1068G7,28
+2428,Intel Core i7-1068NG7,28
+2429,Intel Core i7-1065G7,15
+2430,Intel Core i7-1060G7,9
+2431,Intel Core i7-11600H,45
+2432,Intel Core i7-11800H,45
+2433,Intel Core i7-11850H,45
+2434,Intel Core i7-11850HE,45
+2435,Intel Core i7-11700B,65
+2436,Intel Core i7-11370H,35
+2437,Intel Core i7-11375H,35
+2438,Intel Core i7-11390H,35
+2439,Intel Core i7-1165G7,28
+2440,Intel Core i7-1185G7,28
+2441,Intel Core i7-1195G7,28
+2442,Intel Core i7-1185G7E,28
+2443,Intel Core i7-1185GRE,28
+2444,Intel Core i7-1160G7,15
+2445,Intel Core i7-1180G7,15
+2446,Intel Pentium 60,14.6
+2447,Intel Pentium 66,16
+2448,Intel Pentium 75,8
+2449,Intel Pentium 90,9
+2450,Intel Pentium 100,10.1
+2451,Intel Pentium 120,12.81
+2452,Intel Pentium 133,11.2
+2453,Intel Pentium 150,11.6
+2454,Intel Pentium 166,14.5
+2455,Intel Pentium 200,15.5
+2456,Intel Pentium MMX 166,13.1
+2457,Intel Pentium MMX 200,15.7
+2458,Intel Pentium MMX 233,17
+2459,Intel Pentium Dual-Core E2140,65
+2460,Intel Pentium Dual-Core E2160,65
+2461,Intel Pentium Dual-Core E2180,65
+2462,Intel Pentium Dual-Core E2200,65
+2463,Intel Pentium Dual-Core E2220,65
+2464,Intel Pentium Dual-Core E2210,65
+2465,Intel Pentium Dual-Core E5200,65
+2466,Intel Pentium Dual-Core E5300,65
+2467,Intel Pentium E5400,65
+2468,Intel Pentium E5500,65
+2469,Intel Pentium E5700,65
+2470,Intel Pentium E5800,65
+2471,Intel Pentium E6300,65
+2472,Intel Pentium E6500,65
+2473,Intel Pentium E6500K,65
+2474,Intel Pentium E6600,65
+2475,Intel Pentium E6700,65
+2476,Intel Pentium E6800,65
+2477,Intel Pentium G6950,73
+2478,Intel Pentium G6951,73
+2479,Intel Pentium G6960,73
+2480,Intel Pentium G620,65
+2481,Intel Pentium G622,65
+2482,Intel Pentium G630,65
+2483,Intel Pentium G632,65
+2484,Intel Pentium G640,65
+2485,Intel Pentium G645,65
+2486,Intel Pentium G840,65
+2487,Intel Pentium G850,65
+2488,Intel Pentium G860,65
+2489,Intel Pentium G870,65
+2490,Intel Pentium G620T,35
+2491,Intel Pentium G630T,35
+2492,Intel Pentium G640T,35
+2493,Intel Pentium G645T,35
+2494,Intel Pentium G860T,35
+2495,Intel Pentium G2010,55
+2496,Intel Pentium G2020,55
+2497,Intel Pentium G2030,55
+2498,Intel Pentium G2120,55
+2499,Intel Pentium G2130,55
+2500,Intel Pentium G2140,55
+2501,Intel Pentium G2020T,35
+2502,Intel Pentium G2030T,35
+2503,Intel Pentium G2100T,35
+2504,Intel Pentium G2120T,35
+2505,Intel Pentium G3220,53
+2506,Intel Pentium G3240,53
+2507,Intel Pentium G3250,53
+2508,Intel Pentium G3258,53
+2509,Intel Pentium G3260,53
+2510,Intel Pentium G3420,53
+2511,Intel Pentium G3430,53
+2512,Intel Pentium G3440,53
+2513,Intel Pentium G3450,53
+2514,Intel Pentium G3460,53
+2515,Intel Pentium G3470,53
+2516,Intel Pentium G3220T,35
+2517,Intel Pentium G3240T,35
+2518,Intel Pentium G3250T,35
+2519,Intel Pentium G3260T,35
+2520,Intel Pentium G3420T,35
+2521,Intel Pentium G3440T,35
+2522,Intel Pentium G3450T,35
+2523,Intel Pentium G3460T,35
+2524,Intel Pentium G3320TE,35
+2525,Intel Pentium J2850,10
+2526,Intel Pentium J2900,10
+2527,Intel Pentium J3710,6.5
+2528,Intel Pentium G4400,54
+2529,Intel Pentium G4500,51
+2530,Intel Pentium G4520,51
+2531,Intel Pentium G4400T,35
+2532,Intel Pentium G4500T,35
+2533,Intel Pentium G4400TE,35
+2534,Intel Pentium J4205,10
+2535,Intel Pentium Silver J5005,10
+2536,Intel Pentium Silver J5040,10
+2537,Intel Pentium G4560,54
+2538,Intel Pentium G4600,51
+2539,Intel Pentium G4620,51
+2540,Intel Pentium G4560T,35
+2541,Intel Pentium G4600T,35
+2542,Intel Pentium Gold G5400,54
+2543,Intel Pentium Gold G5420,54
+2544,Intel Pentium Gold G5500,54
+2545,Intel Pentium Gold G5600,54
+2546,Intel Pentium Gold G5620,54
+2547,Intel Pentium Gold G5400T,35
+2548,Intel Pentium Gold G5420T,35
+2549,Intel Pentium Gold G5500T,35
+2550,Intel Pentium Gold G5600T,35
+2551,Intel Pentium Gold G5600E,35
+2552,Intel Pentium Gold G6400,58
+2553,Intel Pentium Gold G6405,58
+2554,Intel Pentium Gold G6500,58
+2555,Intel Pentium Gold G6505,58
+2556,Intel Pentium Gold G6600,58
+2557,Intel Pentium Gold G6605,58
+2558,Intel Pentium Gold G6400E,58
+2559,Intel Pentium Gold G6400T,35
+2560,Intel Pentium Gold G6405T,35
+2561,Intel Pentium Gold G6500T,35
+2562,Intel Pentium Gold G6505T,35
+2563,Intel Pentium Gold G6400TE,35
+2564,Intel Pentium Silver N6005,10
+2565,Intel Pentium Dual-Core T2060,31
+2566,Intel Pentium Dual-Core T2080,31
+2567,Intel Pentium Dual-Core T2130,31
+2568,Intel Pentium Dual-Core T2350,31
+2569,Intel Pentium Dual-Core T2310,35
+2570,Intel Pentium Dual-Core T2330,35
+2571,Intel Pentium Dual-Core T2370,35
+2572,Intel Pentium Dual-Core T2390,35
+2573,Intel Pentium Dual-Core T2410,35
+2574,Intel Pentium Dual-Core T3200,35
+2575,Intel Pentium Dual-Core T3400,35
+2576,Intel Pentium T4200,35
+2577,Intel Pentium T4300,35
+2578,Intel Pentium T4400,35
+2579,Intel Pentium T4500,35
+2580,Intel Pentium SU2700,10
+2581,Intel Pentium SU4100,10
+2582,Intel Pentium P6000,35
+2583,Intel Pentium P6100,35
+2584,Intel Pentium P6200,35
+2585,Intel Pentium P6300,35
+2586,Intel Pentium U5400,18
+2587,Intel Pentium U5600,18
+2588,Intel Pentium B940,35
+2589,Intel Pentium B950,35
+2590,Intel Pentium B960,35
+2591,Intel Pentium B970,35
+2592,Intel Pentium B980,35
+2593,Intel Pentium 957,17
+2594,Intel Pentium 967,17
+2595,Intel Pentium 977,17
+2596,Intel Pentium 987,17
+2597,Intel Pentium 997,17
+2598,Intel Pentium A1018,35
+2599,Intel Pentium 2020M,35
+2600,Intel Pentium 2030M,35
+2601,Intel Pentium 2117U,17
+2602,Intel Pentium 2127U,17
+2603,Intel Pentium 2129Y,10
+2604,Intel Pentium 3550M,37
+2605,Intel Pentium 3560M,37
+2606,Intel Pentium 3556U,15
+2607,Intel Pentium 3558U,15
+2608,Intel Pentium 3560Y,11.5
+2609,Intel Pentium 3561Y,11.5
+2610,Intel Pentium 3805U,15
+2611,Intel Pentium 3825U,15
+2612,Intel Pentium N3510,7.5
+2613,Intel Pentium N3520,7.5
+2614,Intel Pentium N3530,7.5
+2615,Intel Pentium N3540,7.5
+2616,Intel Pentium N3700,6
+2617,Intel Pentium N3710,6
+2618,Intel Pentium 4405U,15
+2619,Intel Pentium 4405Y,6
+2620,Intel Pentium N4200,6
+2621,Intel Pentium Silver N5000,6
+2622,Intel Pentium Silver N5030,6
+2623,Intel Pentium Gold 4415U,15
+2624,Intel Pentium Gold 4410Y,6
+2625,Intel Pentium Gold 4415Y,6
+2626,Intel Pentium Gold 4417U,15
+2627,Intel Pentium Gold 4425Y,6
+2628,Intel Pentium Gold 6500Y,5
+2629,Intel Pentium Gold 5405U,15
+2630,Intel Pentium Gold 6405U,15
+2631,Intel Pentium 6805,15
+2632,Intel Pentium Gold 7505,15
+2633,Intel Pentium Silver N6000,6
+2634,Intel Pentium 350,15
+2635,Intel Pentium 1403,80
+2636,Intel Pentium 1407,80
+2637,Intel Pentium 1405,40
+2638,Intel Pentium 1403 v2,80
+2639,Intel Pentium 1405 v2,40
+2640,Intel Pentium D1507,20
+2641,Intel Pentium D1508,25
+2642,Intel Pentium D1509,19
+2643,Intel Pentium D1517,25
+2644,Intel Pentium D1519,25
+2645,Intel Pentium B915C,15
+2646,Intel Pentium B925C,15
+2647,Intel Pentium N6415,6.5
+2648,Intel Pentium J6426,10
+2649,Intel Celeron 266,16.59
+2650,Intel Celeron 300,18.48
+2651,Intel Celeron 300A,17.8
+2652,Intel Celeron 333,19.7
+2653,Intel Celeron 366,21.7
+2654,Intel Celeron 400,23.7
+2655,Intel Celeron 433,24.1
+2656,Intel Celeron 466,25.7
+2657,Intel Celeron 500,27
+2658,Intel Celeron 533,28.3
+2659,Intel Celeron 533A,14
+2660,Intel Celeron 566,19.2
+2661,Intel Celeron 600,15.8
+2662,Intel Celeron 633,16.5
+2663,Intel Celeron 667,17.5
+2664,Intel Celeron 700,18.3
+2665,Intel Celeron 733,23.6
+2666,Intel Celeron 766,20
+2667,Intel Celeron 800,20.8
+2668,Intel Celeron 850,25.7
+2669,Intel Celeron 900,26.7
+2670,Intel Celeron 950,28
+2671,Intel Celeron 1.00,29
+2672,Intel Celeron 1.10,33
+2673,Intel Celeron 1000A,27.29.5
+2674,Intel Celeron 1100A,27.29.5
+2675,Intel Celeron 1200,29.32.9
+2676,Intel Celeron 1300,33.4
+2677,Intel Celeron 1400,33.34.8
+2678,Intel Celeron 1.5,60
+2679,Intel Celeron 1.7,63.5
+2680,Intel Celeron 1.8,66.1
+2681,Intel Celeron 2.0,71.2
+2682,Intel Celeron 1.8A,66.1
+2683,Intel Celeron 2.0,52.8
+2684,Intel Celeron 2.1,55.5
+2685,Intel Celeron 2.2,57.1
+2686,Intel Celeron 2.3,58.3
+2687,Intel Celeron 2.4,59.8
+2688,Intel Celeron 2.5,61.0
+2689,Intel Celeron 2.6,62.6
+2690,Intel Celeron 2.7,66.8
+2691,Intel Celeron 2.8,68.4
+2692,Intel Celeron D 310,73
+2693,Intel Celeron D 315,73
+2694,Intel Celeron D 320,73
+2695,Intel Celeron D 320,73
+2696,Intel Celeron D 325,73
+2697,Intel Celeron D 325,84
+2698,Intel Celeron D 325J,84
+2699,Intel Celeron D 326,84
+2700,Intel Celeron D 330,73
+2701,Intel Celeron D 330,73
+2702,Intel Celeron D 330J,84
+2703,Intel Celeron D 331,84
+2704,Intel Celeron D 335,73
+2705,Intel Celeron D 335,84
+2706,Intel Celeron D 335J,84
+2707,Intel Celeron D 336,84
+2708,Intel Celeron D 340,73
+2709,Intel Celeron D 340J,84
+2710,Intel Celeron D 340J,84
+2711,Intel Celeron D 341,84
+2712,Intel Celeron D 345,73
+2713,Intel Celeron D 345J,84
+2714,Intel Celeron D 346,84
+2715,Intel Celeron D 350,73
+2716,Intel Celeron D 350J,73
+2717,Intel Celeron D 351,84
+2718,Intel Celeron D 355,84
+2719,Intel Celeron D 347,65
+2720,Intel Celeron D 352,65
+2721,Intel Celeron D 356,65
+2722,Intel Celeron D 360,65
+2723,Intel Celeron D 365,65
+2724,Intel Celeron 220,19
+2725,Intel Celeron 420,35
+2726,Intel Celeron 430,35
+2727,Intel Celeron 440,35
+2728,Intel Celeron 450,35
+2729,Intel Celeron 445,65
+2730,Intel Celeron E1200,65
+2731,Intel Celeron E1400,65
+2732,Intel Celeron E1500,65
+2733,Intel Celeron E1600,65
+2734,Intel Celeron E3200,65
+2735,Intel Celeron E3300,65
+2736,Intel Celeron E3400,65
+2737,Intel Celeron E3500,65
+2738,Intel Celeron G1101,73
+2739,Intel Celeron G530,65
+2740,Intel Celeron G540,65
+2741,Intel Celeron G550,65
+2742,Intel Celeron G555,65
+2743,Intel Celeron G440,35
+2744,Intel Celeron G460,35
+2745,Intel Celeron G465,35
+2746,Intel Celeron G470,35
+2747,Intel Celeron G530T,35
+2748,Intel Celeron G540T,35
+2749,Intel Celeron G550T,35
+2750,Intel Celeron G1610,55
+2751,Intel Celeron G1620,55
+2752,Intel Celeron G1630,55
+2753,Intel Celeron G1610T,35
+2754,Intel Celeron G1620T,35
+2755,Intel Celeron J1750,10
+2756,Intel Celeron J1800,10
+2757,Intel Celeron J1850,10
+2758,Intel Celeron J1900,10
+2759,Intel Celeron J3060,6
+2760,Intel Celeron J3160,6
+2761,Intel Celeron G1820,53
+2762,Intel Celeron G1830,53
+2763,Intel Celeron G1840,53
+2764,Intel Celeron G1850,53
+2765,Intel Celeron G1820T,35
+2766,Intel Celeron G1840T,35
+2767,Intel Celeron G1820TE,35
+2768,Intel Celeron G3900,51
+2769,Intel Celeron G3920,51
+2770,Intel Celeron G3900T,35
+2771,Intel Celeron G3900E,35
+2772,Intel Celeron G3900TE,35
+2773,Intel Celeron G3902E,25
+2774,Intel Celeron J3355,10
+2775,Intel Celeron J3455,10
+2776,Intel Celeron J4005,10
+2777,Intel Celeron J4105,10
+2778,Intel Celeron J4025,10
+2779,Intel Celeron J4125,10
+2780,Intel Celeron G3930,51
+2781,Intel Celeron G3950,51
+2782,Intel Celeron G3930T,35
+2783,Intel Celeron G3930E,54
+2784,Intel Celeron G3930TE,35
+2785,Intel Celeron G4900,54
+2786,Intel Celeron G4920,54
+2787,Intel Celeron G4930,54
+2788,Intel Celeron G4950,54
+2789,Intel Celeron G4900T,35
+2790,Intel Celeron G4930T,35
+2791,Intel Celeron G4930E,35
+2792,Intel Celeron G4932E,25
+2793,Intel Celeron G5900,58
+2794,Intel Celeron G5905,58
+2795,Intel Celeron G5920,58
+2796,Intel Celeron G5925,58
+2797,Intel Celeron G5900E,58
+2798,Intel Celeron G5900T,35
+2799,Intel Celeron G5905T,35
+2800,Intel Celeron G5900TE,35
+2801,Intel Celeron N4505,10
+2802,Intel Celeron N5105,10
+2803,Intel Mobile Celeron 266,9.8
+2804,Intel Mobile Celeron 300,11.1
+2805,Intel Mobile Celeron 333,11.8
+2806,Intel Mobile Celeron 366,13.1
+2807,Intel Mobile Celeron 400,13.8
+2808,Intel Mobile Celeron 433,19.4
+2809,Intel Mobile Celeron 466,20.7
+2810,Intel Mobile Celeron LV 266,7.9
+2811,Intel Celeron M 310,24.5
+2812,Intel Celeron M 320,24.5
+2813,Intel Celeron M 330,24.5
+2814,Intel Celeron M 340,24.5
+2815,Intel Celeron M ULV 600,7
+2816,Intel Celeron M ULV 800,7
+2817,Intel Celeron M ULV 333,7
+2818,Intel Celeron M 350,21
+2819,Intel Celeron M 360,21
+2820,Intel Celeron M 370,21
+2821,Intel Celeron M 380,21
+2822,Intel Celeron M 390,21
+2823,Intel Celeron M ULV 383,5.5
+2824,Intel Celeron 205,21
+2825,Intel Celeron M ULV 353,5
+2826,Intel Celeron M ULV 373,5.5
+2827,Intel Celeron 215,27
+2828,Intel Celeron M 410,27
+2829,Intel Celeron M 420,27
+2830,Intel Celeron M 430,27
+2831,Intel Celeron M 440,27
+2832,Intel Celeron M 450,27
+2833,Intel Celeron M ULV 423,5.5
+2834,Intel Celeron M ULV 443,5.5
+2835,Intel Celeron 1.66,27
+2836,Intel Celeron 1.83,27
+2837,Intel Celeron M 520,30
+2838,Intel Celeron M 530,30
+2839,Intel Celeron 530,27
+2840,Intel Celeron 540,30
+2841,Intel Celeron 550,30
+2842,Intel Celeron 560,27
+2843,Intel Celeron 570,27
+2844,Intel Celeron 575,31
+2845,Intel Celeron 585,31
+2846,Intel Celeron M ULV 523,5.5
+2847,Intel Celeron ULV 573,10
+2848,Intel Celeron 900,35
+2849,Intel Celeron 925,35
+2850,Intel Celeron M ULV 722,5.5
+2851,Intel Celeron M ULV 723,10
+2852,Intel Celeron M ULV 743,10
+2853,Intel Celeron ULV 763,10
+2854,Intel Celeron T1400,35
+2855,Intel Celeron T1500,35
+2856,Intel Celeron T1600,35
+2857,Intel Celeron T1700,35
+2858,Intel Celeron T3000,35
+2859,Intel Celeron T3100,35
+2860,Intel Celeron T3300,35
+2861,Intel Celeron T3500,35
+2862,Intel Celeron SU2300,10
+2863,Intel Celeron P4500,35
+2864,Intel Celeron P4505,35
+2865,Intel Celeron P4600,35
+2866,Intel Celeron U3400,18
+2867,Intel Celeron U3405,18
+2868,Intel Celeron U3600,18
+2869,Intel Celeron B710,35
+2870,Intel Celeron B720,35
+2871,Intel Celeron B730,35
+2872,Intel Celeron B800,35
+2873,Intel Celeron B810,35
+2874,Intel Celeron B815,35
+2875,Intel Celeron B820,35
+2876,Intel Celeron B830,35
+2877,Intel Celeron B840,35
+2878,Intel Celeron B810E,35
+2879,Intel Celeron 787,17
+2880,Intel Celeron 797,17
+2881,Intel Celeron 807,17
+2882,Intel Celeron 847,17
+2883,Intel Celeron 857,17
+2884,Intel Celeron 867,17
+2885,Intel Celeron 877,17
+2886,Intel Celeron 887,17
+2887,Intel Celeron 827E,17
+2888,Intel Celeron 847E,17
+2889,Intel Celeron 807UE,10
+2890,Intel Celeron 1000M,35
+2891,Intel Celeron 1005M,35
+2892,Intel Celeron 1020M,35
+2893,Intel Celeron 1020E,35
+2894,Intel Celeron 1007U,17
+2895,Intel Celeron 1017U,17
+2896,Intel Celeron 1037U,17
+2897,Intel Celeron 927UE,17
+2898,Intel Celeron 1047UE,17
+2899,Intel Celeron 1019Y,10
+2900,Intel Celeron 2950M,37
+2901,Intel Celeron 2970M,37
+2902,Intel Celeron 2955U,15
+2903,Intel Celeron 2957U,15
+2904,Intel Celeron 2980U,15
+2905,Intel Celeron 2981U,15
+2906,Intel Celeron 2961Y,11.5
+2907,Intel Celeron 2000E,37
+2908,Intel Celeron 2002E,25
+2909,Intel Celeron 3205U,15
+2910,Intel Celeron 3215U,15
+2911,Intel Celeron 3755U,15
+2912,Intel Celeron 3765U,15
+2913,Intel Celeron N2805,4.3
+2914,Intel Celeron N2806,4.5
+2915,Intel Celeron N2807,4.3
+2916,Intel Celeron N2808,4.5
+2917,Intel Celeron N2810,7.5
+2918,Intel Celeron N2815,7.5
+2919,Intel Celeron N2820,7.5
+2920,Intel Celeron N2830,7.5
+2921,Intel Celeron N2840,7.5
+2922,Intel Celeron N2910,7.5
+2923,Intel Celeron N2920,7.5
+2924,Intel Celeron N2930,7.5
+2925,Intel Celeron N2940,7.5
+2926,Intel Celeron N3000,4
+2927,Intel Celeron N3010,4
+2928,Intel Celeron N3050,6
+2929,Intel Celeron N3060,6
+2930,Intel Celeron N3150,6
+2931,Intel Celeron N3160,6
+2932,Intel Celeron 3855U,15
+2933,Intel Celeron 3955U,15
+2934,Intel Celeron N3350,6
+2935,Intel Celeron N3450,6
+2936,Intel Celeron N4000,6
+2937,Intel Celeron N4100,6
+2938,Intel Celeron N4020,6
+2939,Intel Celeron N4120,6
+2940,Intel Celeron 3865U,15
+2941,Intel Celeron 3965U,15
+2942,Intel Celeron 3965Y,6
+2943,Intel Celeron 3867U,15
+2944,Intel Celeron 4205U,15
+2945,Intel Celeron 4305U,15
+2946,Intel Celeron 4305UE,15
+2947,Intel Celeron 5205U,15
+2948,Intel Celeron 5305U,15
+2949,Intel Celeron 6305,15
+2950,Intel Celeron 6305E,15
+2951,Intel Celeron N4500,6
+2952,Intel Celeron N5100,6
+2953,Intel Celeron P1053,30
+2954,Intel Celeron 725C,10
+2955,Intel Celeron N6210,6.5
+2956,Intel Celeron N6211,6.5
+2957,Intel Celeron J6412,10
+2958,Intel Celeron J6413,10
+2959,Intel Celeron 6600HE,35
+2960,Intel Core i9-11900K,125
+2961,Intel Core i9-11900KF,125
+2962,Intel Core i9-11900,65
+2963,Intel Core i9-11900F,65
+2964,Intel Core i9-11900T,35
+2965,Intel Core i7-11700K,125
+2966,Intel Core i7-11700KF,125
+2967,Intel Core i7-11700,65
+2968,Intel Core i7-11700F,65
+2969,Intel Core i7-11700T,35
+2970,Intel Core i5-11600K,125
+2971,Intel Core i5-11600KF,125
+2972,Intel Core i5-11600,65
+2973,Intel Core i5-11600T,35
+2974,Intel Core i5-11500,65
+2975,Intel Core i5-11500T,35
+2976,Intel Core i5-11400,65
+2977,Intel Core i5-11400F,65
+2978,Intel Core i5-11400T,35
+2979,Intel Core i9-10910,125
+2980,Intel Core i9-10900K,125
+2981,Intel Core i9-10900KF,125
+2982,Intel Core i9-10900,65
+2983,Intel Core i9-10900E,65
+2984,Intel Core i9-10900F,65
+2985,Intel Core i9-10900T,35
+2986,Intel Core i9-10850K,125
+2987,Intel Core i7-10700K,125
+2988,Intel Core i7-10700KF,125
+2989,Intel Core i7-10700,65
+2990,Intel Core i7-10700E,65
+2991,Intel Core i7-10700F,65
+2992,Intel Core i7-10700T,35
+2993,Intel Core i7-10700TE,35
+2994,Intel Core i5-10600K,125
+2995,Intel Core i5-10600KF,125
+2996,Intel Core i5-10600,65
+2997,Intel Core i5-10600T,35
+2998,Intel Core i5-10500,65
+2999,Intel Core i5-10500E,65
+3000,Intel Core i5-10500T,35
+3001,Intel Core i5-10500TE,35
+3002,Intel Core i5-10400,65
+3003,Intel Core i5-10400F,65
+3004,Intel Core i5-10400T,35
+3005,Intel Core i3-10320,65
+3006,Intel Core i3-10300,65
+3007,Intel Core i3-10300T,35
+3008,Intel Core i3-10100,65
+3009,Intel Core i3-10100E,65
+3010,Intel Core i3-10100F,65
+3011,Intel Core i3-10100T,35
+3012,Intel Core i3-10100TE,35
+3013,Intel Core i7-1065G7,15
+3014,Intel Core i7-1060G7,9
+3015,Intel Core i7-10750H,45
+3016,Intel Core i7-10710U,15
+3017,Intel Core i7-10610U,15
+3018,Intel Core i7-10510U,15
+3019,Intel Core i7-10510Y,7
+3020,Intel Core i5-10500H,45
+3021,Intel Core i5-10210U,15
+3022,Intel Core i9-9900KS,127
+3023,Intel Core i9-9900K,95
+3024,Intel Core i9-9900,65
+3025,Intel Core i9-9900T,35
+3026,Intel Core i7-9700K,95
+3027,Intel Core i7-9700,65
+3028,Intel Core i7-9700T,35
+3029,Intel Core i7-9700TE,35
+3030,Intel Core i5-9600K,95
+3031,Intel Core i5-9600KF,95
+3032,Intel Core i5-9600,65
+3033,Intel Core i5-9600T,35
+3034,Intel Core i5-9500,65
+3035,Intel Core i5-9500E,65
+3036,Intel Core i5-9500F,65
+3037,Intel Core i5-9500T,35
+3038,Intel Core i5-9500TE,35
+3039,Intel Core i5-9400,65
+3040,Intel Core i5-9400F,65
+3041,Intel Core i5-9400T,35
+3042,Intel Core i3-9350K,91
+3043,Intel Core i3-9350KF,91
+3044,Intel Core i3-9320,65
+3045,Intel Core i3-9300,65
+3046,Intel Core i3-9300T,35
+3047,Intel Core i3-9100,65
+3048,Intel Core i3-9100E,65
+3049,Intel Core i3-9100F,65
+3050,Intel Core i3-9100T,35
+3051,Intel Core i3-9100TE,35
+3052,Intel Core m3-8100Y,5
+3053,Intel Core i9-8950HK,45
+3054,Intel Core i7-8850H,45
+3055,Intel Core i7-8750H,45
+3056,Intel Core i7-8700B,65
+3057,Intel Core i7-8665U,15
+3058,Intel Core i7-8650U,15
+3059,Intel Core i7-8569U,28
+3060,Intel Core i7-8565U,15
+3061,Intel Core i7-8559U,28
+3062,Intel Core i7-8557U,15
+3063,Intel Core i7-8550U,15
+3064,Intel Core i7-8500Y,5
+3065,Intel Core i5-8500B,65
+3066,Intel Core i5-8400H,45
+3067,Intel Core i5-8400B,65
+3068,Intel Core i5-8365U,15
+3069,Intel Core i5-8350U,15
+3070,Intel Core i5-8310Y,7
+3071,Intel Core i5-8300H,45
+3072,Intel Core i5-8269U,28
+3073,Intel Core i5-8265U,15
+3074,Intel Core i5-8260U,15
+3075,Intel Core i5-8259U,28
+3076,Intel Core i5-8257U,15
+3077,Intel Core i5-8250U,15
+3078,Intel Core i5-8210Y,7
+3079,Intel Core i5-8200Y,5
+3080,Intel Core i3-8145U,15
+3081,Intel Core i3-8140U,15
+3082,Intel Core i3-8130U,15
+3083,Intel Core i3-8109U,28
+3084,Intel Core i3-8100H,45
+3085,Intel Core i3-8100B,65
+3086,Intel Core i9-7980XE,165
+3087,Intel Core i9-7960X,165
+3088,Intel Core i9-7940X,165
+3089,Intel Core i9-7920X,140
+3090,Intel Core i9-7900X,140
+3091,Intel Core i7-7820X,140
+3092,Intel Core i7-7800X,140
+3093,Intel Core i7-7740X,112
+3094,Intel Core i7-7700K,91
+3095,Intel Core i7-7700,65
+3096,Intel Core i7-7700T,35
+3097,Intel Core i5-7640X,112
+3098,Intel Core i5-7600K,91
+3099,Intel Core i5-7600,65
+3100,Intel Core i5-7600T,35
+3101,Intel Core i5-7500,65
+3102,Intel Core i5-7500T,35
+3103,Intel Core i5-7400,65
+3104,Intel Core i5-7400T,35
+3105,Intel Core i3-7350K,60
+3106,Intel Core i3-7320,51
+3107,Intel Core i3-7300,51
+3108,Intel Core i3-7300T,35
+3109,Intel Core i3-7100,51
+3110,Intel Core i3-7100T,35
+3111,Intel Core i3-7101E,54
+3112,Intel Core i3-7101TE,35
+3113,Intel Core i7-7920HQ,45.0
+3114,Intel Core i7-7820HQ,45.0
+3115,Intel Core i7-7820HK,45.0
+3116,Intel Core i7-7700HQ,45.0
+3117,Intel Core i7-7660U,15.0
+3118,Intel Core i7-7600U,15.0
+3119,Intel Core i7-7567U,28.0
+3120,Intel Core i7-7560U,15.0
+3121,Intel Core i7-7500U,15.0
+3122,Intel Core i7-7Y75,4.5
+3123,Intel Core i5-7440HQ,45.0
+3124,Intel Core i5-7300HQ,45.0
+3125,Intel Core i5-7360U,15.0
+3126,Intel Core i5-7300U,15.0
+3127,Intel Core i5-7287U,28.0
+3128,Intel Core i5-7267U,28.0
+3129,Intel Core i5-7260U,15.0
+3130,Intel Core i5-7200U,15.0
+3131,Intel Core i5-7Y57,4.5
+3132,Intel Core i5-7Y54,4.5
+3133,Intel Core i3-7100H,35.0
+3134,Intel Core i3-7167U,28.0
+3135,Intel Core i3-7130U,15.0
+3136,Intel Core i3-7100U,15.0
+3137,Intel Atom 230,4
+3138,Intel Atom 330,8
+3139,Intel Atom D410,10
+3140,Intel Atom D425,10
+3141,Intel Atom D510,13
+3142,Intel Atom D525,13
+3143,Intel Atom D2500,10
+3144,Intel Atom D2550,10
+3145,Intel Atom D2560,10
+3146,Intel Atom D2700,10
+3147,Intel Atom D2701,10
+3148,Intel Atom N270,2.5
+3149,Intel Atom N280,2.5
+3150,Intel Atom N435,5.0
+3151,Intel Atom N450,5.5
+3152,Intel Atom N455,6.5
+3153,Intel Atom N470,6.5
+3154,Intel Atom N475,6.5
+3155,Intel Atom N550,8.5
+3156,Intel Atom N570,8.5
+3157,Intel Atom N2600,3.5
+3158,Intel Atom N2800,6.5
+3159,Intel Atom Z500,0.65
+3160,Intel Atom Z510,2
+3161,Intel Atom Z510P,2.2
+3162,Intel Atom Z510PT,2.2
+3163,Intel Atom Z515,1.4
+3164,Intel Atom Z520,2
+3165,Intel Atom Z520PT,2.2
+3166,Intel Atom Z530,2
+3167,Intel Atom Z530P,2.2
+3168,Intel Atom Z540,2.4
+3169,Intel Atom Z550,2.4
+3170,Intel Atom Z560,2.5
+3171,Intel Atom Z600,1.3
+3172,Intel Atom Z605,2.2
+3173,Intel Atom Z610,1.3
+3174,Intel Atom Z612,1.3
+3175,Intel Atom Z615,2.2
+3176,Intel Atom Z620,1.3
+3177,Intel Atom Z625,2.2
+3178,Intel Atom Z2420,3
+3179,Intel Atom Z2460,3
+3180,Intel Atom Z2480,4
+3181,Intel Atom Z2610,3
+3182,Intel Atom Z650,3
+3183,Intel Atom Z670,3
+3184,Intel Atom x5-Z8300,2.17
+3185,Intel Atom x5-Z8330,2.17
+3186,Intel Atom x5-Z8350,2.17
+3187,Intel Atom x5-Z8500,2.17
+3188,Intel Atom x5-Z8550,2.17
+3189,Intel Atom x7-Z8700,2.17
+3190,Intel Atom x7-Z8750,2.17
+3191,Intel Atom E620,3.3
+3192,Intel Atom E620T,3.3
+3193,Intel Atom E640,3.6
+3194,Intel Atom E640T,3.6
+3195,Intel Atom E660,3.6
+3196,Intel Atom E660T,3.6
+3197,Intel Atom E680,4.5
+3198,Intel Atom E680T,4.5
+3199,Intel Atom E625C,2.7
+3200,Intel Atom E625CT,2.7
+3201,Intel Atom E645C,3.6
+3202,Intel Atom E645CT,3.6
+3203,Intel Atom E665C,3.6
+3204,Intel Atom E665CT,3.6
+3205,Intel Atom E3805,3
+3206,Intel Atom E3815,5
+3207,Intel Atom E3825,6
+3208,Intel Atom E3826,7
+3209,Intel Atom E3827,8
+3210,Intel Atom E3845,10
+3211,Intel Atom x5-E8000,5
+3212,Intel Atom x5-E3930,6.5
+3213,Intel Atom x5-E3940,9.5
+3214,Intel Atom x7-E3950,12
+3215,Intel Atom x6200FE,4.5
+3216,Intel Atom x6211E,6
+3217,Intel Atom x6212RE,6
+3218,Intel Atom x6413E,9
+3219,Intel Atom x6414RE,9
+3220,Intel Atom x6425E,12
+3221,Intel Atom x6425RE,12
+3222,Intel Atom x6427FE,12
+3223,Intel Atom S1220,8.1
+3224,Intel Atom S1240,6.1
+3225,Intel Atom S1260,8.5
+3226,Intel Atom S1269,11.7
+3227,Intel Atom S1279,13.1
+3228,Intel Atom S1289,14.1
+3229,Intel Atom C2350,6
+3230,Intel Atom C2530,9
+3231,Intel Atom C2550,14
+3232,Intel Atom C2730,12
+3233,Intel Atom C2750,20
+3234,Intel Atom C2308,6
+3235,Intel Atom C2316,7
+3236,Intel Atom C2338,7
+3237,Intel Atom C2358,7
+3238,Intel Atom C2508,9.5
+3239,Intel Atom C2516,10
+3240,Intel Atom C2518,13
+3241,Intel Atom C2538,15
+3242,Intel Atom C2558,15
+3243,Intel Atom C2718,18
+3244,Intel Atom C2738,20
+3245,Intel Atom C2758,20
+3246,Intel Atom C3308,9.5
+3247,Intel Atom C3336,11
+3248,Intel Atom C3338,8.5
+3249,Intel Atom C3338R,10.5
+3250,Intel Atom C3436L,10.75
+3251,Intel Atom C3508,11.5
+3252,Intel Atom C3538,15
+3253,Intel Atom C3558,16
+3254,Intel Atom C3558R,17
+3255,Intel Atom C3708,17
+3256,Intel Atom C3750,21
+3257,Intel Atom C3758,25
+3258,Intel Atom C3758R,26
+3259,Intel Atom C3808,25
+3260,Intel Atom C3830,21
+3261,Intel Atom C3850,25
+3262,Intel Atom C3858,25
+3263,Intel Atom C3950,24
+3264,Intel Atom C3955,32
+3265,Intel Atom C3958,31
+3266,Intel Atom CE4110,7
+3267,Intel Atom CE4130,7
+3268,Intel Atom CE4150,7
+3269,Intel Atom CE4215,7
+3270,Intel Atom CE4235,7
+3271,Intel Atom CE4253,7
+3272,Intel Atom CE4255,7
+3273,Intel Atom CE4257,7
+3274,Intel Atom CE4270,7
+3275,Intel Atom CE4275,7
+3276,Intel Atom CE4277,7
+3277,Intel Atom CE5315,15
+3278,Apple M1, 10

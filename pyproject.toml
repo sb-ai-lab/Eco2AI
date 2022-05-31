@@ -1,0 +1,43 @@
+[tool.poetry]
+name = "eco2ai"
+version = "0.1.0"
+description = "emission tracking library"
+authors = ["AI Lab, Sber",
+            "Vladimir Lazarev <lazarev@airi.net>",
+            "Semyon Budyonny  <sanbudenny@sberbank.ru>",
+            "leonid zhukov <lezhukov@sberbank.ru>"]
+
+homepage = "https://sberbank-ai-lab.github.io/RePlay/"
+repository = "https://github.com/sberbank-ai-lab/RePlay"
+
+classifiers = [
+    "Programming Language :: Python :: 3.8",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Natural Language :: English",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Typing :: Typed"
+]
+readme = "README.md"
+packages = [
+    { include = "eco2ai"}
+]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<4"
+APScheduler = "^3.8.1"
+numpy = "^1.22.1"
+pandas = "^1.3.5"
+requests = "^2.27.1"
+pynvml = "^11.4.1"
+psutil = "^5.9.0"
+py-cpuinfo = "^8.0.0"
+tzlocal = "^4.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
