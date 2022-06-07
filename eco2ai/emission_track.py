@@ -13,7 +13,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from eco2ai.tools.tools_gpu import *
 from eco2ai.tools.tools_cpu import *
 
-EMISSION_PER_MWT = 511.7942
+EMISSION_PER_MWT = 310.2
 FROM_mWATTS_TO_kWATTH = 1000*1000*3600
 FROM_kWATTH_TO_MWATTH = 1000
 
