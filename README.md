@@ -1,6 +1,3 @@
-[pypi] (https://pypi.org/project/eco2ai/)
-
-
 # Eco2AI
 
 Eco2AI is a python library for CO2 emission tracking. It monitors energy consumption of CPU and GPU, then estimates equivalent carbon emissions. 
