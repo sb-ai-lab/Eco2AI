@@ -1,7 +1,5 @@
 # Eco2AI
 
-%![PyPI - Downloads](https://pypi.org/project/eco2ai/)
-
 Eco2AI is a python library for CO2 emission tracking. It monitors energy consumption of CPU and GPU, then estimates equivalent carbon emissions. 
 Eco2AI is applicable to all python scripts, all you need is to add couple strings to your code.  All emission data and your devices info are logged into local file.  
 
