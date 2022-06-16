@@ -11,7 +11,7 @@
 
 + [About Eco2AI :clipboard:](#1)
 + [Installation :wrench:](#2)
-+ [Use examples :bulb:](#3)
++ [Use examples :computer:](#3)
 + [Important note :blue_book:](#4)
 + [Feedback :envelope:](#5)
 
@@ -43,7 +43,7 @@ To install eco2ai library run next command:
 pip install eco2ai
 ```
 
-## Use examples :bulb:<a name="3"></a> 
+## Use examples :computer:<a name="3"></a> 
 
 eco2ai's interface is quite simple. Here is a the most straightforward usage example:
 ```python
