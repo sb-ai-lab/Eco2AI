@@ -9,17 +9,17 @@
 
 # Eco2AI
 
-+ [About Eco2AI](#1)
-+ [Installation](#2)
-+ [Use examples](#3)
-+ [Important note](#4)
-+ [Feedback](#5)
++ [About Eco2AI :clipboard:](#1)
++ [Installation :wrench:](#2)
++ [Use examples :bulb:](#3)
++ [Important note :blue_book:](#4)
++ [Feedback :envelope:](#5)
 
 
 
 
 
-##  About Eco2AI <a name="1"></a> 
+## About Eco2AI :clipboard: <a name="1"></a> 
 Eco2AI is a python library for CO2 emission tracking. It monitors energy consumption of CPU and GPU, then estimates equivalent carbon emissions. 
 Eco2AI is applicable to all python scripts, all you need is to add couple strings to your code.  All emission data and your devices info are logged into local file.  
 
@@ -36,14 +36,14 @@ Every single run of Tracker() accompanies with session description added into lo
 + OS
 + country
 
-##  Installation <a name="2"></a> 
+##  Installation :wrench:<a name="2"></a> 
 To install eco2ai library run next command:
 
 ```
 pip install eco2ai
 ```
 
-## Use examples <a name="3"></a> 
+## Use examples :bulb:<a name="3"></a> 
 
 eco2ai's interface is quite simple. Here is a the most straightforward usage example:
 ```python
@@ -129,7 +129,7 @@ tracker.stop()
 
 
 <!-- There is [sber_emission_tracker_guide.ipynb](https://github.com/vladimir-laz/AIRIEmisisonTracker/blob/704ff88468f6ad403d69a63738888e1a3c41f59b/guide/sber_emission_tracker_guide.ipynb)  - useful jupyter notebook with more examples and notes. We highly recommend to check it out beforehand. -->
-## Important note <a name="4"></a> 
+## Important note :blue_book:<a name="4"></a> 
 
 According to climate transparency report for each kilowatt hour of electricity generated in Russia in 2020, an average of 310 g of CO2 was emitted. This constant is used in CO2 estimation by default.
 
@@ -137,5 +137,5 @@ In order to calculate gpu & cpu power consumption correctly you should create th
 
 For every new calculation create a new “Tracker.”
 
-# Feedback <a name="5"></a> 
+# Feedback :envelope:<a name="5"></a> 
 If you had some problems while working with our tracker, please, give us a feedback comments in [document](https://docs.google.com/spreadsheets/d/1927TwoFaW7R_IFC6-4xKG_sjlPUaYCX9vLqzrOsASB4/edit#gid=0)
