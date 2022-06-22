@@ -20,7 +20,7 @@
 
 
 ## About Eco2AI :clipboard: <a name="1"></a> 
-Eco2AI is a python library for CO2 emission tracking. It monitors energy consumption of CPU and GPU, then estimates equivalent carbon emissions. 
+Eco2AI is a python library for CO<sub>2</sub> emission tracking. It monitors energy consumption of CPU and GPU, then estimates equivalent carbon emissions. 
 Eco2AI is applicable to all python scripts, all you need is to add couple strings to your code.  All emission data and your devices info are logged into local file.  
 
 Every single run of Tracker() accompanies with session description added into logging file including the following items:
@@ -30,7 +30,7 @@ Every single run of Tracker() accompanies with session description added into lo
 + start_time
 + duration(s)
 + power_consumption(kWTh)
-+ CO2_emissions(kg)
++ CO<sub>2</sub>_emissions(kg)
 + CPU_name
 + GPU_name
 + OS
@@ -131,7 +131,7 @@ tracker.stop()
 <!-- There is [sber_emission_tracker_guide.ipynb](https://github.com/vladimir-laz/AIRIEmisisonTracker/blob/704ff88468f6ad403d69a63738888e1a3c41f59b/guide/sber_emission_tracker_guide.ipynb)  - useful jupyter notebook with more examples and notes. We highly recommend to check it out beforehand. -->
 ## Important note :blue_book:<a name="4"></a> 
 
-According to climate transparency report, for each kilowatt hour of electricity generated in Russia in 2020, an average of 310 g of CO2 was emitted. This constant is used in CO<sub>2</sub> estimation by default.
+According to climate transparency report, for each kilowatt hour of electricity generated in Russia in 2020, an average of 310 g of CO<sub>2</sub> was emitted. This constant is used in CO<sub>2</sub> estimation by default.
 
 In order to calculate gpu & cpu power consumption correctly you should create the 'Tracker' before any gpu or cpu usage
 
