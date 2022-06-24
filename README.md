@@ -140,5 +140,5 @@ For every new calculation create a new “Tracker.”
 # Feedback :envelope:<a name="5"></a> 
 If you had some problems while working with our tracker, please, give us a feedback comments in [document](https://docs.google.com/spreadsheets/d/1927TwoFaW7R_IFC6-4xKG_sjlPUaYCX9vLqzrOsASB4/edit#gid=0)
 
-# Supported by
+# In collaboration with
 <img src="https://github.com/sb-ai-lab/Eco2AI/blob/main/images/AIRI%20-%20Full%20logo%20(2).png" width="200"/>
