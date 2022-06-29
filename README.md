@@ -72,7 +72,7 @@ train_func(your_model, your_dataset, your_optimizer, your_epochs)
 ```
 
 
-For your convenience every time you initilize a Tracker object with your custom parameters, this settings will be saved until library is uninstalled, and then every new tracker will be created with your custom settings(if you will create new tracker with new parameters, then they will be saved instead of old ones). For example:
+For your convenience every time you instantiate the Tracker object with your custom parameters, these settings will be saved until the library is uninstalled, and then every new tracker will be created with your custom settings (if you create a tracker with new parameters, then they will be saved instead of old ones). For example:
 
 ```python
 
