@@ -90,7 +90,6 @@ class Tracker:
                  measure_period=10,
                  emission_level=EMISSION_PER_MWT,
                  ):
-        print("hello, guys!")
         self._params_dict = get_params()
         self.project_name = project_name if project_name is not None else self._params_dict["project_name"]
         self.experiment_description = experiment_description if experiment_description is not None else self._params_dict["experiment_description"]
@@ -147,7 +146,8 @@ class Tracker:
         emissions = self._consumption * self._emission_level / FROM_kWATTH_TO_MWATTH
         if not os.path.isfile(self.file_name):
             with open(self.file_name, 'w') as file:
-                file.write("project_name,experiment_description(model type etc.),start_time,duration(s),power_consumption(kWTh),CO2_emissions(kg),CPU_name,GPU_name,OS,country,")
+                file.write("project_name,experiment_description(model type etc.),start_time,duration(s),power_consumption(kWTh),CO2_emissions(kg),CPU_name,GPU_name,OS,country\n")
+                # file.write(f"{self.project_name}\t{self.experiment_description}\t{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(self._start_time))}\t{duration}\t{self._consumption}\t{emissions}\t{self._cpu.name()}/{self._cpu.tdp()} TDP: {self._cpu.cpu_num()} device(s)\t{self._gpu.name()} {self._gpu.gpu_num()} device(s)\t{self._os}\t{self._country}\n")
                 file.write(f"*{self.project_name}*,*{self.experiment_description}*,{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(self._start_time))},{duration},{self._consumption},{emissions},*{self._cpu.name()}/{self._cpu.cpu_num()} device(s), TDP:{self._cpu.tdp()}*,{self._gpu.name()} {self._gpu.gpu_num()} device(s),{self._os},{self._country}\n")
         else:
             with open(self.file_name, "a") as file:
