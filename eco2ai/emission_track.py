@@ -146,7 +146,7 @@ class Tracker:
         emissions = self._consumption * self._emission_level / FROM_kWATTH_TO_MWATTH
         if not os.path.isfile(self.file_name):
             with open(self.file_name, 'w') as file:
-                file.write("project_name\texperiment_description(model type etc.)\tstart_time\tduration(s)\tpower_consumption(kWTh)\tCO2_emissions(kg)\tCPU_name\tGPU_name\tOS\tcountry\n")
+                file.write("project_name,experiment_description(model type etc.),start_time\,duration(s),power_consumption(kWTh),CO2_emissions(kg),CPU_name,GPU_name,OS,country,")
                 file.write(f"*{self.project_name}*,*{self.experiment_description}*,{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(self._start_time))},{duration},{self._consumption},{emissions},*{self._cpu.name()}/{self._cpu.cpu_num()} device(s), TDP:{self._cpu.tdp()}*,{self._gpu.name()} {self._gpu.gpu_num()} device(s),{self._os},{self._country}\n")
         else:
             with open(self.file_name, "a") as file:
