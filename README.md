@@ -126,9 +126,6 @@ tracker.start()
 <your code>
 tracker.stop()
 ```
-
-
-
 <!-- There is [sber_emission_tracker_guide.ipynb](https://github.com/vladimir-laz/AIRIEmisisonTracker/blob/704ff88468f6ad403d69a63738888e1a3c41f59b/guide/sber_emission_tracker_guide.ipynb)  - useful jupyter notebook with more examples and notes. We highly recommend to check it out beforehand. -->
 ## Important note :blue_book:<a name="4"></a> 
 
