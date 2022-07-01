@@ -12,9 +12,9 @@ DEPENDENCIES = [
 
 setup(
     name = 'eco2ai',
-    version = '0.1.1',
+    version = '0.1.2',
     author=["Vladimir Lazarev", 'Nikita Zakharenko', 'Semyon Budyonny', 'Leonid Zhukov'],
-    url = 'http://37.18.73.175/applied-ai/Eco2AI.git@development',
+    # url = '.',
     description = long_description,
     packages = find_packages(),
     install_requires=DEPENDENCIES,
