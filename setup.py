@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 
 with open("README.md", "r") as f:
     long_description = f.read()
@@ -12,11 +12,10 @@ DEPENDENCIES = [
 
 setup(
     name = 'eco2ai',
-    version = '0.1.2',
+    version = '0.1.0',
     author=["Vladimir Lazarev", 'Nikita Zakharenko', 'Semyon Budyonny', 'Leonid Zhukov'],
-    # url = 'https://github.com/sb-ai-lab/Eco2AI.git@development',
     description = long_description,
-    packages = find_packages(),
+    packages = ['eco2ai'],
     install_requires=DEPENDENCIES,
     package_data={
         "eco2ai": [
