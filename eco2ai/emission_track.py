@@ -195,6 +195,9 @@ class Tracker:
             self._scheduler.shutdown()
 
     def start(self):
+        if self._start_time is not None:
+            self._scheduler.remove_job("job")
+            self._scheduler.shutdown()
         self._cpu = CPU()
         self._gpu = GPU()
         self._start_time = time.time()
