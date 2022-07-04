@@ -13,7 +13,6 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from eco2ai.tools.tools_gpu import *
 from eco2ai.tools.tools_cpu import *
 
-EMISSION_PER_MWT = 310.2
 FROM_mWATTS_TO_kWATTH = 1000*1000*3600
 FROM_kWATTH_TO_MWATTH = 1000
 
@@ -64,6 +63,15 @@ def get_params():
     return dictionary
 
 
+def define_carbon_index():
+    country = eval(requests.get("https://ipinfo.io/").content.decode('ascii'))['country']
+    data = pd.read_csv('carbon_index.csv')
+    result = data[data['alpha_2_code'] == country]
+    if result.shape[0] < 1:
+        result = data[data['country'] == 'World']
+    return result.values.reshape(-1)[-1]
+
+
 class Tracker:
     """
     This class calculates CO2 emissions during cpu or gpu calculations 
@@ -88,7 +96,7 @@ class Tracker:
                  experiment_description=None,
                  file_name=None,
                  measure_period=10,
-                 emission_level=EMISSION_PER_MWT,
+                 emission_level=define_carbon_index(),
                  ):
         self._params_dict = get_params()
         self.project_name = project_name if project_name is not None else self._params_dict["project_name"]
