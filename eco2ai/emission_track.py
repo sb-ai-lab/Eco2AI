@@ -64,8 +64,9 @@ def get_params():
 
 
 def define_carbon_index():
+    carbon_index_table_name = resource_stream('eco2ai', 'data/carbon_index.csv').name
     country = eval(requests.get("https://ipinfo.io/").content.decode('ascii'))['country']
-    data = pd.read_csv('carbon_index.csv')
+    data = pd.read_csv(carbon_index_table_name)
     result = data[data['alpha_2_code'] == country]
     if result.shape[0] < 1:
         result = data[data['country'] == 'World']
