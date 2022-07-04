@@ -1,0 +1,210 @@
+country,alpha_2_code,alpha_3_code,un_code,carbon_index
+Afghanistan,AF,AFG,4,166.667
+Albania,AL,ALB,8,24.482
+Algeria,DZ,DZA,12,485.45
+American Samoa,AS,ASM,16,687.5
+Angola,AO,AGO,24,173.169
+Antigua and Barbuda,AG,ATG,28,676.471
+Argentina,AR,ARG,32,353.052
+Armenia,AM,ARM,51,209.016
+Aruba,AW,ABW,533,586.957
+Australia,AU,AUS,36,560.384
+Austria,AT,AUT,40,142.506
+Azerbaijan,AZ,AZE,31,537.051
+Bahamas,BS,BHS,44,700.0
+Bahrain,BH,BHR,48,490.14
+Bangladesh,BD,BGD,50,550.318
+Barbados,BB,BRB,52,676.471
+Belarus,BY,BLR,112,472.122
+Belgium,BE,BEL,56,198.201
+Belize,BZ,BLZ,84,483.871
+Benin,BJ,BEN,204,652.174
+Bhutan,BT,BTN,64,23.464
+Bolivia,BO,BOL,68,319.834
+Bosnia and Herzegovina,BA,BIH,70,522.042
+Botswana,BW,BWA,72,800.0
+Brazil,BR,BRA,76,113.069
+British Virgin Islands,VG,VGB,92,714.286
+Brunei,BN,BRN,96,659.483
+Bulgaria,BG,BGR,100,327.368
+Burkina Faso,BF,BFA,854,633.721
+Burundi,BI,BDI,108,218.75
+Cambodia,KH,KHM,116,423.664
+Cameroon,CM,CMR,120,253.915
+Canada,CA,CAN,124,120.486
+Cape Verde,CV,CPV,132,574.468
+Cayman Islands,KY,CYM,136,685.714
+Central African Republic,CF,CAF,140,0.0
+Chad,TD,TCD,148,666.667
+Chile,CL,CHL,152,386.545
+China,CN,CHN,156,549.534
+Colombia,CO,COL,170,210.526
+Comoros,KM,COM,174,700.0
+Congo,CG,COG,178,374.663
+Cook Islands,CK,COK,184,500.0
+Costa Rica,CR,CRI,188,32.59
+Cote d'Ivoire,CI,CIV,384,421.436
+Croatia,HR,HRV,191,234.139
+Cuba,CU,CUB,192,609.969
+Cyprus,CY,CYP,196,618.557
+Czechia,CZ,CZE,203,397.253
+Democratic Republic of Congo,CD,COD,180,25.946
+Denmark,DK,DNK,208,188.653
+Djibouti,DJ,DJI,262,666.667
+Dominica,DM,DMA,212,454.545
+Dominican Republic,DO,DOM,214,625.139
+Ecuador,EC,ECU,218,134.634
+Egypt,EG,EGY,818,470.506
+El Salvador,SV,SLV,222,183.074
+Equatorial Guinea,GQ,GNQ,226,628.319
+Eritrea,ER,ERI,232,652.174
+Estonia,EE,EST,233,440.336
+Eswatini,SZ,SWZ,748,212.121
+Ethiopia,ET,ETH,231,25.442
+Faeroe Islands,FO,FRO,234,384.615
+Falkland Islands,FK,FLK,238,500.0
+Fiji,FJ,FJI,242,295.238
+Finland,FI,FIN,246,141.88
+France,FR,FRA,250,67.53
+French Guiana,GF,GUF,254,360.0
+French Polynesia,PF,PYF,258,470.588
+Gabon,GA,GAB,266,305.648
+Gambia,GM,GMB,270,700.0
+Georgia,GE,GEO,268,136.488
+Germany,DE,DEU,276,332.495
+Ghana,GH,GHA,288,343.552
+Greece,GR,GRC,300,387.988
+Greenland,GL,GRL,304,133.333
+Grenada,GD,GRD,308,714.286
+Guadeloupe,GP,GLP,312,593.939
+Guam,GU,GUM,316,672.316
+Guatemala,GT,GTM,320,278.46
+Guinea,GN,GIN,324,182.099
+Guinea-Bissau,GW,GNB,624,750.0
+Guyana,GY,GUY,328,629.31
+Haiti,HT,HTI,332,612.245
+Honduras,HN,HND,340,345.714
+Hong Kong,HK,HKG,344,684.989
+Hungary,HU,HUN,348,246.981
+Iceland,IS,ISL,352,28.751
+India,IN,IND,356,625.573
+Indonesia,ID,IDN,360,663.488
+Iran,IR,IRN,364,487.99
+Iraq,IQ,IRQ,368,517.746
+Ireland,IE,IRL,372,312.812
+Israel,IL,ISR,376,556.772
+Italy,IT,ITA,380,336.714
+Jamaica,JM,JAM,388,543.943
+Japan,JP,JPN,392,472.57
+Jordan,JO,JOR,400,435.138
+Kazakhstan,KZ,KAZ,398,655.38
+Kenya,KE,KEN,404,79.812
+Kiribati,KI,KIR,296,666.667
+Kuwait,KW,KWT,414,489.576
+Kyrgyzstan,KG,KGZ,417,80.928
+Laos,LA,LAO,418,304.638
+Latvia,LV,LVA,428,223.776
+Lebanon,LB,LBN,422,546.214
+Lesotho,LS,LSO,426,20.0
+Liberia,LR,LBR,430,273.81
+Libya,LY,LBY,434,552.366
+Lithuania,LT,LTU,440,262.693
+Luxembourg,LU,LUX,442,196.721
+Macao,MO,MAC,446,482.143
+Madagascar,MG,MDG,450,419.689
+Malawi,MW,MWI,454,113.924
+Malaysia,MY,MYS,458,589.3
+Maldives,MV,MDV,462,704.918
+Mali,ML,MLI,466,472.892
+Malta,MT,MLT,470,448.113
+Martinique,MQ,MTQ,474,656.25
+Mauritania,MR,MRT,478,530.055
+Mauritius,MU,MUS,480,609.489
+Mexico,MX,MEX,484,410.689
+Moldova,MD,MDA,498,656.794
+Mongolia,MN,MNG,496,733.333
+Montenegro,ME,MNE,499,401.18
+Montserrat,MS,MSR,500,500.0
+Morocco,MA,MAR,504,624.966
+Mozambique,MZ,MOZ,508,134.444
+Myanmar,MM,MMR,104,312.683
+Namibia,,NAM,516,48.077
+Nauru,NR,NRU,520,666.667
+Nepal,NP,NPL,524,22.654
+Netherlands,NL,NLD,528,394.117
+New Caledonia,NC,NCL,540,637.631
+New Zealand,NZ,NZL,554,149.274
+Nicaragua,NI,NIC,558,350.731
+Niger,NE,NER,562,672.414
+Nigeria,NG,NGA,566,398.363
+North Korea,KP,PRK,408,155.161
+North Macedonia,MK,MKD,807,528.09
+Norway,NO,NOR,578,30.985
+Oman,OM,OMN,512,489.87
+Pakistan,PK,PAK,586,355.967
+Palestine,PS,PSE,275,630.769
+Panama,PA,PAN,591,242.57
+Papua New Guinea,PG,PNG,598,556.931
+Paraguay,PY,PRY,600,23.916
+Peru,PE,PER,604,230.647
+Philippines,PH,PHL,608,578.009
+Poland,PL,POL,616,647.321
+Portugal,PT,PRT,620,251.843
+Puerto Rico,PR,PRI,630,601.734
+Qatar,QA,QAT,634,489.87
+Reunion,RE,REU,638,452.769
+Romania,RO,ROU,642,244.876
+Russia,RU,RUS,643,347.451
+Rwanda,RW,RWA,646,377.358
+Saint Kitts and Nevis,KN,KNA,659,681.818
+Saint Lucia,LC,LCA,662,685.714
+Saint Pierre and Miquelon,PM,SPM,666,800.0
+Saint Vincent and the Grenadines,VC,VCT,670,500.0
+Samoa,WS,WSM,882,428.571
+Sao Tome and Principe,ST,STP,678,666.667
+Saudi Arabia,SA,SAU,682,570.473
+Senegal,SN,SEN,686,545.29
+Serbia,RS,SRB,688,597.905
+Seychelles,SC,SYC,690,693.878
+Sierra Leone,SL,SLE,694,47.619
+Singapore,SG,SGP,702,488.668
+Slovakia,SK,SVK,703,158.741
+Slovenia,SI,SVN,705,245.708
+Solomon Islands,SB,SLB,90,700.0
+Somalia,SO,SOM,706,657.143
+South Africa,ZA,ZAF,710,720.023
+South Korea,KR,KOR,410,444.398
+South Sudan,SS,SSD,728,709.091
+Spain,ES,ESP,724,199.515
+Sri Lanka,LK,LKA,144,494.275
+Sudan,SD,SDN,736,266.106
+Suriname,SR,SUR,740,305.085
+Sweden,SE,SWE,752,42.371
+Switzerland,CH,CHE,756,55.166
+Syria,SY,SYR,760,538.554
+Taiwan,TW,TWN,158,563.381
+Tajikistan,TJ,TJK,762,73.489
+Tanzania,TZ,TZA,834,386.792
+Thailand,TH,THA,764,506.537
+Togo,TG,TGO,768,592.593
+Tonga,TO,TON,776,666.667
+Trinidad and Tobago,TT,TTO,780,520.278
+Tunisia,TN,TUN,788,471.087
+Turkey,TR,TUR,792,411.302
+Turkmenistan,TM,TKM,795,544.381
+Turks and Caicos Islands,TC,TCA,796,708.333
+Uganda,UG,UGA,800,77.088
+Ukraine,UA,UKR,804,279.239
+United Arab Emirates,AE,ARE,784,471.57
+United Kingdom,GB,GBR,826,245.715
+United States,US,USA,840,369.571
+United States Virgin Islands,VI,VIR,850,693.548
+Uruguay,UY,URY,858,106.013
+Uzbekistan,UZ,UZB,860,496.78
+Vanuatu,VU,VUT,548,571.429
+Venezuela,VE,VEN,862,192.012
+Vietnam,VN,VNM,704,546.025
+World,WORLD,WORLD,WORLD,436.529
+Yemen,YE,YEM,887,540.698
+Zambia,ZM,ZMB,894,120.776
+Zimbabwe,ZW,ZWE,716,288.24
