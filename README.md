@@ -134,8 +134,8 @@ tracker.stop()
 <!-- There is [sber_emission_tracker_guide.ipynb](https://github.com/vladimir-laz/AIRIEmisisonTracker/blob/704ff88468f6ad403d69a63738888e1a3c41f59b/guide/sber_emission_tracker_guide.ipynb)  - useful jupyter notebook with more examples and notes. We highly recommend to check it out beforehand. -->
 ## Important note :blue_book:<a name="4"></a> 
 
+If for some reasons it is not possible to define country, then emission coefficient is set to 436.529kg/MWh, which is global average.
 
-According to the climate transparency report, for every kilowatt-hour of electricity produced in Russia in 2020, an average of 310 g of CO<sub>2</sub> was emitted. This constant uses in CO<sub>2</sub> estimation by default.
 
 For proper calculation of gpu and cpu power consumption, you should create a "Tracker" before any gpu or CPU usage.
 
