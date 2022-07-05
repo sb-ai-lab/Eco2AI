@@ -21,10 +21,11 @@
 
 
 ## About Eco2AI :clipboard: <a name="1"></a> 
-Eco2AI is a python library for CO<sub>2</sub> emission tracking. It monitors energy consumption of CPU and GPU, then estimates equivalent carbon emissions. 
-Eco2AI is applicable to all python scripts, all you need is to add couple strings to your code.  All emission data and your devices info are logged into local file.  
+The Eco2AI is a python library for CO<sub>2</sub> emission tracking. It monitors energy consumption of CPU & GPU devices and estimates equivalent carbon emissions. 
+The Eco2AI is applicable to all python scripts and all you need is to add the couple of strings to your code. All emissions data and information about your devices are recorded in a local file. 
 
-Every single run of Tracker() accompanies with session description added into logging file including the following items:
+Every single run of Tracker() accompanies by a session description added to the log file, including the following elements:
+                              
 
 + project_name
 + experiment_description
@@ -38,7 +39,7 @@ Every single run of Tracker() accompanies with session description added into lo
 + country
 
 ##  Installation :wrench:<a name="2"></a> 
-To install eco2ai library run next command:
+To install the eco2ai library, run the following command:
 
 ```
 pip install eco2ai
@@ -46,7 +47,8 @@ pip install eco2ai
 
 ## Use examples :computer:<a name="3"></a> 
 
-eco2ai's interface is quite simple. Here is a the most straightforward usage example:
+The eco2ai interface is quite simple. Here is the simplest usage example:
+
 ```python
 
 import eco2ai
@@ -60,7 +62,8 @@ tracker.start()
 tracker.stop()
 ```
 
-eco2ai also supports decorators. Once decorated function executed, emissions info will be written to the file. See example below:
+The eco2ai also supports decorators. As soon as the decorated function is executed, the information about the emissions will be written to the emission.csv file:
+
 ```python
 from eco2ai import track
 
@@ -71,8 +74,7 @@ def train_func(model, dataset, optimizer, epochs):
 train_func(your_model, your_dataset, your_optimizer, your_epochs)
 ```
 
-
-For your convenience every time you initilize a Tracker object with your custom parameters, this settings will be saved until library is uninstalled, and then every new tracker will be created with your custom settings(if you will create new tracker with new parameters, then they will be saved instead of old ones). For example:
+For your convenience, every time you instantiate the Tracker object with your custom parameters, these settings will be saved until the library is deleted. Eeach new tracker will be created with your custom settings (if you create a tracker with new parameters, they will be saved instead of the old ones). For example:
 
 ```python
 
@@ -92,7 +94,7 @@ tracker.stop()
 
 # now, we want to create a new tracker for new calculations
 tracker = eco2ai.Tracker()
-# now, it's equivelent to:
+# now, it's equivalent to:
 # tracker = eco2ai.Tracker(
 #     project_name="YourProjectName", 
 #     experiment_description="training the <your model> model",
@@ -104,7 +106,7 @@ tracker.stop()
 
 ```
 
-You can also set parameters using set_params() function, like in the example below:
+You can also set parameters using the set_params() function, as in the example below:
 
 ```python
 from eco2ai import set_params, Tracker
@@ -132,14 +134,17 @@ tracker.stop()
 <!-- There is [sber_emission_tracker_guide.ipynb](https://github.com/vladimir-laz/AIRIEmisisonTracker/blob/704ff88468f6ad403d69a63738888e1a3c41f59b/guide/sber_emission_tracker_guide.ipynb)  - useful jupyter notebook with more examples and notes. We highly recommend to check it out beforehand. -->
 ## Important note :blue_book:<a name="4"></a> 
 
-According to climate transparency report, for each kilowatt hour of electricity generated in Russia in 2020, an average of 310 g of CO<sub>2</sub> was emitted. This constant is used in CO<sub>2</sub> estimation by default.
+If for some reasons it is not possible to define country, then emission coefficient is set to 436.529kg/MWh, which is global average.
+[Global Electricity Review](https://ember-climate.org/insights/research/global-electricity-review-2022/#supporting-material-downloads)
 
-In order to calculate gpu & cpu power consumption correctly you should create the 'Tracker' before any gpu or cpu usage
+For proper calculation of gpu and cpu power consumption, you should create a "Tracker" before any gpu or CPU usage.
 
-For every new calculation create a new “Tracker.”
+Create a new “Tracker” for every new calculation.
+
 
 # Feedback :envelope:<a name="5"></a> 
-If you had some problems while working with our tracker, please, give us a feedback comments in [document](https://docs.google.com/spreadsheets/d/1927TwoFaW7R_IFC6-4xKG_sjlPUaYCX9vLqzrOsASB4/edit#gid=0)
+
+If you have any problems working with our tracker, please make comments on [document](https://docs.google.com/spreadsheets/d/1927TwoFaW7R_IFC6-4xKG_sjlPUaYCX9vLqzrOsASB4/edit#gid=0)
 
 # In collaboration with
 [<img src="https://github.com/sb-ai-lab/Eco2AI/blob/main/images/AIRI%20-%20Full%20logo%20(2).png" width="200"/>](https://airi.net/)
