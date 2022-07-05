@@ -4,6 +4,7 @@ import platform
 import pandas as pd
 import requests
 import numpy as np
+import warnings
 from re import sub
 import json
 from pkg_resources import resource_stream
@@ -99,6 +100,14 @@ class Tracker:
                  measure_period=10,
                  emission_level=define_carbon_index(),
                  ):
+        warnings.warn(
+    message="""
+    If you use a VPN, you may have problems with identifying your country by IP.
+    It is recommended to disable VPN or
+    manually install the ISO-Alpha-2 code of your country during initialization of the Tracker() class.
+    You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/country-codes
+    """
+)
         self._params_dict = get_params()
         self.project_name = project_name if project_name is not None else self._params_dict["project_name"]
         self.experiment_description = experiment_description if experiment_description is not None else self._params_dict["experiment_description"]
@@ -196,8 +205,11 @@ class Tracker:
 
     def start(self):
         if self._start_time is not None:
-            self._scheduler.remove_job("job")
-            self._scheduler.shutdown()
+            try:
+                self._scheduler.remove_job("job")
+                self._scheduler.shutdown()
+            except:
+                pass
         self._cpu = CPU()
         self._gpu = GPU()
         self._start_time = time.time()
