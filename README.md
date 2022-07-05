@@ -21,7 +21,7 @@
 
 
 ## About Eco2AI :clipboard: <a name="1"></a> 
-The Eco2AI is a python library for CO<sub>2</sub> emission tracking. It monitors energy consumption of CPU & GPU devices and estimates equivalent carbon emissions. 
+The Eco2AI is a python library for CO<sub>2</sub> emission tracking. It monitors energy consumption of CPU & GPU devices and estimates equivalent carbon emissions taking into account the regional emission coefficient. 
 The Eco2AI is applicable to all python scripts and all you need is to add the couple of strings to your code. All emissions data and information about your devices are recorded in a local file. 
 
 Every single run of Tracker() accompanies by a session description added to the log file, including the following elements:
