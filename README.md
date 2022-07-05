@@ -135,7 +135,7 @@ tracker.stop()
 ## Important note :blue_book:<a name="4"></a> 
 
 If for some reasons it is not possible to define country, then emission coefficient is set to 436.529kg/MWh, which is global average.
-
+[Global Electricity Review](https://ember-climate.org/insights/research/global-electricity-review-2022/#supporting-material-downloads)
 
 For proper calculation of gpu and cpu power consumption, you should create a "Tracker" before any gpu or CPU usage.
 
