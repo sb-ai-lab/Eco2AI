@@ -252,7 +252,12 @@ def track(func):
         tracker = Tracker()
         tracker.start()
         # print(args)
-        returned = func(*args)
+        try:
+            returned = func(*args)
+        except Exception:
+            tracker.stop()
+            del tracker
+            raise Exception
         tracker.stop()
         del tracker
         return returned
