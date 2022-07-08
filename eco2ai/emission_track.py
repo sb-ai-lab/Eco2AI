@@ -149,6 +149,7 @@ class Tracker:
         # self._mode == "shut down" means that CO2 tracker is stopped
         self._mode = "first_time"
     
+    
     def get_set_params(self, project_name, experiment_description, file_name):
         dictionary = dict()
         if project_name is not None:
@@ -165,14 +166,18 @@ class Tracker:
             dictionary["file_name"] = "emission.csv"
         set_params(**dictionary)
 
+
     def consumption(self):
         return self._consumption
     
+
     def emission_level(self):
         return self._emission_level
     
+
     def measure_period(self):
         return self._measure_period
+
 
     def _write_to_csv(self):
         # if user used older versions, it may be needed to upgrade his .csv file
@@ -221,6 +226,7 @@ class Tracker:
             self._scheduler.remove_job("job")
             self._scheduler.shutdown()
 
+
     def start(self):
         if self._start_time is not None:
             try:
@@ -235,6 +241,7 @@ class Tracker:
         self._scheduler.start()
         # print(self._cpu.name())
         # print(self._gpu.name())
+
 
     def stop(self, ):
         if self._start_time is None:
@@ -254,6 +261,7 @@ def available_devices():
     all_available_cpu()
     all_available_gpu()
     # need to add RAM
+
 
 def track(func):
     """
@@ -275,3 +283,39 @@ def track(func):
         del tracker
         return returned
     return inner
+
+
+class FileDoesNotExists(Exception):
+    pass
+
+
+class NotNeededExtension(Exception):
+    pass
+
+
+def calculate_money(
+    kwh_price,
+    filename='emisison.csv',
+    project_name='all',
+    experiment_description=None
+):
+    if not os.path.exists(filename):
+        raise FileDoesNotExists(f'File \'{filename}\' does not exist')
+    if not filename.endswith('.csv'):
+        raise NotNeededExtension('File need to be with extension \'.csv\'')
+    df = pd.read_csv(filename)
+    if project_name != 'all':
+        df = df[df['project_name'] == project_name]
+    if experiment_description is not None:
+        df = df[df['experiment_description(model type etc.)'] == experiment_description]
+    if df.shape[0] == 0:
+        warnings.warn(
+            '''
+            There is no any projects with your specified project_name and experiment_description arguments
+            '''
+        )
+        
+    consumption = df['power_consumption(kWTh)'].values
+    consumption = consumption.sum()
+    
+    return consumption * kwh_price
