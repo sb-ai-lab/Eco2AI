@@ -78,7 +78,7 @@ def define_carbon_index():
             result = data[data['region'] == region]
         else: 
             result = data[data['region'] == country]
-    return result.values.reshape(-1)[-1], country, region
+    return result.values.reshape(-1)[-1]
 
 
 class Tracker:
