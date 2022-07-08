@@ -66,12 +66,19 @@ def get_params():
 
 def define_carbon_index():
     carbon_index_table_name = resource_stream('eco2ai', 'data/carbon_index.csv').name
-    country = eval(requests.get("https://ipinfo.io/").content.decode('ascii'))['country']
+    ip_dict = eval(requests.get("https://ipinfo.io/").content.decode('ascii'))
+    country = ip_dict['country']
+    region = ip_dict['region']
     data = pd.read_csv(carbon_index_table_name)
     result = data[data['alpha_2_code'] == country]
     if result.shape[0] < 1:
         result = data[data['country'] == 'World']
-    return result.values.reshape(-1)[-1]
+    if result.shape[0] > 1:
+        if data[data['region'] == region].shape[0] != 0:
+            result = data[data['region'] == region]
+        else: 
+            result = data[data['region'] == country]
+    return result.values.reshape(-1)[-1], country, region
 
 
 class Tracker:
