@@ -64,21 +64,32 @@ def get_params():
     return dictionary
 
 
-def define_carbon_index():
+def define_carbon_index(
+    emission_level=None, 
+    alpha_2_code=None
+):
     carbon_index_table_name = resource_stream('eco2ai', 'data/carbon_index.csv').name
-    ip_dict = eval(requests.get("https://ipinfo.io/").content.decode('ascii'))
-    country = ip_dict['country']
-    region = ip_dict['region']
+    if alpha_2_code is None:
+        ip_dict = eval(requests.get("https://ipinfo.io/").content.decode('ascii'))
+        country = ip_dict['country']
+        region = ip_dict['region']
+    else:
+        country = alpha_2_code
+        region = None
+    if emission_level is not None:
+        print((emission_level, f'({country}/{region})') if region is not None else (emission_level, f'({country})'))
+        return (emission_level, f'({country}/{region})') if region is not None else (emission_level, f'({country})')
     data = pd.read_csv(carbon_index_table_name)
     result = data[data['alpha_2_code'] == country]
     if result.shape[0] < 1:
         result = data[data['country'] == 'World']
     if result.shape[0] > 1:
-        if data[data['region'] == region].shape[0] != 0:
+        if data[data['region'] == region].shape[0] > 0:
             result = data[data['region'] == region]
         else: 
-            result = data[data['region'] == country]
-    return result.values.reshape(-1)[-1]
+            result = result[result['region'] == 'Whole country']
+    result = result.values[0][-1]
+    return (result, f'({country}/{region})') if region is not None else (result, f'({country})')
 
 
 class Tracker:
@@ -105,7 +116,8 @@ class Tracker:
                  experiment_description=None,
                  file_name=None,
                  measure_period=10,
-                 emission_level=define_carbon_index(),
+                 emission_level=None,
+                 alpha_2_code=None,
                  ):
         warnings.warn(
     message="""
@@ -123,7 +135,7 @@ class Tracker:
         if (type(measure_period) == int or type(measure_period) == float) and measure_period <= 0:
             raise ValueError("measure_period should be positive number")
         self._measure_period = measure_period
-        self._emission_level = emission_level
+        self._emission_level, self._country = define_carbon_index(emission_level, alpha_2_code)
         self._scheduler = BackgroundScheduler(job_defaults={'max_instances': 4}, misfire_grace_time=None)
         self._start_time = None
         self._cpu = None
@@ -132,7 +144,6 @@ class Tracker:
         self._os = platform.system()
         if self._os == "Darwin":
             self._os = "MacOS"
-        self._country = self.define_country()
         # self._mode == "first_time" means that CO2 emissions is written to .csv file first time
         # self._mode == "runtime" means that CO2 emissions is written to file periodically during runtime 
         # self._mode == "shut down" means that CO2 tracker is stopped
@@ -234,11 +245,6 @@ class Tracker:
         self._func_for_sched() 
         self._write_to_csv()
         self._mode = "shut down"
-
-    def define_country(self,):
-        region = sub(",", '',eval(requests.get("https://ipinfo.io/").content.decode('ascii'))['region'])
-        country = sub(",", '',eval(requests.get("https://ipinfo.io/").content.decode('ascii'))['country'])
-        return f"{region}/{country}"
 
 
 def available_devices():
