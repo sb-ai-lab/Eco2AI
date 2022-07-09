@@ -325,7 +325,7 @@ def summary(
     kwh_price=None,
     write_to_file=None,
 ):
-    if not os.path.exists(filename):
+    if not path.exists(filename):
         raise FileDoesNotExists(f'File \'{filename}\' does not exist')
     if not filename.endswith('.csv'):
         raise NotNeededExtension('File need to be with extension \'.csv\'')
@@ -338,18 +338,24 @@ def summary(
             'total power_consumption(kWTh)', 
             'total CO2_emissions(kg)',
         ]
+    summ = np.zeros(3)
     for project in projects:
-        values = list(
-            df[df['project_name'] == project][
+        values = df[df['project_name'] == project][
                 ['duration(s)', 'power_consumption(kWTh)', 'CO2_emissions(kg)']
             ].values.sum(axis=0)
-        )
+        summ += values
+        values = list(values)
         values.insert(0, project)
         if kwh_price is not None:
             values.append(values[2] * kwh_price)
         result.append(values)
+        
+    summ = list(summ)
+    summ.insert(0, 'All the projects')
     if kwh_price is not None:
+        summ.append(summ[2] * kwh_price)
         columns.append('total electricity price')
+    result.append(summ)
     result = pd.DataFrame(
         result,
         columns=columns
