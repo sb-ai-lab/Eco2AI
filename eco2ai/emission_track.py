@@ -325,7 +325,7 @@ def summary(
     kwh_price=None,
     write_to_file=None,
 ):
-    if not path.exists(filename):
+    if not os.path.exists(filename):
         raise FileDoesNotExists(f'File \'{filename}\' does not exist')
     if not filename.endswith('.csv'):
         raise NotNeededExtension('File need to be with extension \'.csv\'')
