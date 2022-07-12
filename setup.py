@@ -12,7 +12,7 @@ DEPENDENCIES = [
 
 setup(
     name = 'eco2ai',
-    version = '0.1.0',
+    version = '0.2.2',
     author=["Vladimir Lazarev", 'Nikita Zakharenko', 'Semyon Budyonny', 'Leonid Zhukov'],
     description = long_description,
     packages = ['eco2ai'],
