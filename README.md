@@ -47,6 +47,8 @@ pip install eco2ai
 
 ## Use examples :computer:<a name="3"></a> 
 
+Example usage eco2ai [![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1GQ5pI01iv7GJB-A9v9g7QX2yij3n_wNB?usp=sharing)
+
 The eco2ai interface is quite simple. Here is the simplest usage example:
 
 ```python
