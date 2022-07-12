@@ -2,7 +2,7 @@
 name = "eco2ai"
 version = "0.1.0"
 description = "emission tracking library"
-authors = ["AI Lab, Sber",
+authors = ["AI Lab",
             "Vladimir Lazarev <lazarev@airi.net>",
             "Nikita Zakharenko <nnzakharenko@sberbank.ru>",
             "Semyon Budyonny  <sanbudenny@sberbank.ru>",
@@ -12,7 +12,7 @@ homepage = "https://github.com/sb-ai-lab/Eco2AI"
 repository = "https://github.com/sb-ai-lab/Eco2AI"
 
 classifiers = [
-    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.7",
     "Operating System :: OS Independent",
     "Intended Audience :: Science/Research",
     "Development Status :: 3 - Alpha",
@@ -27,15 +27,15 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = ">=3.8,<4"
-APScheduler = "^3.8.1"
-numpy = "^1.22.1"
-pandas = "^1.3.5"
-requests = "^2.27.1"
+python = ">=3.7.1,<4.0"
+numpy = "1.21"
+pandas = "1.3.5"
+APScheduler = "^3.9.1"
+requests = "^2.28.1"
 pynvml = "^11.4.1"
-psutil = "^5.9.0"
+psutil = "^5.9.1"
 py-cpuinfo = "^8.0.0"
-tzlocal = "^4.1"
+tzlocal = "^4.2"
 
 [tool.poetry.dev-dependencies]
 
