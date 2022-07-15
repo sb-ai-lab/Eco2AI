@@ -3,6 +3,7 @@ import time
 import platform
 import pandas as pd
 import requests
+import string
 import numpy as np
 import warnings
 from re import sub
@@ -118,6 +119,7 @@ class Tracker:
                  measure_period=10,
                  emission_level=None,
                  alpha_2_code=None,
+                 encode=False,
                  ):
         warnings.warn(
     message="""
@@ -141,6 +143,7 @@ class Tracker:
         self._cpu = None
         self._gpu = None
         self._consumption = 0
+        self._encode=encode
         self._os = platform.system()
         if self._os == "Darwin":
             self._os = "MacOS"
@@ -179,7 +182,10 @@ class Tracker:
         return self._measure_period
 
 
-    def _write_to_csv(self):
+    def _write_to_csv(
+        self,
+        f_encode=None
+        ):
         # if user used older versions, it may be needed to upgrade his .csv file
         # but after all, such verification should be deleted
         # self.check_for_older_versions()
@@ -193,12 +199,15 @@ class Tracker:
             with open(self.file_name, "a") as file:
                 file.write(f"\"{self.project_name}\",\"{self.experiment_description}\",{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(self._start_time))},{duration},{self._consumption},{emissions},\"{self._cpu.name()}/{self._cpu.cpu_num()} device(s), TDP:{self._cpu.tdp()}\",{self._gpu.name()} {self._gpu.gpu_num()} device(s),{self._os},{self._country}\n")
         if self._mode == "runtime":
-            self._merge_CO2_emissions()
+            self._merge_CO2_emissions(f_encode)
         self._mode = "runtime"
 
 
     # merges 2 CO2 emissions calculations together
-    def _merge_CO2_emissions(self,):
+    def _merge_CO2_emissions(
+        self,
+        f_encode=None
+        ):
         # it should be eliminated in future versions. 
         try:
             dataframe = pd.read_csv(self.file_name)
@@ -207,11 +216,13 @@ class Tracker:
         columns, values = dataframe.columns, dataframe.values
         row = values[-2]
         row[3:6] += values[-1][3:6]
+        if f_encode:
+            row = encode_dataframe(row.reshape(-1, 1))
         values = np.concatenate((values[:-2], row.reshape(1, -1)))
         pd.DataFrame(values, columns=columns).to_csv(self.file_name, index=False)
 
 
-    def _func_for_sched(self):
+    def _func_for_sched(self,):
         cpu_consumption = self._cpu.calculate_consumption()
         if self._gpu.is_gpu_available:
             gpu_consumption = self._gpu.calculate_consumption()
@@ -244,13 +255,15 @@ class Tracker:
 
 
     def stop(self, ):
+        f_encode=None
         if self._start_time is None:
             raise Exception("Need to first start the tracker by running tracker.start()")
         self._scheduler.remove_job("job")
         self._scheduler.shutdown()
-
+        if self._encode == True:
+            f_encode=True
         self._func_for_sched() 
-        self._write_to_csv()
+        self._write_to_csv(f_encode)
         self._mode = "shut down"
 
 
@@ -363,3 +376,29 @@ def summary(
     if write_to_file is not None:
         result.to_csv(write_to_file)
     return result
+
+
+def encode(f_string):
+    n=5
+    symbols = string.printable[:95] + 'йцукенгшщзхъфывапролджэячсмитьбюёЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ'
+    s = ''
+    for i in range(0,int(len(symbols)/2)):
+        s += symbols[i] + symbols[i+int(len(symbols)/2)]
+    symbols = s
+    
+    result = ""
+    for letter in f_string:
+        try:
+            index = symbols.index(letter)
+            result += symbols[index+n]
+        except:
+            result += letter
+    return result
+
+
+def encode_dataframe(values):
+    values = values.astype(str)
+    for i in range(values.shape[0]):
+        for j in range(values.shape[1]):
+            values[i][j] = encode(values[i][j])
+    return values
