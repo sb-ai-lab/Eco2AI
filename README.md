@@ -79,7 +79,6 @@ train_func(your_model, your_dataset, your_optimizer, your_epochs)
 For your convenience, every time you instantiate the Tracker object with your custom parameters, these settings will be saved until the library is deleted. Eeach new tracker will be created with your custom settings (if you create a tracker with new parameters, they will be saved instead of the old ones). For example:
 
 ```python
-
 import eco2ai
 
 tracker = eco2ai.Tracker(
