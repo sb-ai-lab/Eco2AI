@@ -138,7 +138,7 @@ class Tracker:
             raise ValueError("measure_period should be positive number")
         self._measure_period = measure_period
         self._emission_level, self._country = define_carbon_index(emission_level, alpha_2_code)
-        self._scheduler = BackgroundScheduler(job_defaults={'max_instances': 4}, misfire_grace_time=None)
+        self._scheduler = BackgroundScheduler(job_defaults={'max_instances': 10}, misfire_grace_time=None)
         self._start_time = None
         self._cpu = None
         self._gpu = None
@@ -247,6 +247,7 @@ class Tracker:
                 pass
         self._cpu = CPU()
         self._gpu = GPU()
+        self._mode = "first_time"
         self._start_time = time.time()
         self._scheduler.add_job(self._func_for_sched, "interval", seconds=self._measure_period, id="job")
         self._scheduler.start()

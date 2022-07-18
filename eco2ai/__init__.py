@@ -4,6 +4,7 @@ from .emission_track import (
     set_params,
     get_params,
     track,
+    define_carbon_index,
     calculate_money,
     summary,
 )
