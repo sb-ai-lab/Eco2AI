@@ -9,9 +9,18 @@ Argentina,Whole country,AR,ARG,32,353.052
 Armenia,Whole country,AM,ARM,51,209.016
 Aruba,Whole country,AW,ABW,533,586.957
 Australia,Whole country,AU,AUS,36,560.384
+Australia,ACT,AU,AUS,36,790
+Australia,Australian Capital Territory,AU,AUS,36,790
+Australia,New South Wales,AU,AUS,36,790
+Australia,Northern Territory,AU,AUS,36,570
+Australia,Queensland,AU,AUS,36,800
+Australia,South Australia,AU,AUS,36,350
+Australia,Tasmania,AU,AUS,36,160
+Australia,Victoria,AU,AUS,36,960
+Australia,Western Australia,AU,AUS,36,680
 Austria,Whole country,AT,AUT,40,142.506
 Azerbaijan,Whole country,AZ,AZE,31,537.051
-Bahamas,Whole country,BS,BHS,44,700.0
+Bahamas,Whole country,BS,BHS,44,700
 Bahrain,Whole country,BH,BHR,48,490.14
 Bangladesh,Whole country,BD,BGD,50,550.318
 Barbados,Whole country,BB,BRB,52,676.471
@@ -22,7 +31,7 @@ Benin,Whole country,BJ,BEN,204,652.174
 Bhutan,Whole country,BT,BTN,64,23.464
 Bolivia,Whole country,BO,BOL,68,319.834
 Bosnia and Herzegovina,Whole country,BA,BIH,70,522.042
-Botswana,Whole country,BW,BWA,72,800.0
+Botswana,Whole country,BW,BWA,72,800
 Brazil,Whole country,BR,BRA,76,113.069
 British Virgin Islands,Whole country,VG,VGB,92,714.286
 Brunei,Whole country,BN,BRN,96,659.483
@@ -32,16 +41,29 @@ Burundi,Whole country,BI,BDI,108,218.75
 Cambodia,Whole country,KH,KHM,116,423.664
 Cameroon,Whole country,CM,CMR,120,253.915
 Canada,Whole country,CA,CAN,124,120.486
+Canada,Alberta,CA,CAN,124,620
+Canada,British Columbia,CA,CAN,124,18.6
+Canada,Manitoba,CA,CAN,124,1.2
+Canada,New Brunswick,CA,CAN,124,260
+Canada,Newfoundland and Labrador,CA,CAN,124,28
+Canada,Nova Scotia,CA,CAN,124,760
+Canada,Northwest Territories,CA,CAN,124,200
+Canada,Nunavut ,CA,CAN,124,850
+Canada,Ontario,CA,CAN,124,30
+Canada,Prince Edward Island,CA,CAN,124,2
+Canada,Quebec,CA,CAN,124,1.2
+Canada,Saskatchewan,CA,CAN,124,660
+Canada,Yukon,CA,CAN,124,101
 Cape Verde,Whole country,CV,CPV,132,574.468
 Cayman Islands,Whole country,KY,CYM,136,685.714
-Central African Republic,Whole country,CF,CAF,140,0.0
+Central African Republic,Whole country,CF,CAF,140,0
 Chad,Whole country,TD,TCD,148,666.667
 Chile,Whole country,CL,CHL,152,386.545
 China,Whole country,CN,CHN,156,549.534
 Colombia,Whole country,CO,COL,170,210.526
-Comoros,Whole country,KM,COM,174,700.0
+Comoros,Whole country,KM,COM,174,700
 Congo,Whole country,CG,COG,178,374.663
-Cook Islands,Whole country,CK,COK,184,500.0
+Cook Islands,Whole country,CK,COK,184,500
 Costa Rica,Whole country,CR,CRI,188,32.59
 Cote d'Ivoire,Whole country,CI,CIV,384,421.436
 Croatia,Whole country,HR,HRV,191,234.139
@@ -62,14 +84,14 @@ Estonia,Whole country,EE,EST,233,440.336
 Eswatini,Whole country,SZ,SWZ,748,212.121
 Ethiopia,Whole country,ET,ETH,231,25.442
 Faeroe Islands,Whole country,FO,FRO,234,384.615
-Falkland Islands,Whole country,FK,FLK,238,500.0
+Falkland Islands,Whole country,FK,FLK,238,500
 Fiji,Whole country,FJ,FJI,242,295.238
 Finland,Whole country,FI,FIN,246,141.88
 France,Whole country,FR,FRA,250,67.53
-French Guiana,Whole country,GF,GUF,254,360.0
+French Guiana,Whole country,GF,GUF,254,360
 French Polynesia,Whole country,PF,PYF,258,470.588
 Gabon,Whole country,GA,GAB,266,305.648
-Gambia,Whole country,GM,GMB,270,700.0
+Gambia,Whole country,GM,GMB,270,700
 Georgia,Whole country,GE,GEO,268,136.488
 Germany,Whole country,DE,DEU,276,332.495
 Ghana,Whole country,GH,GHA,288,343.552
@@ -80,7 +102,7 @@ Guadeloupe,Whole country,GP,GLP,312,593.939
 Guam,Whole country,GU,GUM,316,672.316
 Guatemala,Whole country,GT,GTM,320,278.46
 Guinea,Whole country,GN,GIN,324,182.099
-Guinea-Bissau,Whole country,GW,GNB,624,750.0
+Guinea-Bissau,Whole country,GW,GNB,624,750
 Guyana,Whole country,GY,GUY,328,629.31
 Haiti,Whole country,HT,HTI,332,612.245
 Honduras,Whole country,HN,HND,340,345.714
@@ -105,7 +127,7 @@ Kyrgyzstan,Whole country,KG,KGZ,417,80.928
 Laos,Whole country,LA,LAO,418,304.638
 Latvia,Whole country,LV,LVA,428,223.776
 Lebanon,Whole country,LB,LBN,422,546.214
-Lesotho,Whole country,LS,LSO,426,20.0
+Lesotho,Whole country,LS,LSO,426,20
 Liberia,Whole country,LR,LBR,430,273.81
 Libya,Whole country,LY,LBY,434,552.366
 Lithuania,Whole country,LT,LTU,440,262.693
@@ -124,7 +146,7 @@ Mexico,Whole country,MX,MEX,484,410.689
 Moldova,Whole country,MD,MDA,498,656.794
 Mongolia,Whole country,MN,MNG,496,733.333
 Montenegro,Whole country,ME,MNE,499,401.18
-Montserrat,Whole country,MS,MSR,500,500.0
+Montserrat,Whole country,MS,MSR,500,500
 Morocco,Whole country,MA,MAR,504,624.966
 Mozambique,Whole country,MZ,MOZ,508,134.444
 Myanmar,Whole country,MM,MMR,104,312.683
@@ -201,7 +223,7 @@ Russia,Mordoviya Republic,RU,RUS,643,186.07
 Russia,Tatarstan Republic,RU,RUS,643,186.07
 Russia,St.-Petersburg,RU,RUS,643,224.45
 Russia,Murmansk,RU,RUS,643,53.51
-Russia,Kaliningrad,RU,RUS,643,387.10
+Russia,Kaliningrad,RU,RUS,643,387.1
 Russia,Leningradskaya Oblast,RU,RUS,643,224.45
 Russia,Novgorod Oblast,RU,RUS,643,224.45
 Russia,Pskov Oblast,RU,RUS,643,224.45
@@ -241,8 +263,8 @@ Russia,Sakha,RU,RUS,643,443.02
 Rwanda,Whole country,RW,RWA,646,377.358
 Saint Kitts and Nevis,Whole country,KN,KNA,659,681.818
 Saint Lucia,Whole country,LC,LCA,662,685.714
-Saint Pierre and Miquelon,Whole country,PM,SPM,666,800.0
-Saint Vincent and the Grenadines,Whole country,VC,VCT,670,500.0
+Saint Pierre and Miquelon,Whole country,PM,SPM,666,800
+Saint Vincent and the Grenadines,Whole country,VC,VCT,670,500
 Samoa,Whole country,WS,WSM,882,428.571
 Sao Tome and Principe,Whole country,ST,STP,678,666.667
 Saudi Arabia,Whole country,SA,SAU,682,570.473
@@ -253,7 +275,7 @@ Sierra Leone,Whole country,SL,SLE,694,47.619
 Singapore,Whole country,SG,SGP,702,488.668
 Slovakia,Whole country,SK,SVK,703,158.741
 Slovenia,Whole country,SI,SVN,705,245.708
-Solomon Islands,Whole country,SB,SLB,90,700.0
+Solomon Islands,Whole country,SB,SLB,90,700
 Somalia,Whole country,SO,SOM,706,657.143
 South Africa,Whole country,ZA,ZAF,710,720.023
 South Korea,Whole country,KR,KOR,410,444.398
@@ -281,6 +303,57 @@ Ukraine,Whole country,UA,UKR,804,279.239
 United Arab Emirates,Whole country,AE,ARE,784,471.57
 United Kingdom,Whole country,GB,GBR,826,245.715
 United States,Whole country,US,USA,840,369.571
+United States,Alaska,US,USA,840,442.22
+United States,Alabama,US,USA,840,356.33
+United States,Arkansas,US,USA,840,511.63
+United States,Arizona,US,USA,840,396.13
+United States,California,US,USA,840,175.62
+United States,Colorado,US,USA,840,603.76
+United States,Connecticut,US,USA,840,361.83
+United States,Delaware,US,USA,840,16.5
+United States,Florida,US,USA,840,397.93
+United States,Georgia,US,USA,840,399.59
+United States,Hawaii,US,USA,840,708.84
+United States,Iowa,US,USA,840,390.75
+United States,Idaho,US,USA,840,95.88
+United States,Illinois,US,USA,840,329.21
+United States,Indiana,US,USA,840,741.26
+United States,Kansas,US,USA,840,405.35
+United States,Kentucky,US,USA,840,807.68
+United States,Louisiana,US,USA,840,374.81
+United States,Massachusetts,US,USA,840,354.06
+United States,Maryland,US,USA,840,335.07
+United States,Maine,US,USA,840,96.87
+United States,Michigan,US,USA,840,459.68
+United States,Minnesota,US,USA,840,399.58
+United States,Missouri,US,USA,840,725.21
+United States,Mississippi,US,USA,840,379.82
+United States,Montana,US,USA,840,572.76
+United States,North Carolina,US,USA,840,353.59
+United States,North Dakota,US,USA,840,656.57
+United States,Nebraska,US,USA,840,574.08
+United States,New Hampshire,US,USA,840,116.23
+United States,New Jersey,US,USA,840,247.29
+United States,New Mexico,US,USA,840,601.86
+United States,Nevada,US,USA,840,335.35
+United States,New York,US,USA,840,171.57
+United States,Ohio,US,USA,840,563.57
+United States,Oklahoma,US,USA,840,333.05
+United States,Oregon,US,USA,840,180.59
+United States,Pennsylvania,US,USA,840,344.17
+United States,Rhode Island,US,USA,840,386.59
+United States,South Carolina,US,USA,840,244.21
+United States,South Dakota,US,USA,840,223.22
+United States,Tennessee,US,USA,840,319.5
+United States,Texas,US,USA,840,414.32
+United States,Utah,US,USA,840,726.57
+United States,Virginia,US,USA,840,288.42
+United States,Vermont,US,USA,840,23.25
+United States,Washington,US,USA,840,135.67
+United States,Wisconsin,US,USA,840,559.27
+United States,West Virginia,US,USA,840,882.35
+United States,Virgin Islands,US,USA,840,693.548
+United States,Wyoming,US,USA,840,938.48
 United States Virgin Islands,Whole country,VI,VIR,850,693.548
 Uruguay,Whole country,UY,URY,858,106.013
 Uzbekistan,Whole country,UZ,UZB,860,496.78
