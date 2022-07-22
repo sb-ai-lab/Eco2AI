@@ -46,15 +46,20 @@ class CPU():
         self.calculate_consumption()
         return self._consumption
 
-    def get_cpu_percent(self):
-        tmp_array = psutil.cpu_percent(interval=self._measure_period, percpu=True)
-        percent = sum(tmp_array) / len(tmp_array)
-        return percent
+    def get_cpu_percent(self,):
+        operating_system = platform.system()
+        os_dict = {
+            'Linux': get_cpu_percent_linux,
+            'Windows': get_cpu_percent_windows,
+            'Darwin': get_cpu_percent_mac_os
+        }
+        # print(self._cpu_num, operating_system)
+        return os_dict[operating_system](self._cpu_num)
 
     def calculate_consumption(self):
         time_period = time.time() - self._start
         self._start = time.time()
-        consumption = self._tdp * self.get_cpu_percent() / 100 * self._cpu_num * time_period / FROM_WATTs_TO_kWATTh
+        consumption = self._tdp * self.get_cpu_percent() * self._cpu_num * time_period / FROM_WATTs_TO_kWATTh
         if consumption < 0:
             consumption = 0
         self._consumption += consumption
@@ -65,6 +70,7 @@ class CPU():
 
     def cpu_num(self,):
         return self._cpu_num
+    
 
 def all_available_cpu():
     '''
@@ -264,3 +270,51 @@ def find_tdp_value(f_string, f_table_name, constant_value=CONSTANT_CONSUMPTION):
             if element[1] == max_coincidence:
                 tmp_elements.append(element[0])
         return find_max_tdp(tmp_elements)
+
+
+
+def get_cpu_percent_mac_os(cpu_num):
+    cores_num = psutil.cpu_count()
+    strings = os.popen('top -stats "command,cpu" -l 2| grep -E "(python)|(%CPU)"').read().split('\n')
+    strings.pop()
+    strings = strings[int(len(strings) / 2) + 1:]
+    for index in range(len(strings)):
+        strings[index] = float(strings[index].split()[-1])
+    
+    cpu_percent = sum(strings)
+    return cpu_percent / cores_num / 100 / cpu_num
+
+
+def get_cpu_percent_linux(cpu_num):
+#     разрделить на число физических процессоров надо не забыть
+    cores_num = psutil.cpu_count()
+    strings = os.popen('top -b -n 1 | grep -E -w -i "python.*|jupyter.*|COMMAND"').read().split('\n')
+    strings.pop()
+    for index, string in enumerate(strings):
+        strings[index] = string.split()
+    index_cpu = strings[0].index('%CPU')
+    cpu_percent = sum(float(array[index_cpu]) for array in strings[1:])
+    return cpu_percent / cores_num / 100 / cpu_num
+
+
+def get_cpu_percent_windows(cpu_num):
+    processName = 'python'
+    list_of_needed_processes = []
+    list_of_all_processes = []
+    #Iterate over the all the running process
+    for proc in psutil.process_iter():
+        try:
+            pinfo = proc.as_dict(attrs=['name', 'cpu_percent'])
+           # Check if process name contains the given name string.
+            if pinfo['cpu_percent'] is not None:
+                list_of_all_processes.append(pinfo['cpu_percent'])
+                if processName.lower() in pinfo['name'].lower() :
+                    list_of_needed_processes.append(pinfo['cpu_percent'])
+        except (psutil.NoSuchProcess, psutil.AccessDenied , psutil.ZombieProcess) :
+            pass
+    sum_needed = sum(list_of_needed_processes)
+    sum_all = sum(list_of_all_processes)
+    if sum_all != 0:
+        return sum_needed / sum_all / cpu_num
+    else:
+        return 0
