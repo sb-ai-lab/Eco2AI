@@ -8,12 +8,27 @@ class NoGPUWarning(Warning):
     pass
 
 class GPU():
-    '''
-    This class is interface for tracking gpu consumption.
-    All methods are done here on the assumption that all gpu devices are of equal model.
-    The GPU class is not intended for separate usage, outside the Tracker class
-    '''
+    """
+        This class is interface for tracking gpu consumption.
+        All methods are done here on the assumption that all gpu devices are of equal model.
+        The GPU class is not intended for separate usage, outside the Tracker class
+
+    """
     def __init__(self,):
+        """
+            This class method initializes GPU object.
+            Creates fields of class object. All the fields are private variables
+
+            Parameters
+            ----------
+            No parameters
+
+            Returns
+            -------
+            GPU: GPU
+                Object of class GPU
+
+        """
         self._consumption = 0
         self.is_gpu_available = is_gpu_available()
         if not self.is_gpu_available:
@@ -23,6 +38,18 @@ class GPU():
             self._start = time.time()
     
     def calculate_consumption(self):
+        """
+            This class method calculates GPU power consumption.
+            
+            Parameters
+            ----------
+            No parameters
+            
+            Returns
+            -------
+            consumption: float
+                CPU power consumption
+        """
         if not self.is_gpu_available:
             return 0
         duration = time.time() - self._start
@@ -36,11 +63,37 @@ class GPU():
         return consumption
     
     def get_consumption(self):
+        """
+            This class method returns GPU power consupmtion amount.
+
+            Parameters
+            ----------
+            No parameters
+
+            Returns
+            -------
+            self._consumption: float
+                CPU power consumption
+
+        """
         if not self.is_gpu_available:
             return 0
         return self._consumption
     
     def gpu_memory(self):
+        """
+            This class method returns GPU Memory used. Pynvml library is used.
+
+            Parameters
+            ----------
+            No parameters
+
+            Returns
+            -------
+            gpus_memory: list
+                list of GPU Memory used per every GPU
+
+        """
         if not self.is_gpu_available:
             return None
         pynvml.nvmlInit()
@@ -54,6 +107,19 @@ class GPU():
         return gpus_memory
 
     def gpu_temperature(self):
+        """
+            This class method returns GPU temperature. Pynvml library is used.
+
+            Parameters
+            ----------
+            No parameters
+
+            Returns
+            -------
+            gpus_temps: list
+                list of GPU temperature per every GPU
+
+        """
         if not self.is_gpu_available:
             return None
         pynvml.nvmlInit()
@@ -67,6 +133,19 @@ class GPU():
         return gpus_temps
 
     def gpu_power(self):
+        """
+            This class method returns GPU power consumption. Pynvml library is used.
+
+            Parameters
+            ----------
+            No parameters
+
+            Returns
+            -------
+            gpus_powers: list
+                list of GPU power consumption per every GPU
+
+        """
         if not self.is_gpu_available:
             return None
         pynvml.nvmlInit()
@@ -80,6 +159,19 @@ class GPU():
         return gpus_powers
 
     def gpu_power_limit(self):
+        """
+            This class method returns GPU power limits. Pynvml library is used.
+
+            Parameters
+            ----------
+            No parameters
+
+            Returns
+            -------
+            gpus_limits: list
+                list of GPU power limits per every GPU
+
+        """
         if not self.is_gpu_available:
             return None
         pynvml.nvmlInit()
@@ -93,6 +185,21 @@ class GPU():
         return gpus_limits
     
     def name(self,):
+        """
+            This class method returns GPU name if there are any GPU visible
+            or it returns empty string. All the GPU devices are intended to be of the same model
+            Pynvml library is used.
+
+            Parameters
+            ----------
+            No parameters
+
+            Returns
+            -------
+            gpus_name: string
+                string with GPU name. 
+
+        """
         try:
             pynvml.nvmlInit()
             deviceCount = pynvml.nvmlDeviceGetCount()
@@ -107,6 +214,20 @@ class GPU():
             return ""
     
     def gpu_num(self):
+        """
+            This class method returns number of visible GPU devices.
+            Pynvml library is used.
+
+            Parameters
+            ----------
+            No parameters
+
+            Returns
+            -------
+            deviceCount: int
+                Number of visible GPU devices. 
+
+        """
         try:
             pynvml.nvmlInit()
             deviceCount = pynvml.nvmlDeviceGetCount()
@@ -120,9 +241,21 @@ class GPU():
 
 
 def is_gpu_available():
-    '''
-    Returns True if there are GPUs available.
-    '''
+    """
+        This function checks if there are any available GPU devices
+        All the GPU devices are intended to be of the same model
+        
+        Parameters
+        ----------
+        No parameters
+        
+        Returns
+        -------
+        gpu_availability: bool
+            If there are any visible GPU devices, 
+            then gpu_availability = True, else gpu_availability = False
+
+    """
     try:
         pynvml.nvmlInit()
         deviceCount = pynvml.nvmlDeviceGetCount()
@@ -137,10 +270,19 @@ def is_gpu_available():
         return False
 
 def all_available_gpu():
-    '''
-    Prints all seeable gpu devices
-    All the devices should be of the same model
-    '''
+    """
+        This function prints all seeable GPU devices
+        All the GPU devices are intended to be of the same model
+        
+        Parameters
+        ----------
+        No parameters
+        
+        Returns
+        -------
+        No returns
+
+    """
     try:
         pynvml.nvmlInit()
         deviceCount = pynvml.nvmlDeviceGetCount()
