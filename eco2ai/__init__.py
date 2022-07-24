@@ -18,3 +18,13 @@ from eco2ai.tools.tools_gpu import (
     GPU,
     all_available_gpu
 )
+
+from eco2ai.tools.tools_ram import (
+    RAM,
+)
+
+
+tracker = eco2ai.Tracker(
+    project_name='Your project name',
+    experiment_description='Training the <your model> model'
+)
