@@ -12,8 +12,10 @@ from pkg_resources import resource_stream
 import sys
 from apscheduler.schedulers.background import BackgroundScheduler
 
-from eco2ai.tools.tools_gpu import *
-from eco2ai.tools.tools_cpu import *
+from eco2ai.tools.tools_gpu import GPU, all_available_gpu
+from eco2ai.tools.tools_cpu import CPU, all_available_cpu
+from eco2ai.tools.tools_ram import RAM
+
 
 FROM_mWATTS_TO_kWATTH = 1000*1000*3600
 FROM_kWATTH_TO_MWATTH = 1000
@@ -124,7 +126,6 @@ def define_carbon_index(
         country = alpha_2_code
         region = None
     if emission_level is not None:
-        # print((emission_level, f'({country}/{region})') if region is not None else (emission_level, f'({country})'))
         return (emission_level, f'({country}/{region})') if region is not None else (emission_level, f'({country})')
     data = pd.read_csv(carbon_index_table_name)
     result = data[data['alpha_2_code'] == country]
@@ -222,6 +223,7 @@ class Tracker:
         self._start_time = None
         self._cpu = None
         self._gpu = None
+        self._ram = None
         self._consumption = 0
         self._encode=encode
         self._os = platform.system()
@@ -413,7 +415,7 @@ class Tracker:
     def _func_for_sched(self,):
         """
             This class method is a function, that is put in a scheduler and run periodically during Thacker work.
-            It calculates CPU and GPU power consumption and writes results to a .csv file.
+            It calculates CPU, GPU and RAM power consumption and writes results to a .csv file.
 
             Parameters
             ----------
@@ -425,12 +427,14 @@ class Tracker:
         
         """
         cpu_consumption = self._cpu.calculate_consumption()
+        ram_consumption = self._ram.calculate_consumption()
         if self._gpu.is_gpu_available:
             gpu_consumption = self._gpu.calculate_consumption()
         else:
             gpu_consumption = 0
         self._consumption += cpu_consumption
         self._consumption += gpu_consumption
+        self._consumption += ram_consumption
         self._write_to_csv()
         self._consumption = 0
         self._start_time = time.time()
@@ -459,8 +463,10 @@ class Tracker:
                 self._scheduler.shutdown()
             except:
                 pass
+            self._scheduler = BackgroundScheduler(job_defaults={'max_instances': 10}, misfire_grace_time=None)
         self._cpu = CPU()
         self._gpu = GPU()
+        self._ram = RAM()
         self._mode = "first_time"
         self._start_time = time.time()
         self._scheduler.add_job(self._func_for_sched, "interval", seconds=self._measure_period, id="job")
@@ -529,7 +535,6 @@ def track(func):
     def inner(*args):
         tracker = Tracker()
         tracker.start()
-        # print(args)
         try:
             returned = func(*args)
         except Exception:

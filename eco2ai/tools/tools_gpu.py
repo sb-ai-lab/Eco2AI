@@ -101,7 +101,6 @@ class GPU():
         gpus_memory = []
         for i in range(deviceCount):
             handle = pynvml.nvmlDeviceGetHandleByIndex(i)
-            # print("memory:", pynvml.nvmlDeviceGetMemoryInfo(handle))
             gpus_memory.append(pynvml.nvmlDeviceGetMemoryInfo(handle))
         pynvml.nvmlShutdown()
         return gpus_memory
@@ -127,7 +126,6 @@ class GPU():
         gpus_temps = []
         for i in range(deviceCount):
             handle = pynvml.nvmlDeviceGetHandleByIndex(i)
-            # print("temperature:", pynvml.nvmlDeviceGetTemperature(handle, NVML_TEMPERATURE_GPU))
             gpus_temps.append(pynvml.nvmlDeviceGetTemperature(handle, pynvml.NVML_TEMPERATURE_GPU))
         pynvml.nvmlShutdown()
         return gpus_temps
@@ -153,7 +151,6 @@ class GPU():
         gpus_powers = []
         for i in range(deviceCount):
             handle = pynvml.nvmlDeviceGetHandleByIndex(i)
-            # print("power:", pynvml.nvmlDeviceGetPowerUsage(handle))
             gpus_powers.append(pynvml.nvmlDeviceGetPowerUsage(handle))
         pynvml.nvmlShutdown()
         return gpus_powers
@@ -179,7 +176,6 @@ class GPU():
         gpus_limits = []
         for i in range(deviceCount):
             handle = pynvml.nvmlDeviceGetHandleByIndex(i)
-            # print("power limit:", pynvml.nvmlDeviceGetEnforcedPowerLimit(handle))
             gpus_limits.append(pynvml.nvmlDeviceGetEnforcedPowerLimit(handle))
         pynvml.nvmlShutdown()
         return gpus_limits
@@ -262,7 +258,6 @@ def is_gpu_available():
         gpus_powers = []
         for i in range(deviceCount):
             handle = pynvml.nvmlDeviceGetHandleByIndex(i)
-            # print("power:", pynvml.nvmlDeviceGetPowerUsage(handle))
             gpus_powers.append(pynvml.nvmlDeviceGetPowerUsage(handle))
         pynvml.nvmlShutdown()
         return True
@@ -290,7 +285,6 @@ def all_available_gpu():
         for i in range(deviceCount):
             handle = pynvml.nvmlDeviceGetHandleByIndex(i)
             pynvml.nvmlDeviceGetPowerUsage(handle)
-            # print("names:", pynvml.nvmlDeviceGetName(handle))
             gpus_name.append(pynvml.nvmlDeviceGetName(handle))
         string = f"""Seeable gpu device(s):
         {gpus_name[0].decode("UTF-8")}: {deviceCount} device(s)"""

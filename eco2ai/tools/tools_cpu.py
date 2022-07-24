@@ -126,7 +126,8 @@ class CPU():
             'Windows': get_cpu_percent_windows,
             'Darwin': get_cpu_percent_mac_os
         }
-        return os_dict[operating_system]()
+        cpu_percent = os_dict[operating_system]()
+        return cpu_percent
 
     def calculate_consumption(self):
         """
