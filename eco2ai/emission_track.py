@@ -137,7 +137,7 @@ def define_carbon_index(
         else: 
             result = result[result['region'] == 'Whole country']
     result = result.values[0][-1]
-    return (result, f'({country}/{region})') if region is not None else (result, f'({country})')
+    return (result, f'{country}/{region}') if region is not None else (result, f'{country}')
 
 
 class Tracker:
@@ -182,7 +182,7 @@ class Tracker:
                 Name of file to save the the results of calculations.
                 The default is None
             measure_period: float
-                Period of power consumption measurements.
+                Period of power consumption measurements in seconds.
                 The more period the more time between measurements.
                 The default is 10
             emission_level: float
@@ -370,10 +370,10 @@ class Tracker:
         if not os.path.isfile(self.file_name):
             with open(self.file_name, 'w') as file:
                 file.write("project_name,experiment_description(model type etc.),start_time,duration(s),power_consumption(kWTh),CO2_emissions(kg),CPU_name,GPU_name,OS,region/country\n")
-                file.write(f"\"{self.project_name}\",\"{self.experiment_description}\",{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(self._start_time))},{duration},{self._consumption},{emissions},\"{self._cpu.name()}/{self._cpu.cpu_num()} device(s), TDP:{self._cpu.tdp()}\",{self._gpu.name()} {self._gpu.gpu_num()} device(s),{self._os},{self._country}\n")
+                file.write(f"\"{self.project_name}\",\"{self.experiment_description}\",\"{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(self._start_time))}\",\"{duration}\",\"{self._consumption}\",\"{emissions}\",\"{self._cpu.name()}/{self._cpu.cpu_num()} device(s), TDP:{self._cpu.tdp()}\",\"{self._gpu.name()} {self._gpu.gpu_num()} device(s)\",\"{self._os}\",\"{self._country}\"\n")
         else:
             with open(self.file_name, "a") as file:
-                file.write(f"\"{self.project_name}\",\"{self.experiment_description}\",{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(self._start_time))},{duration},{self._consumption},{emissions},\"{self._cpu.name()}/{self._cpu.cpu_num()} device(s), TDP:{self._cpu.tdp()}\",{self._gpu.name()} {self._gpu.gpu_num()} device(s),{self._os},{self._country}\n")
+                file.write(f"\"{self.project_name}\",\"{self.experiment_description}\",\"{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(self._start_time))}\",\"{duration}\",\"{self._consumption}\",\"{emissions}\",\"{self._cpu.name()}/{self._cpu.cpu_num()} device(s), TDP:{self._cpu.tdp()}\",\"{self._gpu.name()} {self._gpu.gpu_num()} device(s)\",\"{self._os}\",\"{self._country}\"\n")
         if self._mode == "runtime":
             self._merge_CO2_emissions(f_encode)
         self._mode = "runtime"
@@ -699,6 +699,9 @@ def encode(f_string):
     """
     n=5
     symbols = string.printable[:95] + 'йцукенгшщзхъфывапролджэячсмитьбюёЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ'
+    symbols = symbols.replace(',', '')
+    symbols = symbols.replace('\"', '')
+    symbols = symbols.replace('\'', '')
     s = ''
     for i in range(0,int(len(symbols)/2)):
         s += symbols[i] + symbols[i+int(len(symbols)/2)]
