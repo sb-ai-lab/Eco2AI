@@ -149,10 +149,10 @@ The Eco2AI is licensed under a [Apache licence 2.0](https://www.apache.org/licen
 
 Please consider citing the following paper in any research manuscript using the Eco2AI library:
 
-
 ```
 @article{eco2ai_lib,
     author = {Semen Budennyy*, Vladimir Lazarev, Nikita Zakharenko, Alexey Korovin, Olga Plosskaya, Denis Dimitrov, Vladimir Arkhipkin, Ivan Barsola, Ilya Egorov, Aleksandra Kosterina, Leonid Zhukov
+
 },
     title = {eco2AI: open-source library for carbon emission tracking of machine learning models},
     year = {2022},
