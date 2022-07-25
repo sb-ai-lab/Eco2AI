@@ -142,6 +142,23 @@ For proper calculation of gpu and cpu power consumption, you should create a "Tr
 
 Create a new “Tracker” for every new calculation.
 
+# Citing Eco2AI
+
+The Eco2AI is licensed under a [Creative Commons Attribution 4.0 License](https://creativecommons.org/licenses/by/4.0/legalcode).
+
+Please consider citing the following paper in any research manuscript using the Eco2AI library:
+
+
+```
+@article{eco2ai_lib,
+    author = {Semen Budennyy*, Nikita Zakharenko, Olga Plosskaya, Denis Dimitrov, Vladimir Arkhipkin, Ivan Barsola, Ilya Egorov, Aleksandra Kosterina, Vladimir Lazarev, Alexey Korovin, Leonid Zhukov
+},
+    title = {eco2AI: open-source library for carbon emission tracking of machine learning models},
+    year = {2022},
+    journal={arXiv preprint arXiv:2207.XXXXX},
+}
+```
+
 
 # Feedback :envelope:<a name="5"></a> 
 
