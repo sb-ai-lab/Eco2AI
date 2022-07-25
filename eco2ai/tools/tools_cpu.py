@@ -36,7 +36,7 @@ class CPU():
             Parameters
             ----------
             measure_period: float
-                Period of power consumption measurements.
+                Period of power consumption measurements in seconds.
                 The more period the more time between measurements
                 The default is 10
 
