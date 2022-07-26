@@ -165,6 +165,7 @@ class Tracker:
                  measure_period=10,
                  emission_level=None,
                  alpha_2_code=None,
+                 pue=1,
                  encode=False,
                  ):
         """
@@ -192,6 +193,11 @@ class Tracker:
                 User specified country code.
                 User can search own country code here: https://www.iban.com/country-codes
                 Default is None
+            pue: float
+                Power utilization efficiency. 
+                It is ration of the total 'facility power' and 'IT equipment energy consumption'. 
+                PUE is a measure of a data center power efficiency.
+                This parameter will be very essential during calculations using data centres facilities.
             encode: bool
                 If 'encode' parameter is True, then results of calculation is written to file encoded.
                 The default is False
@@ -224,6 +230,7 @@ class Tracker:
         self._cpu = None
         self._gpu = None
         self._ram = None
+        self._pue = pue
         self._consumption = 0
         self._encode=encode
         self._os = platform.system()
@@ -435,6 +442,7 @@ class Tracker:
         self._consumption += cpu_consumption
         self._consumption += gpu_consumption
         self._consumption += ram_consumption
+        self._consumption *= self._pue
         self._write_to_csv()
         self._consumption = 0
         self._start_time = time.time()
@@ -626,8 +634,12 @@ def summary(
         filename: str
             Name of file the user wants to analyse.
         kwh_price: float
+            Price of one kilo-watt-hour of energy.
             Default is None,
-        write_to_file: bool
+        write_to_file: str
+            If this parameter is not None the resultant dataframe will be written to file with name of this parameter.
+            For example, is write_to_file == 'total_summary_project_1.csv', 
+            then resultant summary dataframe will be written to file 'total_summary_project_1.csv'.
             Default is None
 
         Returns
