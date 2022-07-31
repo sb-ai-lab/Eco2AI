@@ -451,15 +451,16 @@ def get_cpu_percent_mac_os():
             CPU utilization fraction. 'cpu_percent' in [0, 1]. 
 
     """
-    cores_num = psutil.cpu_count()
-    strings = os.popen('top -stats "command,cpu" -l 2| grep -E "(python)|(%CPU)"').read().split('\n')
+    cpu_num = psutil.cpu_count()
+    current_pid = os.getpid()
+    cpu_percent = 0
+    strings = os.popen('top -stats "command,cpu,pgrp" -l 2| grep -E "(python)|(%CPU)"').read().split('\n')
     strings.pop()
     strings = strings[int(len(strings) / 2) + 1:]
     for index in range(len(strings)):
-        strings[index] = float(strings[index].split()[-1])
-    
-    cpu_percent = sum(strings)
-    return cpu_percent / cores_num / 100
+        if int(strings[index].split()[-1]) == current_pid:
+            cpu_percent = float(strings[index].split()[1])
+    return cpu_percent / cpu_num / 100
 
 
 def get_cpu_percent_linux():
@@ -476,14 +477,16 @@ def get_cpu_percent_linux():
             CPU utilization fraction. 'cpu_percent' in [0, 1]. 
 
     """
-    cores_num = psutil.cpu_count()
+    cpu_num = psutil.cpu_count()
+    current_pid = os.getpid()
     strings = os.popen('top -b -n 1 | grep -E -w -i "python.*|jupyter.*|COMMAND"').read().split('\n')
     strings.pop()
-    for index, string in enumerate(strings):
-        strings[index] = string.split()
-    index_cpu = strings[0].index('%CPU')
-    cpu_percent = sum(float(array[index_cpu]) for array in strings[1:])
-    return cpu_percent / cores_num / 100
+    index_cpu = strings[0].split().index('%CPU')
+    for index, string in enumerate(strings[1:]):
+        if int(string.split()[0]) == current_pid:
+            cpu_percent = float(string.split()[index_cpu].replace(',', '.'))
+            break
+    return cpu_percent / cpu_num / 100
 
 
 def get_cpu_percent_windows():
@@ -500,23 +503,23 @@ def get_cpu_percent_windows():
             CPU utilization fraction. 'cpu_percent' in [0, 1]. 
 
     """
-    processName = 'python'
-    list_of_needed_processes = []
+    current_pid = os.getpid()
+    cpu_percent = 0
     list_of_all_processes = []
     #Iterate over the all the running process
     for proc in psutil.process_iter():
         try:
-            pinfo = proc.as_dict(attrs=['name', 'cpu_percent'])
-           # Check if process name contains the given name string.
+            pinfo = proc.as_dict(attrs=['name', 'cpu_percent', 'pid'])
+           # Check if process pid equals the current one.
             if pinfo['cpu_percent'] is not None:
                 list_of_all_processes.append(pinfo['cpu_percent'])
-                if processName.lower() in pinfo['name'].lower() :
-                    list_of_needed_processes.append(pinfo['cpu_percent'])
+                if pinfo['pid'] == current_pid:
+                    print(pinfo)
+                    cpu_percent = pinfo['cpu_percent']
         except (psutil.NoSuchProcess, psutil.AccessDenied , psutil.ZombieProcess) :
             pass
-    sum_needed = sum(list_of_needed_processes)
     sum_all = sum(list_of_all_processes)
     if sum_all != 0:
-        return sum_needed / sum_all
+        return cpu_percent / sum_all
     else:
         return 0
