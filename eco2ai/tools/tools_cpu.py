@@ -484,9 +484,9 @@ def get_cpu_percent_linux():
     index_cpu = strings[0].split().index('%CPU')
     for index, string in enumerate(strings[1:]):
         if int(string.split()[0]) == current_pid:
-            cpu_percent = float(string.split()[index_cpu])
+            cpu_percent = float(string.split()[index_cpu].replace(',', '.'))
             break
-    return cpu_percent / cpu_num
+    return cpu_percent / cpu_num / 100
 
 
 def get_cpu_percent_windows():

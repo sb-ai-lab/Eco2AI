@@ -19,7 +19,7 @@ class RAM():
             Parameters
             ----------
             measure_period: float
-                Period of power consumption measurements  in seconds.
+                Period of power consumption measurements in seconds.
                 The more period the more time between measurements
                 The default is 10
 
@@ -64,24 +64,19 @@ class RAM():
                 Total amount of virtual memory(RAM) used in gigabytes.
 
         """
-        processNames = ['python', 'jupyter']
-        list_of_needed_processes = []
-
-        for processName in processNames:
-            for proc in psutil.process_iter():
-                try:
-                    pinfo = proc.as_dict(attrs=['name', 'cpu_percent', 'memory_percent'])
-
-                    if processName.lower() in pinfo['name'].lower() :
-                        list_of_needed_processes.append(pinfo)
-                except (psutil.NoSuchProcess, psutil.AccessDenied , psutil.ZombieProcess) :
-                    pass
+        current_pid = os.getpid()
+        memory_percent = 0
+        
+        for proc in psutil.process_iter():
+            try:
+                pinfo = proc.as_dict(attrs=['name', 'pid', 'memory_percent'])
+                if pinfo['pid'] == current_pid:
+                    memory_percent = float(pinfo['memory_percent'])
+            except (psutil.NoSuchProcess, psutil.AccessDenied , psutil.ZombieProcess) :
+                pass
 
         total_memory = psutil.virtual_memory().total / (1024 ** 3)
-        total_memory_used = 0
-        for process in list_of_needed_processes:
-            total_memory_used += process['memory_percent'] * total_memory / 100
-        return total_memory_used
+        return memory_percent * total_memory / 100
 
 
     def calculate_consumption(self):
