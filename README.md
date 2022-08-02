@@ -160,7 +160,7 @@ Please consider citing the following paper in any research manuscript using the 
 },
     title = {eco2AI: open-source library for carbon emission tracking of machine learning models},
     year = {2022},
-    journal={arXiv preprint arXiv:2207.XXXXX},
+    journal={arXiv preprint arXiv:2208.00406},
 }
 ```
 
