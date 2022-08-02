@@ -9,6 +9,7 @@
 
 [![PyPI - Downloads](https://img.shields.io/badge/%20PyPI%20-link%20for%20download-brightgreen)](https://pypi.org/project/eco2ai/)
 ![PyPI - Downloads](https://img.shields.io/pypi/v/eco2ai?color=bright-green&label=PyPI&logo=pypi&logoColor=yellow)
+![DOI](https://img.shields.io/badge/DOI-eco2AI%20article-brightgreen)
 [![telegram support](https://img.shields.io/twitter/url?label=eco2ai%20support&logo=telegram&style=social&url=https%3A%2F%2Ft.me%2F%2BjsaoAgioprQ4Zjk6)](https://t.me/eco2ai)
 
 # Eco2AI
@@ -146,6 +147,7 @@ For proper calculation of gpu and cpu power consumption, you should create a "Tr
 Create a new “Tracker” for every new calculation.
 
 # Citing Eco2AI
+![DOI](https://img.shields.io/badge/DOI-eco2AI%20article-brightgreen)
 
 The Eco2AI is licensed under a [Apache licence 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
