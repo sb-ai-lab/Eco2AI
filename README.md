@@ -1,5 +1,3 @@
-
-
 <img src=https://github.com/sb-ai-lab/Eco2AI/blob/main/images/photo_2022-06-14_13-02-37.jpg />
 
 
@@ -17,7 +15,8 @@
 + [Installation :wrench:](#2)
 + [Use examples :computer:](#3)
 + [Important note :blue_book:](#4)
-+ [Feedback :envelope:](#5)
++ [Citing](#5)
++ [Feedback :envelope:](#6)
 
 
 
@@ -145,7 +144,7 @@ For proper calculation of gpu and cpu power consumption, you should create a "Tr
 
 Create a new “Tracker” for every new calculation.
 
-# Citing Eco2AI
+## Citing Eco2AI <a name="5"></a>
 
 The Eco2AI is licensed under a [Apache licence 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
@@ -163,9 +162,9 @@ Please consider citing the following paper in any research manuscript using the 
 ```
 
 
-# Feedback :envelope:<a name="5"></a> 
+## Feedback :envelope:<a name="6"></a> 
 
 If you have any problems working with our tracker, please make comments on [document](https://docs.google.com/spreadsheets/d/1927TwoFaW7R_IFC6-4xKG_sjlPUaYCX9vLqzrOsASB4/edit#gid=0)
 
-# In collaboration with
+## In collaboration with
 [<img src="https://github.com/sb-ai-lab/Eco2AI/blob/main/images/AIRI%20-%20Full%20logo%20(2).png" width="200"/>](https://airi.net/)
