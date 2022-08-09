@@ -514,7 +514,7 @@ def get_cpu_percent_windows():
             if pinfo['cpu_percent'] is not None:
                 list_of_all_processes.append(pinfo['cpu_percent'])
                 if pinfo['pid'] == current_pid:
-                    print(pinfo)
+                    # print(pinfo)
                     cpu_percent = pinfo['cpu_percent']
         except (psutil.NoSuchProcess, psutil.AccessDenied , psutil.ZombieProcess) :
             pass

@@ -1,6 +1,3 @@
-<img src=https://github.com/sb-ai-lab/Eco2AI/blob/main/images/photo_2022-06-14_13-02-37.jpg />
-
-
 ![PyPI Downloads](https://img.shields.io/pypi/dm/eco2ai?color=brightgreen&label=PyPI%20downloads&logo=pypi&logoColor=yellow)
 [![PyPI all Downloads](https://img.shields.io/badge/All%20PyPI%20downloads-look%20in%20Colab-brightgreen)](https://colab.research.google.com/drive/1BQu8ju01zYXrfW61x3oBn0wnSoUxP6kc?usp=sharing)
 
@@ -12,18 +9,18 @@
 
 # Eco2AI
 
-+ [About Eco2AI :clipboard:](#1)
-+ [Installation :wrench:](#2)
-+ [Use examples :computer:](#3)
-+ [Important note :blue_book:](#4)
++ [About Eco2AI ](#1)
++ [Installation ](#2)
++ [Use examples ](#3)
++ [Important note ](#4)
 + [Citing](#5)
-+ [Feedback :envelope:](#6)
++ [Feedback ](#6)
 
 
 
 
 
-## About Eco2AI :clipboard: <a name="1"></a> 
+## About Eco2AI  <a name="1"></a> 
 The Eco2AI is a python library for CO<sub>2</sub> emission tracking. It monitors energy consumption of CPU & GPU devices and estimates equivalent carbon emissions taking into account the regional emission coefficient. 
 The Eco2AI is applicable to all python scripts and all you need is to add the couple of strings to your code. All emissions data and information about your devices are recorded in a local file. 
 
@@ -41,14 +38,14 @@ Every single run of Tracker() accompanies by a session description added to the 
 + OS
 + country
 
-##  Installation :wrench:<a name="2"></a> 
+##  Installation <a name="2"></a> 
 To install the eco2ai library, run the following command:
 
 ```
 pip install eco2ai
 ```
 
-## Use examples :computer:<a name="3"></a> 
+## Use examples <a name="3"></a> 
 
 Example usage eco2ai [![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1GQ5pI01iv7GJB-A9v9g7QX2yij3n_wNB?usp=sharing)
 
@@ -136,7 +133,7 @@ tracker.stop()
 
 
 <!-- There is [sber_emission_tracker_guide.ipynb](https://github.com/vladimir-laz/AIRIEmisisonTracker/blob/704ff88468f6ad403d69a63738888e1a3c41f59b/guide/sber_emission_tracker_guide.ipynb)  - useful jupyter notebook with more examples and notes. We highly recommend to check it out beforehand. -->
-## Important note :blue_book:<a name="4"></a> 
+## Important note <a name="4"></a> 
 
 If for some reasons it is not possible to define country, then emission coefficient is set to 436.529kg/MWh, which is global average.
 [Global Electricity Review](https://ember-climate.org/insights/research/global-electricity-review-2022/#supporting-material-downloads)
@@ -145,12 +142,8 @@ For proper calculation of gpu and cpu power consumption, you should create a "Tr
 
 Create a new “Tracker” for every new calculation.
 
-<<<<<<< HEAD
-## Citing Eco2AI <a name="5"></a>
-=======
 # Citing Eco2AI
 [![DOI](https://img.shields.io/badge/DOI-eco2AI%20article-brightgreen)](https://arxiv.org/abs/2208.00406)
->>>>>>> 37b1b123129510bb04ce13bbe208f278ccff82f1
 
 The Eco2AI is licensed under a [Apache licence 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
@@ -168,7 +161,7 @@ Please consider citing the following paper in any research manuscript using the 
 ```
 
 
-## Feedback :envelope:<a name="6"></a> 
+## Feedback <a name="6"></a> 
 
 If you have any problems working with our tracker, please make comments on [document](https://docs.google.com/spreadsheets/d/1927TwoFaW7R_IFC6-4xKG_sjlPUaYCX9vLqzrOsASB4/edit#gid=0)
 
