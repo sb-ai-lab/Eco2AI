@@ -1,12 +1,14 @@
-
-
 <img src=https://github.com/sb-ai-lab/Eco2AI/blob/main/images/photo_2022-06-14_13-02-37.jpg />
 
 
-![PyPI - Downloads](https://img.shields.io/pypi/dm/eco2ai?color=brightgreen&label=PyPI%20downloads&logo=pypi&logoColor=yellow)
+![PyPI Downloads](https://img.shields.io/pypi/dm/eco2ai?color=brightgreen&label=PyPI%20downloads&logo=pypi&logoColor=yellow)
+[![PyPI all Downloads](https://img.shields.io/badge/All%20PyPI%20downloads-look%20in%20Colab-brightgreen)](https://colab.research.google.com/drive/1BQu8ju01zYXrfW61x3oBn0wnSoUxP6kc?usp=sharing)
+
+
 [![PyPI - Downloads](https://img.shields.io/badge/%20PyPI%20-link%20for%20download-brightgreen)](https://pypi.org/project/eco2ai/)
 ![PyPI - Downloads](https://img.shields.io/pypi/v/eco2ai?color=bright-green&label=PyPI&logo=pypi&logoColor=yellow)
-[![telegram support](https://img.shields.io/twitter/url?label=eco2ai%20support&logo=telegram&style=social&url=https%3A%2F%2Ft.me%2F%2BjsaoAgioprQ4Zjk6)](https://t.me/+jsaoAgioprQ4Zjk6)
+[![DOI](https://img.shields.io/badge/DOI-eco2AI%20article-brightgreen)](https://arxiv.org/abs/2208.00406)
+[![telegram support](https://img.shields.io/twitter/url?label=eco2ai%20support&logo=telegram&style=social&url=https%3A%2F%2Ft.me%2F%2BjsaoAgioprQ4Zjk6)](https://t.me/eco2ai)
 
 # Eco2AI
 
@@ -14,14 +16,15 @@
 + [Installation :wrench:](#2)
 + [Use examples :computer:](#3)
 + [Important note :blue_book:](#4)
-+ [Feedback :envelope:](#5)
++ [Citing](#5)
++ [Feedback :envelope:](#6)
 
 
 
 
 
 ## About Eco2AI :clipboard: <a name="1"></a> 
-The Eco2AI is a python library for CO<sub>2</sub> emission tracking. It monitors energy consumption of CPU & GPU devices and estimates equivalent carbon emissions. 
+The Eco2AI is a python library for CO<sub>2</sub> emission tracking. It monitors energy consumption of CPU & GPU devices and estimates equivalent carbon emissions taking into account the regional emission coefficient. 
 The Eco2AI is applicable to all python scripts and all you need is to add the couple of strings to your code. All emissions data and information about your devices are recorded in a local file. 
 
 Every single run of Tracker() accompanies by a session description added to the log file, including the following elements:
@@ -46,6 +49,8 @@ pip install eco2ai
 ```
 
 ## Use examples :computer:<a name="3"></a> 
+
+Example usage eco2ai [![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1GQ5pI01iv7GJB-A9v9g7QX2yij3n_wNB?usp=sharing)
 
 The eco2ai interface is quite simple. Here is the simplest usage example:
 
@@ -77,7 +82,6 @@ train_func(your_model, your_dataset, your_optimizer, your_epochs)
 For your convenience, every time you instantiate the Tracker object with your custom parameters, these settings will be saved until the library is deleted. Eeach new tracker will be created with your custom settings (if you create a tracker with new parameters, they will be saved instead of the old ones). For example:
 
 ```python
-
 import eco2ai
 
 tracker = eco2ai.Tracker(
@@ -141,10 +145,28 @@ For proper calculation of gpu and cpu power consumption, you should create a "Tr
 
 Create a new “Tracker” for every new calculation.
 
+# Citing Eco2AI
+[![DOI](https://img.shields.io/badge/DOI-eco2AI%20article-brightgreen)](https://arxiv.org/abs/2208.00406)
 
-# Feedback :envelope:<a name="5"></a> 
+The Eco2AI is licensed under a [Apache licence 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
+Please consider citing the following paper in any research manuscript using the Eco2AI library:
+
+```
+@article{eco2ai_lib,
+    author = {Semen Budennyy*, Vladimir Lazarev, Nikita Zakharenko, Alexey Korovin, Olga Plosskaya, Denis Dimitrov, Vladimir Arkhipkin, Ivan Barsola, Ilya Egorov, Aleksandra Kosterina, Leonid Zhukov
+    
+},
+    title = {eco2AI: open-source library for carbon emission tracking of machine learning models},
+    year = {2022},
+    journal={arXiv preprint arXiv:2208.00406},
+}
+```
+
+
+## Feedback :envelope:<a name="6"></a> 
 
 If you have any problems working with our tracker, please make comments on [document](https://docs.google.com/spreadsheets/d/1927TwoFaW7R_IFC6-4xKG_sjlPUaYCX9vLqzrOsASB4/edit#gid=0)
 
-# In collaboration with
+## In collaboration with
 [<img src="https://github.com/sb-ai-lab/Eco2AI/blob/main/images/AIRI%20-%20Full%20logo%20(2).png" width="200"/>](https://airi.net/)
