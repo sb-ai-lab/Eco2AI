@@ -27,6 +27,8 @@ def set_params(**params):
         project_name = ...
         experiment_description = ...
         file_name = ...
+        measure_period = ...
+        pue = ...
         
         Parameters
         ----------
@@ -49,6 +51,10 @@ def set_params(**params):
         dictionary["experiment_description"] = "default experiment description"
     if "file_name" not in dictionary:
         dictionary["file_name"] = "emission.csv"
+    if "measure_period" not in dictionary:
+        dictionary["measure_period"] = 10
+    if "pue" not in dictionary:
+        dictionary["pue"] = 1
     with open(filename, 'w') as json_file:
         json_file.write(json.dumps(dictionary))
 
@@ -59,6 +65,9 @@ def get_params():
         project_name = ...
         experiment_description = ...
         file_name = ...
+        measure_period = ...
+        pue = ...
+        More complete information about attributes can be seen in Tracker class
         
         Parameters
         ----------
@@ -67,7 +76,7 @@ def get_params():
         Returns
         -------
         params: dict
-            Dictionary of Tracker parameters: project_name, experiment_description, file_name. 
+            Dictionary of Tracker parameters: project_name, experiment_description, file_name, measure_period and pue
 
     """
     filename = resource_stream('eco2ai', 'data/config.txt').name
@@ -81,7 +90,9 @@ def get_params():
             dictionary = {
                 "project_name": "Deafult project name",
                 "experiment_description": "no experiment description",
-                "file_name": "emission.csv"
+                "file_name": "emission.csv",
+                "measure_period": 10,
+                "pue": 1,
                 }
     return dictionary
 
@@ -216,21 +227,22 @@ class Tracker:
     You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/country-codes
     """
 )
+        if (type(measure_period) == int or type(measure_period) == float) and measure_period <= 0:
+            raise ValueError("measure_period should be positive number")
         self._params_dict = get_params()
         self.project_name = project_name if project_name is not None else self._params_dict["project_name"]
         self.experiment_description = experiment_description if experiment_description is not None else self._params_dict["experiment_description"]
         self.file_name = file_name if file_name is not None else self._params_dict["file_name"]
-        self.get_set_params(self.project_name, self.experiment_description, self.file_name)
-        if (type(measure_period) == int or type(measure_period) == float) and measure_period <= 0:
-            raise ValueError("measure_period should be positive number")
-        self._measure_period = measure_period
+        self._measure_period = measure_period if measure_period is not None else self._params_dict["measure_period"]
+        self._pue = pue if pue is not None else self._params_dict["pue"]
+        self.get_set_params(self.project_name, self.experiment_description, self.file_name, self._measure_period, self._pue)
+
         self._emission_level, self._country = define_carbon_index(emission_level, alpha_2_code)
         self._scheduler = BackgroundScheduler(job_defaults={'max_instances': 10}, misfire_grace_time=None)
         self._start_time = None
         self._cpu = None
         self._gpu = None
         self._ram = None
-        self._pue = pue
         self._consumption = 0
         self._encode=encode
         self._os = platform.system()

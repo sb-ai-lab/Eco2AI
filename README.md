@@ -41,14 +41,16 @@ Every single run of Tracker() accompanies by a session description added to the 
 + OS
 + country
 
-##  Installation :wrench:<a name="2"></a> 
+##  Installation <a name="2"></a> 
 To install the eco2ai library, run the following command:
 
 ```
 pip install eco2ai
 ```
 
-## Use examples :computer:<a name="3"></a> 
+## Use examples <a name="3"></a> 
+
+Example usage eco2ai [![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1GQ5pI01iv7GJB-A9v9g7QX2yij3n_wNB?usp=sharing)
 
 Example usage eco2ai [![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1GQ5pI01iv7GJB-A9v9g7QX2yij3n_wNB?usp=sharing)
 
@@ -136,7 +138,7 @@ tracker.stop()
 
 
 <!-- There is [sber_emission_tracker_guide.ipynb](https://github.com/vladimir-laz/AIRIEmisisonTracker/blob/704ff88468f6ad403d69a63738888e1a3c41f59b/guide/sber_emission_tracker_guide.ipynb)  - useful jupyter notebook with more examples and notes. We highly recommend to check it out beforehand. -->
-## Important note :blue_book:<a name="4"></a> 
+## Important note <a name="4"></a> 
 
 If for some reasons it is not possible to define country, then emission coefficient is set to 436.529kg/MWh, which is global average.
 [Global Electricity Review](https://ember-climate.org/insights/research/global-electricity-review-2022/#supporting-material-downloads)
