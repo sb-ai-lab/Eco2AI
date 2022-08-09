@@ -4,6 +4,7 @@ import platform
 import pandas as pd
 import requests
 import string
+import uuid
 import numpy as np
 import warnings
 from re import sub
@@ -27,6 +28,8 @@ def set_params(**params):
         project_name = ...
         experiment_description = ...
         file_name = ...
+        measure_period = ...
+        pue = ...
         
         Parameters
         ----------
@@ -49,6 +52,10 @@ def set_params(**params):
         dictionary["experiment_description"] = "default experiment description"
     if "file_name" not in dictionary:
         dictionary["file_name"] = "emission.csv"
+    if "measure_period" not in dictionary:
+        dictionary["measure_period"] = 10
+    if "pue" not in dictionary:
+        dictionary["pue"] = 1
     with open(filename, 'w') as json_file:
         json_file.write(json.dumps(dictionary))
 
@@ -59,6 +66,9 @@ def get_params():
         project_name = ...
         experiment_description = ...
         file_name = ...
+        measure_period = ...
+        pue = ...
+        More complete information about attributes can be seen in Tracker class
         
         Parameters
         ----------
@@ -67,7 +77,7 @@ def get_params():
         Returns
         -------
         params: dict
-            Dictionary of Tracker parameters: project_name, experiment_description, file_name. 
+            Dictionary of Tracker parameters: project_name, experiment_description, file_name, measure_period and pue
 
     """
     filename = resource_stream('eco2ai', 'data/config.txt').name
@@ -81,9 +91,13 @@ def get_params():
             dictionary = {
                 "project_name": "Deafult project name",
                 "experiment_description": "no experiment description",
-                "file_name": "emission.csv"
+                "file_name": "emission.csv",
+                "measure_period": 10,
+                "pue": 1,
                 }
     return dictionary
+
+
 
 
 def define_carbon_index(
@@ -198,6 +212,7 @@ class Tracker:
                 It is ration of the total 'facility power' and 'IT equipment energy consumption'. 
                 PUE is a measure of a data center power efficiency.
                 This parameter will be very essential during calculations using data centres facilities.
+                The default is 1.
             encode: bool
                 If 'encode' parameter is True, then results of calculation is written to file encoded.
                 The default is False
@@ -216,28 +231,29 @@ class Tracker:
     You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/country-codes
     """
 )
+        if (type(measure_period) == int or type(measure_period) == float) and measure_period <= 0:
+            raise ValueError("measure_period should be positive number")
         self._params_dict = get_params()
         self.project_name = project_name if project_name is not None else self._params_dict["project_name"]
         self.experiment_description = experiment_description if experiment_description is not None else self._params_dict["experiment_description"]
         self.file_name = file_name if file_name is not None else self._params_dict["file_name"]
-        self.get_set_params(self.project_name, self.experiment_description, self.file_name)
-        if (type(measure_period) == int or type(measure_period) == float) and measure_period <= 0:
-            raise ValueError("measure_period should be positive number")
-        self._measure_period = measure_period
+        self._measure_period = measure_period if measure_period is not None else self._params_dict["measure_period"]
+        self._pue = pue if pue is not None else self._params_dict["pue"]
+        self.get_set_params(self.project_name, self.experiment_description, self.file_name, self._measure_period, self._pue)
+
         self._emission_level, self._country = define_carbon_index(emission_level, alpha_2_code)
         self._scheduler = BackgroundScheduler(job_defaults={'max_instances': 10}, misfire_grace_time=None)
         self._start_time = None
         self._cpu = None
         self._gpu = None
         self._ram = None
-        self._pue = pue
+        self._id = None
         self._consumption = 0
         self._encode=encode
         self._os = platform.system()
         if self._os == "Darwin":
             self._os = "MacOS"
-        # self._mode == "first_time" means that CO2 emissions is written to .csv file first time
-        # self._mode == "runtime" means that CO2 emissions is written to file periodically during runtime 
+        # self._mode == "first_time" means that the Tracker is just initialized
         # self._mode == "shut down" means that CO2 tracker is stopped
         self._mode = "first_time"
     
@@ -246,13 +262,17 @@ class Tracker:
         self, 
         project_name=None, 
         experiment_description=None, 
-        file_name=None
+        file_name=None,
+        measure_period=None,
+        pue=None
         ):
         """
             This function returns default Tracker attributes values:
             project_name = ...
             experiment_description = ...
             file_name = ...
+            measure_period = ...
+            pue = ...
             
             Parameters
             ----------
@@ -265,10 +285,21 @@ class Tracker:
             file_name: str
                 Name of file to save the the results of calculations.
                 The default is None
+            measure_period: float
+                Period of power consumption measurements in seconds.
+                The more period the more time between measurements.
+                The default is None
+            pue: float
+                Power utilization efficiency. 
+                It is ration of the total 'facility power' and 'IT equipment energy consumption'. 
+                PUE is a measure of a data center power efficiency.
+                This parameter will be very essential during calculations using data centres facilities.
+                The default is None
 
             Returns
             -------
-            No return 
+            dictionary: dict
+
 
         """
         dictionary = dict()
@@ -284,7 +315,17 @@ class Tracker:
             dictionary["file_name"] = file_name
         else:
             dictionary["file_name"] = "emission.csv"
+        if measure_period is not None:
+            dictionary["measure_period"] = measure_period
+        else:
+            dictionary["measure_period"] = 10
+        if pue is not None:
+            dictionary["pue"] = pue
+        else:
+            dictionary["pue"] = 1
         set_params(**dictionary)
+
+        return dictionary
 
 
     def consumption(self):
@@ -303,6 +344,23 @@ class Tracker:
         """
         return self._consumption
     
+
+    def id(self):
+        """
+            This class method returns the Tracker id
+
+            Parameters
+            ----------
+            No parameters
+
+            Returns
+            -------
+            id: str
+                The Tracker's id. id is random UUID
+
+        """
+        return self._id
+
 
     def emission_level(self):
         """
@@ -372,18 +430,37 @@ class Tracker:
         # if user used older versions, it may be needed to upgrade his .csv file
         # but after all, such verification should be deleted
         # self.check_for_older_versions()
-        duration = time.time() - self._start_time
-        emissions = self._consumption * self._emission_level / FROM_kWATTH_TO_MWATTH
+        attributes_dict = dict()
+        attributes_dict["id"] = [self._id]
+        attributes_dict["project_name"] = [f"{self.project_name}"]
+        attributes_dict["experiment_description"] = [f"{self.experiment_description}"]
+        attributes_dict["epoch"] = [f"N\A"]
+        attributes_dict["start_time"] = [f"{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(self._start_time))}"]
+        attributes_dict["duration(s)"] = [f"{time.time() - self._start_time}"]
+        attributes_dict["power_consumption(kWTh)"] = [f"{self._consumption}"]
+        attributes_dict["CO2_emissions(kg)"] = [f"{self._consumption * self._emission_level / FROM_kWATTH_TO_MWATTH}"]
+        attributes_dict["CPU_name"] = [f"{self._cpu.name()}/{self._cpu.cpu_num()} device(s), TDP:{self._cpu.tdp()}"]
+        attributes_dict["GPU_name"] = [f"{self._gpu.name()} {self._gpu.gpu_num()} device(s)"]
+        attributes_dict["OS"] = [f"{self._os}"]
+        attributes_dict["region/country"] = [f"{self._country}"]
+        attributes_dict["cost"] = [f"N\A"]
+
         if not os.path.isfile(self.file_name):
-            with open(self.file_name, 'w') as file:
-                file.write("project_name,experiment_description(model type etc.),start_time,duration(s),power_consumption(kWTh),CO2_emissions(kg),CPU_name,GPU_name,OS,region/country\n")
-                file.write(f"\"{self.project_name}\",\"{self.experiment_description}\",\"{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(self._start_time))}\",\"{duration}\",\"{self._consumption}\",\"{emissions}\",\"{self._cpu.name()}/{self._cpu.cpu_num()} device(s), TDP:{self._cpu.tdp()}\",\"{self._gpu.name()} {self._gpu.gpu_num()} device(s)\",\"{self._os}\",\"{self._country}\"\n")
+            pd.DataFrame(attributes_dict).to_csv(self.file_name, index=False)
+                
         else:
-            with open(self.file_name, "a") as file:
-                file.write(f"\"{self.project_name}\",\"{self.experiment_description}\",\"{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(self._start_time))}\",\"{duration}\",\"{self._consumption}\",\"{emissions}\",\"{self._cpu.name()}/{self._cpu.cpu_num()} device(s), TDP:{self._cpu.tdp()}\",\"{self._gpu.name()} {self._gpu.gpu_num()} device(s)\",\"{self._os}\",\"{self._country}\"\n")
-        if self._mode == "runtime":
-            self._merge_CO2_emissions(f_encode)
-        self._mode = "runtime"
+            attributes_dataframe = pd.read_csv(self.file_name)
+            # constructing an array of attributes
+            attributes_array = []
+            for element in attributes_dict.values():
+                attributes_array += element
+            
+            if attributes_dataframe[attributes_dataframe['id'] == self._id].shape[0] == 0:
+                attributes_dataframe.loc[attributes_dataframe.shape[0]] = attributes_array
+            else:
+                row_index = attributes_dataframe[attributes_dataframe['id'] == self._id].index.values[0]
+                attributes_dataframe.loc[row_index] = attributes_array
+            attributes_dataframe.to_csv(self.file_name, index=False)
 
 
     def _merge_CO2_emissions(
@@ -439,13 +516,15 @@ class Tracker:
             gpu_consumption = self._gpu.calculate_consumption()
         else:
             gpu_consumption = 0
-        self._consumption += cpu_consumption
-        self._consumption += gpu_consumption
-        self._consumption += ram_consumption
-        self._consumption *= self._pue
+        tmp_comsumption = 0
+        tmp_comsumption += cpu_consumption
+        tmp_comsumption += gpu_consumption
+        tmp_comsumption += ram_consumption
+        tmp_comsumption *= self._pue
+        self._consumption += tmp_comsumption
         self._write_to_csv()
-        self._consumption = 0
-        self._start_time = time.time()
+        # self._consumption = 0
+        # self._start_time = time.time()
         if self._mode == "shut down":
             self._scheduler.remove_job("job")
             self._scheduler.shutdown()
@@ -475,6 +554,7 @@ class Tracker:
         self._cpu = CPU()
         self._gpu = GPU()
         self._ram = RAM()
+        self._id = str(uuid.uuid4())
         self._mode = "first_time"
         self._start_time = time.time()
         self._scheduler.add_job(self._func_for_sched, "interval", seconds=self._measure_period, id="job")
@@ -504,6 +584,7 @@ class Tracker:
             f_encode=True
         self._func_for_sched() 
         self._write_to_csv(f_encode)
+        self._consumption = 0
         self._mode = "shut down"
 
 
