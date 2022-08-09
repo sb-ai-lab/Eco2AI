@@ -2,7 +2,7 @@
 
 
 ![PyPI Downloads](https://img.shields.io/pypi/dm/eco2ai?color=brightgreen&label=PyPI%20downloads&logo=pypi&logoColor=yellow)
-[![PyPI all Downloads](https://img.shields.io/badge/All%20PyPI%20downloads-look%20in%20Colab-brightgreen)](https://colab.research.google.com/drive/1BQu8ju01zYXrfW61x3oBn0wnSoUxP6kc?usp=sharing)
+[![PyPI all Downloads](https://img.shields.io/badge/All%20PyPI%20downloads-look%20in%20Colab-brightgreen)](https://colab.research.google.com/drive/1UoSHPRUHbg5B1U2x8p_ACo21X9N6n1im?authuser=1)
 
 
 [![PyPI - Downloads](https://img.shields.io/badge/%20PyPI%20-link%20for%20download-brightgreen)](https://pypi.org/project/eco2ai/)
@@ -50,9 +50,8 @@ pip install eco2ai
 
 ## Use examples <a name="3"></a> 
 
-Example usage eco2ai [![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1GQ5pI01iv7GJB-A9v9g7QX2yij3n_wNB?usp=sharing)
+Example usage eco2ai [![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1hn0DQiKHeyXwvOOR3UEXaGsD6DqVm6b7?authuser=1)
 
-Example usage eco2ai [![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1GQ5pI01iv7GJB-A9v9g7QX2yij3n_wNB?usp=sharing)
 
 The eco2ai interface is quite simple. Here is the simplest usage example:
 
