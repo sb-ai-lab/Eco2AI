@@ -254,6 +254,7 @@ class Tracker:
         if self._os == "Darwin":
             self._os = "MacOS"
         # self._mode == "first_time" means that the Tracker is just initialized
+        # self._mode == "run time" means that CO2 tracker is now running
         # self._mode == "shut down" means that CO2 tracker is stopped
         self._mode = "first_time"
     
@@ -450,6 +451,8 @@ class Tracker:
                 
         else:
             attributes_dataframe = pd.read_csv(self.file_name)
+            if list(attributes_dataframe.columns) != list(attributes_dict.keys()):
+                attributes_dataframe = self._update_to_new_version(attributes_dataframe, list(attributes_dict.keys()))
             # constructing an array of attributes
             attributes_array = []
             for element in attributes_dict.values():
@@ -461,44 +464,39 @@ class Tracker:
                 row_index = attributes_dataframe[attributes_dataframe['id'] == self._id].index.values[0]
                 attributes_dataframe.loc[row_index] = attributes_array
             attributes_dataframe.to_csv(self.file_name, index=False)
+        self._mode = "run time"
 
 
-    def _merge_CO2_emissions(
-        self,
-        f_encode=None
-        ):
+    def _update_to_new_version(self, attributes_dataframe, new_columns):
         """
-            This class method takes the last two strings of a .csv file with calculated results, 
-            merges it and then writes back new string instead of two ones
+            This class method is a function, that updates dataframe to newer versions: adds new columns etc
 
             Parameters
             ----------
-            f_encode: bool
-                If 'encode' parameter is True, then results of calculation is written to file encoded.
-                The default is False
+            attributes_dataframe: pd.DataFrame
+                Dataframe to update
+            new_columns: list
+                New columns which should be contained in updated dataframe
 
             Returns
             -------
-            No returns
+           dataframe: pd.DataFrame
+            Updated dataframe.
         
         """
-        # it should be eliminated in future versions. 
-        try:
-            dataframe = pd.read_csv(self.file_name)
-        except:
-            dataframe = pd.read_csv(self.file_name, sep='\t')
-        columns, values = dataframe.columns, dataframe.values
-        row = values[-2]
-        row[3:6] += values[-1][3:6]
-        if f_encode:
-            row = encode_dataframe(row.reshape(-1, 1))
-        values = np.concatenate((values[:-2], row.reshape(1, -1)))
-        pd.DataFrame(values, columns=columns).to_csv(self.file_name, index=False)
+        current_columns = list(attributes_dataframe.columns)
+        # print("1: ", new_columns, current_columns)
+        for column in new_columns:
+            if column not in current_columns:
+                attributes_dataframe[column] = "N\A"
+        attributes_dataframe = attributes_dataframe[new_columns]
+
+        return attributes_dataframe
 
 
     def _func_for_sched(self,):
         """
-            This class method is a function, that is put in a scheduler and run periodically during Thacker work.
+            This class method is a function, that puts in a scheduler and runs periodically during Thacker work.
             It calculates CPU, GPU and RAM power consumption and writes results to a .csv file.
 
             Parameters
