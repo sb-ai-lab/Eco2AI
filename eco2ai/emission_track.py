@@ -1,6 +1,7 @@
 import os
 import time
 import platform
+from typing import Type
 import pandas as pd
 import requests
 import string
@@ -20,6 +21,14 @@ from eco2ai.tools.tools_ram import RAM
 
 FROM_mWATTS_TO_kWATTH = 1000*1000*3600
 FROM_kWATTH_TO_MWATTH = 1000
+
+
+class FileDoesNotExists(Exception):
+    pass
+
+
+class NotNeededExtension(Exception):
+    pass
 
 
 def set_params(**params):
@@ -180,7 +189,7 @@ class Tracker:
                  emission_level=None,
                  alpha_2_code=None,
                  pue=1,
-                 encode=False,
+                 encode_file=None,
                  ):
         """
             This class method initializes Thacker object and creates fields of class object
@@ -213,9 +222,13 @@ class Tracker:
                 PUE is a measure of a data center power efficiency.
                 This parameter will be very essential during calculations using data centres facilities.
                 The default is 1.
-            encode: bool
-                If 'encode' parameter is True, then results of calculation is written to file encoded.
-                The default is False
+            encode_file: str
+                If this parameter is not None, results of calculations will be encoded
+                and the results will be writen to file.
+                If this parameter == True encoded data will be written to file "encoded_" + value of file_name parameter.
+                So, default name of file with encoded data will be "encoded_emission.csv"
+                If this parameter is of str type, then name of file with encoded data will be value of encode_file parameter.
+                The default is None. 
             
             Returns
             -------
@@ -232,7 +245,12 @@ class Tracker:
     """
 )
         if (type(measure_period) == int or type(measure_period) == float) and measure_period <= 0:
-            raise ValueError("measure_period should be positive number")
+            raise ValueError("\'measure_period\' should be positive number")
+        if encode_file is not None:
+            if type(encode_file) is not str and not (encode_file is True):
+                raise TypeError(f"'encode_file' parameter should have str type, not {type(encode_file)}")
+            if type(encode_file) is str and not encode_file.endswith('.csv'):
+                raise NotNeededExtension(f"'encode_file' name need to be with extension \'.csv\'")
         self._params_dict = get_params()
         self.project_name = project_name if project_name is not None else self._params_dict["project_name"]
         self.experiment_description = experiment_description if experiment_description is not None else self._params_dict["experiment_description"]
@@ -249,7 +267,7 @@ class Tracker:
         self._ram = None
         self._id = None
         self._consumption = 0
-        self._encode=encode
+        self._encode_file=encode_file if encode_file != True else "encoded_"+file_name
         self._os = platform.system()
         if self._os == "Darwin":
             self._os = "MacOS"
@@ -401,7 +419,6 @@ class Tracker:
 
     def _write_to_csv(
         self,
-        f_encode=None
         ):
         """
             This class method writes to .csv file calculation results.
@@ -419,13 +436,12 @@ class Tracker:
 
             Parameters
             ----------
-            f_encode: bool
-                If 'encode' parameter is True, then results of calculation is written to file encoded.
-                The default is False
+            No parameters
 
             Returns
             -------
-            No returns
+            attributes_dict: dict
+                Dictionary with all the attibutes that should be written to .csv file
                 
         """
         # if user used older versions, it may be needed to upgrade his .csv file
@@ -465,6 +481,7 @@ class Tracker:
                 attributes_dataframe.loc[row_index] = attributes_array
             attributes_dataframe.to_csv(self.file_name, index=False)
         self._mode = "run time"
+        return attributes_dict
 
 
     def _update_to_new_version(self, attributes_dataframe, new_columns):
@@ -573,17 +590,46 @@ class Tracker:
             No returns
         
         """
-        f_encode=None
         if self._start_time is None:
             raise Exception("Need to first start the tracker by running tracker.start()")
         self._scheduler.remove_job("job")
         self._scheduler.shutdown()
-        if self._encode == True:
-            f_encode=True
         self._func_for_sched() 
-        self._write_to_csv(f_encode)
+        attributes_dict = self._write_to_csv()
+        if self._encode_file is not None:
+            self._func_for_encoding(attributes_dict)
         self._consumption = 0
         self._mode = "shut down"
+
+
+    
+    def _func_for_encoding(self, attributes_dict):
+        """
+            This function encodes all calculated data and attributes and writes it to file.
+            File name depenвs on 'encode_file' parameter. 
+            More details can be seen in 'encode_file' parameter description in Tracker class.
+
+            Parameters
+            ----------
+            attributes_dict: dict
+                Dictionary with all the attibutes that should be written to .csv file
+
+            Returns
+            -------
+            No returns
+        
+        """
+        for key in attributes_dict.keys():
+            attributes_dict[key] = [encode(str(attributes_dict[key][0]))]
+        if not os.path.isfile(self._encode_file):
+            pd.DataFrame(attributes_dict).to_csv(self._encode_file, index=False)
+        else:
+            attributes_dataframe = pd.read_csv(self._encode_file)
+            attributes_array = []
+            for element in attributes_dict.values():
+                attributes_array += element
+            attributes_dataframe.loc[attributes_dataframe.shape[0]] = attributes_array
+            attributes_dataframe.to_csv(self._encode_file, index=False)
 
 
 def available_devices():
@@ -632,14 +678,6 @@ def track(func):
         del tracker
         return returned
     return inner
-
-
-class FileDoesNotExists(Exception):
-    pass
-
-
-class NotNeededExtension(Exception):
-    pass
 
 
 def calculate_money(
