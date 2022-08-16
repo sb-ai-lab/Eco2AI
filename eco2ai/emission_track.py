@@ -4,6 +4,7 @@ import platform
 from typing import Type
 import pandas as pd
 import requests
+import psutil
 import string
 import uuid
 import numpy as np
@@ -161,6 +162,42 @@ def define_carbon_index(
             result = result[result['region'] == 'Whole country']
     result = result.values[0][-1]
     return (result, f'{country}/{region}') if region is not None else (result, f'{country}')
+
+
+def is_file_opened(
+    needed_file
+):
+    """
+        This function checks if given file is opened in any python or jupyter process
+        
+        Parameters
+        ----------
+        needed_file: str
+            Name of file that is going to be checked 
+        
+        Returns
+        -------
+        result: bool
+            True if file is opened in any python or jupyter process
+            
+
+    """
+    result = False
+    needed_file = os.path.abspath(needed_file)
+    python_processes = []
+    for proc in psutil.process_iter():
+        try:
+            pinfo = proc.as_dict(attrs=["name", "cpu_percent", "pid"])
+            if "python" in pinfo["name"].lower() or "jupyter" in pinfo["name"].lower():
+                python_processes.append(pinfo["pid"])
+                flist = proc.open_files()
+                if flist:
+                    for nt in flist:
+                        if needed_file in nt.path:
+                            result = True
+        except:
+            pass
+    return result
 
 
 class Tracker:
@@ -463,23 +500,40 @@ class Tracker:
         attributes_dict["cost"] = [f"N\A"]
 
         if not os.path.isfile(self.file_name):
-            pd.DataFrame(attributes_dict).to_csv(self.file_name, index=False)
+            while True:
+                if not is_file_opened(self.file_name):
+                    open(self.file_name, "w").close()
+                    tmp = open(self.file_name, "w")
+                    pd.DataFrame(attributes_dict).to_csv(self.file_name, index=False)
+                    tmp.close()
+                    break
+                else: 
+                    time.sleep(0.5)
                 
         else:
-            attributes_dataframe = pd.read_csv(self.file_name)
-            if list(attributes_dataframe.columns) != list(attributes_dict.keys()):
-                attributes_dataframe = self._update_to_new_version(attributes_dataframe, list(attributes_dict.keys()))
-            # constructing an array of attributes
-            attributes_array = []
-            for element in attributes_dict.values():
-                attributes_array += element
-            
-            if attributes_dataframe[attributes_dataframe['id'] == self._id].shape[0] == 0:
-                attributes_dataframe.loc[attributes_dataframe.shape[0]] = attributes_array
-            else:
-                row_index = attributes_dataframe[attributes_dataframe['id'] == self._id].index.values[0]
-                attributes_dataframe.loc[row_index] = attributes_array
-            attributes_dataframe.to_csv(self.file_name, index=False)
+            while True:
+                if not is_file_opened(self.file_name):
+                    tmp = open(self.file_name, "r")
+
+                    attributes_dataframe = pd.read_csv(self.file_name)
+                    if list(attributes_dataframe.columns) != list(attributes_dict.keys()):
+                        attributes_dataframe = self._update_to_new_version(attributes_dataframe, list(attributes_dict.keys()))
+                    # constructing an array of attributes
+                    attributes_array = []
+                    for element in attributes_dict.values():
+                        attributes_array += element
+                    
+                    if attributes_dataframe[attributes_dataframe['id'] == self._id].shape[0] == 0:
+                        attributes_dataframe.loc[attributes_dataframe.shape[0]] = attributes_array
+                    else:
+                        row_index = attributes_dataframe[attributes_dataframe['id'] == self._id].index.values[0]
+                        attributes_dataframe.loc[row_index] = attributes_array
+                    attributes_dataframe.to_csv(self.file_name, index=False)
+
+                    tmp.close()
+                    break
+                else: 
+                    time.sleep(0.5)
         self._mode = "run time"
         return attributes_dict
 
@@ -619,17 +673,39 @@ class Tracker:
             No returns
         
         """
+
         for key in attributes_dict.keys():
             attributes_dict[key] = [encode(str(attributes_dict[key][0]))]
+
         if not os.path.isfile(self._encode_file):
-            pd.DataFrame(attributes_dict).to_csv(self._encode_file, index=False)
+            while True:
+                if not is_file_opened(self._encode_file):
+                    open(self._encode_file, "w").close()
+                    tmp = open(self._encode_file, "r")
+
+                    pd.DataFrame(attributes_dict).to_csv(self._encode_file, index=False)
+
+                    tmp.close()
+                    break
+                else: 
+                    time.sleep(0.5)
+        
         else:
-            attributes_dataframe = pd.read_csv(self._encode_file)
-            attributes_array = []
-            for element in attributes_dict.values():
-                attributes_array += element
-            attributes_dataframe.loc[attributes_dataframe.shape[0]] = attributes_array
-            attributes_dataframe.to_csv(self._encode_file, index=False)
+            while True:
+                if not is_file_opened(self._encode_file):
+                    tmp = open(self._encode_file, "r")
+
+                    attributes_dataframe = pd.read_csv(self._encode_file)
+                    attributes_array = []
+                    for element in attributes_dict.values():
+                        attributes_array += element
+                    attributes_dataframe.loc[attributes_dataframe.shape[0]] = attributes_array
+                    attributes_dataframe.to_csv(self._encode_file, index=False)
+
+                    tmp.close()
+                    break
+                else: 
+                    time.sleep(0.5)
 
 
 def available_devices():
