@@ -1,12 +1,6 @@
 from .emission_track import (
-    Tracker,
-    available_devices, 
-    set_params,
-    get_params,
+    Tracker, 
     track,
-    define_carbon_index,
-    calculate_money,
-    summary,
 )
 
 from eco2ai.tools.tools_cpu import (
@@ -21,4 +15,13 @@ from eco2ai.tools.tools_gpu import (
 
 from eco2ai.tools.tools_ram import (
     RAM,
+)
+
+from eco2ai.utils import (
+    available_devices,
+    set_params,
+    get_params,
+    define_carbon_index,
+    calculate_money,
+    summary
 )

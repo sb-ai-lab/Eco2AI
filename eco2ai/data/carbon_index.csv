@@ -1,366 +1,366 @@
-country,region,alpha_2_code,alpha_3_code,un_code,carbon_index
-Afghanistan,Whole country,AF,AFG,4,166.667
-Albania,Whole country,AL,ALB,8,24.482
-Algeria,Whole country,DZ,DZA,12,485.45
-American Samoa,Whole country,AS,ASM,16,687.5
-Angola,Whole country,AO,AGO,24,173.169
-Antigua and Barbuda,Whole country,AG,ATG,28,676.471
-Argentina,Whole country,AR,ARG,32,353.052
-Armenia,Whole country,AM,ARM,51,209.016
-Aruba,Whole country,AW,ABW,533,586.957
-Australia,Whole country,AU,AUS,36,560.384
-Australia,ACT,AU,AUS,36,790
-Australia,Australian Capital Territory,AU,AUS,36,790
-Australia,New South Wales,AU,AUS,36,790
-Australia,Northern Territory,AU,AUS,36,570
-Australia,Queensland,AU,AUS,36,800
-Australia,South Australia,AU,AUS,36,350
-Australia,Tasmania,AU,AUS,36,160
-Australia,Victoria,AU,AUS,36,960
-Australia,Western Australia,AU,AUS,36,680
-Austria,Whole country,AT,AUT,40,142.506
-Azerbaijan,Whole country,AZ,AZE,31,537.051
-Bahamas,Whole country,BS,BHS,44,700
-Bahrain,Whole country,BH,BHR,48,490.14
-Bangladesh,Whole country,BD,BGD,50,550.318
-Barbados,Whole country,BB,BRB,52,676.471
-Belarus,Whole country,BY,BLR,112,472.122
-Belgium,Whole country,BE,BEL,56,198.201
-Belize,Whole country,BZ,BLZ,84,483.871
-Benin,Whole country,BJ,BEN,204,652.174
-Bhutan,Whole country,BT,BTN,64,23.464
-Bolivia,Whole country,BO,BOL,68,319.834
-Bosnia and Herzegovina,Whole country,BA,BIH,70,522.042
-Botswana,Whole country,BW,BWA,72,800
-Brazil,Whole country,BR,BRA,76,113.069
-British Virgin Islands,Whole country,VG,VGB,92,714.286
-Brunei,Whole country,BN,BRN,96,659.483
-Bulgaria,Whole country,BG,BGR,100,327.368
-Burkina Faso,Whole country,BF,BFA,854,633.721
-Burundi,Whole country,BI,BDI,108,218.75
-Cambodia,Whole country,KH,KHM,116,423.664
-Cameroon,Whole country,CM,CMR,120,253.915
-Canada,Whole country,CA,CAN,124,120.486
-Canada,Alberta,CA,CAN,124,620
-Canada,British Columbia,CA,CAN,124,18.6
-Canada,Manitoba,CA,CAN,124,1.2
-Canada,New Brunswick,CA,CAN,124,260
-Canada,Newfoundland and Labrador,CA,CAN,124,28
-Canada,Nova Scotia,CA,CAN,124,760
-Canada,Northwest Territories,CA,CAN,124,200
-Canada,Nunavut ,CA,CAN,124,850
-Canada,Ontario,CA,CAN,124,30
-Canada,Prince Edward Island,CA,CAN,124,2
-Canada,Quebec,CA,CAN,124,1.2
-Canada,Saskatchewan,CA,CAN,124,660
-Canada,Yukon,CA,CAN,124,101
-Cape Verde,Whole country,CV,CPV,132,574.468
-Cayman Islands,Whole country,KY,CYM,136,685.714
-Central African Republic,Whole country,CF,CAF,140,0
-Chad,Whole country,TD,TCD,148,666.667
-Chile,Whole country,CL,CHL,152,386.545
-China,Whole country,CN,CHN,156,549.534
-Colombia,Whole country,CO,COL,170,210.526
-Comoros,Whole country,KM,COM,174,700
-Congo,Whole country,CG,COG,178,374.663
-Cook Islands,Whole country,CK,COK,184,500
-Costa Rica,Whole country,CR,CRI,188,32.59
-Cote d'Ivoire,Whole country,CI,CIV,384,421.436
-Croatia,Whole country,HR,HRV,191,234.139
-Cuba,Whole country,CU,CUB,192,609.969
-Cyprus,Whole country,CY,CYP,196,618.557
-Czechia,Whole country,CZ,CZE,203,397.253
-Democratic Republic of Congo,Whole country,CD,COD,180,25.946
-Denmark,Whole country,DK,DNK,208,188.653
-Djibouti,Whole country,DJ,DJI,262,666.667
-Dominica,Whole country,DM,DMA,212,454.545
-Dominican Republic,Whole country,DO,DOM,214,625.139
-Ecuador,Whole country,EC,ECU,218,134.634
-Egypt,Whole country,EG,EGY,818,470.506
-El Salvador,Whole country,SV,SLV,222,183.074
-Equatorial Guinea,Whole country,GQ,GNQ,226,628.319
-Eritrea,Whole country,ER,ERI,232,652.174
-Estonia,Whole country,EE,EST,233,440.336
-Eswatini,Whole country,SZ,SWZ,748,212.121
-Ethiopia,Whole country,ET,ETH,231,25.442
-Faeroe Islands,Whole country,FO,FRO,234,384.615
-Falkland Islands,Whole country,FK,FLK,238,500
-Fiji,Whole country,FJ,FJI,242,295.238
-Finland,Whole country,FI,FIN,246,141.88
-France,Whole country,FR,FRA,250,67.53
-French Guiana,Whole country,GF,GUF,254,360
-French Polynesia,Whole country,PF,PYF,258,470.588
-Gabon,Whole country,GA,GAB,266,305.648
-Gambia,Whole country,GM,GMB,270,700
-Georgia,Whole country,GE,GEO,268,136.488
-Germany,Whole country,DE,DEU,276,332.495
-Ghana,Whole country,GH,GHA,288,343.552
-Greece,Whole country,GR,GRC,300,387.988
-Greenland,Whole country,GL,GRL,304,133.333
-Grenada,Whole country,GD,GRD,308,714.286
-Guadeloupe,Whole country,GP,GLP,312,593.939
-Guam,Whole country,GU,GUM,316,672.316
-Guatemala,Whole country,GT,GTM,320,278.46
-Guinea,Whole country,GN,GIN,324,182.099
-Guinea-Bissau,Whole country,GW,GNB,624,750
-Guyana,Whole country,GY,GUY,328,629.31
-Haiti,Whole country,HT,HTI,332,612.245
-Honduras,Whole country,HN,HND,340,345.714
-Hong Kong,Whole country,HK,HKG,344,684.989
-Hungary,Whole country,HU,HUN,348,246.981
-Iceland,Whole country,IS,ISL,352,28.751
-India,Whole country,IN,IND,356,625.573
-Indonesia,Whole country,ID,IDN,360,663.488
-Iran,Whole country,IR,IRN,364,487.99
-Iraq,Whole country,IQ,IRQ,368,517.746
-Ireland,Whole country,IE,IRL,372,312.812
-Israel,Whole country,IL,ISR,376,556.772
-Italy,Whole country,IT,ITA,380,336.714
-Jamaica,Whole country,JM,JAM,388,543.943
-Japan,Whole country,JP,JPN,392,472.57
-Jordan,Whole country,JO,JOR,400,435.138
-Kazakhstan,Whole country,KZ,KAZ,398,655.38
-Kenya,Whole country,KE,KEN,404,79.812
-Kiribati,Whole country,KI,KIR,296,666.667
-Kuwait,Whole country,KW,KWT,414,489.576
-Kyrgyzstan,Whole country,KG,KGZ,417,80.928
-Laos,Whole country,LA,LAO,418,304.638
-Latvia,Whole country,LV,LVA,428,223.776
-Lebanon,Whole country,LB,LBN,422,546.214
-Lesotho,Whole country,LS,LSO,426,20
-Liberia,Whole country,LR,LBR,430,273.81
-Libya,Whole country,LY,LBY,434,552.366
-Lithuania,Whole country,LT,LTU,440,262.693
-Luxembourg,Whole country,LU,LUX,442,196.721
-Macao,Whole country,MO,MAC,446,482.143
-Madagascar,Whole country,MG,MDG,450,419.689
-Malawi,Whole country,MW,MWI,454,113.924
-Malaysia,Whole country,MY,MYS,458,589.3
-Maldives,Whole country,MV,MDV,462,704.918
-Mali,Whole country,ML,MLI,466,472.892
-Malta,Whole country,MT,MLT,470,448.113
-Martinique,Whole country,MQ,MTQ,474,656.25
-Mauritania,Whole country,MR,MRT,478,530.055
-Mauritius,Whole country,MU,MUS,480,609.489
-Mexico,Whole country,MX,MEX,484,410.689
-Moldova,Whole country,MD,MDA,498,656.794
-Mongolia,Whole country,MN,MNG,496,733.333
-Montenegro,Whole country,ME,MNE,499,401.18
-Montserrat,Whole country,MS,MSR,500,500
-Morocco,Whole country,MA,MAR,504,624.966
-Mozambique,Whole country,MZ,MOZ,508,134.444
-Myanmar,Whole country,MM,MMR,104,312.683
-Namibia,Whole country,,NAM,516,48.077
-Nauru,Whole country,NR,NRU,520,666.667
-Nepal,Whole country,NP,NPL,524,22.654
-Netherlands,Whole country,NL,NLD,528,394.117
-New Caledonia,Whole country,NC,NCL,540,637.631
-New Zealand,Whole country,NZ,NZL,554,149.274
-Nicaragua,Whole country,NI,NIC,558,350.731
-Niger,Whole country,NE,NER,562,672.414
-Nigeria,Whole country,NG,NGA,566,398.363
-North Korea,Whole country,KP,PRK,408,155.161
-North Macedonia,Whole country,MK,MKD,807,528.09
-Norway,Whole country,NO,NOR,578,30.985
-Oman,Whole country,OM,OMN,512,489.87
-Pakistan,Whole country,PK,PAK,586,355.967
-Palestine,Whole country,PS,PSE,275,630.769
-Panama,Whole country,PA,PAN,591,242.57
-Papua New Guinea,Whole country,PG,PNG,598,556.931
-Paraguay,Whole country,PY,PRY,600,23.916
-Peru,Whole country,PE,PER,604,230.647
-Philippines,Whole country,PH,PHL,608,578.009
-Poland,Whole country,PL,POL,616,647.321
-Portugal,Whole country,PT,PRT,620,251.843
-Puerto Rico,Whole country,PR,PRI,630,601.734
-Qatar,Whole country,QA,QAT,634,489.87
-Reunion,Whole country,RE,REU,638,452.769
-Romania,Whole country,RO,ROU,642,244.876
-Russia,Whole country,RU,RUS,643,347.451
-Russia,Belgorod Oblast,RU,RUS,643,240.56
-Russia,Vladimir,RU,RUS,643,240.56
-Russia,Voronezj,RU,RUS,643,240.56
-Russia,Vologda,RU,RUS,643,240.56
-Russia,Kostroma Oblast,RU,RUS,643,240.56
-Russia,Kursk,RU,RUS,643,240.56
-Russia,Orel Oblast,RU,RUS,643,240.56
-Russia,Lipetsk Oblast,RU,RUS,643,240.56
-Russia,Ryazan Oblast,RU,RUS,643,240.56
-Russia,Bryansk Oblast ,RU,RUS,643,240.56
-Russia,Kaluga,RU,RUS,643,240.56
-Russia,Smolensk,RU,RUS,643,240.56
-Russia,Tambov,RU,RUS,643,240.56
-Russia,Tver Oblast,RU,RUS,643,240.56
-Russia,Tula,RU,RUS,643,240.56
-Russia,Jaroslavl,RU,RUS,643,240.56
-Russia,Moscow Oblast,RU,RUS,643,240.56
-Russia,Ivanovo,RU,RUS,643,240.56
-Russia,Moscow,RU,RUS,643,240.56
-Russia,Astrakhan,RU,RUS,643,218.85
-Russia,Volgograd Oblast,RU,RUS,643,218.85
-Russia,Dagestan,RU,RUS,643,218.85
-Russia,Adygeya Republic,RU,RUS,643,218.85
-Russia,Krasnoyarskiy,RU,RUS,643,218.85
-Russia,Kalmykiya Republic,RU,RUS,643,218.85
-Russia,Crimea,RU,RUS,643,218.85
-Russia,Rostov,RU,RUS,643,218.85
-Russia,Ingushetiya Republic,RU,RUS,643,218.85
-Russia,Kabardino-Balkariya Republic,RU,RUS,643,218.85
-Russia,Karachayevo-Cherkesiya Republic,RU,RUS,643,218.85
-Russia,North Ossetia,RU,RUS,643,218.85
-Russia,Chechnya,RU,RUS,643,218.85
-Russia,Stavropol’ Kray,RU,RUS,643,218.86
-Russia,Stavropol Kray,RU,RUS,643,218.85
-Russia,Sevastopol City,RU,RUS,643,218.85
-Russia,Penza,RU,RUS,643,186.07
-Russia,Samara Oblast,RU,RUS,643,186.07
-Russia,Saratovskaya Oblast,RU,RUS,643,186.07
-Russia,Ulyanovsk,RU,RUS,643,186.07
-Russia,Nizhny Novgorod Oblast,RU,RUS,643,186.07
-Russia,Chuvashia,RU,RUS,643,186.07
-Russia,Mariy-El Republic,RU,RUS,643,186.07
-Russia,Mordoviya Republic,RU,RUS,643,186.07
-Russia,Tatarstan Republic,RU,RUS,643,186.07
-Russia,St.-Petersburg,RU,RUS,643,224.45
-Russia,Murmansk,RU,RUS,643,53.51
-Russia,Kaliningrad,RU,RUS,643,387.1
-Russia,Leningradskaya Oblast,RU,RUS,643,224.45
-Russia,Novgorod Oblast,RU,RUS,643,224.45
-Russia,Pskov Oblast,RU,RUS,643,224.45
-Russia,Nenets,RU,RUS,643,600.13
-Russia,Arkhangelsk Oblast,RU,RUS,643,600.14
-Russia,Karelia,RU,RUS,643,224.45
-Russia,Komi,RU,RUS,643,754.98
-Russia,Bashkortostan Republic,RU,RUS,643,468.85
-Russia,Udmurtiya Republic,RU,RUS,643,468.85
-Russia,Khanty-Mansia,RU,RUS,643,468.85
-Russia,Yamalo-Nenets,RU,RUS,643,468.85
-Russia,Perm,RU,RUS,643,468.85
-Russia,Kirov,RU,RUS,643,468.85
-Russia,Kurgan Oblast,RU,RUS,643,468.85
-Russia,Orenburg Oblast,RU,RUS,643,468.85
-Russia,Sverdlovsk,RU,RUS,643,468.85
-Russia,Tyumen’ Oblast,RU,RUS,643,468.85
-Russia,Chelyabinsk,RU,RUS,643,468.85
-Russia,Altai,RU,RUS,643,363.41
-Russia,Buryatiya Republic,RU,RUS,643,363.42
-Russia,Tyva Republic,RU,RUS,643,363.42
-Russia,Khakasiya Republic,RU,RUS,643,363.42
-Russia,Altay Kray,RU,RUS,643,363.42
-Russia,Transbaikal Territory,RU,RUS,643,363.42
-Russia,Krasnoyarsk Krai,RU,RUS,643,363.42
-Russia,Irkutsk Oblast,RU,RUS,643,363.42
-Russia,Kemerovo Oblast,RU,RUS,643,363.42
-Russia,Novosibirsk Oblast,RU,RUS,643,363.42
-Russia,Omsk,RU,RUS,643,363.42
-Russia,Tomsk Oblast,RU,RUS,643,363.42
-Russia,Amur Oblast,RU,RUS,643,443.02
-Russia,Primorskiy (Maritime) Kray,RU,RUS,643,443.02
-Russia,Primorskiy Kray,RU,RUS,643,443.03
-Russia,Khabarovsk,RU,RUS,643,443.02
-Russia,Jewish Autonomous Oblast,RU,RUS,643,443.02
-Russia,Sakha,RU,RUS,643,443.02
-Rwanda,Whole country,RW,RWA,646,377.358
-Saint Kitts and Nevis,Whole country,KN,KNA,659,681.818
-Saint Lucia,Whole country,LC,LCA,662,685.714
-Saint Pierre and Miquelon,Whole country,PM,SPM,666,800
-Saint Vincent and the Grenadines,Whole country,VC,VCT,670,500
-Samoa,Whole country,WS,WSM,882,428.571
-Sao Tome and Principe,Whole country,ST,STP,678,666.667
-Saudi Arabia,Whole country,SA,SAU,682,570.473
-Senegal,Whole country,SN,SEN,686,545.29
-Serbia,Whole country,RS,SRB,688,597.905
-Seychelles,Whole country,SC,SYC,690,693.878
-Sierra Leone,Whole country,SL,SLE,694,47.619
-Singapore,Whole country,SG,SGP,702,488.668
-Slovakia,Whole country,SK,SVK,703,158.741
-Slovenia,Whole country,SI,SVN,705,245.708
-Solomon Islands,Whole country,SB,SLB,90,700
-Somalia,Whole country,SO,SOM,706,657.143
-South Africa,Whole country,ZA,ZAF,710,720.023
-South Korea,Whole country,KR,KOR,410,444.398
-South Sudan,Whole country,SS,SSD,728,709.091
-Spain,Whole country,ES,ESP,724,199.515
-Sri Lanka,Whole country,LK,LKA,144,494.275
-Sudan,Whole country,SD,SDN,736,266.106
-Suriname,Whole country,SR,SUR,740,305.085
-Sweden,Whole country,SE,SWE,752,42.371
-Switzerland,Whole country,CH,CHE,756,55.166
-Syria,Whole country,SY,SYR,760,538.554
-Taiwan,Whole country,TW,TWN,158,563.381
-Tajikistan,Whole country,TJ,TJK,762,73.489
-Tanzania,Whole country,TZ,TZA,834,386.792
-Thailand,Whole country,TH,THA,764,506.537
-Togo,Whole country,TG,TGO,768,592.593
-Tonga,Whole country,TO,TON,776,666.667
-Trinidad and Tobago,Whole country,TT,TTO,780,520.278
-Tunisia,Whole country,TN,TUN,788,471.087
-Turkey,Whole country,TR,TUR,792,411.302
-Turkmenistan,Whole country,TM,TKM,795,544.381
-Turks and Caicos Islands,Whole country,TC,TCA,796,708.333
-Uganda,Whole country,UG,UGA,800,77.088
-Ukraine,Whole country,UA,UKR,804,279.239
-United Arab Emirates,Whole country,AE,ARE,784,471.57
-United Kingdom,Whole country,GB,GBR,826,245.715
-United States,Whole country,US,USA,840,369.571
-United States,Alaska,US,USA,840,442.22
-United States,Alabama,US,USA,840,356.33
-United States,Arkansas,US,USA,840,511.63
-United States,Arizona,US,USA,840,396.13
-United States,California,US,USA,840,175.62
-United States,Colorado,US,USA,840,603.76
-United States,Connecticut,US,USA,840,361.83
-United States,Delaware,US,USA,840,16.5
-United States,Florida,US,USA,840,397.93
-United States,Georgia,US,USA,840,399.59
-United States,Hawaii,US,USA,840,708.84
-United States,Iowa,US,USA,840,390.75
-United States,Idaho,US,USA,840,95.88
-United States,Illinois,US,USA,840,329.21
-United States,Indiana,US,USA,840,741.26
-United States,Kansas,US,USA,840,405.35
-United States,Kentucky,US,USA,840,807.68
-United States,Louisiana,US,USA,840,374.81
-United States,Massachusetts,US,USA,840,354.06
-United States,Maryland,US,USA,840,335.07
-United States,Maine,US,USA,840,96.87
-United States,Michigan,US,USA,840,459.68
-United States,Minnesota,US,USA,840,399.58
-United States,Missouri,US,USA,840,725.21
-United States,Mississippi,US,USA,840,379.82
-United States,Montana,US,USA,840,572.76
-United States,North Carolina,US,USA,840,353.59
-United States,North Dakota,US,USA,840,656.57
-United States,Nebraska,US,USA,840,574.08
-United States,New Hampshire,US,USA,840,116.23
-United States,New Jersey,US,USA,840,247.29
-United States,New Mexico,US,USA,840,601.86
-United States,Nevada,US,USA,840,335.35
-United States,New York,US,USA,840,171.57
-United States,Ohio,US,USA,840,563.57
-United States,Oklahoma,US,USA,840,333.05
-United States,Oregon,US,USA,840,180.59
-United States,Pennsylvania,US,USA,840,344.17
-United States,Rhode Island,US,USA,840,386.59
-United States,South Carolina,US,USA,840,244.21
-United States,South Dakota,US,USA,840,223.22
-United States,Tennessee,US,USA,840,319.5
-United States,Texas,US,USA,840,414.32
-United States,Utah,US,USA,840,726.57
-United States,Virginia,US,USA,840,288.42
-United States,Vermont,US,USA,840,23.25
-United States,Washington,US,USA,840,135.67
-United States,Wisconsin,US,USA,840,559.27
-United States,West Virginia,US,USA,840,882.35
-United States,Virgin Islands,US,USA,840,693.548
-United States,Wyoming,US,USA,840,938.48
-United States Virgin Islands,Whole country,VI,VIR,850,693.548
-Uruguay,Whole country,UY,URY,858,106.013
-Uzbekistan,Whole country,UZ,UZB,860,496.78
-Vanuatu,Whole country,VU,VUT,548,571.429
-Venezuela,Whole country,VE,VEN,862,192.012
-Vietnam,Whole country,VN,VNM,704,546.025
-World,Whole country,WORLD,WORLD,WORLD,436.529
-Yemen,Whole country,YE,YEM,887,540.698
-Zambia,Whole country,ZM,ZMB,894,120.776
-Zimbabwe,Whole country,ZW,ZWE,716,288.24
+country,region,alternative_name,alpha_2_code,alpha_3_code,un_code,carbon_index
+Afghanistan,Whole country,N/A,AF,AFG,4,166.667
+Albania,Whole country,N/A,AL,ALB,8,24.482
+Algeria,Whole country,N/A,DZ,DZA,12,485.45
+American Samoa,Whole country,N/A,AS,ASM,16,687.5
+Angola,Whole country,N/A,AO,AGO,24,173.169
+Antigua and Barbuda,Whole country,N/A,AG,ATG,28,676.471
+Argentina,Whole country,N/A,AR,ARG,32,353.052
+Armenia,Whole country,N/A,AM,ARM,51,209.016
+Aruba,Whole country,N/A,AW,ABW,533,586.957
+Australia,Whole country,N/A,AU,AUS,36,560.384
+Australia,ACT,"ACT,Au-thai-li-a Su-tu Liang-thi,Austraalia pealinna ala,Australeschen Haaptstadterritoire,Australia Cefurba Teritorio,Australia Siu-to Tek-piat-khu,Australia Siú-to͘ Te̍k-pia̍t-khu,Australiako Hiriburuaren Lurraldea,Australian Capital Territory,Australian Capital Territory (Canberra),Australian paeaekaupunkiterritorio,Australian pääkaupunkiterritorio,Australijas galvaspilsetas teritorija,Australijos sostines teritorija,Australijos sostinės teritorija,Australijska prestonichka teritorija,Australijskaja stalichnaja tehrytoryja,Australijskie Terytorium Stoleczne,Australijskie Terytorium Stołeczne,Australisc Heafodbyrig Landscipe,Australisc Hēafodbyrig Landscipe,Australysk Haadstedsk Territoarium,Austrālijas galvaspilsētas teritorija,Ausztraliai fovarosi teruelet,Ausztráliai fővárosi terület,Avstralijn Nijslehlijn Nutag Dehvsgehr,Avstralijs'ka stolichna teritorija,Avstralijska stolichna teritorija,Avstralijskaja stolichnaja territorija,Avstraliska prestolninska teritorija,Avstraliya Paytaxt Ərazisi,Avustralya Baskent Boelgesi,Avustralya Başkent Bölgesi,Aŭstralia Ĉefurba Teritorio,Canberra,Commonwealth Territory,Crioch Phriomhchathair na hAstraile,Críoch Phríomhchathair na hAstráile,Epikrateia Afstralianis Protevousas,Federal Capital Territory,Hoefudborgarsvaedi Astraliu,Höfuðborgarsvæði Ástralíu,Lanh tho Thu go Uc,Lãnh thổ Thủ đô Úc,O-ciu Siu-du Dek-ku,Ostrielyan Kapitel Teritrii,Teritoeio da Capita Australian-a,Teritorij australskog glavnog grada,Teritorija australijskog glavnog grada,Teritorija glavnog grada Australije,Teritorium australskeho hlavneho mesta,Teritorium hlavniho mesta Australie,Teritorium hlavního města Austrálie,Teritoryo nga Kapital han Australya,Teritórium austrálskeho hlavného mesta,Teritöio da Capitâ Australian-a,Territoire de la capitale australienne,Territori da la chapitala australiana,Territori de la Capital Australiana,Territori de la capitala australiana,Territorio da Capital Australiana,Territorio de la Capital Australiana,Territorio della Capitale Australiana,Territorium Capitale Australianum,Territòri de la capitala australiana,Território da Capital Australiana,Thalloo Preeu-valjagh ny h-Austrail,Tiriad Ker-benn Aostralia,Tiriad Kêr-benn Aostralia,Tiriogaeth Prifddinas Awstralia,Wilayah Ibu Kota Australia,Wilayah Ibu Negara Australia,Yass-Canberra,ao da li ya shou dou ling de,ao zhou shou dou de qu,asatreli'a'i rajadhani rajakhetara,astreliyana rajadhani ksetra,attireliyat talainakara atpulam,oseuteuleillia sudo junju,ostreliya'i rajadhani ksetra,ostreliyana kepitala teritori,osutoraria shou dou te bie de yu,qlmrw paytkhty astralya,Àu-thai-li-â Sú-tû Liâng-thi,Ó̤-ciŭ Siū-dŭ Dĕk-kṳ̆,Επικράτεια Αυστραλιανής Πρωτεύουσας,Австралийн Нийслэлийн Нутаг Дэвсгэр,Австралийска столична територия,Австралийская столичная территория,Австралиска престолнинска територија,Австралійська столична територія,Аустралијска престоничка територија,Аўстралійская сталічная тэрыторыя,Ավստրալիական մայրաքաղաքային տարածք,טריטוריית הבירה האוסטרלית,آسٹریلوی دارالحکومت علاقہ,قلمرو پایتختی استرالیا,ناوچەی پایتەختی ئوسترالیا,अस्ट्रेलियन राजधानी क्षेत्र,ऑस्ट्रेलियन कॅपिटल टेरिटोरी,ऑस्ट्रेलियाई राजधानी क्षेत्र,ਆਸਟ੍ਰੇਲੀਆਈ ਰਾਜਧਾਨੀ ਰਾਜਖੇਤਰ,ஆத்திரேலியத் தலைநகர ஆட்புலம்,ออสเตรเลียนแคพิทอลเทร์ริทอรี,ფედერალური ტერიტორია,オーストラリア首都特別地域,澳大利亚首都领地,澳洲首都地區,오스트레일리아 수도 준주",AU,AUS,36,790.0
+Australia,Australian Capital Territory,"ACT,Au-thai-li-a Su-tu Liang-thi,Austraalia pealinna ala,Australeschen Haaptstadterritoire,Australia Cefurba Teritorio,Australia Siu-to Tek-piat-khu,Australia Siú-to͘ Te̍k-pia̍t-khu,Australiako Hiriburuaren Lurraldea,Australian Capital Territory,Australian Capital Territory (Canberra),Australian paeaekaupunkiterritorio,Australian pääkaupunkiterritorio,Australijas galvaspilsetas teritorija,Australijos sostines teritorija,Australijos sostinės teritorija,Australijska prestonichka teritorija,Australijskaja stalichnaja tehrytoryja,Australijskie Terytorium Stoleczne,Australijskie Terytorium Stołeczne,Australisc Heafodbyrig Landscipe,Australisc Hēafodbyrig Landscipe,Australysk Haadstedsk Territoarium,Austrālijas galvaspilsētas teritorija,Ausztraliai fovarosi teruelet,Ausztráliai fővárosi terület,Avstralijn Nijslehlijn Nutag Dehvsgehr,Avstralijs'ka stolichna teritorija,Avstralijska stolichna teritorija,Avstralijskaja stolichnaja territorija,Avstraliska prestolninska teritorija,Avstraliya Paytaxt Ərazisi,Avustralya Baskent Boelgesi,Avustralya Başkent Bölgesi,Aŭstralia Ĉefurba Teritorio,Canberra,Commonwealth Territory,Crioch Phriomhchathair na hAstraile,Críoch Phríomhchathair na hAstráile,Epikrateia Afstralianis Protevousas,Federal Capital Territory,Hoefudborgarsvaedi Astraliu,Höfuðborgarsvæði Ástralíu,Lanh tho Thu go Uc,Lãnh thổ Thủ đô Úc,O-ciu Siu-du Dek-ku,Ostrielyan Kapitel Teritrii,Teritoeio da Capita Australian-a,Teritorij australskog glavnog grada,Teritorija australijskog glavnog grada,Teritorija glavnog grada Australije,Teritorium australskeho hlavneho mesta,Teritorium hlavniho mesta Australie,Teritorium hlavního města Austrálie,Teritoryo nga Kapital han Australya,Teritórium austrálskeho hlavného mesta,Teritöio da Capitâ Australian-a,Territoire de la capitale australienne,Territori da la chapitala australiana,Territori de la Capital Australiana,Territori de la capitala australiana,Territorio da Capital Australiana,Territorio de la Capital Australiana,Territorio della Capitale Australiana,Territorium Capitale Australianum,Territòri de la capitala australiana,Território da Capital Australiana,Thalloo Preeu-valjagh ny h-Austrail,Tiriad Ker-benn Aostralia,Tiriad Kêr-benn Aostralia,Tiriogaeth Prifddinas Awstralia,Wilayah Ibu Kota Australia,Wilayah Ibu Negara Australia,Yass-Canberra,ao da li ya shou dou ling de,ao zhou shou dou de qu,asatreli'a'i rajadhani rajakhetara,astreliyana rajadhani ksetra,attireliyat talainakara atpulam,oseuteuleillia sudo junju,ostreliya'i rajadhani ksetra,ostreliyana kepitala teritori,osutoraria shou dou te bie de yu,qlmrw paytkhty astralya,Àu-thai-li-â Sú-tû Liâng-thi,Ó̤-ciŭ Siū-dŭ Dĕk-kṳ̆,Επικράτεια Αυστραλιανής Πρωτεύουσας,Австралийн Нийслэлийн Нутаг Дэвсгэр,Австралийска столична територия,Австралийская столичная территория,Австралиска престолнинска територија,Австралійська столична територія,Аустралијска престоничка територија,Аўстралійская сталічная тэрыторыя,Ավստրալիական մայրաքաղաքային տարածք,טריטוריית הבירה האוסטרלית,آسٹریلوی دارالحکومت علاقہ,قلمرو پایتختی استرالیا,ناوچەی پایتەختی ئوسترالیا,अस्ट्रेलियन राजधानी क्षेत्र,ऑस्ट्रेलियन कॅपिटल टेरिटोरी,ऑस्ट्रेलियाई राजधानी क्षेत्र,ਆਸਟ੍ਰੇਲੀਆਈ ਰਾਜਧਾਨੀ ਰਾਜਖੇਤਰ,ஆத்திரேலியத் தலைநகர ஆட்புலம்,ออสเตรเลียนแคพิทอลเทร์ริทอรี,ფედერალური ტერიტორია,オーストラリア首都特別地域,澳大利亚首都领地,澳洲首都地區,오스트레일리아 수도 준주",AU,AUS,36,790.0
+Australia,New South Wales,"NSW,New South Wales,Nouvelle-Galles du Sud,Nova Gales do Sul,Novsudkimrio,Novyj Juzhnyj Uehl's,Shtat Novyj Juzhnyj Uehl's,State of New South Wales,Uusi Etelae-Wales,Uusi Etelä-Wales,Новый Южный Уэльс,Штат Новый Южный Уэльс",AU,AUS,36,790.0
+Australia,Northern Territory,"Amihanan nga Teritoryo,Australija khotugu territorijata,Baek Liang-tu,Báe̤k Liāng-tū,Caegat territori,Crioch an Tuaiscirt,Críoch an Tuaiscirt,Eszaki teruelet,Hilagang Teritoryo,Ipar Lurraldea,Khojd Nutag Dehvsgehr,Kuzey Topraklari,Kuzey Toprakları,Lanh tho Bac Uc,Lãnh thổ Bắc Úc,NT,Nerdlechen Territoire,Noardlik Territoarium,Noordelijk Territorium,Noordelike Gebied,Norda Teritorio,Nordelik Territorium,Nordterritoriet,Nordterritorium,Nordursvaedid,Northan Teritrii,Northern Territory,Northerne Landscipe,Northren Territory,Norðursvæðið,Norþerne Landscipe,Nërdlechen Territoire,Pak Leng-to,Pak Léng-tó͘,Pangulung Territorio,Paunochnaja tehrytoryja,Pivnichna teritorija,Pohjaterritoorium,Pohjoisterritorio,Põhjaterritoorium,Roinn-a-Tuath,Severna Teritorija,Severna teritorija,Severnaja territorija,Severne teritorium,Severni teritorium,Severné teritórium,Severní teritorium,Siaurine Teritorija,Sjeverna teritorija,Sjeverni teritorij,Teritoeio do Nord,Teritoriul de Nord,Teritöio do Nord,Territoire du Nord,Territori dal Nord,Territori del Nord,Territorio del Nord,Territorio del Norte,Territorio do Norte,Territorium Septentrionale,Territòri del Nòrd,Território do Norte,Terytorium Polnocne,Terytorium Północne,Thalloo yn Twoaie,Tiriad an Norzh,Tiriogaeth y Gogledd,Voreia Epikrateia,Wilayah Utara,Ziemelu teritorija,Ziemeļu teritorija,aqlym shmaly,bei ling de,htrytwryh hzpwnyt,nodeon junju,nordarna teritori,northarna teritari,nozanteritori,nxr theirn ther ri thx ri,qlmrw shmaly,utari rajakhetara,vata atpulam,Északi terület,Şimal ərazisi,Šiaurinė Teritorija,Βόρεια Επικράτεια,Аустралия хотугу территорията,Паўночная тэрыторыя,Північна територія,Северна Територија,Северна територия,Северна територија,Северная территория,Хойд Нутаг Дэвсгэр,Цæгат территори,Հյուսիսային տարածք,הטריטוריה הצפונית,إقليم شمالي,اتلا تھاں,خاکەکانی باکووری ئوسترالیا,شمالی علاقہ,قلمرو شمالی,नॉर्थर्न टेरिटरी,नॉर्दर्न टेरिटोरी,ਉੱਤਰੀ ਰਾਜਖੇਤਰ,வட ஆட்புலம்,นอร์เทิร์นเทร์ริทอรี,မြောက်ဩစတြေးလျပြည်နယ်,ჩრდილოეთი ტერიტორია,ノーザンテリトリー,北領地,北领地,노던 준주",AU,AUS,36,570.0
+Australia,Queensland,"Kvinslando,Kvinslend,QLD,Queensland,Shtat Kvinslend,State of Queensland,Квинсленд,Штат Квинсленд",AU,AUS,36,800.0
+Australia,South Australia,"Australia Meridional,Australie-Meridionale,Australie-Méridionale,Austrália Meridional,Etelae-Australia,Etelä-Australia,Juzhnaja Avstralija,SA,Shtat Juzhnaja Avstralija,South Australia,State of South Australia,Suda Australio,Suda Aŭstralio,Suedaustralien,Südaustralien,Штат Южная Австралия,Южная Австралия",AU,AUS,36,350.0
+Australia,Tasmania,"Shtat Tasmanija,State of Tasmania,TAS,Tasmania,Tasmanie,Tasmanien,Tasmanija,Tasmanio,Tasmânia,Van Diemen's Land,an Tasmain,an Tasmáin,Тасмания,Штат Тасмания",AU,AUS,36,160.0
+Australia,Victoria,"Shtat Viktorija,State of Victoria,VIC,Victoria,Viktorija,Viktorio,Vitoria,Vitória,Виктория,Штат Виктория",AU,AUS,36,960.0
+Australia,Western Australia,"Australia Ocidental,Australie-Occidentale,Austrália Ocidental,Laensi-Australia,Länsi-Australia,Okcidenta Australio,Okcidenta Aŭstralio,Shtat Zapadnaja Avstralija,State of Western Australia,Swan River Colony,WA,West Australia,West Coast,Westaustralien,Western Australia,Zapadnaja Avstralija,Западная Австралия,Штат Западная Австралия",AU,AUS,36,680.0
+Austria,Whole country,N/A,AT,AUT,40,142.506
+Azerbaijan,Whole country,N/A,AZ,AZE,31,537.051
+Bahamas,Whole country,N/A,BS,BHS,44,700.0
+Bahrain,Whole country,N/A,BH,BHR,48,490.14
+Bangladesh,Whole country,N/A,BD,BGD,50,550.318
+Barbados,Whole country,N/A,BB,BRB,52,676.471
+Belarus,Whole country,N/A,BY,BLR,112,472.122
+Belgium,Whole country,N/A,BE,BEL,56,198.201
+Belize,Whole country,N/A,BZ,BLZ,84,483.871
+Benin,Whole country,N/A,BJ,BEN,204,652.174
+Bhutan,Whole country,N/A,BT,BTN,64,23.464
+Bolivia,Whole country,N/A,BO,BOL,68,319.834
+Bosnia and Herzegovina,Whole country,N/A,BA,BIH,70,522.042
+Botswana,Whole country,N/A,BW,BWA,72,800.0
+Brazil,Whole country,N/A,BR,BRA,76,113.069
+British Virgin Islands,Whole country,N/A,VG,VGB,92,714.286
+Brunei,Whole country,N/A,BN,BRN,96,659.483
+Bulgaria,Whole country,N/A,BG,BGR,100,327.368
+Burkina Faso,Whole country,N/A,BF,BFA,854,633.721
+Burundi,Whole country,N/A,BI,BDI,108,218.75
+Cambodia,Whole country,N/A,KH,KHM,116,423.664
+Cameroon,Whole country,N/A,CM,CMR,120,253.915
+Canada,Whole country,N/A,CA,CAN,124,120.486
+Canada,Alberta,"AB,Al'berta,Al'bertae,Alb.,Alberta,Alberta pruwinsya,Alberta-sen,Alberta-sén,Alberto,Alburta,Albèrta,Albérta,Almperta,Alta.,Pravincyja Al'berta,aelbeota ju,ai bo ta,ailabarata,albarta,alberta,albrta,alpartta,arubata zhou,ya bo da,Αλμπέρτα,Алберта,Албърта,Альбертæ,Альберта,Правінцыя Альберта,Ալբերտա,אלבערטא,אלברטה,آلبرتا,ألبرتا,البرٹا,ایلبرٹا,ܐܠܒܪܛܐ,अल्बर्टा,आल्बर्टा,ਐਲਬਰਟਾ,ஆல்பர்ட்டா,ಆಲ್ಬರ್ಟಾ,รัฐแอลเบอร์ตา,အယ်လဗားတားပြည်နယ်,ალბერთა,ალბერტა,アルバータ州,亞伯達,艾伯塔,앨버타 주",CA,CAN,124,620.0
+Canada,British Columbia,"An Choloim Bhriotanach,An Cholóim Bhriotanach,BC,Breetish Columbie,Breska Kolumbia,Breska Kólumbía,Bretu Kolumbeje,Brit Columbia,Brita Kolumbio,Britanakan Kolumbia,Britani Kolumbiye,Britaniin Kolumbi,Britanijy Kolumbi,Britaniya Kolumbiyasi,Britaniya Kolumbiyası,Britans'ka Kolumbija,Britanska Kolumbija,Britanskaja Kolumbija,Britanya Kolumbiyasi,Britanya Kolumbiyası,Briti Columbia,British Columbia,British Columbia pruwinsya,British Kolambia,British Kolombiya,British Kolumbia,Britisk Columbia,Brits-Columbia,Brits-Columbie,Brits-Columbië,Britsk-Kolumbia,Britska Kolumbia,Britska Kolumbie,Britská Kolumbia,Britská Kolumbie,Brittilaeinen Kolumbia,Brittiläinen Kolumbia,Britu Kolumbija,Britų Kolumbija,Brytyjsko Kolumbijo,Brytyjsko Kolůmbijo,Brėtu Kolumbėjė,Colombia Britanica,Colombie-Britannique,Colonbia Britanica,Columbia Bhreatannach,Columbia Britainiarra,Columbia Britanega,Columbia Britanica,Columbia Britanică,Columbia Britannic,Columbia Britannica,Columbia Britànica,Columbia Británica,Colómbia Britanica,Colùmbia Britànnica,Colúmbia Britànica,Colúmbia Britânica,Combia Britannega,Cołonbia Britànica,Cómbia Britannega,Kolombi Bredennek,Kolumbia Britanike,Kolumbia Brytyjska,Kolumbia Vyretanagua,Kolumbia Vyretañagua,Pravincyja Brytanskaja Kalumbija,Vretaniki Kolomvia,Yn Cholombey Ghoaldagh,bei shi sheng,beulitisikeolleombia ju,britisa kolabi'a,britisa kolambiya,brtanwy kwlmbya,brytysh klmbya,bu lie dian ge lun bi ya,buritisshukoronbia zhou,kwlwmbya albrytanyt,piritticu kolampiya,qwlwmbyh hbrytyt,rath britich kholambeiy,Βρετανική Κολομβία,Британ Колумбияһы,Британиин Колумби,Британийы Колумби,Британска Колумбия,Британска Колумбија,Британская Колумбия,Британська Колумбія,Бритиш Коламбиа,Правінцыя Брытанская Калумбія,Բրիտանական Կոլումբիա,בריטישע קאלומביע,קולומביה הבריטית,برطانوی کولمبیا,برٹش کولمبیا,بریتیش کلمبیا,كولومبيا البريطانية,ܩܘܠܘܡܒܝܐ ܒܪܝܛܝܬܐ,ब्रिटिश कोलंबिया,ब्रिटिश कोलम्बिया,ਬ੍ਰਿਟਿਸ਼ ਕੋਲੰਬੀਆ,பிரிட்டிசு கொலம்பியா,ಬ್ರಿಟಿಷ್‌‌ ಕೊಲಂಬಿಯಾ,รัฐบริติชโคลัมเบีย,ဗြိတိသျှ ကိုလံဘီယာ ပြည်နယ်,ბრიტანეთის კოლუმბია,ბრიტანეთიშ კოლუმბია,ブリティッシュコロンビア州,不列颠哥伦比亚,卑詩省,브리티시컬럼비아 주",CA,CAN,124,18.6
+Canada,Manitoba,"MB,Man.,Manitoba,Manitoba OElkisi,Manitoba provints,Manitoba pruwinsya,Manitoba Ölkisi,Manitoba-sen,Manitoba-sén,Manitobaa,Manitobae,Manitobo,Manitompa,Manitova,Manitòba,Pravincyja Manitoba,maenitoba ju,man ni tuo ba,manitoba,manitoba zhou,manittopa,manytwba,menitoba,mian ni tu ba,mian ni tuo ba,mnytba,mnytwbh,Μανιτόμπα,Манитобæ,Манитоба,Манітоба,Правінцыя Манітоба,Մանիտոբա,מאניטאבא,מניטובה,مانيتوبا,مانیٹوبا,منیتبا,ܡܐܢܝܛܘܒܐ,मानिटोबा,मॅनिटोबा,ਮਾਨੀਟੋਬਾ,மானிட்டோபா,รัฐแมนิโทบา,မနီတိုးဗားပြည်နယ်,მანიტობა,ᒪᓂᑐᐸ,マニトバ州,曼尼托巴,緬尼吐巴,緬尼托巴,매니토바 주",CA,CAN,124,1.2
+Canada,New Brunswick,"Acadie,Brunswick Berria,Brunswick Newydd,Brunswick Nowydh,Brunswick Nuadh,N'ju-Bransuik,N'ju-Bransvik,NB,Naujasis Bransvikas,Naus Brunsviks,Neuvo Brunswick,New Brunswick,New Brunswick pruwinsya,Nieu-Brunswyk,Nij-Breunswyk,Niou Bransgouik,Nju Bransvik,Nju Branzvik,Nju Brunzuik,Nou Brunswick,Noul Brunswick,Nouveau-Brunswick,Nov-Brunsviko,Nova Brunsvic,Nova Brunsvique,Nova Brunswick,Novi Brunswick,Novo Brunswick,Novum Brunsvicum,Novy Brunsvik,Nový Brunšvik,Nowy Brunszwik,Nubransvika,Nueva Brunswick,Nuevo Brunswick,Nuovo Brunswick,Nyu Bransuik,Nyu-Brunsvik,Nòu Brunswick,Pravincyja N'ju-Bransuik,Uj-Brunswick,Yengi Brunswik OElkisi,Yéngi Brunswik Ölkisi,n'yu brunsavika,ni'u barasavika,niu bin shi yu sheng,niyu pirancuvik,nyubeuleonjeuwig ju,nyuburanzuuikku zhou,nyw brnzwwyq,nyw brnzwyk,nyw brwnswk,nyw brwnzwyk,nyw brwnzwyq,nywbranzwyk,rath niw brans wik,xin bu lun rui ke,Új-Brunswick,Ņūbransvika,Νιου Μπράνσγουικ,Њу Бранзвик,Њу Брансвик,Нью-Брансвик,Нью-Брансвік,Нью-Брансуик,Ню Брънзуик,Правінцыя Нью-Брансуік,Նյու Բրանսուիկ,ניו ברנזוויק,نيو برونزويك,نیو برنزویک,نیو برونسوک,نیوبرانزویک,ܢܝܘ ܒܪܘܢܙܘܝܩ,न्यू ब्रुन्सविक,ਨਿਊ ਬਰੰਸਵਿਕ,நியூ பிரன்சுவிக்,รัฐนิวบรันสวิก,ნიუ-ბრანსუიკი,ニューブランズウィック州,新不倫瑞克,紐賓士域省,뉴브런즈윅 주",CA,CAN,124,260.0
+Canada,Newfoundland and Labrador,"NL,New Foundland - Labrador,Newfoundland,Newfoundland & Labrador,Newfoundland and Labrador,Newfoundland och Labrador,Novlando kaj Labradoro,Talamh an Eisc agus Labradar,Talamh an Éisc agus Labradar,Terra Nova e Labrador,Terre-Neuve-et-Labrador,nyupeondeullaendeu,nyupeondeullaendeu laebolado,뉴펀들랜드,뉴펀들랜드 래보라도",CA,CAN,124,28.0
+Canada,Nova Scotia,"Alba Nuadh,Albain Nua,Alban Nowydh,Eskozia Berria,Iskocyay Newey,Jaunskotija,NS,Nalbin Noa,Naujoji Skotija,Naujoji Škotija,Naujuoje Skuoteje,Naujuojė Škuotėjė,Nea Skotia,Nei-Schottland,Neuva Scossia,Neuva Scòssia,Nij-Skotlan,Nij-Skotlân,Niwe Scotland,Nog Shotlandi,Nor Sotlandia,Noua Scotie,Noua Scoție,Nouvelle-Ecosse,Nouvelle-Écosse,Nov-Skotio,Nova Escocia,Nova Escòcia,Nova Escócia,Nova Scotia,Nova Scotia pruwinsya,Nova Shkotska,Nova Shotlandija,Nova Skosha,Nova Skotia,Nova Skotija,Nova Skotska,Nova Škotska,Novaja Shotlandija,Nove Skotsko,Nové Skotsko,Nové Škótsko,Nowa Skotiye OElkisi,Nowa Skotiye Ölkisi,Nowa Szkocja,Nueva Escocia,Nuova Scozia,Nyja-Skotland,Nòva Escòcia,Nýja-Skotland,Nīwe Scotland,Pravincyja Novaja Shatlandyja,Shehneh Shotland,Skocia e Re,Skos Nevez,Uj-Skocia,Yancuic Escocia,Yangi Shotlandiya,Yeni Iskocya,Yeni Sotlandiya,Yeni İskoçya,Yeni Şotlandiya,nobaseukosya ju,nobasukoshia zhou,nova sakosa,nova skociya,novha skosiya,nuo hua si gao sha,nwa askwshya,nwbh sqwtyh,nwfa skwsha,nwwa skwshya,rath no wa s ko cheiy,xin si ke she,Új-Skócia,İskoçyay Newey,Νέα Σκωτία,Нова Скотия,Нова Скоша,Нова Шкотска,Нова Шотландія,Новая Шотландия,Ног Шотланди,Правінцыя Новая Шатландыя,Шэнэ Шотланд,Նոր Շոտլանդիա,נאווע סקאשע,נובה סקוטיה,نوا اسکوشیا,نوا سکوٹیا,نوفا سكوشا,نووا سکوشیا,ܢܘܒܐ ܣܩܘܛܝܐ,नोव्हा स्कॉशिया,ਨੋਵਾ ਸਕੋਸ਼ਾ,நோவா ஸ்கோசியா,รัฐโนวาสโกเชีย,နိုဗာစကိုးရှားပြည်နယ်,ახალი შოტლანდია,ノバスコシア州,新斯科舍,諾華斯高沙,노바스코샤 주",CA,CAN,124,760.0
+Canada,Northwest Territories,"NT,NWT,Nordokcidentaj Teritorioj,Northwest Territories,Territoires du Nord-Ouest,Territorios do Noroeste,Territórios do Noroeste",CA,CAN,124,200.0
+Canada,Nunavut ,N/A,CA,CAN,124,850.0
+Canada,Ontario,"Canada West,ON,Ont.,Ontareje,Ontarijas,Ontario,Ontario pruwinsya,Ontario-sen,Ontario-sén,Ontariu,Ontariyo,Ontarėjė,Ontàrio,Ontário,Ontārio,Pravincyja Antarya,Upper Canada,an da e,an da e sheng,antari'o,antariyo,antaryw,awntaryw,onrariyo,ontalio ju,ontari'o,ontario zhou,ontariyea,ontariyo,Οντάριο,Онтарио,Онтаріо,Правінцыя Антарыа,Օնտարիո,אונטריו,אנטעריא,أونتاريو,انتاریو,انٹاریو,اونتاريو,اونٹاریو,ܐܘܢܛܐܪܝܘ,ऑन्टारियो,ओण्टारियो,অন্টারিও,ਓਂਟਾਰੀਓ,ஒன்ராறியோ,అంటారియో,ഒണ്ടാറിയോ,รัฐออนแทรีโอ,အွန်တေးရီးယိုးပြည်နယ်,ონტარიო,ᐅᓐᑌᕇᐤ,ᐋᓐᑎᐅᕆᔪ,オンタリオ州,安大略,安大略省,온타리오 주",CA,CAN,124,30.0
+Canada,Prince Edward Island,"Eduardo Printzearen Uhartea,Edward Ong-chu To,Edward Uong-cu Do,Edward Uòng-cṳ̄ Dō̤,Edward Ông-chú Tó,Eilean Eoin,Eilean Eòin,Ellan y Phrinse Edard,Enez ar Prins Edward,Enez ar Priñs Edward,Eyja Jatvards prins,Eyja Játvarðs prins,GJao Hoang tu Edward,Ile-du-Prince-Edouard,Ilha do Principe Eduardo,Ilha do Príncipe Eduardo,Illa del Prince Edoard,Illa del Princep Eduard,Illa del Príncep Eduard,Illa do Principe Eduardo,Illa do Príncipe Eduardo,Insula Printului Edward,Insula Prințului Edward,Insula principis Eduardi,Insulo de Princo Eduardo,Ishulli i Princit Eduard,Isla del Principe Eduardo,Isla del Príncipe Eduardo,Islla Principe Dubardu,Islla Príncipe Dubardu,Isoa do Principe Edoardo,Isoa do Prinçipe Edoardo,Isola Prinzipe Edvard,Isola del Principe Edoardo,Isola del Prinsi Edoard,Isula de su Printzipe Eduardu,Nisos tou Prinkipa Edouardou,Oilean Phrionsa Eadbhard,Oileán Phrionsa Éadbhard,Ostriv Princa Edvarda,Ostrov Princ Eduard,Ostrov Princ Edvard,Ostrov Princa Ehduarda,Ostrov princa Eduarda,Ostrov prince Edwarda,Ostrvo Princa Edvarda,Ostrvo Princa Edwarda,Otok Princa Edwarda,Otok princa Edvarda,PE,PEI,Prenca Edvarda sala,Prens Edward Adasi,Prens Edward Adası,Princ Ehduard Utrauy,Princ Ehduardy sakuadakh,Princ Ehdvardyn Aral,Princa Edvarda Sala,Prince Edward Eilun,Prince Edward Island,Prince Edward Island pruwinsya,Prince Edward-sziget,Prince Edwardsoy,Princo Edvardo sala,Prins Edwardeilan,Prins Edwardeiland,Prins Edwardeilân,Prins Edwards oe,Prins Edwards ö,Prins Ehdvardyn Aral,Prins-Edward-eiland,Prinssi Edwardin saari,Prints Edwardi saar,Prinča Edvarda Sala,Prėnca Edvarda sala,Pulau Pangeran Edward,Pulau Putera Edward,Puro han Prinsipe Edwardo,Purô han Prinsipe Edwardo,Shahzoda Eduard oroli,Vostrau Prynca Ehduarda,Wyspa Ksiecia Edwarda,Wyspa Księcia Edwarda,Ynys an Pryns Edward,ai de hua wang zi dao,ilavaracar etvart tivu,jzyrh prns adward,jzyrt alamyr adward,peulinseuedeuwodeuaillaendeu ju,prinsa edavarda ayalanda,prisa aidavarada tapu,purinsuedowadoairando zhou,Ìsola dël Prinsi Edoard,Ìsula de su Prìntzipe Eduardu,Île-du-Prince-Édouard,Đảo Hoàng tử Edward,Şahzadə Eduard Adası,Νήσος του Πρίγκηπα Εδουάρδου,Востраў Прынца Эдуарда,Острво Принца Едварда,Остров Принц Едвард,Остров Принц Едуард,Остров Принца Эдуарда,Острів Принца Едварда,Принс Эдвардын Арал,Принц Эдвардын Арал,Принц Эдуард Утрауы,Принц Эдуарды сакъадах,Էդուարդ արքայազնի կղզի,אי הנסיך אדוארד,جزيرة الأمير إدوارد,جزیره پرنس ادوارد,پرنس ایڈورڈ آئی لینڈ,پرنس ایڈورڈ آئیلینڈ,ܓܙܪܬܐ ܕܐܡܝܪܐ ܐܕܘܐܪܕ,प्रिन्स एडवर्ड आयलंड,ਪ੍ਰਿੰਸ ਐਡਵਰਡ ਟਾਪੂ,இளவரசர் எட்வர்ட் தீவு,รัฐปรินซ์เอ็ดเวิร์ดไอแลนด์,პრინს-ედუარდის კუნძული,პრინც-ედუარდიშ კოკი,プリンスエドワードアイランド州,愛德華王子島,프린스에드워드아일랜드 주",CA,CAN,124,2.0
+Canada,Quebec,"Kebekio,QC,Que.,Quebec,Quebeque,Québec",CA,CAN,124,1.2
+Canada,Saskatchewan,"Pravincyja Saskachehvan,SK,Sascachevao,Sascachevão,Sascatchewane,Sask.,Saskacevan,Saskacevana,Saskacevanas,Saskacevano,Saskacevans,Saskachevan,Saskachewan,Saskachéwan,Saskatchewan,Saskatchewan pruwinsya,Saskatchewan-sen,Saskatchewan-sén,Saskatchewani provints,Saskatsouan,Saskaçevan,Saskaĉevano,Saskačevana,Saskačevanas,Saskačevans,caskaccuvan,sa si ka che wen,sasakacavana,saskacevana,saskachwan,saskatshwan,saskchywan,sasukachuwan zhou,seoseukaecheowon ju,sha shi jia zhi wan,ssqzwʼn,Σασκάτσουαν,Правінцыя Саскачэван,Саскачеван,Սասկաչևան,סאסקאטשעווען,ססקצואן,ساسكاتشوان,ساسکاچوان,ساسکٹچیوان,ساسکچیوان,ܣܐܣܩܐܬܫܘܐܢ,सास्काचेवान,ਸਸਕਾਚਵਾਨ,சஸ்காச்சுவான்,รัฐซัสแคตเชวัน,ဆက်စကက်ချီဝမ်နယ်,სასკაჩევანი,サスカチュワン州,沙士加芝灣,薩斯喀徹溫,서스캐처원 주",CA,CAN,124,660.0
+Canada,Yukon,"Geocon Landscipe,Gioukon,Iucao,Iucão,Jukon,Jukona,Jukonas,Jukonio,Jukons,Júkon,Roinn an Iukon,Tehrytoryja Jukan,YT,Yukon,Yukon Rayoni,Yukon Territory,Yukón,ykwn,yu khxn,yu kong,yu kong de qu,yukkan,yukon junju,yukon zhun zhou,yukona,ywkan,ywkwn,ywqwn,Γιούκον,Јукон,Тэрыторыя Юкан,Юкон,Յուկոն,יוקאן,יוקון,يوكون,یوکان,یکون,ܝܘܩܘܢ,युकॉन,ਯੂਕੋਨ,யூக்கான்,ยูคอน,ယူးကွန်းနယ်,იუკონი,ユーコン準州,育空,育空地區,유콘 준주",CA,CAN,124,101.0
+Cape Verde,Whole country,N/A,CV,CPV,132,574.468
+Cayman Islands,Whole country,N/A,KY,CYM,136,685.714
+Central African Republic,Whole country,N/A,CF,CAF,140,0.0
+Chad,Whole country,N/A,TD,TCD,148,666.667
+Chile,Whole country,N/A,CL,CHL,152,386.545
+China,Whole country,N/A,CN,CHN,156,549.534
+Colombia,Whole country,N/A,CO,COL,170,210.526
+Comoros,Whole country,N/A,KM,COM,174,700.0
+Congo,Whole country,N/A,CG,COG,178,374.663
+Cook Islands,Whole country,N/A,CK,COK,184,500.0
+Costa Rica,Whole country,N/A,CR,CRI,188,32.59
+Cote d'Ivoire,Whole country,N/A,CI,CIV,384,421.436
+Croatia,Whole country,N/A,HR,HRV,191,234.139
+Cuba,Whole country,N/A,CU,CUB,192,609.969
+Cyprus,Whole country,N/A,CY,CYP,196,618.557
+Czechia,Whole country,N/A,CZ,CZE,203,397.253
+Democratic Republic of Congo,Whole country,N/A,CD,COD,180,25.946
+Denmark,Whole country,N/A,DK,DNK,208,188.653
+Djibouti,Whole country,N/A,DJ,DJI,262,666.667
+Dominica,Whole country,N/A,DM,DMA,212,454.545
+Dominican Republic,Whole country,N/A,DO,DOM,214,625.139
+Ecuador,Whole country,N/A,EC,ECU,218,134.634
+Egypt,Whole country,N/A,EG,EGY,818,470.506
+El Salvador,Whole country,N/A,SV,SLV,222,183.074
+Equatorial Guinea,Whole country,N/A,GQ,GNQ,226,628.319
+Eritrea,Whole country,N/A,ER,ERI,232,652.174
+Estonia,Whole country,N/A,EE,EST,233,440.336
+Eswatini,Whole country,N/A,SZ,SWZ,748,212.121
+Ethiopia,Whole country,N/A,ET,ETH,231,25.442
+Faeroe Islands,Whole country,N/A,FO,FRO,234,384.615
+Falkland Islands,Whole country,N/A,FK,FLK,238,500.0
+Fiji,Whole country,N/A,FJ,FJI,242,295.238
+Finland,Whole country,N/A,FI,FIN,246,141.88
+France,Whole country,N/A,FR,FRA,250,67.53
+French Guiana,Whole country,N/A,GF,GUF,254,360.0
+French Polynesia,Whole country,N/A,PF,PYF,258,470.588
+Gabon,Whole country,N/A,GA,GAB,266,305.648
+Gambia,Whole country,N/A,GM,GMB,270,700.0
+Georgia,Whole country,N/A,GE,GEO,268,136.488
+Germany,Whole country,N/A,DE,DEU,276,332.495
+Ghana,Whole country,N/A,GH,GHA,288,343.552
+Greece,Whole country,N/A,GR,GRC,300,387.988
+Greenland,Whole country,N/A,GL,GRL,304,133.333
+Grenada,Whole country,N/A,GD,GRD,308,714.286
+Guadeloupe,Whole country,N/A,GP,GLP,312,593.939
+Guam,Whole country,N/A,GU,GUM,316,672.316
+Guatemala,Whole country,N/A,GT,GTM,320,278.46
+Guinea,Whole country,N/A,GN,GIN,324,182.099
+Guinea-Bissau,Whole country,N/A,GW,GNB,624,750.0
+Guyana,Whole country,N/A,GY,GUY,328,629.31
+Haiti,Whole country,N/A,HT,HTI,332,612.245
+Honduras,Whole country,N/A,HN,HND,340,345.714
+Hong Kong,Whole country,N/A,HK,HKG,344,684.989
+Hungary,Whole country,N/A,HU,HUN,348,246.981
+Iceland,Whole country,N/A,IS,ISL,352,28.751
+India,Whole country,N/A,IN,IND,356,625.573
+Indonesia,Whole country,N/A,ID,IDN,360,663.488
+Iran,Whole country,N/A,IR,IRN,364,487.99
+Iraq,Whole country,N/A,IQ,IRQ,368,517.746
+Ireland,Whole country,N/A,IE,IRL,372,312.812
+Israel,Whole country,N/A,IL,ISR,376,556.772
+Italy,Whole country,N/A,IT,ITA,380,336.714
+Jamaica,Whole country,N/A,JM,JAM,388,543.943
+Japan,Whole country,N/A,JP,JPN,392,472.57
+Jordan,Whole country,N/A,JO,JOR,400,435.138
+Kazakhstan,Whole country,N/A,KZ,KAZ,398,655.38
+Kenya,Whole country,N/A,KE,KEN,404,79.812
+Kiribati,Whole country,N/A,KI,KIR,296,666.667
+Kuwait,Whole country,N/A,KW,KWT,414,489.576
+Kyrgyzstan,Whole country,N/A,KG,KGZ,417,80.928
+Laos,Whole country,N/A,LA,LAO,418,304.638
+Latvia,Whole country,N/A,LV,LVA,428,223.776
+Lebanon,Whole country,N/A,LB,LBN,422,546.214
+Lesotho,Whole country,N/A,LS,LSO,426,20.0
+Liberia,Whole country,N/A,LR,LBR,430,273.81
+Libya,Whole country,N/A,LY,LBY,434,552.366
+Lithuania,Whole country,N/A,LT,LTU,440,262.693
+Luxembourg,Whole country,N/A,LU,LUX,442,196.721
+Macao,Whole country,N/A,MO,MAC,446,482.143
+Madagascar,Whole country,N/A,MG,MDG,450,419.689
+Malawi,Whole country,N/A,MW,MWI,454,113.924
+Malaysia,Whole country,N/A,MY,MYS,458,589.3
+Maldives,Whole country,N/A,MV,MDV,462,704.918
+Mali,Whole country,N/A,ML,MLI,466,472.892
+Malta,Whole country,N/A,MT,MLT,470,448.113
+Martinique,Whole country,N/A,MQ,MTQ,474,656.25
+Mauritania,Whole country,N/A,MR,MRT,478,530.055
+Mauritius,Whole country,N/A,MU,MUS,480,609.489
+Mexico,Whole country,N/A,MX,MEX,484,410.689
+Moldova,Whole country,N/A,MD,MDA,498,656.794
+Mongolia,Whole country,N/A,MN,MNG,496,733.333
+Montenegro,Whole country,N/A,ME,MNE,499,401.18
+Montserrat,Whole country,N/A,MS,MSR,500,500.0
+Morocco,Whole country,N/A,MA,MAR,504,624.966
+Mozambique,Whole country,N/A,MZ,MOZ,508,134.444
+Myanmar,Whole country,N/A,MM,MMR,104,312.683
+Namibia,Whole country,N/A,,NAM,516,48.077
+Nauru,Whole country,N/A,NR,NRU,520,666.667
+Nepal,Whole country,N/A,NP,NPL,524,22.654
+Netherlands,Whole country,N/A,NL,NLD,528,394.117
+New Caledonia,Whole country,N/A,NC,NCL,540,637.631
+New Zealand,Whole country,N/A,NZ,NZL,554,149.274
+Nicaragua,Whole country,N/A,NI,NIC,558,350.731
+Niger,Whole country,N/A,NE,NER,562,672.414
+Nigeria,Whole country,N/A,NG,NGA,566,398.363
+North Korea,Whole country,N/A,KP,PRK,408,155.161
+North Macedonia,Whole country,N/A,MK,MKD,807,528.09
+Norway,Whole country,N/A,NO,NOR,578,30.985
+Oman,Whole country,N/A,OM,OMN,512,489.87
+Pakistan,Whole country,N/A,PK,PAK,586,355.967
+Palestine,Whole country,N/A,PS,PSE,275,630.769
+Panama,Whole country,N/A,PA,PAN,591,242.57
+Papua New Guinea,Whole country,N/A,PG,PNG,598,556.931
+Paraguay,Whole country,N/A,PY,PRY,600,23.916
+Peru,Whole country,N/A,PE,PER,604,230.647
+Philippines,Whole country,N/A,PH,PHL,608,578.009
+Poland,Whole country,N/A,PL,POL,616,647.321
+Portugal,Whole country,N/A,PT,PRT,620,251.843
+Puerto Rico,Whole country,N/A,PR,PRI,630,601.734
+Qatar,Whole country,N/A,QA,QAT,634,489.87
+Reunion,Whole country,N/A,RE,REU,638,452.769
+Romania,Whole country,N/A,RO,ROU,642,244.876
+Russia,Whole country,N/A,RU,RUS,643,347.451
+Russia,Belgorod Oblast,"Belgorod,Belgorod Oblast,Belgorodin alue,Belgorodskaja Oblast',Belgorodskaja oblast,Belgorodskaja oblast',Belgorodskaya Oblast',Belgorodskaya Oblast’,Oblast de Belgorod,Белгородская Область,Белгородская область",RU,RUS,643,240.56
+Russia,Vladimir,"Oblast de Vladimir,Vladimir,Vladimirin alue,Vladimirskaja oblast,Vladimirskaja oblast',Vladimirskaya Oblast',Vladimirskaya Oblast’,Wladimir,Владимирская область",RU,RUS,643,240.56
+Russia,Voronezj,"Oblast de Voronej,Voronezh Oblast,Voronezhskaja Oblast',Voronezhskaja oblast',Voronezhskaya Oblast',Voronezhskaya Oblast’,Voronezin alue,Voronezj,Voronezjskaja oblast,Voronežin alue,Woronesch,Воронежская Область,Воронежская область",RU,RUS,643,240.56
+Russia,Vologda,"Oblast de Vologda,Vologda,Vologda Oblast,Vologdan alue,Vologodskaja Oblast',Vologodskaja oblast,Vologodskaja oblast',Vologodskaya Oblast',Vologodskaya Oblast’,Wologda,Вологодская Область,Вологодская область",RU,RUS,643,240.56
+Russia,Kostroma Oblast,"Kostroma,Kostroma Oblast,Kostroman alue,Kostromska Oblast',Kostromska Oblast’,Kostromskaja Oblast',Kostromskaja oblast,Kostromskaja oblast',Kostromskaya Oblast',Kostromskaya Oblast’,Oblast de Kostroma,Костромская Область,Костромская область",RU,RUS,643,240.56
+Russia,Kursk,"Kursk,Kursk Oblast,Kurskaja Oblast',Kurskaja oblast,Kurskaja oblast',Kurskaya Oblast',Kurskaya Oblast’,Kurskin alue,Oblast de Koursk,Курская Область,Курская область",RU,RUS,643,240.56
+Russia,Orel Oblast,"Oblast d'Orel,Orel Oblast,Orjol,Orlovskaja Oblast',Orlovskaja oblast,Orlovskaja oblast',Orlovskaya Oblast',Orlovskaya Oblast’,Orël Oblast,Орловская Область,Орловская область",RU,RUS,643,240.56
+Russia,Lipetsk Oblast,"Lipeckaja Oblast',Lipeckaja oblast',Lipetsk,Lipetsk Oblast,Lipetskaja oblast,Lipetskaya Oblast',Lipetskaya Oblast’,Lipetskin alue,Lipezk,Oblast de Lipetsk,Липецкая Область,Липецкая область",RU,RUS,643,240.56
+Russia,Ryazan Oblast,"Oblast de Riazan,Riazan Oblast,Rjasan,Rjazan,Rjazanskaja Oblast',Rjazanskaja oblast,Rjazanskaja oblast',Ryazan Oblast,Ryazan' Oblast,Ryazanskaya Oblast',Ryazanskaya Oblast’,Ryazan’ Oblast,Рязанская Область,Рязанская область",RU,RUS,643,240.56
+Russia,Bryansk Oblast ,N/A,RU,RUS,643,240.56
+Russia,Kaluga,"Kaluga,Kaluga Oblast,Kalugan alue,Kaluzhskaja Oblast',Kaluzhskaja oblast',Kaluzhskaya Oblast',Kaluzhskaya Oblast’,Kaluzjskaja oblast,Oblast de Kalouga,Калужская Область,Калужская область",RU,RUS,643,240.56
+Russia,Smolensk,"Oblast de Smolensk,Smolensk,Smolensk Oblast,Smolenskaja Oblast',Smolenskaja oblast,Smolenskaja oblast',Smolenskaya Oblast',Smolenskaya Oblast’,Смоленская Область,Смоленская область",RU,RUS,643,240.56
+Russia,Tambov,"Oblast de Tambov,Stavropol,Tambov,Tambov Oblast,Tambovskaja Oblast',Tambovskaja oblast,Tambovskaja oblast',Tambovskaya Oblast',Tambovskaya Oblast’,Tambow,Тамбовская Область,Тамбовская область",RU,RUS,643,240.56
+Russia,Tver Oblast,"Kalinin Oblast,Kalininskaya Oblast',Kalininskaya Oblast’,Oblast de Tver,Tver,Tver Oblast,Tver' Oblast,Tverskaja Oblast',Tverskaja oblast,Tverskaja oblast',Tverskaya,Tverskaya Oblast',Tverskaya Oblast’,Tver’ Oblast,Twer,Тверская Область,Тверская область",RU,RUS,643,240.56
+Russia,Tula,"Oblast de Toula,Tul'skaja Oblast',Tul'skaja oblast',Tul'skaya Oblast',Tula,Tula Oblast,Tulskaja oblast,Tul’skaya Oblast’,Тульская Область,Тульская область",RU,RUS,643,240.56
+Russia,Jaroslavl,"Jaroslavl,Jaroslavskaja Oblast',Jaroslavskaja oblast,Jaroslavskaja oblast',Jaroslawl,Oblast d'Iaroslavl,Yaroslavl Oblast,Yaroslavl' Oblast,Yaroslavl’ Oblast,Yaroslavskaya Oblast',Yaroslavskaya Oblast’,Ярославская Область,Ярославская область",RU,RUS,643,240.56
+Russia,Moscow Oblast,"Cuige Mhosco,Cúige Mhoscó,MO,Maeskuyjy oblaest,Maskavas apgabals,Maskouskaja voblasc',Maskvos sritis,Mehzkuu oblast,Mok-su-kho-chu,Moscow,Moscow Oblast,Moskevska oblast,Moskevská oblast,Mosko vel,Moskou-oblast,Moskova Oblasti,Moskova Oblastı,Moskovan aloveh,Moskovan alue,Moskovon' jonks,Moskovs'ka oblast',Moskovska oblast,Moskovskaja oblast',Moskovskaya Chiu,Moskovskaya Oblast,Moskovská oblasť,Moskua oblas't,Moskuko oblasta,Moskuv'ska oblast',Moskva,Moskva fylke,Moskva muzh,Moskva oblast,Moskva oblasty,Moskva provinco,Moskva vilajat,Moskva vilayeti,Moskva vilayəti,Moskva viloyati,Moskva vilâyeti,Moskva walayati,Moskvagaj mozho,Moskvan agj,Moskvan oblast',Moskvayi marz,Moskvа walayatı,Moszkvai teruelet,Moszkvai terület,Mo̍k-sṳ̂-khô-chû,Muskav oblace,Musko ulos,Oblasc Moskwa,Oblast Moscfa,Oblast Moskau,Oblast Moskou,Oblast Moskov,Oblast Moskow,Oblast Moskwa,Oblast de Moscou,Oblast de Moscu,Oblast' di Mosca,Oblasć Moskwa,Obwod moskiewski,Obwód moskiewski,Perifereia Moschas,Podmoskov'e,Podmoskovye,Provincia de Moscou,Província de Moscou,Regio Moscuensis,Regiunea Moscova,Vilojati Maskav,Wilayah Moscow,astan mskw,masko oplastu,maskw awblast,mhafzt mwskw,mo si ke zhou,moseukeuba ju,mosko oblasta,mosukuwa zhou,mwskw awblast,mwsqbh,Óblast de Moscú,Περιφέρεια Μόσχας,Вилояти Маскав,Мæскуыйы облæст,Маскоўская вобласць,Москва вилаят,Москва муж,Москва областы,Москва уобалаһа,Москвагай можо,Москван область,Моско вел,Москова төгәлң,Московонь ёнкс,Московска област,Московская область,Московська область,Москъвьска область,Мускав облаçĕ,Муско улос,Мэзкуу област,Мәскәү өлкәсе,Мәскәү өлкәһе,Мӧскуа обласьт,Подмосковье,Մոսկվայի մարզ,מוסקבה,استان مسکو,ماسکو اوبلاست,محافظة موسكو,موسكو أوبلاست,मॉस्को ओब्लास्त,மாஸ்கோ ஓப்லஸ்து,მოსკოვის ოლქი,モスクワ州,莫斯科州,모스크바 주",RU,RUS,643,240.56
+Russia,Ivanovo,"Ivanovo,Ivanovo Oblast,Ivanovon alue,Ivanovskaja Oblast',Ivanovskaja oblast,Ivanovskaja oblast',Ivanovskaya Oblast',Ivanovskaya Oblast’,Iwanowo,Oblast d'Ivanovo,Ивановская Область,Ивановская область",RU,RUS,643,240.56
+Russia,Moscow,"Cuige Mhosco,Cúige Mhoscó,MO,Maeskuyjy oblaest,Maskavas apgabals,Maskouskaja voblasc',Maskvos sritis,Mehzkuu oblast,Mok-su-kho-chu,Moscow,Moscow Oblast,Moskevska oblast,Moskevská oblast,Mosko vel,Moskou-oblast,Moskova Oblasti,Moskova Oblastı,Moskovan aloveh,Moskovan alue,Moskovon' jonks,Moskovs'ka oblast',Moskovska oblast,Moskovskaja oblast',Moskovskaya Chiu,Moskovskaya Oblast,Moskovská oblasť,Moskua oblas't,Moskuko oblasta,Moskuv'ska oblast',Moskva,Moskva fylke,Moskva muzh,Moskva oblast,Moskva oblasty,Moskva provinco,Moskva vilajat,Moskva vilayeti,Moskva vilayəti,Moskva viloyati,Moskva vilâyeti,Moskva walayati,Moskvagaj mozho,Moskvan agj,Moskvan oblast',Moskvayi marz,Moskvа walayatı,Moszkvai teruelet,Moszkvai terület,Mo̍k-sṳ̂-khô-chû,Muskav oblace,Musko ulos,Oblasc Moskwa,Oblast Moscfa,Oblast Moskau,Oblast Moskou,Oblast Moskov,Oblast Moskow,Oblast Moskwa,Oblast de Moscou,Oblast de Moscu,Oblast' di Mosca,Oblasć Moskwa,Obwod moskiewski,Obwód moskiewski,Perifereia Moschas,Podmoskov'e,Podmoskovye,Provincia de Moscou,Província de Moscou,Regio Moscuensis,Regiunea Moscova,Vilojati Maskav,Wilayah Moscow,astan mskw,masko oplastu,maskw awblast,mhafzt mwskw,mo si ke zhou,moseukeuba ju,mosko oblasta,mosukuwa zhou,mwskw awblast,mwsqbh,Óblast de Moscú,Περιφέρεια Μόσχας,Вилояти Маскав,Мæскуыйы облæст,Маскоўская вобласць,Москва вилаят,Москва муж,Москва областы,Москва уобалаһа,Москвагай можо,Москван область,Моско вел,Москова төгәлң,Московонь ёнкс,Московска област,Московская область,Московська область,Москъвьска область,Мускав облаçĕ,Муско улос,Мэзкуу област,Мәскәү өлкәсе,Мәскәү өлкәһе,Мӧскуа обласьт,Подмосковье,Մոսկվայի մարզ,מוסקבה,استان مسکو,ماسکو اوبلاست,محافظة موسكو,موسكو أوبلاست,मॉस्को ओब्लास्त,மாஸ்கோ ஓப்லஸ்து,მოსკოვის ოლქი,モスクワ州,莫斯科州,모스크바 주",RU,RUS,643,240.56
+Russia,Astrakhan,"Astrachan,Astrahanin alue,Astrakan,Astrakhan,Astrakhan Oblast,Astrakhan' Oblast,Astrakhanskaja Oblast',Astrakhanskaja oblast',Astrakhanskaya Oblast',Astrakhanskaya Oblast’,Astrakhan’ Oblast,Oblast d'Astrakhan,Астраханская Область,Астраханская область",RU,RUS,643,218.85
+Russia,Volgograd Oblast,"Oblast de Volgograd,Stalingrad Oblast,Stalingradskaya Oblast',Stalingradskaya Oblast’,Volgograd,Volgograd Oblast,Volgogradin alue,Volgogradskaja Oblast',Volgogradskaja oblast,Volgogradskaja oblast',Volgogradskaya Oblast',Volgogradskaya Oblast’,Wolgograd,Волгоградская Область,Волгоградская область",RU,RUS,643,218.85
+Russia,Dagestan,"An Dagastain,An Dagastáin,Dagistan,Dagestaan,Dagestan,Dagestan A.S.S.R.,Dagestan Khiung-fo-koet,Dagestan Khiung-fò-koet,Dagestan Republic,Dagestan Respublikas',Dagestan Respubliki,Dagestana,Dagestanan Tazovaldkund,Dagestanas,Dagestani,Dagestani Vabariik,Dagestano,Dagestanskaya ASSR,Dagestanskaya Avtonomnaya Sovetskaya Sotsialisticheskaya Respublika,Dageston,Dagestán,Dagestāna,Dagestōn,Dagesztan,Dagesztán,Daghestan,Daghestania,Dagistan,Dagstan,Daguestan,Daguestao,Daguestán,Daguestão,Daguistan,Daguistan Respublika,Daguustan,Daguustan Respublika,Daguusttan,Daguystan,Daguystan Dzhumg'urijat,Daguystehn,Dagystan,Dagéstan,Daxistan,Dağıstan,DegӀastan,Dimokratia tou Ntankestan,Dog'iston,Dogiston,Dogʻiston,Republik Dagestan,Republikken Dagestan,Republique de Daghestan,Respublika Dagestan,République de Daghestan,da ji si tan,da ji si tan gong he guo,dageseutan gonghwagug,dagesutan gong he guo,daghstan,daghstwn,daghystan,dagisatana,dagistana,takestan,Δημοκρατία του Νταγκεστάν,Дагестаан,Дагестан,Дагестан Республикась,Дагестан Республики,Дагстан,Дагъистан,Дагъистан Республика,Дагъсин таңһч,Дагъустан,Дагъустан Республика,Дагъусттан,Дагъыстан,Дагъыстан Джумгьурият,Дагъыстэн,Дағыстан,Даҕьесҭан Аҳәынҭқарра,ДегӀастан,Доғистон,Республика Дагестан,Դաղստան,דאגסטן,داغستان,داغستون,داغىستان,दाग़िस्तान,दागिस्तान,ਦਾਗਿਸਤਾਨ,தாகெஸ்தான்,ദാഗസ്താൻ,დაღესტანი,ダゲスタン共和国,达吉斯坦共和国,達吉斯坦,다게스탄 공화국,𐌳𐌰𐌲𐌰𐌹𐍃𐍄𐌰𐌽",RU,RUS,643,218.85
+Russia,Adygeya Republic,"Adigueya,Adygea,Adygeh Respublik,Adygeia,Adygeiska republiken,Adygeja,Adygey Autonomous Oblast,Adygeya,Adygeya Republic,Adygeyskaya AO,Adygeyskaya Avtonomnaya Oblast',Adygeyskaya Avtonomnaya Oblast’,Republique d'Adyguee,Respublika Adygeja,Respublika Adygeya,République d'Adyguée,Адыгея,Адыгэ Республик,Республика Адыгея",RU,RUS,643,218.85
+Russia,Krasnoyarskiy,"Krai de Krasnoiarsk,Krai de Krasnojarsk,Krasnojarsk,Krasnojarskij Kraj,Krasnojarskij kraj,Krasnojarskin aluepiiri,Krasnoyarsk Krai,Krasnoyarsk Kray,Krasnoyarskiy,Krasnoyarskiy Kray,Kraï de Krasnoïarsk,Красноярский Край,Красноярский край",RU,RUS,643,218.85
+Russia,Kalmykiya Republic,"Kalmuckien,Kalmueckien,Kalmukia,Kalmyk ASSR,Kalmyk Autonomous Oblast,Kalmyk Avtonomnaya Sovetskaya Sotsialisticheskaya Respublika,Kalmykia,Kalmykija,Kalmykiya,Kalmykiya Republic,Kalmytskaya ASSR,Kalmytskaya Avtonomnaya Sovetskaya Sotsialisticheskaya Respublika,Kalmückien,Khal'mg Taңһch,Republique de Kalmoukie,Respublika Kalmykija,Respublika Kalmykiya,République de Kalmoukie,Калмыкия,Республика Калмыкия,Хальмг Таңһч",RU,RUS,643,218.85
+Russia,Crimea,N/A,RU,RUS,643,218.85
+Russia,Rostov,"Oblast de Rostov,Rostov,Rostov Oblast,Rostovskaja Oblast',Rostovskaja oblast,Rostovskaja oblast',Rostovskaya Oblast,Rostovskaya Oblast',Rostovskaya Oblast’,Rostow,Ростовская Область,Ростовская область",RU,RUS,643,218.85
+Russia,Ingushetiya Republic,"Chechen-Ingush ASSR,Chechen-Ingush Avtonomnaya Sovetskaya Sotsialisticheskaya Respublika,Checheno-Ingushetia,Checheno-Ingushskaya ASSR,Checheno-Ingushskaya Avtonomnaya Sovetskaya Sotsialisticheskaya Respublika,GӀalgӏaj Mokhk,Inguschetien,Ingusetia,Ingushetia,Ingushetija,Ingushetiya,Ingushetiya Republic,Ingushkaya Respublika,Ingushskaja respublika,Ingusia,Ingusjien,Ingušia,Republique d'Ingouchie,Respublika Ingushetija,Respublika Ingushetiya,République d'Ingouchie,ГӀалгӏай Мохк,Ингушетия,Ингушская республика,Республика Ингушетия",RU,RUS,643,218.85
+Russia,Kabardino-Balkariya Republic,"Kabardi-Balkaria,Kabardina-Balkaria,Kabardinien-Balkarien,Kabardino-Balkaria,Kabardino-Balkarian ASSR,Kabardino-Balkarien,Kabardino-Balkarija,Kabardino-Balkariya,Kabardino-Balkariya Republic,Kabardino-Balkarskaja Respublika,Kabardino-Balkarskaja respublika,Kabardino-Balkarskaya ASSR,Kabardino-Balkarskaya Avtonomnaya Sovetskaya Sotsialisticheskaya Respublika,Kabardino-Balkarskaya Respublika,Kuabarty-Malkuar Respublika,Kuehbehrdej-Balukuehr Respublikeh,Republique de Kabardino-Balkarie,Respublika Kabardino-Balkarija,République de Kabardino-Balkarie,Кабардино-Балкария,Кабардино-Балкарская Республика,Кабардино-Балкарская республика,Къабарты-Малкъар Республика,Къэбэрдей-Балъкъэр Республикэ,Республика Кабардино-Балкария",RU,RUS,643,218.85
+Russia,Karachayevo-Cherkesiya Republic,"Karachaevo-Cherkesija,Karachaevo-Cherkessija,Karachaevo-Cherkesskaja Respublika,Karachay-Cherkessia,Karachayevo-Cherkesiya,Karachayevo-Cherkesiya Republic,Karachayevo-Cherkesskaya AO,Karachayevo-Cherkesskaya Avtonomnaya Oblast',Karachayevo-Cherkesskaya Avtonomnaya Oblast’,Karachayevo-Cherkesskaya Respublika,Karashaj-Sherkesh Respublikasy,Karatjajen-Tjerkessien,Karatsai-Tserkessia,Karatschai-Tscherkessien,Karatšai-Tšerkessia,Kuarachaj-Cherkes Respublika,Kuarcha-Cherkes Respublika,Kuehrehshej-Shehrdzhehs Respublikeh,Province de Karatchaievo-Tcherkessie,Province de Karatchaïévo-Tcherkessie,Respublika Karachaevo-Cherkessija,Карачаево-Черкесия,Карачаево-Черкессия,Карачаево-Черкесская Республика,Карашай-Шеркеш Республикасы,Къарачай-Черкес Республика,Къарча-Черкес Республика,Къэрэшей-Шэрджэс Республикэ,Республика Карачаево-Черкессия",RU,RUS,643,218.85
+Russia,North Ossetia,"Caegat Iryston,Nordossetien,Nordossetien-Alanien,North Ossetia,North Ossetia Republic,North Ossetian A.S.S.R.,Osetia del Norte,Pohjois-Ossetia-Alania,Republique d'Ossetie-du-Nord-Alanie,Respublika Severnaja Osetija,Respublika Severnaja Osetija - Alanija,Respublika Severnaja Osetija-Alanija,Respublika Severnaya Osetiya,Respublika Severnaya Osetiya-Alaniya,République d'Ossétie-du-Nord-Alanie,Severnaja Osetija,Severnaja Osetija-Alanija,Severnaya Osetiya-Alaniya,Severo-Osetinskaya ASSR,Severo-Osetinskaya Avtonomnaya Sovetskaya Sotsialisticheskaya Respublika,Республика Северная Осетия,Республика Северная Осетия - Алания,Республика Северная Осетия-Алания,Северная Осетия,Северная Осетия-Алания,Цæгат Ирыстон",RU,RUS,643,218.85
+Russia,Chechnya,"Chechen Republic,Chechen-Ingush ASSR,Chechenia,Checheno-Ingushetia,Checheno-Ingushskaya ASSR,Checheno-Ingushskaya Avtonomnaya Sovetskaya Sotsialisticheskaya Respublika,Chechenskaja Respublika,Chechenskaya Respublika,Chechnja,Chechnya,Chechnya Republic,Nokhchijcho',Republique de Tchetchenie,République de Tchétchénie,Tjetjenien,Tschetschenien,Tsetsenia,Tsjetsjenia,Tšetšenia,Нохчийчоь,Чеченская Республика,Чечня",RU,RUS,643,218.85
+Russia,Stavropol’ Kray,"Krai de Stavropol,Kraï de Stavropol,Stavropol,Stavropol Krai,Stavropol Kray,Stavropol' Kray,Stavropol'e,Stavropol'skij Kraj,Stavropol'skij kraj,Stavropol'skiy,Stavropol'skiy Kray,Stavropol'ya,Stavropolin aluepiiri,Stavropolsky kray,Stavropol’ Kray,Stavropol’skiy Kray,Stavropol’ya,Stawropol,Ставрополье,Ставропольский Край,Ставропольский край",RU,RUS,643,218.86
+Russia,Stavropol Kray,"Krai de Stavropol,Kraï de Stavropol,Stavropol,Stavropol Krai,Stavropol Kray,Stavropol' Kray,Stavropol'e,Stavropol'skij Kraj,Stavropol'skij kraj,Stavropol'skiy,Stavropol'skiy Kray,Stavropol'ya,Stavropolin aluepiiri,Stavropolsky kray,Stavropol’ Kray,Stavropol’skiy Kray,Stavropol’ya,Stawropol,Ставрополье,Ставропольский Край,Ставропольский край",RU,RUS,643,218.85
+Russia,Sevastopol City,N/A,RU,RUS,643,218.85
+Russia,Penza,"Oblast de Penza,Pensa,Penza,Penza Oblast,Penzenskaja Oblast',Penzenskaja oblast,Penzenskaja oblast',Penzenskaya Oblast',Penzenskaya Oblast’,Пензенская Область,Пензенская область",RU,RUS,643,186.07
+Russia,Samara Oblast,"Kuybyshev Oblast,Kuybyshevskaya Oblast',Kuybyshevskaya Oblast’,Oblast de Samara,Samara,Samara Oblast,Samarskaja Oblast',Samarskaja oblast,Samarskaja oblast',Samarskaya Oblast',Samarskaya Oblast’,Самарская Область,Самарская область",RU,RUS,643,186.07
+Russia,Saratovskaya Oblast,"Oblast de Saratov,Saratov,Saratov Oblast,Saratovskaja Oblast',Saratovskaja oblast,Saratovskaja oblast',Saratovskaya Oblast,Saratow,Саратовская Область,Саратовская область",RU,RUS,643,186.07
+Russia,Ulyanovsk,"Chemper oblace,Cuige Ulyanovsk,Cúige Ulyanovsk,Oblast Oeljanovsk,Oblast Uljanowsk,Oblast Ulyanovsk,Oblast d'Oulianovsk,Oblast dOulianovsk,Oblast de Ulianovsk,Oblast' di Ul'janovsk,Obwod uljanowski,Obwód uljanowski,Oeljanofsk-oblast,Perifereia Oulianofsk,Provincia dUlianovsk,Província dUliànovsk,Regiunea Ulianovsk,Sember vel,Ul'janauskaja voblasc',Ul'janon' jonks,Ul'janovs'ka oblast',Ul'janovschy oblaest,Ul'janovsk muzh,Ul'janovsk oblas't,Ul'janovsk ulos,Ul'janovskaj uobalas,Ul'janovskaja Oblast',Ul'janovskaja oblast',Ul'janovskan oblast',Ul'yanovsk Oblast,Ul'yanovskaya Oblast',Ulanovska oblast,Ulianovska oblast,Ulianovská oblasť,Uljanovsk,Uljanovsk oblast,Uljanovska oblast,Uljanovska provinco,Uljanovskaja oblast,Uljanovskas apgabals,Uljanovski oblast,Uljanovskin alue,Uljanovsko sritis,Uljanovská oblast,Uljanovszki teruelet,Uljanovszki terület,Uljanowsk,Ulyanov viloyati,Ulyanovsk,Ulyanovsk Oblast,Ulyanovsk Oblasti,Ulyanovsk Oblastı,Ulyanovsk vilayəti,Ulyanovsk-chu,Ulyanovsk-chû,Ulyanovskaya oblast,Ul’yanovsk Oblast,Ul’yanovskaya Oblast’,Uļjanovskas apgabals,Vilojati Uljanovsk,Wilayah Ulyanovsk,alyanwsk,astan awlyanwfsk,awlyanwfsk awblast,ulliyanobseukeu ju,ulyanovska oblasta,uriyanofusuku zhou,wu li yang nuo fu si ke zhou,Óblast de Uliánovsk,Περιφέρεια Ουλιάνοφσκ,Вилояти Уляновск,Оулиꙗновьска область,Сембер вел,Сембер өлкәсе,Ульяна төгәлң,Ульянаўская вобласць,Ульяновск муж,Ульяновск обласьт,Ульяновск улос,Ульяновскай уобалас,Ульяновскан область,Ульяновская Область,Ульяновская область,Ульяновсчы облæст,Ульяновська область,Ульянонь ёнкс,Уляновска област,Улјановска област,Уљановска област,Чĕмпĕр облаçĕ,מחוז אולייאנובסק,أوليانوفسك أوبلاست,استان اولیانوفسک,الیانوسک,उल्यानोव्स्क ओब्लास्ट,उल्यानोव्स्क ओब्लास्त,ულიანოვსკის ოლქი,ウリヤノフスク州,乌里扬诺夫斯克州,울리야놉스크 주",RU,RUS,643,186.07
+Russia,Nizhny Novgorod Oblast,"Gor'ki Oblast,Gor'kovskaya Oblast',Gorki Oblast,Gor’ki Oblast,Gor’kovskaya Oblast’,Nischni Nowgorod,Nizhegorodskaja Oblast',Nizhegorodskaja oblast',Nizhegorodskaya Oblast',Nizhegorodskaya Oblast’,Nizhny Novgorod Oblast,Nizjegorodskaja oblast,Nizjnij Novgorod,Nizni Novgorodin alue,Nižni Novgorodin alue,Oblast de Nijni Novgorod,Нижегородская Область,Нижегородская область",RU,RUS,643,186.07
+Russia,Chuvashia,"Chavash Respubliki,Chuvachia,Chuvas'ka Respublika,Chuvash A.S.S.R.,Chuvash Republic,Chuvashia,Chuvashija,Chuvashiya,Chuvashiya Republic,Chuvashskaja Respublika,Chuvashskaya ASSR,Chuvashskaya Avtonomnaya Sovetskaya Sotsialisticheskaya Respublika,Chuvashskaya Respublika,Chuvasia,Chuváchia,Ciuvascia,Cuvasija,Cuvasio,Cuvasistan,Cuvaska,Cuvassko,Czuwaszja,Republique de Tchouvachie,Respublika Chuvashija,République de Tchouvachie,Tjuvasjien,Tschuwaschien,Tsjoevasjie,Tsjoevasjië,Tsjuvasjia,Tsuvassia,Txuvaixia,Txuvaxia,Txuvàixia,Tšuvassia,Tšuvaššia,chu wa shen gong he guo,chubasi gonghwagug,chuvuashi gong he guo,chwashstan,tshwfashya,Çuvaşistan,Ĉuvaŝio,Čuvašija,Čuvaška,Čuvašsko,Республика Чувашия,Чăваш Республики,Чуваська Республіка,Чувашия,Чувашија,Чувашская Республика,تشوفاشيا,چواشستان,チュヴァシ共和国,楚瓦什共和国,추바시 공화국",RU,RUS,643,186.07
+Russia,Mariy-El Republic,"Mari A.S.S.R.,Mari El,Mari-El,Marij Ehl,Marij Ehl Respublik,Marij El,Marij-Ehl,Marin tasavalta,Mariy-El,Mariy-El Republic,Mariyskaya ASSR,Mariyskaya Avtonomnaya Sovetskaya Sotsialisticheskaya Respublika,Mary Ehl Respublik,Republique de Maris,Respublika Marij Ehl,Respublika Marij-Ehl,Respublika Mariy-El,République de Maris,Марий Эл,Марий Эл Республик,Марий-Эл,Мары Эл Республик,Республика Марий Эл,Республика Марий-Эл",RU,RUS,643,186.07
+Russia,Mordoviya Republic,"Mordovia,Mordovija,Mordoviya,Mordoviya Republic,Mordovskaja respublika,Mordovskaya A.S.S.R.,Mordovskaya Avtonomnaya Sovetskaya Sotsialisticheskaya Respublika,Mordovskaya Sovetskaya Sotsialisticheskaya Respublika,Mordvin A.S.S.R.,Mordvinia,Mordvinian A.S.S.R.,Mordvinien,Mordwinien,Mordzin,Republique de Mordovie,Respublika Mordovija,Respublika Mordoviya,République de Mordovie,Мордовия,Мордовская республика,Республика Мордовия",RU,RUS,643,186.07
+Russia,Tatarstan Republic,"Republique de Tatarstan,Respublika Tatarstan,République de Tatarstan,Tartaristan,Tartaristao,Tartaristão,Tatar A.S.S.R.,Tatarskaya ASSR,Tatarskaya Avtonomnaya Sovetskaya Sotsialisticheskaya Respublika,Tatarstan,Tatarstan Republic,Tatarstan Respublika,Республика Татарстан,Татарстан",RU,RUS,643,186.07
+Russia,St.-Petersburg,"Cathair Pheadair,Gorod-Geroy Leningrad,Leningrad,Léningrad,Peterburi,Petrograd,Piiteri,Pétrograd,Saint Petersburg,Saint-Petersbourg,Saint-Pétersbourg,San Petersburgo,Sankt Petersburg,Sankt-Peterburg,St.-Petersburg,Szentpetervar,Szentpétervár,leningeuladeu,sangteupeteleubuleukeu,senta pitarsabarga,Ленинград,Петроград,Санкт-Петербург,সেন্ট পিটার্সবার্গ,레닌그라드,상트페테르부르크",RU,RUS,643,224.45
+Russia,Murmansk,"Kol'skij kraj,Murmanchanija,Murmanija,Murmanshhina,Murmansk,Murmansk Oblast,Murmansk oblast,Murmanska,Murmanska oblast,Murmanska provinco,Murmanskaja Oblast',Murmanskaja oblast,Murmanskaja oblast',Murmanskaya Oblast',Murmanskaya Oblast’,Murmanski oblast,Murmanskij kraj,Murmanskij region,Murmanskin aloveh,Murmanskin alue,Murmanská oblast,Murmánska,Oblast Moermansk,Oblast Murmansk,Oblast de Mourmansk,Oblast de Murmansk,Oblast de Múrmansk,Oblast' di Murmansk,Obwod murmanski,Obwód murmański,Podmurman'e,Provincia de Murmansk,Província de Múrmansk,Regiunea Murmansc,Regiunea Murmansk,astan mwrmansk,mo er man si ke zhou,muleumanseukeu ju,murumansuku zhou,Кольский край,Мурмания,Мурманска област,Мурманская Область,Мурманская область,Мурманский край,Мурманский регион,Мурманчания,Мурманщина,Подмурманье,استان مورمانسک,ムルマンスク州,摩爾曼斯克州,무르만스크 주",RU,RUS,643,53.51
+Russia,Kaliningrad,"Kaliningrad,Kaliningrad Oblast,Kaliningrader Gebiet,Kaliningradin alue,Kaliningrado sritis,Kaliningradskaja Oblast',Kaliningradskaja oblast,Kaliningradskaja oblast',Kaliningradskaya Oblast',Kaliningradskaya Oblast’,Karaliauciaus sritis,Karaliaučiaus sritis,Oblast de Kaliningrad,Калининградская Область,Калининградская область",RU,RUS,643,387.1
+Russia,Leningradskaya Oblast,"Leningrad,Leningrad Oblast,Leningrad oblast,Leningradin aloveh,Leningradin alue,Leningradskaja Oblast',Leningradskaja oblast',Leningradskaya Oblast',Leningradskaya Oblast’,Oblast de Leningrad,Oblast de Léningrad,Ленинградская Область,Ленинградская область",RU,RUS,643,224.45
+Russia,Novgorod Oblast,"Gor'ki Oblast,Gor'kovskaya Oblast',Gorki Oblast,Gor’ki Oblast,Gor’kovskaya Oblast’,Nischni Nowgorod,Nizhegorodskaja Oblast',Nizhegorodskaja oblast',Nizhegorodskaya Oblast',Nizhegorodskaya Oblast’,Nizhny Novgorod Oblast,Nizjegorodskaja oblast,Nizjnij Novgorod,Nizni Novgorodin alue,Nižni Novgorodin alue,Oblast de Nijni Novgorod,Нижегородская Область,Нижегородская область",RU,RUS,643,224.45
+Russia,Pskov Oblast,"Oblast de Pskov,Pskov,Pskov Oblast,Pskovskaja Oblast',Pskovskaja oblast,Pskovskaja oblast',Pskovskaya Oblast',Pskovskaya Oblast’,Pskow,Псковская Область,Псковская область",RU,RUS,643,224.45
+Russia,Nenets,"District autonome de Iamalie,Jamalo-Neneckij AO,Jamalo-Neneckij Avtonomnyj Okrug,Jamalo-Neneckij avtonomnyj okrug,Jamalo-Nentsien,Yamalia,Yamalo-Nenets,Yamalo-Nenets Autonomous Okrug,Yamalo-Nenetskiy Avtonomnyy Okrug,Yamalo-Nenetskiy Natsional'nyy Okrug,Yamalo-Nenetskiy Natsional’nyy Okrug,Ямало-Ненецкий АО,Ямало-Ненецкий Автономный Округ,Ямало-Ненецкий автономный округ",RU,RUS,643,600.13
+Russia,Arkhangelsk Oblast,"Archangelsk,Arhankelin aloveh,Arkangelin alue,Arkhangel'sk Oblast,Arkhangel'skaja Oblast',Arkhangel'skaja oblast',Arkhangel'skaya Oblast',Arkhangelsk,Arkhangelsk Oblast,Arkhangelskaya,Arkhangelskaya oblast,Arkhangel’sk Oblast,Arkhangel’skaya Oblast’,Oblast d'Arkhangelsk,Архангельская Область,Архангельская область",RU,RUS,643,600.14
+Russia,Karelia,"Bүgd Najramdakh Karel' Uls,Carelia,Carelie,Carèlia,Carélie,Cong hoa Karelia,Cong hoa Kareliya,Cumhuriyete Kareliya,Cumhuriyete Karelya,Cumhuriyetê Kareliya,Cumhuriyetê Karelya,Cộng hòa Karelia,Cộng hòa Kareliya,Dimokratia tis Karelias,Garjil,Garjila dassevaldi,Gárjil,Gárjila dásseváldi,Kar'ala Vabariik,Kar'jala,Karehlija,Karel Koeztarsasag,Karel Respubliki,Karel respublikeh,Karel'skaja respublika,Karel'skaya ASSR,Karel'skaya Avtonomnaya Sovetskaya Sotsialisticheskaya Respublika,Karelehn' Respublikas',Kareli,Kareli Respublika,Kareli Ulas,Karelia,Karelia Khiung-fo-koet,Karelia Khiung-fò-koet,Karelia Kiong-ho-kok,Karelia Kiōng-hô-kok,Kareliae,Kareliae Coemhueriaete,Kareliako Errepublika,Karelian ASSR,Kareliayi Hanrapetutʻyun,Karelie,Karelien,Karelij,Karelij Respublik,Karelija,Karelija Respublikasy,Karelija Respublikata,Karelija Respublikaһy,Karelijas Republika,Karelijn Respublika,Karelijos Respublika,Kareliya,Kareliya Republic,Kareliya Respublikasi,Kareliya Respublikası,Kareliä,Kareliä Cömhüriäte,Karelië,Karelska republika,Karelska republiken,Karelsko,Karelská republika,Karelud taңһch,Karelya,Karelya Cumhuriyeti,Karel’skaya ASSR,Karel’skaya Avtonomnaya Sovetskaya Sotsialisticheskaya Respublika,Karilija,Karjal,Karjala,Karjala Vabariik,Karjalan Tazovaldkund,Karjalan tasavalta,Karjalan tazavaldu,Karjalan tašavalta,Karél Köztársaság,Karélia,Karēlijas Republika,Karꙗla Dimokratiꙗ,Lydveldid Karelia,Lýðveldið Karelia,Poblacht na Caireile,Poblacht na Cairéile,Rehspublika Karehlija,Repubblica di Carelia,Republic o Karelie,Republic of Karelia,Republica Carela,Republica Carelia,Republica Carelă,Republica da Carelia,Republica de Carelia,Republica de Karelia,Republiek Karelie,Republiek Karelië,Republiek van Karelie,Republiek van Karelië,Republik Karelia,Republik Karelien,Republika Karelii,Republika Karelija,Republika Karelska,Republika e Karelise,Republika e Karelisë,Republika han Karelia,Republika ng Karelia,Republikken Karelia,Republikken Karelija,Republiko di Karelia,Republique de Carelie,República da Carélia,República de Carelia,República de Carèlia,Res Publica Carelia,Respublika Kar'jala,Respublika Karelija,Respublika Kareliya,Respublikae Kareli,Respubliko Karelio,Républik Karélia,République de Carélie,Venaeman Karjal,Venäman Karjal,jmhwry karlya,jmhwryt karylya,jmہwryہ karylya,ka lei li a gong he guo,kalelliya gonghwagug,kareliya,kareliya ganatantra,kareliya kutiyaracu,kareria gong he guo,karېlyyە,kereliya,kereliya prajasattaka,krylya,kʼareliis respʼublikʼa,qrlyh,rpwblyqt qrlyh,satharn rath khare li ya,Δημοκρατία της Καρελίας,Бүгд Найрамдах Карель Улс,Карел Республики,Карел республикэ,Карели,Карели Республика,Карели Улас,Карелий,Карелий Республик,Карелийн Республика,Карелия,Карелия Республикасы,Карелия Республиката,Карелия Республикаһы,Карелија,Карелуд таңһч,Карельская республика,Карелэнь Республикась,Карелія,Карилия,Карьяла,Карэлія,Карꙗла Димократїꙗ,Република Карелия,Република Карелија,Республикæ Карели,Республика Карелия,Республика Карьяла,Республіка Карелія,Рэспубліка Карэлія,Կարելիա,Կարելիայի Հանրապետություն,קרליה,רפובליקת קרליה,جمهورية كاريليا,جمهوری کارلیا,جمہوریہ کاریلیا,كارېلىيە,کریلیا,कारेलिया गणतंत्र,कॅरेलिया,कॅरेलिया प्रजासत्ताक,கரேலிய குடியரசு,கரேலியா,สาธารณรัฐคาเรลียา,კარელიის რესპუბლიკა,カレリア共和国,卡累利阿共和国,카렐리야 공화국",RU,RUS,643,224.45
+Russia,Komi,"Cong hoa Komi,Cộng hòa Komi,Dimokratia ton Komi,Komi,Komi ASSR,Komi Avtonomnaya Sovetskaya Sotsialisticheskaya Respublika,Komi Cumhuriyeti,Komi Republic,Komi Respublika,Komi Respublikas',Komi Respublikasi,Komi Respublikasy,Komi Respublikası,Komi Respubliki,Komi dassevaldi,Komi dásseváldi,Komi mastor,Komi respublika,Komi respublikeh,Komifoeld,Komiföld,Komiio,Komijos Respublika,Komijsko,Komin Tazovaldkund,Komin tasavalta,Poblacht Choimi,Poblacht Choimí,Rehspublika Komi,Repubblica dei Komi,Republica Komi,Republica de Komi,Republiek van Komi,Republik Komi,Republika Komi,Republika han Komi,Republika ng Komi,Republikken Komi,Republique de Komis,República de Komi,Respublika Komi,Respublikae Komi,Républik Komi,République de Komis,jmhwryt kwmy,ke mi gong he guo,komi gong he guo,komi gonghwagug,komi prajasattaka,kwmy,rpwblyqt qwmy,Δημοκρατία των Κόμι,Коми,Коми Республика,Коми Республикасы,Коми Республикась,Коми Республики,Коми мастор,Коми республика,Коми республикэ,Комигуд таңһч,Республикæ Коми,Республика Коми,Республіка Комі,Рэспубліка Комі,רפובליקת קומי,جمهورية كومي,كومى,کومی,कोमी प्रजासत्ताक,კომის რესპუბლიკა,コミ共和国,科米共和国,코미 공화국",RU,RUS,643,754.98
+Russia,Bashkortostan Republic,"Baschkortostan,Bashkirskaya ASSR,Bashkirskaya Avtonomnaya Sovetskaya Sotsialisticheskaya Respublika,Bashkortostan,Bashkortostan Republic,Bashҡortostan,Basjkirien,Baskhir,Baskortostan,Baškortostan,Republique de Bachkirie,Respublika Bashkortostan,République de Bachkirie,Башкортостан,Башҡортостан,Республика Башкортостан",RU,RUS,643,468.85
+Russia,Udmurtiya Republic,"Republique d'Oudmourtie,Respublika Udmurtija,République d'Oudmourtie,Udmurt A.S.S.R.,Udmurtia,Udmurtien,Udmurtija,Udmurtiya,Udmurtiya Republic,Udmurtskaja Respublika,Udmurtskaja respublika,Udmurtskaya ASSR,Udmurtskaya Avtonomnaya Sovetskaya Sotsialisticheskaya Respublika,Udmurtskaya Respublika,Республика Удмуртия,Удмуртия,Удмуртская Республика,Удмуртская республика",RU,RUS,643,468.85
+Russia,Khanty-Mansia,"Chantien-Mansien,District autonome de Khantys-Mansis,Khantia-Mansia,Khanty-Mansi National Okrug,Khanty-Mansi-Yugra,Khanty-Mansia,Khanty-Mansiisk National Okrug,Khanty-Mansijskij AO,Khanty-Mansijskij Avtonomnyj Okrug,Khanty-Mansijskij Avtonomnyj Okrug-Jugra,Khanty-Mansijskij avtonomnyj okrug,Khanty-Mansiyskiy Avtonomnyy Okrug,Khanty-Mansiyskiy Avtonomnyy Okrug-Yugra,Khanty-Mansiyskiy Natsional'nyy Okrug,Khanty-Mansiyskiy Natsional’nyy Okrug,Ostyako-Vogul'skiy National'nyy Okrug,Ostyako-Vogul’skiy National’nyy Okrug,Ханты-Мансийский АО,Ханты-Мансийский Автономный Округ,Ханты-Мансийский Автономный Округ–Югра,Ханты-Мансийский автономный округ",RU,RUS,643,468.85
+Russia,Yamalo-Nenets,"District autonome de Iamalie,Jamalo-Neneckij AO,Jamalo-Neneckij Avtonomnyj Okrug,Jamalo-Neneckij avtonomnyj okrug,Jamalo-Nentsien,Yamalia,Yamalo-Nenets,Yamalo-Nenets Autonomous Okrug,Yamalo-Nenetskiy Avtonomnyy Okrug,Yamalo-Nenetskiy Natsional'nyy Okrug,Yamalo-Nenetskiy Natsional’nyy Okrug,Ямало-Ненецкий АО,Ямало-Ненецкий Автономный Округ,Ямало-Ненецкий автономный округ",RU,RUS,643,468.85
+Russia,Perm,"Crioch Pherm,Críoch Pherm,Jajahan Perm,Krai Perm,Krai de Perm,Kraj Perm,Kraj Permski,Kraï de Perm,Molotov Oblast,Molotovskaya Oblast',Molotovskaya Oblast’,Perem En,Perem lador,Perm,Perm Krayi,Perm Krayı,Perm diyari,Perm diyarı,Perm kraj,Perm' krae,Perm' shaer,Perm-krai,Permas novads,Permen' kraj,Permes krastas,Permi hatarteruelet,Permi határterület,Permi krai,Permin aluepiiri,Permin rand,Permin zakh uls,Permja regiono,Perms'kij kraj,Permska Pokrajina,Permskaja oblast,Permskaja oblast',Permski kraj,Permskij kraj,Permskiy o'lkasi,Permskiy oʻlkasi,Permsky kraj,Permsky kray,Permský kraj,Permy kraj,Permės kraštas,Perym kraj,Region Perm,Territori de Perm,Territorio di Perm',Tinutul Perm,bi er mu bian jiang qu,byrm kray,mhwz prm,parma kraya,peleum jibang,perm piratecam,perma kraya,perumi de fang,prm,srzmyn prm,Ținutul Perm,Перĕм Ен,Перем ладор,Пермень край,Пермин зах улс,Пермска Покрајина,Пермская область,Пермски край,Пермски крај,Пермский край,Пермскі край,Пермський край,Пермы край,Пермь крае,Пермь шаер,Перым край,מחוז פרם,بيرم كراي,سرزمین پرم,پرم,पर्म क्राय,पेर्म क्राय,பேர்ம் பிரதேசம்,პერმის მხარე,ペルミ地方,彼爾姆邊疆區,페름 지방",RU,RUS,643,468.85
+Russia,Kirov,"Kirov,Kirov Oblast,Kirovin alue,Kirovskaja Oblast',Kirovskaja oblast,Kirovskaja oblast',Kirovskaya Oblast',Kirovskaya Oblast’,Kirow,Oblast de Kirov,Кировская Область,Кировская область",RU,RUS,643,468.85
+Russia,Kurgan Oblast,"Kurgan,Kurgan Oblast,Kurganin alue,Kurganskaja Oblast',Kurganskaja oblast,Kurganskaja oblast',Kurganskaya Oblast',Kurganskaya Oblast’,Oblast de Kourgan,Курганская Область,Курганская область",RU,RUS,643,468.85
+Russia,Orenburg Oblast,"Chkalov Oblast,Chkalovskaya Oblast',Chkalovskaya Oblast’,Oblast d'Orenbourg,Orenburg,Orenburg Oblast,Orenburgskaja Oblast',Orenburgskaja oblast,Orenburgskaja oblast',Orenburgskaya Oblast',Orenburgskaya Oblast’,Оренбургская Область,Оренбургская область",RU,RUS,643,468.85
+Russia,Sverdlovsk,"Oblast de Sverdlovsk,Sverdlovsk,Sverdlovsk Oblast,Sverdlovskaja Oblast',Sverdlovskaja oblast,Sverdlovskaja oblast',Sverdlovskaya Oblast',Sverdlovskaya Oblast’,Swerdlowsk,Свердловская Область,Свердловская область",RU,RUS,643,468.85
+Russia,Tyumen’ Oblast,"Oblast de Tioumen,Tiumen,Tjumen,Tjumen',Tjumenskaja Oblast',Tjumenskaja oblast',Tyumen,Tyumen Oblast,Tyumen' Oblast,Tyumenskaya,Tyumenskaya Oblast',Tyumenskaya Oblast’,Tyumen’ Oblast,Тюменская Область,Тюменская область,Тюмень",RU,RUS,643,468.85
+Russia,Chelyabinsk,"Cheljabinskaja,Cheljabinskaja Oblast',Cheljabinskaja oblast',Chelyabinsk,Chelyabinsk Oblast,Chelyabinskaya Oblast',Chelyabinskaya Oblast’,Oblast Tscheljabinsk,Oblast de Tcheliabinsk,Tjeljabinsk,Tscheljabinsk,Tsjeljabinsk,Tsjeljabinskaja oblast,Челябинская,Челябинская Область,Челябинская область",RU,RUS,643,468.85
+Russia,Altai,"Altai,Altai Krai,Altain aluepiiri,Altaj,Altajskij Kraj,Altajskij kraj,Altay,Altay Kray,Altayskiy,Altayskiy Kray,Krai d'Altai,Kraï d'Altaï,Алтайский Край,Алтайский край",RU,RUS,643,363.41
+Russia,Buryatiya Republic,"Buriatia,Burjaad Ulas,Burjatia,Burjatien,Burjatija,Buryat-Mongol A.S.S.R.,Buryat-Mongol Republic,Buryat-Mongol'skaya ASSR,Buryat-Mongol'skaya Avtonomnaya Sovetskaya Sotsialisticheskaya Respublika,Buryat-Mongolian A.S.S.R.,Buryat-Mongol’skaya ASSR,Buryat-Mongol’skaya Avtonomnaya Sovetskaya Sotsialisticheskaya Respublika,Buryatiya,Buryatiya Republic,Buryatskaya ASSR,Buryatskaya Avtonomnaya Sovetskaya Sotsialisticheskaya Respublika,Republique de Bouriatie,Respublika Burjatija,Respublika Buryatiya,République de Bouriatie,Буряад Улас,Бурятия,Республика Бурятия",RU,RUS,643,363.42
+Russia,Tyva Republic,"Republic of Tyva,Republique de Touva,Respublika Tuva,Respublika Tyva,République de Touva,Tuva,Tuvinskaya Avtonomnaya Sovetskaya Sotsialisticheskaya Respublika,Tuwa,Tyva,Tyva Republic,Tyva Respublika,Республика Тува,Республика Тыва,Тува,Тыва,Тыва Республика",RU,RUS,643,363.42
+Russia,Khakasiya Republic,"Chakassien,Hakassia,Jakasia,Khakas Oblast',Khakas Oblast’,Khakas Respublikazy,Khakasija,Khakasiya,Khakasiya Republic,Khakass Avtonomnaya Oblast',Khakass Avtonomnaya Oblast’,Khakassia,Khakassk Autonomous Region,Khakasskaja respublika,Khakasskaya AO,Khakasskaya Avtonomnaya Oblast',Khakasskaya Avtonomnaya Oblast’,Republique de Khakassie,Respublika Khakasija,Respublika Khakasiya,République de Khakassie,Республика Хакасия,Хакас Республиказы,Хакасия,Хакасская республика",RU,RUS,643,363.42
+Russia,Altay Kray,"Altai,Altai Krai,Altain aluepiiri,Altaj,Altajskij Kraj,Altajskij kraj,Altay,Altay Kray,Altayskiy,Altayskiy Kray,Krai d'Altai,Kraï d'Altaï,Алтайский Край,Алтайский край",RU,RUS,643,363.42
+Russia,Transbaikal Territory,"Krai de Transbaikalie,Kraï de Transbaïkalie,Taka-Baikalian aluepiiri,Transbaikal,Transbaikal Territory,Transbaikalien,Zabaikalie,Zabajkal'skij Kraj,Zabaykal'skiy (Transbaikal) Kray,Zabaykal'skiy Kray,Zabaykalskiy (Transbaikal) Kray,Zabaykalsky,Zabaykal’skiy (Transbaikal) Kray,Zabaykal’skiy Kray,Забайкальский Край",RU,RUS,643,363.42
+Russia,Krasnoyarsk Krai,"Krai de Krasnoiarsk,Krai de Krasnojarsk,Krasnojarsk,Krasnojarskij Kraj,Krasnojarskij kraj,Krasnojarskin aluepiiri,Krasnoyarsk Krai,Krasnoyarsk Kray,Krasnoyarskiy,Krasnoyarskiy Kray,Kraï de Krasnoïarsk,Красноярский Край,Красноярский край",RU,RUS,643,363.42
+Russia,Irkutsk Oblast,"Irkutsk,Irkutsk Oblast,Irkutskaja Oblast',Irkutskaja oblast,Irkutskaja oblast',Irkutskaya Oblast',Irkutskaya Oblast’,Irkutskin alue,Oblast d'Irkoutsk,Иркутская Область,Иркутская область",RU,RUS,643,363.42
+Russia,Kemerovo Oblast,"Kemerovo,Kemerovo Oblast,Kemerovo Oblast',Kemerovo Oblast’,Kemerovon alue,Kemerovskaja Oblast',Kemerovskaja oblast,Kemerovskaja oblast',Kemerovskaya Oblast',Kemerovskaya Oblast’,Kemerowo,Oblast de Kemerovo,Кемеровская Область,Кемеровская область",RU,RUS,643,363.42
+Russia,Novosibirsk Oblast,"Novosibirsk,Novosibirsk Oblast,Novosibirskaja Oblast',Novosibirskaja oblast,Novosibirskaja oblast',Novosibirskaya Oblast',Novosibirskaya Oblast’,Novosibirskin alue,Nowosibirsk,Oblast de Novossibirsk,Новосибирская Область,Новосибирская область",RU,RUS,643,363.42
+Russia,Omsk,"Oblast d'Omsk,Omsk,Omsk Oblast,Omskaja Oblast',Omskaja oblast,Omskaja oblast',Omskaya Oblast',Omskaya Oblast’,Омская Область,Омская область",RU,RUS,643,363.42
+Russia,Tomsk Oblast,"Oblast de Tomsk,Tomsk,Tomsk Oblast,Tomsk Oblast',Tomsk Oblast’,Tomskaja Oblast',Tomskaja oblast,Tomskaja oblast',Tomskaya Oblast',Tomskaya Oblast’,Томская Область,Томская область",RU,RUS,643,363.42
+Russia,Amur Oblast,"Amur,Amur Oblast,Amurin alue,Amurskaja Oblast',Amurskaja oblast,Amurskaja oblast',Amurskaya Oblast',Amurskaya Oblast’,Oblast d'Amour,Амурская Область,Амурская область",RU,RUS,643,443.02
+Russia,Primorskiy (Maritime) Kray,"Krai De Primorsky,Krai de Primorie,Kraï de Primorie,Maritime Krai,Maritime Territory,Primorje,Primorjen aluepiiri,Primorski Krai,Primorskij Kraj,Primorskij kraj,Primorskiy,Primorskiy (Maritime) Kray,Primorskiy Kray,Приморский Край,Приморский край",RU,RUS,643,443.02
+Russia,Primorskiy Kray,"Krai De Primorsky,Krai de Primorie,Kraï de Primorie,Maritime Krai,Maritime Territory,Primorje,Primorjen aluepiiri,Primorski Krai,Primorskij Kraj,Primorskij kraj,Primorskiy,Primorskiy (Maritime) Kray,Primorskiy Kray,Приморский Край,Приморский край",RU,RUS,643,443.03
+Russia,Khabarovsk,"Chabarovsk,Chabarowsk,Habarovskin aluepiiri,Khabarovsk,Khabarovsk Krai,Khabarovsk Kray,Khabarovskij Kraj,Khabarovskij kraj,Khabarovskiy Kray,Krai de Khabarovsk,Kraï de Khabarovsk,Хабаровский Край,Хабаровский край",RU,RUS,643,443.02
+Russia,Jewish Autonomous Oblast,"Birobidjan,Birobijan,Den jodiske autonome oblasten,Den jødiske autonome oblasten,Evrejska avtonomna oblast,Evrejskaja AO,Evrejskaja Avtonomnaja Oblast',Evrejskaja avtonomnaja oblast',Hebrea Autonomio,Hebrea Aŭtonomio,Jevrejska autonomna oblast,Jewish Autonomous Oblast,Jodiske Autonome Oblast,Joodse Autonome Oblast,Judiska autonoma laenet,Judiska autonoma länet,Juedische Autonome Oblast,Juudi autonoomne oblast,Juutalaisten autonominen alue,Jødiske Autonome Oblast,Jüdische Autonome Oblast,Oblast Autonomo Hebreo,Oblast Autonomo Judaico,Oblast Autônomo Judaico,Oblast Emren Yuzev,Oblast Otonom Yahudi,Oblast autonome juif,Oblast' autonoma ebraica,Provincia Autonoma dels Hebreus,Província Autònoma dels Hebreus,Regiunea Autonoma Evreiasca,Regiunea Autonomă Evreiască,Yevreiskaya Autonomous Oblast,Yevreiski Autonomous Oblast,Yevrey (Jewish) Autonomous Oblast,Yevreyskaya AO,Yevreyskaya Autonomnaya Oblast',Yevreyskaya Autonomnaya Oblast’,Yevreyskaya Avtonomnaya Oblast',Yevreyskaya Avtonomnaya Oblast’,Zidovska autonomna oblast,Zidovska autonomni oblast,Zydowski Obwod Autonomiczny,astan khwdgrdan yhwdy,hmhwz hyhwdy hʼwtwnwmy,you tai zi zhi zhou,yudaein jachiju,yudaya zi zhi zhou,yydysʻ ʼwytʼnʼmʻ gʻgnt,Óblast Autónomo Hebreo,Żydowski Obwód Autonomiczny,Židovska autonomna oblast,Židovská autonomní oblast,Židovská autonómna oblasť,Јеврејска аутономна област,Еврейска автономна област,Еврейская АО,Еврейская Автономная Область,Еврейская автономная область,המחוז היהודי האוטונומי,יידישע אויטאנאמע געגנט,استان خودگردان یهودی,ユダヤ自治州,犹太自治州,유대인 자치주",RU,RUS,643,443.02
+Russia,Sakha,"Oblast de Sakhaline,Sachalin,Sajalin,Sakhalin,Sakhalin Oblast,Sakhalinskaja Oblast',Sakhalinskaja oblast',Sakhalinskaya Oblast',Sakhalinskaya Oblast’,Сахалин,Сахалинская Область,Сахалинская область",RU,RUS,643,443.02
+Rwanda,Whole country,N/A,RW,RWA,646,377.358
+Saint Kitts and Nevis,Whole country,N/A,KN,KNA,659,681.818
+Saint Lucia,Whole country,N/A,LC,LCA,662,685.714
+Saint Pierre and Miquelon,Whole country,N/A,PM,SPM,666,800.0
+Saint Vincent and the Grenadines,Whole country,N/A,VC,VCT,670,500.0
+Samoa,Whole country,N/A,WS,WSM,882,428.571
+Sao Tome and Principe,Whole country,N/A,ST,STP,678,666.667
+Saudi Arabia,Whole country,N/A,SA,SAU,682,570.473
+Senegal,Whole country,N/A,SN,SEN,686,545.29
+Serbia,Whole country,N/A,RS,SRB,688,597.905
+Seychelles,Whole country,N/A,SC,SYC,690,693.878
+Sierra Leone,Whole country,N/A,SL,SLE,694,47.619
+Singapore,Whole country,N/A,SG,SGP,702,488.668
+Slovakia,Whole country,N/A,SK,SVK,703,158.741
+Slovenia,Whole country,N/A,SI,SVN,705,245.708
+Solomon Islands,Whole country,N/A,SB,SLB,90,700.0
+Somalia,Whole country,N/A,SO,SOM,706,657.143
+South Africa,Whole country,N/A,ZA,ZAF,710,720.023
+South Korea,Whole country,N/A,KR,KOR,410,444.398
+South Sudan,Whole country,N/A,SS,SSD,728,709.091
+Spain,Whole country,N/A,ES,ESP,724,199.515
+Sri Lanka,Whole country,N/A,LK,LKA,144,494.275
+Sudan,Whole country,N/A,SD,SDN,736,266.106
+Suriname,Whole country,N/A,SR,SUR,740,305.085
+Sweden,Whole country,N/A,SE,SWE,752,42.371
+Switzerland,Whole country,N/A,CH,CHE,756,55.166
+Syria,Whole country,N/A,SY,SYR,760,538.554
+Taiwan,Whole country,N/A,TW,TWN,158,563.381
+Tajikistan,Whole country,N/A,TJ,TJK,762,73.489
+Tanzania,Whole country,N/A,TZ,TZA,834,386.792
+Thailand,Whole country,N/A,TH,THA,764,506.537
+Togo,Whole country,N/A,TG,TGO,768,592.593
+Tonga,Whole country,N/A,TO,TON,776,666.667
+Trinidad and Tobago,Whole country,N/A,TT,TTO,780,520.278
+Tunisia,Whole country,N/A,TN,TUN,788,471.087
+Turkey,Whole country,N/A,TR,TUR,792,411.302
+Turkmenistan,Whole country,N/A,TM,TKM,795,544.381
+Turks and Caicos Islands,Whole country,N/A,TC,TCA,796,708.333
+Uganda,Whole country,N/A,UG,UGA,800,77.088
+Ukraine,Whole country,N/A,UA,UKR,804,279.239
+United Arab Emirates,Whole country,N/A,AE,ARE,784,471.57
+United Kingdom,Whole country,N/A,GB,GBR,826,245.715
+United States,Whole country,N/A,US,USA,840,369.571
+United States,Alaska,"'Alaka,A-la-su-ka,AK,Alaeksa,Alakskak,Alaksu,Alasca,Alaschka,Alaska,Alaska suyu,Alasko,Alaszka,Aleska,Aliaksa,Aliaska,Aljask,Aljaska,Aljaskae,Aljaske,Aljaška,Alyaska,Alyaska Shitati,Alýaska,Anian,Aļaska,Ałasca,Estado de Alaska,Gamaland,Hakʼaz Dineʼé Bikéyah Hahoodzo,Lalaskaen,Lalaskän,Land of the Midnight Sun,New Albion,Sewards Folly,Shtat Aljaska,State of Alaska,Territory of Alaska,a la si jia,a la si jia zhou,alasaka,alaska,alaska ayalty,allaeseuka ju,arasuka zhou,yەlaska,Àláskà,Â-lâ-sṳ̂-kâ,Αλάσκα,Аляск,Аляскæ,Аляска,Аляске,Алјаска,Аљаска,Штат Аляска,Ալյասկա,אלאסקע,אלסקה,آلاسکا,آلاسکا ایالتی,ألاسكا,ئەلاسکا,الاسكا,الاسکا,ܐܠܐܣܟܐ,अलास्का,अलास्‍का,আলাস্কা,ਅਲਾਸਕਾ,ଆଲାସ୍କା,அலாஸ்கா,అలాస్కా,ಅಲಾಸ್ಕ,അലാസ്ക,ඇලස්කාව,รัฐอะแลสกา,အလက်စကာပြည်နယ်,ალასკა,አላስካ,ᐊᓛᓯᑲ,‘Ālaka,アラスカ州,阿拉斯加,阿拉斯加州,알래스카 주",US,USA,840,442.22
+United States,Alabama,"'Alapama,A-la-pa-ma,AL,Alabama,Alabama Shitati,Alabama suyu,Alabamae,Alabamm-a,Alabamo,Alampama,Alavama,Elabeemah Hahoodzo,Heart of Dixie,Ipinle Alabama,Shtat Alabama,State of Alabama,aellabaema ju,alabama,alapama,alybamas,arabama zhou,elabama,ya la ba ma zhou,Â-lâ-pâ-mâ,Élábéemah Hahoodzo,Ìpínlẹ̀ Alabama,Αλαμπάμα,Алабамæ,Алабама,Штат Алабама,Ալաբամա,אלאבאמא,אלבמה,آلاباما,ألاباما,ئەلاباما,الاباما,ܐܠܒܐܡܐ,अलाबामा,एलबामा,আলাবামা,અલાબામા,அலபாமா,అలబామా,ಅಲಬಾಮ,അലബാമ,รัฐแอละแบมา,ཨ་ལ་པ་མ།,အလာဘားမားပြည်နယ်,ალაბამა,አላባማ,ᐋᓛᐹᒫ,‘Alapama,アラバマ州,亚拉巴马州,앨라배마 주",US,USA,840,356.33
+United States,Arkansas,"'Akanaka,A-khen-set,AR,Akennsas,Arcansas,Arcansia,Arkansas,Arkansas suyu,Arkansaso,Arkansaw,Arkanzas,Arkanzas Shtati,Arkanzasa,Arkanzasas,Arkanzasos,Arkanzes,Arkinso,Arkinsọ,Dzil Biiʼ Dzigaii,Dził Biiʼ Dzígaii,Land of Opportunity,Shtat Arkanzas,State of Arkansas,The Bear State,a ken se zhou,akanso ju,akanso zhou,arakanasasa,arakasa,arkanasasa,arkanca,arkansa,arkansah,arkansas,arkanzas,arkanzas ayalty,arknsas,rath xarkhansx,yarknsas,Â-khén-set,Ārkanzasa,Αρκάνσας,Арканзас,Штат Арканзас,Әркәнзә,Արկանզաս,ארקנסו,ארקענסא,آرکانزاس,آرکانزاس ایالتی,آرکانساس,آرکنساس,أركنساس,ئارکنساس,اركنساس,ܐܪܟܢܣܐܣ,अर्कान्स,आर्कन्सा,आर्कान्स,आर्कान्सः,आर्कान्सा,আরকান্‌সাস,আর্কানসাস,ਆਰਕੰਸਾ,અરકાનસાસ,ஆர்கன்சா,ఆర్కాన్సా,ಅರ್ಕಾನ್ಸಾಸ್,അർക്കൻസാസ്,รัฐอาร์คันซอ,ཨར་ཁན་སཱ་སི།,အာကင်ဆောပြည်နယ်,არკანზასი,አርካንሳው,‘Akanaka,アーカンソー州,阿肯色州,아칸소 주",US,USA,840,511.63
+United States,Arizona,"'Alikona,A-li-song-na,AZ,Arison-a,Arisona,Ariz.,Arizon,Arizona,Arizona Shitati,Arizona suyu,Arizonae,Arizono,Arizuna,Arizòna,Arizůna,Grand Canyon State,Hoozdo Hahoodzo,Shtat Aryzona,State of Arizona,aelijona ju,airizona,ara'ijona,aricona,arijona,ariseana,arizona,arizona zhou,aryzwna,aryzwna ayalty,ayryzwna,erijona,ya li sang na zhou,Â-li-sông-ná,Αριζόνα,Аризон,Аризонæ,Аризона,Аризоно,Штат Арызона,Արիզոնա,אריזאנע,אריזונה,آریزونا,آریزونا ایالتی,أريزونا,ئەریزۆنا,اريزونا,ایریزونا,ܐܪܝܙܘܢܐ,अराइजोना,आरिजोना,एरिजोना,एरीजोना,ॲrijhona,ॲरिझोना,অ্যারিজোনা,ਐਰੀਜ਼ੋਨਾ,அரிசோனா,ఆరిజోనా,ಆರಿಜೋನ,അരിസോണ,รัฐแอริโซนา,ཨྰ་རི་ཟོ་ནྰ།,အရီဇိုးနားပြည်နယ်,არიზონა,አሪዞና,ᐋᕇᓲᓈ,‘Alikona,アリゾナ州,亞利桑拿州,亞利桑那州,애리조나 주",US,USA,840,396.13
+United States,California,"Akeehashiih Hahoodzo,Akééháshį́į́h Hahoodzo,Albion,Alta California,CA,Calafornia,Calafòrnia,Calif,Calif.,Califfornia,Californeye,California,California Del Norte,California Republic,California Septentrional,California Superior,California suyu,Californie,Californien,Californië,Califòrnia,Califórnia,Całifornia,Estado de California,Golden State,Ka-li-fuk-ni-a,Kalefuorneje,Kaleponi,Kalifonaen,Kalifoni,Kalifonän,Kaliforni,Kalifornia,Kalifornie,Kalifornien,Kalifornij,Kalifornija,Kalifornijo,Kalifornio,Kaliforniska,Kaliforniya,Kaliforniya shtati,Kaliforniye Shitati,Kalifornië,Kalifornje,Kalifornía,Kaliforńijo,Kalifurnya,Kalifòni,Kalifọ́rníà,Kalėfuornėjė,Karaponia,Karapōnia,Kâ-li-fuk-nì-â,New Albion,Noua Albion,Nueva California,Shtat Kalifornija,State of California,WCC,jia li fu ni ya,jia li fu ni ya zhou,jia zhou,kaelliponia ju,kailiforani'a,kailiforniya,kalifornias,kaliforniya,kaliphorniya,kaliporniya,kalyfrnya,kalyfwrnya,kalyfwrnya ayalty,kariforunia,kariforunia zhou,keliphorniya,kyaliphorniya,kylyfwrnya,qlypwrnyh,Καλιφόρνια,Калифорни,Калифорний,Калифорния,Калифорнија,Каліфорнія,Штат Каліфорнія,Կալիֆոռնիա,קאליפארניע,קליפורניה,كاليفورنيا,کالیفرنیا,کالیفورنیا,کالیفورنیا ایالتی,کالیفۆرنیا,کالېفورنیا,کیلیفورنیا,कालिफ़ोर्निया,कॅलिफोर्निया,कैलिफ़ोर्निया,क्यालिफोर्निया,ক্যালিফোর্নিয়া,ਕੈਲੀਫ਼ੋਰਨੀਆ,કેલિફોર્નિયા,கலிபோர்னியா,కాలిఫోర్నియా,ಕ್ಯಾಲಿಫೊರ್ನಿಯ,കാലിഫോർണിയ,รัฐแคลิฟอร์เนีย,ཁྰ་ལེ་ཧྥོར་ནི་ཡ།,ကယ်လီဖိုးနီးယားပြည်နယ်,კალიფორნია,ካሊፎርኒያ,ᑳᓖᐴᕐᓃᐊ,カリフォルニア,カリフォルニア州,加利福尼亚,加利福尼亚州,加利福尼亞州,加州,캘리포니아 주",US,USA,840,175.62
+United States,Colorado,"CO,Centennial State,Colorado,Colorado suyu,Coloradu,Coloratum,Cołorado,Dibe Nitsaa Hahoodzo,Dibé Nitsaa Hahoodzo,Estado de Colorado,Kho-lo-la-to,Khô-lò-là-tô,Kolarad,Kololako,Koloradas,Koloradio,Kolorado,Kolorado Shitati,Kolorads,Koloranto,Kolorādo,Shtat Kalarada,State of Colorado,ge luo la du zhou,kalorado,ke luo la duo zhou,kealaradea,klradw,klradw ayalty,kolarado,kolarato,kollolado ju,kolorado,kolorados,koloryado,kororado zhou,kwlwradw,kʼolorados shtʼatʼi,qwlwrdw,rath kholorado,Κολοράντο,Коларад,Колорадо,Штат Каларада,Կոլորադո,קאלאראדא,קולורדו,كولورادو,کلرادو,کلرادو ایالتی,کلراډو,کولورادو,کولوراڈو,کۆلۆرادۆ,ܟܘܠܘܪܐܕܘ,कॉलोराडो,कोलोराडो,कोलोरादो,कोलोर्याडो,কলোরাডো,ਕੋਲੋਰਾਡੋ,கொலராடோ,కొలరాడో,കൊളറാഡോ,รัฐโคโลราโด,ཁོ་ལོ་ར་ཌོ།,ကော်လိုရာဒိုပြည်နယ်,კოლორადოს შტატი,ኮሎራዶ,ᑰᓘᕌᑑ,コロラド州,哥羅拉度州,科羅拉多州,콜로라도 주",US,USA,840,603.76
+United States,Connecticut,"CT,Conecticut,Coneticute,Connecticut,Connecticut suyu,Connecticuta,Constitution State,Knektikt,Kanetikud,Kanédikiʼ Hahoodzo,Kaonektikioty,Khong-nai-ti-khiet-chu,Không-nái-tí-khiet-chû,Konekikuka,Konektekots,Konektikat,Konektikati,Konektikot,Konektikut,Konektikuta,Konektikutas,Konektikuto,Konektėkots,Konestikut,Konetikut,Konnektikat Shitati,Konnektikut,Konnetikut,Konnéktikat Shitati,Konèktikòt,Kónétíkùt,Shtat Kanektykut,State of Connecticut,kanaitikata,kanekatikata,kanekrrikkatt,kanektikat,kanektikata,kanetikat,kanetikata,kang nai di ke zhou,kang nie di ge,kang nie di ge zhou,kantykt ayalty,kantykyt,kntykt,konechikatto zhou,konetikeos ju,kwnytykt,kۆnێtykt,qwntyqt,rath khxn net thikhat,Κονέκτικατ,Канетикуд,Конектикат,Коннектикут,Кънектикът,Штат Канектыкут,Կոնեկտիկուտ,קאנעטיקעט,קונטיקט,كونيتيكت,کانتیکئت,کانتیکت ایالتی,کنتیکت,کنکٹیکٹ,کنیکٹیکٹ,کۆنێتیکت,ܟܘܢܝܬܝܟܬ,कनेक्टिकट,कनेक्टिकट्,कनेक्तिकत,কানেকটিকাট,কানেটিকাট,ਕਨੈਟੀਕਟ,கனெடிகட்,కనెక్టికట్,ಕನೆಕ್ಟಿಕಟ್,കണെക്റ്റിക്കട്ട്,รัฐคอนเนตทิคัต,ကနနကတကတပြညနယ,ကွန်နက်တီကတ်ပြည်နယ်,კონექტიკუტი,ኮነቲከት,コネチカット州,康乃狄克州,康涅狄格,康湼狄格州,코네티컷 주",US,USA,840,361.83
+United States,Delaware,"DE,Delauaare,Delauare,Delauer,Delavar,Delavaria,Delavaro,Delavehr,Delaver,Delavera,Delaveras,Delavers,Delavēra,Delaware,Delaware suyu,Delawe,Delawee Hahoodzo,Delawiyer Shitati,Delawè,Délawiyer Shitati,Déláwee Hahoodzo,Déláwè,First State,Kelawea,Ntelagouer,Shtat Dehlavehr,State of Delaware,Thit-la-nga,Thi̍t-lâ-ngá,dela'oyyara,delave'ara,delaver,delavera,delaveris shtʼatʼi,delaveyara,dellaweeo ju,derauea zhou,dlawyr,dlawyr ayalty,dylavyyyr,dylawyr,dێlawێr,te la hua zhou,telaveyar,Ντέλαγουερ,Делавар,Делавер,Делавэр,Делауеър,Деләәвр,Штат Дэлавэр,Դելավեր,דלאוור,דעלעווער,دئلاڤییئر,دلاویر,دلاویر ایالتی,ديلاوير,دێلاوێر,ڈیلاویئر,ܕܝܠܐܘܝܪ,डेलावेयर,डेलावेर,डेलावेर्,देलावेर,ডেলাওয়্যার,ਡੇਲਾਵੇਅਰ,டெலவெயர்,డెలావేర్,ഡെലവെയർ,รัฐเดลาแวร์,དྷེའི་ལ་ཝར།,ဒယ်လာဝဲပြည်နယ်,დელავერის შტატი,ዴላዌር,デラウェア州,特拉华州,特拉華州,델라웨어 주",US,USA,840,16.5
+United States,Florida,"FL,Fla.,Floarida,Florid,Florida,Florida Shitati,Florida suyu,Floridae,Floride,Florido,Florinta,Floryda,Fluoreda,Fluorėda,Flòrida,Flórida,Flórída,Flórídạ,Fu-lo-li-that,Fu-lò-lî-tha̍t,Gah Bikeeʼ Taahiʼahi,Gah Bikeeʼ Taahíʼahí,Ploorid,Pololika,Shtat Flaryda,State of Florida,Sunshine State,Tegesta,falaurida,florida,flwryda,flwryda ayalty,fu luo li da zhou,furorida zhou,fylwryda,peullolida ju,phlarida,phlearida,phlorida,plorida,plwrydh,pulorita,rath flxrida,Φλόριντα,Плоорид,Флоридæ,Флорида,Флориде,Штат Фларыда,Ֆլորիդա,פלארידע,פלורידה,فئلوریدا,فلوريدا,فلوریدا,فلوریدا ایالتی,فلوریڈا,فلۆریدا,फ़्लोरिडा,फ्लोरिडा,फ्लोरिदा,ফ্লোরিডা,ਫ਼ਲੌਰਿਡਾ,புளோரிடா,ఫ్లోరిడా,ಫ್ಲಾರಿಡ,ഫ്ലോറിഡ,รัฐฟลอริดา,ཧྥོ་ལོ་རི་ཌ།,ဖလော်ရီဒါပြည်နယ်,ფლორიდა,ፍሎሪዳ,ᑉᓘᕇᑖ,フロリダ州,佛罗里达州,佛羅里達州,플로리다 주",US,USA,840,397.93
+United States,Georgia,"Chacha,Dzhordzhija,Estado de Georgia,GA,Georgia,Georgie,Georgio,Geórgia,Géorgie,Peach State,State of Georgia,The Colony of Georgia in America,jojia,jojia zhou,qiao zhi ya,Джорджия,ジョージア州,乔治亚,조지아",US,USA,840,399.59
+United States,Hawaii,"Aloha State,Awayi,Chabae,Gavai,Gavaj,Gavaji,Gavajlar,Gavajs'ki ostrovi,Gavajzar,Gavayi,Gaway adalary,Gawaý adalary,HI,Ha-vi-yi,Ha-vî-yî,Hauai'i,Hauaiʻi,Havai,Havaii,Havaija,Havaiji,Havaj,Havajai,Havajas,Havaje,Havaji,Havajo,Havajē,Havay,Havayi,Havaí,Havái,Haváija,Haváí,Hawaay,Hawai,Hawai - Hawai'i,Hawai'i,Hawaii,Hawaii osariik,Hawaii suyu,Hawaiʻi,Hawai‘i,Hawaje,Haway Shitati,Hawaï,Hawái,Ka Pae 'Aina o Hawai'i,Ka Pae Moku o Hawai'i,Ka Pae Moku o Hawaiʻi,Ka Pae ʻĀina o Hawaiʻi,Ke Aupuni Mo'i o Hawai'i,Ke Aupuni Mōʻī o Hawaiʻi,Keyah Alkee Nitiigo Dah Ndaaʼeeli,Khavai,Khavaj,Khavaji,Kingdom of Hawaii,Kéyah Ałkéé Nitį́įgo Dah Ndaaʼeełí,Republic of Hawaii,Sandwich Islands,Shtat Gavai,State of Hawai'i,State of Hawaii,State of Hawai‘i,Territorio do Havai *,Territory of Hawaii,ha'oya'i,haraa'i,hava'i,havai,havais shtʼatʼi,havay,havayi,hawai ju,hawai zhou,haway,hawayy,hawayy ayalty,rath haway,xia wei yi,xia wei yi zhou,Χαβάη,Гавай,Гавайи,Гавайлар,Гавайські острови,Гавайҙар,Гаваї,Хаваи,Хавай,Хаваји,Штат Гаваі,Һауайи,Հավայի,האוואי,הוואי,هاوائی ایالتی,هاواى,هاواي,هاوایی,ھاوایی,ھاڤایی,ہوائی,हवाइ,हवाई,হাওয়াই,হাৱাই,ਹਵਾਈ,ஹவாய்,హవాయి,ಹವಾಯಿ,ഹവായി,รัฐฮาวาย,ཧ་ཝ་ཡི།,ဟာဝိုင်ယီပြည်နယ်,ჰავაი,ჰავაის შტატი,ሃዋኢ,ハワイ州,夏威夷,夏威夷州,하와이 주",US,USA,840,708.84
+United States,Iowa,"'Iowa,Aioua,Aiova,Ajov,Ajova,Ajovae,Ajovo,Ayova,Ayowa,Hawkeye State,Haʼaʼaahji Dzigaii,Haʼaʼaahjí Dzígaii,IA,Iova,Iovao,Iowa,Iowa suyu,Lowa Shitati,Oi-ho-fa,Oi-hò-fà,Shtat Ajova,State of Iowa,a'i'ova,a'i'oya,a'iraa,ai ao hua zhou,ai ao wa zhou,ai he hua zhou,aiova,aiowa ju,aiowa zhou,aiyava,ayova,aywa,aywva,aywwa,aywwa ayalty,ayywwa,rath xixowa,Áyowạ,İowa,Αϊόβα,Айов,Айовæ,Айова,Айово,Ајова,Штат Аёва,Այովա,איווה,אייאווע,آئیووا,آيوا,آیوا,آیووا,آیووا ایالتی,آیوڤا,ئایۆوا,ايوا,ܐܝܐܘܐ,अयोवा,आयोवा,আইওয়া,আইৱা,ਆਇਓਵਾ,આયોવા,அயோவா,అయోవా,ಅಯೋವಾ,ഐയവ,รัฐไอโอวา,ཡོ་བ།,အိုင်အိုဝါပြည်နယ်,აიოვა,አዮዋ,ᐃᐅᕙ,‘Iowa,アイオワ州,埃奧華州,爱荷华州,艾奥瓦州,아이오와 주,𐌹𐌿𐍅𐌰",US,USA,840,390.75
+United States,Idaho,"'Ikaho,Aidahas,Aidaho,Aidahs,Aintacho,Ajdag'o,Ajdakh,Ajdakho,Aydaho,Aydawo,Aydaxo Shitati,Estado de Idaho,Gem State,ID,Idaho,Idaho suyu,Idahum,Nimasii Kʼidadilyehe,Nímasii Kʼidadilyéhé,Oi-that-hot,Oi-tha̍t-hòt,Shtat Ajdakha,State of Idaho,a'id'aho,a'idaho,ai da he zhou,aidahea,aidaho,aidaho ju,aidaho zhou,aitaho,ayad'aho,aydahw,aydahw ayalty,id'aho,rath xidaho,yaydaھۆ,İdaho,Αϊντάχο,Айдагьо,Айдах,Айдахо,Ајдахо,Штат Айдаха,Այդահո,איידהו,איידעהא,آیداهو,آیداهو ایالتی,آیداھو,أيداهو,ئایداھۆ,ايداهو,اڈاہو,ایڈاہو,ܐܝܕܐܗܘ,आइडाहो,आइदाहो,आयडाहो,इडाहो,ऐडहो,আইডাহো,ਆਇਡਾਹੋ,ஐடஹோ,ఐడహొ,ಐಡಹೋ,ഐഡഹോ,รัฐไอดาโฮ,အိုင်ဒါဟိုပြည်နယ်,აიდაჰო,አይዳሆ,ᐄᑖᓲ,‘Ikahō,アイダホ州,愛達荷州,爱达荷州,아이다호 주",US,USA,840,95.88
+United States,Illinois,"'Ilinoe,Elenuojos,Estado de Illinois,IL,Ilinoi,Ilinois,Ilinoisa,Ilinoj,Ilinojs,Ilinojso,Ilinojus,Ilinoys,Ilinwa,Ilinóis,Illinoesia,Illinois,Illinois suyu,Illinoj,Illinojs,Illinoyiz Shitati,Illinoys,Prairie State,Shtat Ilinojs,State of Illinois,To Nitsaa Nilibaah Hahoodzo,Tó Nitsaa Nílį́bąąh Hahoodzo,Yi-li-no,Yî-li-nò,alynwy,aylynwy,aylynwy ayalty,aylynwyz,ileno'is,ilina'e,ilinaya,ilinayasa,ilino'i,ilinoisi,ilinoy,ilinoya,illinayis,illineayi,illinoi ju,irinoi zhou,rath xillinxys,yi li nuo yi zhou,yi li nuo zhou,yylynwy,Ėlėnuojos,İllinois,İllinoys,Ιλινόι,Іллінойс,Илиноис,Илиной,Илинойс,Иллиной,Иллинойс,Штат Ілінойс,Իլինոյս,אילינוי,إلينوي,ئیلینوی,ئیلینۆی,الینوائے,الینوۓ,ايلينوى,ایلینوی,ایلینوی ایالتی,ایلینویز,ܐܠܝܢܘܝ,इलिनॉय,इलिनोइ,इलेनॉइस्,ইলিনয়,ইলিনয়স,ਇਲੀਨਾਏ,இலினொய்,ఇల్లినాయిస్,ഇല്ലിനോയി,รัฐอิลลินอยส์,အီလီနွိုင်းပြည်နယ်,ილინოისი,ኢሊኖይ,ᐄᓚᓄᐃᔅ,‘Ilinoe,イリノイ州,伊利諾州,伊利诺伊州,일리노이 주,𐌹𐌻𐌻𐌹𐌽𐍉𐌹𐍃",US,USA,840,329.21
+United States,Indiana,"'Inikiana,Endiana,Estado de Indiana,Hoosier State,IN,Indian-a,Indiana,Indiana muzh,Indiana suyu,Indianae,Indianao,Indiane,Indiann-a,Indijana,Indiyana,Indiyanna Shitati,Indiāna,Indiǣna,Intiana,Ndiana,Ndiánà,Shtat Indyjana,State of Indiana,Yin-thi-on-nap,Yin-thi-ôn-na̍p,andyana,ayndyana,ayndyana ayalty,idi'ana,indiaena ju,indiana,indiana zhou,indiyana,intiyana,intyana,yin di an na zhou,yyndyana,Índíʼyéenah Hahoodzo,Ėndiana,İndiana,Ιντιάνα,Індіана,Индианæ,Индиана,Индиана муж,Индиане,Индијана,Индән,Штат Індыяна,Ինդիանա,אינדיאנה,אינדיאנע,إنديانا,ئیندیانا,انديانا,انڈیانا,ایندیانا,ایندیانا ایالتی,ܐܢܕܝܐܢܐ,इंडियाना,इण्डियाना,इन्डियाना,इन्दियाना,ইন্ডিয়ানা,ਇੰਡੀਆਨਾ,ઇન્ડિયાના,இந்தியானா,ఇండియానా,ಇಂಡಿಯಾನಾ,ഇന്ത്യാന,รัฐอินดีแอนา,ཨིན་ཌི་ཡཱ་ན།,အင်ဒီယားနားပြည်နယ်,ინდიანა,ኢንዲያና,ᐃᓐᑎᐋᓈ,‘Inikiana,インディアナ州,印第安納州,印第安纳州,인디애나 주",US,USA,840,741.26
+United States,Kansas,"Cansas,Cansia,Estado de Kansas,KS,Kaanzs,Kanekaka,Kansas,Kansas suyu,Kansaso,Kansia,Kanzas,Kanzas Shitati,Kanzasa,Kanzasas,Kanzasos,Kensas,Kham-sat-su,Khâm-sat-sṳ̂,Konzas,Kánzạs,Kènsas,Shadiʼaahji Dzigaii,Shtat Kanzas,Shádiʼááhjí Dzígaii,State of Kansas,Sunflower State,gan sha zhou,kaenjaseu ju,kan sa si zhou,kansas,kansasa,kanzas,kanzas ayalty,kanzasu zhou,kanzys,kencas,kensasa,knsas,kyanasasa,kyansasa,qnzs,Κάνσας,Каанзс,Канзас,Штат Канзас,Կանզաս,קנזס,קענזעס,كانساس,کانزاس,کانزاس ایالتی,کنساس,ܟܐܢܣܐܣ,कन्सास,कान्सास,कान्सास्,कॅन्सस,केन्सास,केन्‍सास,ক্যানসাস,ক্যান্সাস,ਕਾਂਸਸ,કેન્સાસ,கேன்சஸ்,కాన్సాస్,ಕನ್ಸಾಸ್/ಕಾನ್ಸಾಸ್‌‌,കാൻസസ്,รัฐแคนซัส,ཁན་སཱ་སི།,ကန်းဆပ်ပြည်နယ်,კანზასი,ካንሳስ,カンザス州,堪薩斯州,干沙州,캔자스 주",US,USA,840,405.35
+United States,Kentucky,"Blue Grass State,Commonwealth of Kentucky,KY,Kenekuke,Kentaki,Kentakii Hahoodzo,Kentakki,Kentoki,Kentokis,Kentorki,Kentucky,Kentucky suyu,Kentuki,Kentukia,Kentukio,Kentukis,Kentukki,Kentukki Shitati,Kentákii Hahoodzo,Kentórkị,Khen-thap-ki,Khén-thap-kî,Kintaaki,Kèntòki,Kéntukki Shitati,Sadruzhnasc' Kentuki,ken ta ji zhou,kencaki,kenrakki,kentaki,kentakki,kentakki zhou,kenteoki ju,kitaki,kntaky,kntaky ayalty,kyntaky,kێntaky,qntqy,rath khenthakki,Κεντάκι,Кентаки,Кентакки,Кентуки,Кентукки,Кентуккі,Кентъки,Кинтааки,Садружнасць Кентукі,Կենտուկի,קנטקי,קענטאקי,كنتاكى,كنتاكي,کئنتاکی,کنتاکی,کنتاکی ایالتی,کینٹکی,کێنتاکی,कॅण्टकी,केंटकी,केन्चकी,केन्टकी,केन्‍टकी,কেন্টাকি,ਕਿੰਟਕੀ,கென்டக்கி,കെന്റക്കി,รัฐเคนทักกี,ကင်တပ်ကီပြည်နယ်,კენტუკი,ኬንታኪ,ケンタッキー州,肯塔基州,켄터키 주",US,USA,840,807.68
+United States,Louisiana,"Estado de Louisiana,LA,Loisiana,Louisiana,Louisiana osariik,Louisiana suyu,Louisiane,Louisiann-a,Louisianne,Louisiāna,Louiziana,Loyizanna Shitati,Loïsiana,Lu-yi-su-on-na,Lu-yi-sṳ̂-ôn-ná,Ludoviciana,Luikiana,Luisian-a,Luisiana,Luizeana,Luiziana,Luizianae,Luiziane,Luiziano,Luizijana,Luiziāna,Luizjana,Luizėana,Lujziana,Luwisiana,Luwisiyana,Luwisiánà,Lwiziana,Pelican State,Shtat Luizijana,State of Louisiana,Tonteel Chʼinili,Tónteel Chʼínílį́,la Luisiana,lu yi si an na zhou,lu'ijhiyana,lu'ijiyana,lu'isiyana,lu'izi'ana,lu'iziyana,lu-ijiaena ju,luciyana,luiziana,lusiyana,luyisiyana,lwyyzyana,lwyyzyana ayalty,lwyzyana,lwzyana,lyu'isiyana,rath luyseiyna,ruijiana zhou,Λουιζιάνα,Лувизән,Луизианæ,Луизиана,Луизиане,Луизијана,Луйзиана,Луїзіана,Штат Луізіяна,Լուիզիանա,לואיזיאנא,לואיזיאנה,لوئزیانا,لوئیزیانا,لوئیزیانا ایالتی,لوزیانا,لويزيانا,لوٙئیزیانا,لویزیانا,लुइजियाना,लुईज़ियाना,लुईजियाना,लुईझियाना,লুইজিয়ানা,লুইসিয়ানা,ਲੂਈਜ਼ੀਆਨਾ,લ્યુઇસિયાના,லூசியானா,లూసియానా,ಲೂಯಿಸಿಯಾನ,ലുയീസിയാന,รัฐลุยเซียนา,ལུའི་ཟི་ཨཱན་ནཱ།,လူဝီစီယားနားပြည်နယ်,ლუიზიანა,ሉዊዚያና,ᓗᐄᓰᐋᓈ,ルイジアナ州,路易斯安那州,루이지애나 주",US,USA,840,374.81
+United States,Massachusetts,"Bay State,Commonwealth of Massachusetts,MA,Ma-sat-chu-set,Makakukeka,Masachoset,Masachosèt,Masachouseti,Masachusets,Masachuusic,Masachuzets,Masacuseco,Masacusetsa,Masacusetsas,Masacusetsos,Masatsusets,Masaĉuseco,Masačusetsas,Masačusetsos,Masačūsetsa,Massachusets,Massachusets Shitati,Massachusetta,Massachusetts,Massachusetts suyu,Massachuséts Shitati,Massacusets,Massacʻusetʻs,Massaçusets,Meesichooshish Hahoodzo,Mà-sat-chû-set,Másáchusẹts,Méésíchóoshish Hahoodzo,Sadruzhnasc' Masachusets,ma sa zhu sai,ma sa zhu sai zhou,ma sheng,macaccucets,maesachusecheu ju,maisacusatasa,masachusettsu zhou,masachusetʼsi,masachwst,masachwst ayalty,masachwsyt,masachwwsyts,masacyuserrs,masatshwsts,masecusetsa,mass,mesecyusetsa,mszwsts,myasecusetsa,myasecyusetsa,Μασαχουσέτη,Масачузетс,Масачусетс,Масачуусиц,Массачусетс,Массачусеттс,Садружнасць Масачусетс,Մասսաչուսեթս,מאסאטשוסעטס,מסצוסטס,ماساتشوستس,ماساچوسئت,ماساچوست,ماساچوست ایالتی,ماساچووسیتس,میساچوسٹس,میساچیوسٹس,ܡܐܣܐܬܫܘܣܬܣ,मासचुसेट्‍स,मासेचुसेट्स,मॅसेच्युसेट्स,म्यासेचुसेट्स,म्यासेच्युसेट्स,म्यासेच्युसेत्स,ম্যাসাচুসেট্‌স,ਮੈਸਾਚੂਸਟਸ,மாசச்சூசெட்ஸ்,മസാച്യുസെറ്റ്സ്,รัฐแมสซาชูเซตส์,မက်ဆာချူးဆက်ပြည်နယ်,მასაჩუსეტსი,ማሣቹሰትስ,ᒫᓵᓲᓰᑦᔅ,マサチューセッツ州,马萨诸塞,麻省,麻薩諸塞州,매사추세츠 주",US,USA,840,354.06
+United States,Maryland,"MD,Ma-li-lan,Marialand,Marianland,Marieland,Mariland,Marilando,Mary-Land,Maryaland,Marylan,Maryland,Maryland Shitati,Maryland suyu,Marylân,Md.,Meelin Hahoodzo,Mehrilehnd,Mehrilend,Melelana,Meriland,Merilandas,Merilands,Merilann,Merilant,Merilend,Merilenda,Merriland,Mâ-lî-làn,Méelin Hahoodzo,Mérílạnd,Mērilenda,Old Line State,Shtat Mehrylend,State of Maryland,Terra Mariae,Tir Maria,ma li lan zhou,mairilainda,maryland,melillaendeu ju,merilainda,merilamda,merilantu,merilendi,merilyand,merilyanda,merirando zhou,mrylnd,mrylnd ayalty,myryland,mێrylەnd,Μέριλαντ,Мериленд,Меріленд,Мэриленд,Мэрилэнд,Штат Мэрыленд,Մերիլենդ,מארילאנד,מרילנד,مئریلأند,ماريلاند,مریلند,مریلند ایالتی,میرِلَنڈ,میری لینڈ,مێریلەند,ܡܐܪܝܠܐܢܕ,मेरिलैण्ड,मेरिल्यान्ड,मेरिल्यान्द,मेरीलँड,मेरील्यान्ड,मैरिलैण्ड,মেরিল্যান্ড,ਮੈਰੀਲੈਂਡ,மேரிலாந்து,మేరీల్యాండ్,ಮೇರಿಲ್ಯಾಂಡ್,മെരിലാൻ‌ഡ്,รัฐแมริแลนด์,མ་རིས་ལེན་ཌ།,မေရီလန်းပြည်နယ်,მერილენდი,ሜሪላንድ,メリーランド州,馬利蘭州,马里兰州,메릴랜드 주",US,USA,840,335.07
+United States,Maine,"Cenomannica,ME,Maine,Maine suyu,Majno,Mayn,Meane Shitati,Mehn,Meiin Hahoodzo,Mein,Meina,Meinas,Meins,Mejin,Mejn,Men,Mene,Meyn,Mien-yin,Mien-yîn,Mèn,Méané Shitati,Méíin Hahoodzo,Mêne,Mën,Pine Tree State,Shtat Mehn,State of Maine,me'ina,mein ju,mein zhou,mena,menis shtʼatʼi,meyn,mian yin,mian yin zhou,miyn ayalty,myn,myyn,rath men,wlayt myn,Μέιν,Мейин,Мейн,Мен,Мејн,Мэн,Штат Мэн,Մեն,מיין,מעין,مين,مِین ایالتی,میئن,مین,مینے,مےن,مەین,ولاية مين,ܡܝܢ,मेइन,मेन,মেইন,ਮੇਨ,மேய்ன்,മെയ്ൻ,รัฐเมน,မိန်းပြည်နယ်,მენის შტატი,መይን,メイン州,緬因州,缅因,缅因州,메인 주",US,USA,840,96.87
+United States,Michigan,"MI,Mecegans,Met-hiet-kin,Me̍t-hiet-kîn,Michigan,Michigan Shitati,Michigan suyu,Michigania,Michigao,Michigen,Michigàn,Michigão,Michiign,Mich·igan,Micigana,Miciganas,Micigano,Micigen,Miciqan,Mikikana,Mishigin Hahoodzo,Misigan,Misinkan,Miçiqan,Miĉigano,Mičigana,Mičiganas,Míchigan,Míshigin Hahoodzo,Mėčėgans,Shtat Michygan,State of Michigan,Wolverine State,mi xie gen zhou,mi zhi gen zhou,miccikan,michiganis shtʼatʼi,micigana,mishigan zhou,misigan,misigan ju,misigana,mshy gn,mshygn,myshygan,myshygan ayalty,myshyghan,myshyjan,mysygn,Μίσιγκαν,Мичиган,Мичиген,Мичиигн,Мічиган,Штат Мічыган,Միչիգան,מישיגן,مشی گن,مشیگن,ميشيجان,ميشيغان,میشیگان,میشیگان ایالتی,ܡܫܝܓܢ,मिचिगन,मिशिगन,मिसिगन,মিশিগান,ਮਿਸ਼ੀਗਨ,மிச்சிகன்,మిషిగన్,മിഷിഗൺ,รัฐมิชิแกน,མི་ཅི་གྷན།,မီချီဂန်ပြည်နယ်,მიჩიგანის შტატი,ሚሺጋን,ミシガン州,密歇根州,密芝根州,미시간 주",US,USA,840,459.68
+United States,Minnesota,"Estado de Minnesota,MN,Menesuota,Min-ni-su-that,Minekoka,Minesota,Minesoto,Minisoodah Hahoodzo,Minnesota,Minnesota Shitati,Minnesota suyu,Minnesotae,Minnesoto,Minnesòta,Minnésota Shitati,Minésótạ,Mìn-nì-sû-tha̍t,Mínisóodah Hahoodzo,Mėnesuota,North Star State,Shtat Minesota,State of Minnesota,minacotta,minaseatta,minesota,minesota ju,minesota zhou,ming ni su da zhou,minisota,minnasota,mynswta ayalty,mynswth,myny swta,mynyswta,mynysۆta,rath minnisota,Μινεσότα,Минесота,Минисөт,Миннесотæ,Миннесота,Миннесото,Міннесота,Штат Мінесота,Մինեսոտա,מינסוטה,מינעסאטע,منسسوٹا,مينيسوتا,مینئ سوٙتا,مینسوتا ایالتی,مینه‌سوتا,مینیسوٹا,مینیسۆتا,ܡܢܝܣܘܬܐ,मिनिसोटा,मिनेसोटा,मिनेसोता,মিনেসোটা,ਮਿਨੇਸੋਟਾ,மினசோட்டா,మిన్నసోటా,മിനസോട്ട,รัฐมินนิโซตา,မင်နီဆိုးတားပြည်နယ်,მინესოტა,ሚንሶታ,ᒦᓃᓲᑖ,ミネソタ州,明尼苏达州,明尼蘇達州,미네소타 주",US,USA,840,399.58
+United States,Missouri,"Estado de Missouri,Ipinle Missouri,MO,Mesuris,Met-su-li,Me̍t-sû-lî,Mikouli,Misoria,Misouri,Missori,Missori Shitati,Missorí,Missouri,Missouri osariik,Missouri suyu,Missoury,Missoùri,Missuri,Missuri stati,Missuri ştatı,Missuria,Missúri,Misuri,Misurio,Misuris,Misūri,Misūris,Mizouri,Mizuri,Mizurị,Mizuuri,Mėsūris,Show-Me State,Shtat Misury,State of Missouri,To Dzigaii Nili,Tó Dzígaii Nílį́,mi su li zhou,micuri,mijauri,mijhori,mijuli ju,misauri,miseari,misuri,misuris shtʼatʼi,mizuri,mizuri zhou,mswry,myswry,myzwry,myzwry ayalty,rath missuri,Ìpínlẹ̀ Missouri,Μιζούρι,Мизуури,Миссури,Мисури,Міссурі,Штат Місуры,Միսսուրի,מיזורי,مسوری,ميزورى,ميزوري,میزوری,میزوری ایالتی,میسوٙری,ܡܝܙܘܪܝ,मिज़ूरी,मिजौरी,मिसूरी,मिसौरी,মিসৌরি,ਮਿਜ਼ੂਰੀ,મિઝોરી,மிசூரி,ಮಿಸೌರಿ,മിസോറി,รัฐมิสซูรี,မစ်ဆိုရီပြည်နယ်,მისურის შტატი,ሚዙሪ,ミズーリ州,密苏里州,密蘇里州,미주리 주",US,USA,840,725.21
+United States,Mississippi,"Estado de Mississippi,Ipinle Mississippi,MS,Magnolia State,Mesesepe,Met-si-si-pi,Me̍t-sî-sî-pí,Mikikipi,Misciscippi,Misisip,Misisipe,Misisipi,Misisipii Hahoodzo,Misisipio,Misisipė,Missisipi,Missisipi Shitati,Mississipi,Mississippi,Mississippi osariik,Mississippi suyu,Mississippia,Mississippy,Mississipí,Mississípi,Mísísípii Hahoodzo,Mėsėsėpė,Shtat Misisipi,State of Mississippi,mi xi xi bi zhou,micicippi,mishishippi zhou,misisipi,misisipi ju,misisippi,misisipʼis shtʼatʼi,mssspy,msyspy,msysyby,my sy sy py,mysysypy,mysysypy ayalty,rath mississippi,Ìpínlẹ̀ Mississippi,Μισισίπι,Мисисип,Мисисипи,Миссисипи,Миссиссиппи,Міссісіпі,Штат Місісіпі,Միսսիսիպի,מיסיסיפי,مسسسپی,مسيسيبى,مسيسيبي,مسیسپی,می سی سی پی,میسیسیپی,میسیسیپی ایالتی,می‌سی‌سی‌پی,मिसिसिपि,मिसिसिपी,मिसिसिप्पी,মিসিসিপি,ਮਿਸੀਸਿੱਪੀ,மிசிசிப்பி,మిసిసిపీ,മിസിസിപ്പി,รัฐมิสซิสซิปปี,མི་སི་སི་ཕི།,မစ္စစ္စပီပြည်နယ်,მისისიპის შტატი,ሚሲሲፒ,ᒦᓰᓰᐲ,ミシシッピ州,密西西比州,미시시피 주",US,USA,840,379.82
+United States,Montana,"Ayani Naakaii Hahoodzo,Ayání Naakaii Hahoodzo,Hohonaesee,Hohonáéšée,MT,Mantan,Monekana,Montan-a,Montana,Montana Shitati,Montana suyu,Montanae,Montane,Montann-a,Montano,Montāna,Montǣna,Mung-thai-na,Muntana,Mùng-thai-nâ,Můntana,Shtat Mantana,State of Montana,Treasure State,mantana,meantana,meng da na zhou,montaena ju,montana,montana zhou,monttana,mwntana,mwntana ayalty,mwntnh,Μοντάνα,Мантан,Монтанæ,Монтана,Монтане,Штат Мантана,Մոնտանա,מאנטענע,מונטנה,مان‍ٹانا,مونتانا,مونتانا ایالتی,مونٹانا,مۆنتانا,ܡܘܢܬܐܢܐ,मान्‍टाना,मोंटाना,मोन्टाना,मोन्ताना,মন্টানা,ਮੋਂਟਾਨਾ,மொன்ட்டானா,మొంటానా,മൊണ്ടാന,รัฐมอนแทนา,མོན་ཏཱ་ན།,မွန်တားနားပြည်နယ်,მონტანა,ሞንታና,モンタナ州,蒙大拿州,몬태나 주",US,USA,840,572.76
+United States,North Carolina,"Ar Karelajn,Ariwa Carolina,Bac Carolina,Bắc Carolina,Caegat Karolinae,Carolin-a del Nord,Carolin-a dël Nòrd,Carolina Hwoaie,Carolina Mictlampa,Carolina Mictlāmpa,Carolina Septentrionalis,Carolina Thuaidh,Carolina Utara,Carolina a Tuath,Carolina de Nord,Carolina del Nord,Carolina del Norte,Carolina del Nòrd,Carolina do Norte,Carolina du Nord,Carolina dû Nord,Caroline du Nord,Carolinn-a do Nord,Curcer Karolina,Davvi-Carolina,Estado de Carolina del Norte,Eszak-Karolina,Gogledd Carolina,Hilagang Karolina,Hyusisayin Karolina,Ipar Carolina,Judvel Karoline,Jydvel Karolina,Karolin dino,Karolin dinò,Karolina Gledh,Karolina Polnocna,Karolina Północna,Karolina del Norte,Karolinai Shimoli,Karolinaya Bakur,Karolinaya Zimey,Karolinaya Zımey,Karolînaya Bakur,Khojto Karolina,Khotu Karolina,Kuilbaseda Karolina,Kuzey Karolina,NC,Nahookosji Keelaanah Hahoodzo,Noard-Karolina,Noord-Carolina,Nord Carolina,Nord-Carolina,Norda Karolino,Nordal Karolina,Nordur-Karolina,Nort Karolina,Nort Kárólínạ,North Carolina,North Carolina suyu,Northcarolina,Norður-Karólína,Norþcarolīna,Not Carolina,Náhookǫsjí Kééláanah Hahoodzo,Pangulung Carolina,Pet Kha-lo-loi-nap,Pet Khà-lò-lòi-na̍p,Pivnichna Karolina,Pohja-Carolina,Pohjois-Carolina,Poyraz Karolina,Pulnocno Karolina,Põhja-Carolina,Půłnocno Karolina,Severna Karolina,Severnaja Karolina,Severni Karolina,Severná Karolína,Severní Karolína,Shimaliy Karolina Shitati,Shimoliy Karolina,Shtat Paunochnaja Karalina,Siaures Karolina,Simali Karolina,Sjeverna Karolina,State of North Carolina,Tar Heel State,Voreia Karolina,Yvate Karolina,Ziemelkarolina,Ziemeļkarolīna,bei ka luo lai na zhou,karwlayna alshmalyh,karwlayna alshmalyt,karwlyna shwmaly,karwlynay shmaly,nartha kerolaina,nartha kyarola'ina,nartha kyarolina,northa kerolina,noseukaelollaina ju,nosukaroraina zhou,qrwlyynh hzpwnyt,shmal karwlyna ayalty,shmaly karwlyna,shmaly kyrwlayna,utari kairolina,uttara kairolina,uttara kerolina,uttara kyarolina,vata karolaina,Àríwá Carolina,Çурçĕр Каролина,Észak-Karolina,Şimali Karolina,Šiaurės Karolina,Βόρεια Καρολίνα,Ар Карелайн,Йыдвел Каролина,Йӱдвел Каролине,Каролинаи Шимолӣ,Къилбаседа Каролина,Північна Кароліна,Северна Каролина,Северная Каролина,Солтүстік Каролина,Төньяк Каролина,Төньяҡ Каролина,Хойто Каролина,Хоту Каролина,Цæгат Каролинæ,Штат Паўночная Караліна,Հյուսիսային Կարոլինա,צפון קאראליינע,קרוליינה הצפונית,شمال کارولینا ایالتی,شمالی کارولینا,شمالی کیرولائنا,كارولاينا الشمالية,كارولاينا الشماليه,نارتھ کیرولائنا,کارولینا شومالی,کارولینای شمالی,کارۆلینای باکوور,उत्तर केरोलिना,उत्तर कैरोलिना,उत्तर क्यारोलिना,नर्थ क्यारोलाइना,नर्थ क्यारोलिना,नार्थ केरोलैना,नॉर्थ कॅरोलिना,নর্থ ক্যারোলাইনা,ਉੱਤਰੀ ਕੈਰੋਲੀਨਾ,வட கரொலைனா,ಉತ್ತರ ಕೆರೊಲೀನ,വടക്കൻ കരൊലൈന,รัฐนอร์ทแคโรไลนา,မြောက်ကယ်ရိုလိုင်းနားပြည်နယ်,ჩრდილოეთი კაროლინა,ኖርዝ ካሮላይና,ᑳᕉᓖᓈ ᑐᓄᕕᐊᖅ,ノースカロライナ州,北卡罗来纳州,北卡羅萊納州,노스캐롤라이나 주",US,USA,840,353.59
+United States,North Dakota,"Ar Dakot,Ariwa Dakota,Bac Dakota,Bắc Dakota,Caegat Dakotae,Curcer Dakota,Dacota Septentrionalis,Dacota do Norte,Dakota Avaratra,Dakota Gledh,Dakota Hwoaie,Dakota Mictlampa,Dakota Mictlāmpa,Dakota Polnocna,Dakota Północna,Dakota Thuaidh,Dakota Utara,Dakota a Tuath,Dakota de Nord,Dakota del Nord,Dakota del Norte,Dakota del Nòrd,Dakota dino,Dakota dinò,Dakota do Nord,Dakota do Norte,Dakota do Nòrd,Dakota du Nord,Dakota dël Nòrd,Dakota dû Nord,Dakotaya Bakur,Dakotaya Zimey,Dakotaya Zımey,Dakôta Avaratra,Davvi-Dakota,Eszak-Dakota,Gogledd Dakota,Hilagang Dakota,Hyusisayin Dakota,Ipar Dakota,Judvel Dakoto,Jydvel Dakota,Kakoka 'Akau,Kakoka ‘Ākau,Khojd Dakota,Khojto Dakota,Khotu Dakota,Kuilbaseda Dakota,Kuzey Dakota,ND,Nahookosji Dzigaii,Noad-Dakota,Noard-Dakota,Noord-Dakota,Nord Dakota,Nord-Dakota,Norda Dakoto,Nordal Dakota,Nordur-Dakota,North Dakota,North Dakota suyu,Northdakota,Norður-Dakóta,Norþdakota,Not Dakota,Náhookǫsjí Dzígaii,Pangulung Dakota,Pet That-kho-tha,Pet Tha̍t-khô-thâ,Pivnichna Dakota,Pohja-Dakota,Pohjois-Dakota,Poyraz Dakota,Põhja-Dakota,Severna Dakota,Severnaja Dakota,Severni Dakota,Severná Dakota,Severní Dakota,Shimaliy Dakota Shitati,Shimoliy Dakota,Shtat Paunochnaja Dakota,Siaures Dakota,Simali Dakota,Sioux State,Sjeverna Dakota,State of North Dakota,Voreia Ntakota,Yvate Dakota,Ziemeldakota,Ziemeļdakota,bei da ge ta zhou,bei da ke ta zhou,dakwta alshmalyh,dakwta alshmalyt,dakwta shwmaly,dakwtay shmaly,dqwth hzpwnyt,nartha dakota,nartha dekota,northa dakota,noseudakota ju,nosudakota zhou,rath nxr thda kho ta,shmal dakwta ayalty,shmaly dakwta,utari dakota,uttara dakota,uttara dekota,vatakku takotta,Àríwá Dakota,Çурçĕр Дакота,Észak-Dakota,Şimali Dakota,Šiaurės Dakota,Βόρεια Ντακότα,Ар Дакот,Йыдвел Дакота,Йӱдвел Дакото,Къилбаседа Дакота,Північна Дакота,Северна Дакота,Северная Дакота,Солтүстік Дакота,Төньяк Дакота,Хойд Дакота,Хойто Дакота,Хоту Дакота,Цæгат Дакотæ,Штат Паўночная Дакота,Հյուսիսային Դակոտա,דקוטה הצפונית,צפון דעקאטע,داكوتا الشمالية,داكوتا الشماليه,داکوتای شمالی,داکوٙتا شومالی,داکۆتای باکوور,شمال داکوتا ایالتی,شمالی داکوتا,شمالی ڈکوٹا,نارتھ ڈیکوٹا,ܢܘܪܬ ܕܐܟܘܬܐ,उत्तर डकोटा,उत्तर डेकोटा,नर्थ डेकोटा,नर्थ दाकोता,नार्थ डेकोटा,नॉर्थ डकोटा,নর্থ ডাকোটা,ਉੱਤਰੀ ਡਕੋਟਾ,வடக்கு டகோட்டா,ಉತ್ತರ ಡಕೋಟ,വടക്കൻ ഡക്കോട്ട,รัฐนอร์ทดาโคตา,မြောက်ဒါကိုတာပြည်နယ်,ჩრდილოეთი დაკოტა,ኖርዝ ዳኮታ,ᑖᑰᑖ ᑐᓄᕕᐊᖅ,ノースダコタ州,北达科他州,北達哥他州,노스다코타 주",US,USA,840,656.57
+United States,Nebraska,"Cornhusker State,Estado de Nebraska,NE,Nabeeskah Hahoodzo,Nebraask,Nebrasca,Nebraska,Nebraska Shitati,Nebraska suyu,Nebraskae,Nebraske,Nebrasko,Nempraska,Nepalaka,Nui-pu-la-su-ka,Nui-pu-lâ-sṳ̂-kâ,Nébraska Shitati,Shtat Nebraska,State of Nebraska,nabarasaka,nbraska,nbraska ayalty,nbrsqh,nebeulaeseuka ju,nebraska,neburasuka zhou,nei bu la si jia zhou,nepraska,nybraska,nybyraska,Νεμπράσκα,Небрааск,Небраскæ,Небраска,Небраске,Штат Небраска,Նեբրասկա,נברסקה,נעבראסקא,نئبئراسکا,نبراسكا,نبراسکا,نبراسکا ایالتی,نیبراسکا,ܢܝܒܪܐܣܟܐ,नेब्रास्का,नेब्रास्‍का,নেব্রাস্কা,ਨਬਰਾਸਕਾ,નેબ્રાસ્કા,நெப்ராஸ்கா,నెబ్రాస్కా,ನೆಬ್ರಸ್ಕಾ,നെബ്രാസ്ക,รัฐเนแบรสกา,နီဘရားစကားပြည်နယ်,ნებრასკა,ነብራስካ,ネブラスカ州,內布拉斯加州,네브래스카 주",US,USA,840,574.08
+United States,New Hampshire,"Bagong Hampshire,Cene Gehmpshir,Granite State,Hampshire Berri,Hampshire Nowydh,Hampshire Nuadh,Hampshire Ohuru,Hampshire Ohúrú,Mueva Hampshire,N'ju Khehmpshir,N'ju-Gehmpshir,N'ju-Gempshir,N'ju-Khehmpshir,NH,Naujasis Hampsyras,Naujasis Hampšyras,Naus Hampsirs,Naus Hampšīrs,Neu Han-pu-ha,New Hampshire,New Hampshire suyu,Niihempshoo Hahoodzo,Niihémpshoo Hahoodzo,Nij-Hampshire,Niou Chamsair,Niu Hampshire,Niwu Hamtunscir,Nju Khampshur,Nju Khempshir,Noeuvo Hampshire,Nou Anpchi,Nou Hampshire,Nov-Hampshire,Nov-Hampsiro,Nov-Hampŝiro,Nova Hampshire,Nova Hantonia,Nova-Hampshire,Nu Hamekia,Nueva Hampshire,Nuevo Hampshire,Nuhempsira,Nyu Hempʻsir,Nyu-Hempsir,Nyu-Hempşir,Nyu-Xempshir,Néu Hàn-pu-ha,Nòu Hampshire,Nīwu Hāmtūnscīr,Nū Hamekia,Pyahu Hampshire,Shtat N'ju-Gehmpshyr,State of New Hampshire,Tchiaq Hampshire,Yancuic Hampshire,Yancuīc Hampshire,Yengi Xampishir Shitati,Yéngi Xampishir Shitati,n'yu hempasayara,n'yu hyampsara,n'yu hyampsayara,naya hempasayara,nhu hyampsayara,ni'u haimpasara,ni'u hyampasayara,niu xian xi zhou,niu-hempshiri,niyu hamcayar,nyuhaempeusyeo ju,nyuhanpusha zhou,nyw hmpsyyr,nywhambshyr,nywhamshyr,nywhmpshayr,nywhmpshayr ayalty,nywhmshayr,nywھەmpshyr,xin han bu shen er,xin han bu shen er zhou,Çĕнĕ Гэмпшир,Ņūhempšīra,Νιου Χάμσαϊρ,Њу Хемпшир,Нью Хэмпшир,Нью-Гемпшир,Нью-Гэмпшир,Нью-Хэмпшир,Ню Хампшър,Шин Хәмшир,Штат Нью-Гэмпшыр,Նյու Հեմփշիր,ניו המפשייר,ניו העמפשער,نيوهامبشير,نيوهامشير,نیو ہیمپشائر,نیوهمشایر,نیوهمپشایر,نیوهمپشایر ایالتی,نیوٙھامپشایئر,نیوھەمپشیر,ܢܝܘ ܗܐܡܦܫܪ,नया हेम्पशायर,न्यु ह्याम्प्शायर,न्यू हॅम्पशायर,न्यू ह्याम्प्सर,न्हु ह्याम्प्शायर,न्‍यू हेम्‍पशायर,নিউ হ্যাম্পশায়ার,নিউ হ্যাম্প্‌শায়ার,ਨਿਊ ਹੈਂਪਸ਼ਰ,ન્યૂ હેમ્પશાયર,நியூ ஹாம்சயர்,ന്യൂ ഹാംഷെയർ,รัฐนิวแฮมป์เชียร์,ནེའུ་ཧམ་ཕུ་ཤར།,နယူးဟမ်ရှိုင်းယားပြည်နယ်,ნიუ-ჰემფშირი,ኒው ሃምፕሸር,ニューハンプシャー州,新罕布什尔州,新罕布什爾,紐咸西州,뉴햄프셔 주",US,USA,840,116.23
+United States,New Jersey,"Cene Dzhersi,Garden State,Jersey Nuadh,Jersi Nowydh,Mueva Jersey,N'ju D'ehrsi,N'ju-Dzhersi,NJ,Naujasis Dzersis,Naujasis Džersis,Naus Dzerses,Naus Džersės,Nei-Schaersi,Neu Tset-si,Neuvo Jersey,New Jersey,New Jersey osariik,New Jersey suyu,Niijeizii Hahoodzo,Niijéízii Hahoodzo,Nij-Jersey,Niou Tzersei,Niu Yersey,Niwe Cesarea,Nju DZersi,Nju DZerzi,Nju Dzerzi,Nju Dzhursi,Nou Jeze,Nou Jèze,Nov-Jersey,Nov-Jerzejo,Nov-Ĵerzejo,Nova Caesarea,Nova Jersey,Nova Jersia,Nova Jérsia,Nova-Jersey,Nu 'Ieleke,Nu Jezi,Nudzersija,Nueva Jersey,Nuova Gersei,Nyu Cersi,Nyu Jersi,Nyu-Jersi,Néu Tset-sî,Nòva Jersey,Nú Jezị,Nīwe Cēsarēa,Nū ‘Ieleke,Pyahu Jersey,Shtat N'ju-Dzhehrsi,State of New Jersey,Tchiaq Jersey,Yancuic Jersey,Yancuīc Jersey,Yengi Jersey Shtati,Yéngi Jérséy Shtati,n'yu jarsi,n'yu jelsi,n'yujersi,nhu jarsi,ni'u jarasi,ni'u jarsi,niu ze xi zhou,niu-jersi,niyu cerci,nyujaji zhou,nyujeoji ju,nyw grzy,nyw gyrsy,nyw jrsy,nyw jyrsy,nywjrsy ayalty,nywjyrsy,rath niwcexrsi y,xin ze xi zhou,Çĕнĕ Джерси,Ņūdžersija,Νιου Τζέρσεϊ,Њу Џерзи,Њу Џерси,Нью Дьэрси,Нью-Джерси,Нью-Джерсі,Ню Джърси,Ню-Ҷерси,Шин Җөөзи,Штат Нью-Джэрсі,Նյու Ջերսի,ניו גרזי,ניו זשערסי,نيو جيرسى,نيو جيرسي,نیو جرسی,نیوجرسی ایالتی,نیوجێرسی,نیوٙجئرسی,ܢܝܘ ܓܝܪܣܝ,न्यु जर्सी,न्यू जर्सी,न्हु जर्सी,न्‍यू जर्सी,নিউ জার্সি,ਨਿਊ ਜਰਸੀ,நியூ செர்சி,న్యూజెర్సీ,ന്യൂ ജെഴ്സി,รัฐนิวเจอร์ซีย์,ནེའུ་ཇེར་སས།,နယူးဂျာစီပြည်နယ်,ნიუ-ჯერსი,ኒው ጄርዚ,ニュージャージー州,新泽西州,紐澤西州,뉴저지 주",US,USA,840,247.29
+United States,New Mexico,"Bagong Mehiko,Cene Meksika,Ipinle Titun Meksiko,Land of Enchantment,Meagsago Nuadh,Meksiko Nowydh,Mexiko Berria,Musuq Mishiku suyu,N'ju Meksiko,N'ju-Mekhiko,N'ju-Meksiko,N'yu-Meksiko,NM,Naujoji Meksika,Nee-Mexiko,Neo Mexiko,Neu Met-si-ko,Neuv Messich,Neuv Méssich,New Mexico,New Mixiku suyu,New Mïxiku suyu,Nieu-Meksiko,Nieuw Mexico,Nij-Meksiko,Niu Mexico,Niwe Mexico,Nju Meksiko,Noeuvo Mescico,Noev Messich,Nou Meksiko,Nou Mexic,Nou Mèxic,Nouveau-Mexique,Nov-Meksiko,Nova Mehika,Nova-Mexikia,Nove Mexiko,Novel-Mexique,Novi Meksiko,Novo Meksiko,Novo Mexico,Novo México,Novum Mexicum,Nové Mexiko,Novél-Mexique,Nowy Meksyk,Nu Mekiko,Nu Meziko,Nua-Mheicsiceo,Nueva Mehiko,Nuevo Mejico,Nuevo Mexico,Nuevo Méjico,Nuevo México,Nuevu Mexicu,Nuevu Méxicu,Numeksika,Nuovo Messico,Nyu-Meksiko,Néu Me̍t-sî-kô,Nòu Mexic,Növ Messich,Nú Mézíkọ,Nīwe Mexico,Nū Mekiko,Pyahu Mejiko,Pyahu Méjiko,Shin Meeksik,Shtat N'ju-Meksika,State of New Mexico,Tchiaq Mexiqo,Uj-Mexiko,Yancuic Mexihco,Yancuīc Mēxihco,Yengi Meksika Shitati,Yooto Hahoodzo,Yootó Hahoodzo,Yéngi Méksika Shitati,n'yu meksikkea,n'yu meksiko,naya meksiko,ni'u meksiko,niyu mekciko,nyumegsiko ju,nyumekishiko zhou,nyw mksykw,nyw mqsyqw,nyw myksykw,nywmksykw,nywmkzykw,rath niwmeksiko,xin mo xi ge zhou,Çĕнĕ Мексика,Ìpínlẹ̀ Titun Mẹ́ksíkò,Új-Mexikó,Ņūmeksika,Νέο Μεξικό,Нови Мексико,Ново Мексико,Нью Мексико,Нью-Мексико,Нью-Мехико,Ню Мексико,Шин Меексик,Штат Нью-Мексіка,Նյու Մեքսիկո,ניו מעקסיקא,ניו מקסיקו,نيو مكسيكو,نيومكسيكو,نیو میکسیکو,نیومکزیکو,نیومەکسیکۆ,ܢܝܘ ܡܝܟܣܝܟܘ,नया मेक्सिको,न्यू मेक्सिको,নিউ মেক্সিকো,நியூ மெக்சிகோ,న్యూ మెక్సికో,ന്യൂ മെക്സിക്കോ,รัฐนิวเม็กซิโก,མེག་སི་ཀོ་གསར་མ།,နယူးမက္ကဆီကိုပြည်နယ်,ნიუ-მექსიკო,ᏍᏆᏂᏤᏍᏛᎢ,ニューメキシコ州,新墨西哥州,뉴멕시코 주",US,USA,840,601.86
+United States,Nevada,"Estado de Nevada,NV,Naevada,Naʼazhǫǫsh Hahoodzo,Nebada,Nevad,Nevada,Nevada suyu,Nevadae,Nevadda,Nevade,Nevado,Newada,Newada shitati,Nivata,Nui-fa-that,Nui-fà-tha̍t,Náevadạ,Néwada shitati,Shtat Nevada,Silver State,State of Nevada,navada,nbdh,nebada ju,nebada zhou,nebhada,nebheda,nei hua da zhou,nevada,nevata,nevhada,nwada,nwada ayalty,nyfada,nyvada,rath newada,Νεβάδα,Невад,Невадæ,Невада,Неваде,Штат Невада,Նևադա,נבדה,נעוואדא,نئڤادا,نوادا,نوادا ایالتی,نيفادا,نیواڈا,نیڤادا,ܢܝܒܐܕܐ,नेभादा,नेभेदा,नेवाडा,नेव्हाडा,নেভাডা,ਨਵਾਡਾ,நெவாடா,ನೆವಾಡಾ,നെവാഡ,รัฐเนวาดา,ནེ་བ་ད།,နီဗားဒါးပြည်နယ်,ნევადა,ነቫዳ,ᓂᕚᑖ,ネバダ州,內華達州,内华达州,네바다 주",US,USA,840,335.35
+United States,New York,"Cene Jork,Delstaten New York,Eabhraig Nuadh,Efrog Newydd,Empire State,Estado de Nova York,Estado de Nueva York,Estat de Nova York,Etat de New York,Ipinle New York,Kin Yótʼááh Deezʼá Hahoodzo,Mueva York,N'ju Jork,N'ju-Jork,N'ju-Jork Muzh Uls,NY,Nea Yorki,Neu Jorck,Neu-yok-chu,New Jork,New Nederlandt,New Netherland,New Netherlandes,New Yorgi osariik,New York,New York (Bundesstaat),New York Isifunda,New York State,New York suyu,New York-fylki,Nieuw Nederland,Niojuorks,Niorche,Niu York,Niu-iok-ciu,Niujorko valstija,Niwe Eoforwic,Niū-iók-ciŭ,Nju Jork,Nju Yoorg,Nju-Jork,Njujork,Nou Yok,Nou Yòk,Nouvelle Yorck,Nov-Jorkio,Nova Iorque,Nova York,Nova-York,Novum Eboracum,Nowy Jork,Nu Yok,Nua-Eabhrac,Nueva York,Nuioka,Nujorka,Nuova York,Nyu York,Nyu york Shtati,Nyu-York,Nyu-York staty,Nyuyork Shitati,Néu-yok-chû,Nòva York,Nú Yọk,Nýu-Ýork ştaty,Nīwe Eoforwīc,Pyahu Iork,Shin Jork,Shtat N'ju-Jork,Stat Evrek Nowydh,State of New York,Stato di New York,Tchiaq York,Tieu bang New York,Tiểu bang New York,Yancuic York,York Noa,ayalt nywywrk,n'yu yark,n'yu yarka,n'yu yorka,n'yuyark rastram,n'yuyorka,nhu yarka,ni'u iyarka,ni'u yaraka,ni'u yarka,niu,niu yue zhou,niu-iorkʼis shtʼatʼi,niyu york manilam,nyuyog ju,nyuyoku zhou,nyw yark,nyw ywrq,nywyark,nywywrk,nywywrk ayalt,rath niwyxrk,wlayt nywywrk,Çĕнĕ Йорк,État de New York,Ìpínlẹ̀ New York,Ņujorka,Νέα Υόρκη,Њујорк,Нью Йорк,Нью-Йорк,Нью-Йорк Муж Улс,Ню Йорк,Ню-Йорк,Шин Йорк,Штат Нью-Ёрк,Նյու Յորք,ניו יארק,ניו יורק,ایالت نیویورک,نيو يارڪ,نيويارک,نيويورك,نیو یارک,نیویارک,نیویورک,نیویورک ایالت,نیویۆرک,ولاية نيويورك,ܢܝܘ ܝܘܪܩ,न्यु यर्क,न्यू यार्क्,न्यू यॉर्क,न्यू योर्क,न्यूयॉर्क,न्हु यर्क,নিউ ইয়র্ক,ਨਿਊ ਯਾਰਕ,ନିଉ ୟର୍କ,நியூ யோர்க் மாநிலம்,న్యూయార్క్ రాష్ట్రం,ನ್ಯೂ ಯಾರ್ಕ್,ന്യൂയോർക്ക്,නිව්යෝක්,รัฐนิวยอร์ก,ລັດນີວຢອກ,နယူးယောက်ပြည်နယ်,ნიუ-იორკის შტატი,ኒው ዮርክ,ᏄᏯᎩ,ᓂᐅ ᐃᐅᕐᒃ,ញូវយ៉ក,ニューヨーク州,紐約州,纽约州,뉴욕 주",US,USA,840,171.57
+United States,Ohio,"'Ohaio,Buckeye State,Ngo-hai-ngo,Ngò-hài-ngò,OH,Ochaio,Ogajo,Ogayo,Ohaio,Ohaiyo,Ohajas,Ohajo,Ohajos,Ohayo,Ohaïyo,Ohio,Ohio suyu,Ohium,Okhajo,Oohaayoo Hahoodzo,Oohááyoo Hahoodzo,Owayo,Oxayo Shtati,Shtat Agaja,State of Ohio,awhayw,awhayw ayalty,e hai e zhou,oaios,oha'i'o,ohaio,ohaio ju,ohaio zhou,ohayea,ohayo,okaiyo,rath xohixo,yۆھayۆ,Οχάιο,Огайо,Охайо,Охајо,Оҳаё,Штат Агая,Өхәй,Օհայո,אהאיא,אוהיו,أوهايو,ئوھایو,ئۆھایۆ,اؤهايؤ,اوهايو,اوهایو,اوهایو ایالتی,اوہائیو,ܐܘܗܐܝܘ,ओहायो,ওহাইও,ਓਹਾਇਓ,ஒகையோ,ഒഹായോ,รัฐโอไฮโอ,ཨོ་ཧེའོ།,အိုဟိုင်းယိုးပြည်နယ်,ოჰაიო,ኦሃዮ,ᐅᓵᐃᐅ,‘Ohaio,オハイオ州,俄亥俄州,오하이오 주",US,USA,840,563.57
+United States,Oklahoma,"'Okalahoma,Estado de Oklahoma,Halgai Hoteel Hahoodzo,Halgai Hóteel Hahoodzo,Heevahetaneno,Heévȧhetanéno,O-khiet-la-ho-ma,O-khiet-lâ-hò-mâ,OK,Oclahoma,Oclaoma,Oklachoma,Oklahoma,Oklahoma suyu,Oklahomo,Oklakhom,Oklakhoma,Oklakhomae,Oklakhomo,Oklawoma,Oklaxoma,Oklaxoma Shitati,Shtat Aklakhoma,Sooner State,State of Oklahoma,Uoklahuma,Uoklahůma,aklahma,ao ke la he ma zhou,awklahama,awklahma ayalty,awklahwma,okalahoma,okeullahoma ju,oklahoma,oklakoma,okurahoma zhou,rath xo khla ho ma,yۆklaھۆma,Οκλαχόμα,Оклаhома,Оклахом,Оклахомæ,Оклахома,Оклахомо,Штат Аклахома,Օկլահոմա,אוקלהומה,אקלעהאמע,أوكلاهوما,ئوکلاھاما,ئۆکلاھۆما,اوكلاهوما,اوکلاهاما,اوکلاهما ایالتی,اوکلاہوما,اکلاهما,ܐܘܟܠܐܗܘܡܐ,ओक्लाहोमा,ओक्‍लाहोमा,ওকলাহোমা,ওক‌লাহোমা,ਓਕਲਾਹੋਮਾ,ઓક્લાહોમા,ஓக்லகோமா,ఓక్లహోమా,ಒಕ್ಲಹೋಮ,ഒക്‌ലഹോമ,รัฐโอคลาโฮมา,ဥက္ကလာဟိုးမားပြည်နယ်,ოკლაჰომა,ኦክላሆማ,ᎣᎦᎳᎰᎹ,ᐆᑳᓛᓲᒫ,‘Okalahoma,オクラホマ州,奧克拉何馬州,奧克拉荷馬州,오클라호마 주",US,USA,840,333.05
+United States,Oregon,"'Olekona,Beaver State,New Albion,O-let-kong,O-le̍t-kông,OR,Oogin Hahoodzo,Oregao,Oregon,Oregon Shitati,Oregon suyu,Oregona,Oregonas,Oregonia,Oregono,Oregons,Oregão,Oregón,Orenkon,Oreqon,Oriigon,Orégon Shitati,Shtat Arehgon,State of Oregon,aregan,aregana,auregana,aurigana,awrgn,awrgn ayalty,awryghwn,awrygwn,awryjwn,e lei gang,e lei gang zhou,oligeon ju,oregan,oregana,oregon,oregon zhou,oregona,oregoni,orikan,rath xx ri kxn,ywragwn,yۆrygۆn,Óogin Hahoodzo,Όρεγκον,Орегон,Ориигон,Штат Арэгон,Օրեգոն,אורגון,ארעגאן,أوريغون,ئوراگون,ئۆریگۆن,اوريجون,اورگن,اورگن ایالتی,اوریگون,ܐܘܪܝܓܘܢ,अरेगन,ओरेगन,ओरेगन्,औरिगन,অরেগন,ਔਰੇਗਨ,ઑરેગોન,ஓரிகன்,ಆರೆಗನ್,ഒറിഗൺ,รัฐออริกอน,အိုရီဂွန်ပြည်နယ်,ორეგონი,ኦረጎን,ᐆᕇᕇᓐ,‘Olekona,オレゴン州,俄勒冈,俄勒冈州,俄勒岡州,오리건 주",US,USA,840,180.59
+United States,Pennsylvania,"Commonwealth of Pennsylvania,Keystone State,PA,Penekelewinia,Pennsilfaani,Pennsilvani,Pennsilvania,Pennsilvanie,Pennsilvaniya,Pennsilvanië,Pennsilvània,Pennsylvani,Pennsylvania,Pennsylvania suyu,Pennsylvanie,Pennsylvannia,Pennsylvanía,Pennsylvānia,Penselvaneje,Pensil'vani,Pensil'vanij,Pensil'vanija,Pensilvajni,Pensilvani,Pensilvania,Pensilvanien,Pensilvanija,Pensilvanio,Pensilvaniya,Pensilvanya,Pensilveniya,Pensilvânia,Pensilvānija,Pensilwaniye Shitati,Pensoweiniyah Hahoodzo,Pensuelvaen,Pensylvania,Pensylvanie,Pensylvánia,Pensylvánie,Pensylwania,Pensílvéníyạ,Pensîlvanya,Pensülvän,Pensėlvanėjė,Pin-se-fap-ni-a,Pynsylwanijo,Pynsylwańijo,Pènsilvani,Pénsilwaniye Shitati,Pénsówéíniyah Hahoodzo,Pîn-sé-fap-nì-â,Sadruzhnasc' Pensil'vanija,bin xi fa ni ya,bin xi fa ni ya zhou,bin xi fan ni ya zhou,bnsylfanya,painasilaveni'a,penasilabhaniya,penasilvheniya,pencilveniya,penshirubenia zhou,pensilabheniya,pensilaveniya,pensilbeinia ju,pensilbheniya,pensil‌bheniya,pnslwanya,pnsylbnyh,pnsylwanya,pnsylwanya ayalty,pynsylvanya,pێnsylvanya,rath phen silwe neiy,Πενσυλβάνια,Пеннсилвани,Пеннсүлваниа,Пенсилвайни,Пенсилвания,Пенсилванија,Пенсильвани,Пенсильваний,Пенсильвания,Пенсильванія,Садружнасць Пенсільванія,Փենսիլվանիա,פנסילבניה,פענסילוועניע,بنسيلفانيا,پئنسیلڤانیا,پنسلوانیا,پنسیلوانیا,پنسیلوانیا ایالتی,پێنسیلڤانیا,ܦܢܣܝܠܒܐܢܝܐ,पेनसिल्व्हेनिया,पेन्सिलभेनिया,पेन्सिलवेनिया,पेन्सिल्भेनिया,पेन्‍सिल्‍वेनिया,পেনসিলভানিয়া,পেন্সিল্‌ভেনিয়া,ਪੈੱਨਸਿਲਵੇਨੀਆ,பென்சில்வேனியா,പെൻ‌സിൽ‌വാനിയ,รัฐเพนซิลเวเนีย,ཕེན་སུལ་ཝེ་ནའི་ཡ།,ပင်ဆယ်ဗေးနီးယားပြည်နယ်,პენსილვანია,ፔንስልቬኒያ,ペンシルベニア州,宾夕法尼亚,宾夕法尼亚州,賓夕凡尼亞州,펜실베이니아 주",US,USA,840,344.17
+United States,Rhode Island,"Ala mmiri Rhode,Ellan Rhode,Erekusu Rhode,Erékùṣù Rhode,Estado de Rhode Island,Ilha de Rodes,Isoa de Rhode,Little Rhody,Lo-tet-to,Loke 'Ailana,Loke ‘Ailana,Lò-tet-tó,Oilean Rhode,Oileán Rhode,Pulu ning Rhode,RI,Rhode Ieg,Rhode Island,Rhode Island and Providence Plantations,Rhode Island suyu,Rhode Īeg,Rhode-Island,Rhode-Island and Providence Plantations,Rhodensis Insula,Rod Ailandas,Rod Ailands,Rod Ajlehnd,Rod Ajlend,Rod Ajlund,Rod Arl,Rod Aylann,Rod Aylend,Rod-Ajlend,Rod-Aylend,Rod-Insulo,Rodailenda,Rode Arili Shitati,Rode Qikiqtaq,Rodé Arili Shitati,Rogue's Island,Rogues' Island,Roodt Eylandt,Roount Ailant,Roud Ajland,Shtat Rod-Ajlend,State of Rhode Island and Providence Plantations,Wood Aalin Hahoodzo,Wóód Áalin Hahoodzo,Ynys Rhode,lodeuaillaendeu ju,luo de dao,luo de dao zhou,rod ailend,rod-ailendi,roda a'ilainda,roda a'ilyanda,roda ailainda,roda tapu,rodoairando zhou,rot tivu,rwd ayland,rwd aylnd,rwd aylnd ayalty,rwdayland,rwdaylnd,rwڈ aylynڈ,Àlá mmírí Rhode,Ρόουντ Άιλαντ,Род Айленд,Род Айлънд,Род Айлэнд,Род Арл,Род Ајленд,Род-Айленд,Роуд Ајланд,Рөүд-Айленд,Штат Род-Айленд,Ռոդ Այլենդ,ראוד איילענד,רוד איילנד,رود آيلاند,رود آیلند,رود آیلند ایالتی,رود ايلاند,رودآیلأند,رودآیلند,روڈ آئلینڈ,رہوڈز آئلینڈ,ڕۆd yaylەnd,ڕۆد ئایلەند,ܪܘܕ ܐܝܠܐܢܕ,रोड आइलैण्ड,रोड आइल्यान्ड,रोड ऐलैंड,रोड टापू,र्‍होड आयलंड,রোড আইল্যান্ড,ਰੋਡ ਟਾਪੂ,றோட் தீவு,ರೋಡ್ ಐಲೆಂಡ್,റോഡ് ഐലൻഡ്,รัฐโรดไอแลนด์,ရုဒ်အိုင်းလန်းပြည်နယ်,როდ-აილენდი,ሮድ አይላንድ,ロードアイランド州,罗德岛,羅德島州,로드아일랜드 주",US,USA,840,386.59
+United States,South Carolina,"Carolin-a del Sud,Carolin-a dël Sud,Carolina Huitztlampa,Carolina Huitztlāmpa,Carolina Meridiana,Carolina Meridionale,Carolina Selatan,Carolina Theas,Carolina Yiass,Carolina a Deas,Carolina de Sud,Carolina del Sud,Carolina del Sued,Carolina del Sur,Carolina del Süd,Carolina do Sud,Carolina do Sul,Carolina do Sur,Carolina du Sud,Carolina dû Sud,Caroline du Sud,Carolinn-a do Sud,Cənubi Karolina,De Carolina,Del-Karolina,Dienvidkarolina,Dienvidkarolīna,Dél-Karolina,Estado de Carolina del Sur,Etelae-Carolina,Etelä-Carolina,Gueney Karolina,Guusu Carolina,Gúúsù Carolina,Güney Karolina,Haravayin Karolina,Hego Carolina,Janubiy Karolina,Jenubiy Karolina Shitati,Jizni Karolina,Jižní Karolína,Juzhna Karolina,Juzhnaja Karolina,Juzna Karolina,Južna Karolina,Južná Karolína,Kalolaina Hema,Kantar Karolina,Karolin disid,Karolina Antsimo,Karolina Dheghow,Karolina Poludniowa,Karolina Południowa,Karolinaya Basur,Karolinaya Veroci,Karolînaya Başûr,Karôlina Antsimo,Kechyvalvel Karolina,Kechyvalvel Karoline,Khussar Karolinae,Kuilba Karolina,Louna-Carolina,Lulli-Carolina,Lõuna-Carolina,Mauling Carolina,Nam Carolina,Nam Kha-lo-loi-nap,Nleda anyanwu Karolina,Nleda anyanwu Kàròlina,Notia Karolina,Nàm Khà-lò-lòi-na̍p,Palmetto State,Peitu Karolena,Pietu Karolina,Pietų Karolina,Pivdenna Karolina,Polednowo Karolina,Połedńowo Karolina,Pėitū Karolėna,SC,Saut Carolina,Shtat Paudnjovaja Karalina,Shádiʼááhjí Kééláanah Hahoodzo,Soguruu Karolina,Sooth Carolina,Sor-Carolina,South Carolina,South Carolina suyu,State of South Carolina,Sud-Karolina,Suda Karolino,Sudal Karolina,Sudur-Karolina,Sueued-Carolina,Suid-Carolina,Suthcarolina,Suður-Karólína,Syd Carolina,Sør-Carolina,Súd-Karolina,Süüd-Carolina,Sūþcarolīna,Timog Karolina,UEuelen Karolina,Urda Karolina,Yvy Karolina,dakhani kairolina,daksina kerolina,daksina kyarolina,daksini kerola'ina,jnwb karwlyna ayalty,jnwby karwlyna,jnwby kyrwlayna,karwlayna aljnwbyh,karwlayna aljnwbyt,karwlynay jnwby,nan ka luo lai na zhou,nsayy karwlyna,qrwlyynh hdrwmyt,sa'utha kerolaina,sa'utha kerolina,sa'utha kyarola'ina,sauseukaelollaina ju,sausukaroraina zhou,ten karolaina,Üülen Karolina,Νότια Καρολίνα,Јужна Каролина,Кăнтăр Каролина,Кечывалвел Каролине,Кечӹвӓлвел Каролина,Къилба Каролина,Көньяк Каролина,Оңтүстік Каролина,Південна Кароліна,Соҕуруу Каролина,Урда Каролина,Хуссар Каролинæ,Штат Паўднёвая Караліна,Южна Каролина,Южная Каролина,Өмнә Карелайн,Հարավային Կարոլինա,דרום קאראליינע,קרוליינה הדרומית,جنوب کارولینا ایالتی,جنوبی کارولینا,جنوبی کیرولائنا,ساؤتھ کیرولائنا,كارولاينا الجنوبية,كارولاينا الجنوبيه,نسایی کارؤلینا,کارولینا ھارگە,کارولینای جنوبی,کارۆلینای باشوور,दक्षिण क्यारोलिना,दक्षिणी केरोलाइना,साउथ कॅरोलिना,साउथ केरोलैना,साउथ क्यारोलाइना,সাউথ ক্যারোলাইনা,ਦੱਖਣੀ ਕੈਰੋਲੀਨਾ,தென் கரொலைனா,ದಕ್ಷಿಣ ಕೆರೊಲಿನಾ,തെക്കൻ കരൊലൈന,รัฐเซาท์แคโรไลนา,ཁ་རོ་ལི་ན་ལྷོ་ཕྱོགས།,တောင်ကယ်ရိုလိုင်းနားပြည်နယ်,სამხრეთი კაროლინა,ሳውዝ ካሮላይና,ᑳᕉᓖᓈ ᓂᒋᖅ,サウスカロライナ州,南卡罗来纳州,南卡羅萊納州,사우스캐롤라이나 주",US,USA,840,244.21
+United States,South Dakota,"Alniiʼji Dzigaii,Ałnííʼjí Dzígaii,Coyote State,Cənubi Dakota,Dacota Meridiana,Dacota do Sur,Dakota Atsimo,Dakota Dheghow,Dakota Huitztlampa,Dakota Huitztlāmpa,Dakota Poludniowa,Dakota Południowa,Dakota Selatan,Dakota Theas,Dakota Yiass,Dakota a Deas,Dakota de Sud,Dakota del Sud,Dakota del Sued,Dakota del Sur,Dakota del Süd,Dakota disid,Dakota do Sud,Dakota do Sul,Dakota du Sud,Dakota dël Sud,Dakota dû Sud,Dakotaya Basur,Dakotaya Başûr,Dakotaya Veroci,De Dakota,Del-Dakota,Dienviddakota,Dél-Dakota,Etelae-Dakota,Etelä-Dakota,Gueney Dakota,Guusu Dakota,Gúúsù Dakota,Güney Dakota,Haravayin Dakota,Hego Dakota,Janubiy Dakota,Jenubiy Dakota Shitati,Jizni Dakota,Jižní Dakota,Juzhna Dakota,Juzhnaja Dakota,Juzna Dakota,Južna Dakota,Južná Dakota,Kakoka Hema,Kantar Dakota,Kechyvalvel Dakota,Kechyvalvel Dakoto,Khussar Dakotae,Kuilba Dakota,Louna-Dakota,Lulli-Dakota,Lõuna-Dakota,Mauling Dakota,Nam Dakota,Nam That-kho-tha,Nemby Dakota,Notia Ntakota,Nàm Tha̍t-khô-thâ,Peitu Dakota,Pietu Dakota,Pietų Dakota,Pivdenna Dakota,Pėitū Dakota,SD,Saut Dakota,Sawt Dakota,Sawt Dakótạ,Shtat Paudnjovaja Dakota,Sid-Dakota,Soguruu Dakota,Sooth Dakota,Sor-Dakota,South Dakota,South Dakota suyu,State of South Dakota,Sud-Dakota,Suda Dakoto,Sudal Dakota,Sudur-Dakota,Sueued-Dakota,Suid-Dakota,Suthdakota,Suður-Dakóta,Sør-Dakota,Súd-Dakota,Süüd-Dakota,Sūþdakota,Timog Dakota,UEuelen Dakota,Urda Dakota,dakhani dakota,daksina dakota,daksina dyakota,dakwta aljnwbyh,dakwta aljnwbyt,dakwtay jnwby,dqwth hdrwmyt,jnwb dakwta ayalty,jnwby dakwta,nan da ke ta zhou,rath sea th da kho ta,sa'utha dakota,sa'utha dekota,sauseudakota ju,sausudakota zhou,terku takotta,Ñemby Dakota,Üülen Dakota,Νότια Ντακότα,Јужна Дакота,Кăнтăр Дакота,Кечывалвел Дакото,Кечӹвӓлвел Дакота,Къилба Дакота,Көньяк Дакота,Көньяҡ Дакота,Оңтүстік Дакота,Південна Дакота,Соҕуруу Дакота,Урда Дакота,Хуссар Дакотæ,Штат Паўднёвая Дакота,Южна Дакота,Южная Дакота,Өмнә Дакот,Өмнөд Дакота,Հարավային Դակոտա,דקוטה הדרומית,דרום דעקאטע,جنوب داکوتا ایالتی,جنوبی داکوتا,جنوبی ڈکوٹا,داكوتا الجنوبية,داكوتا الجنوبيه,داکوتای جنوبی,داکوٙتا ھارگە,داکۆتای باشوور,ساؤتھ ڈیکوٹا,ܣܐܘܬ ܕܐܟܘܬܐ,दक्षिण डकोटा,दक्षिण ड्याकोटा,साउथ डकोटा,साउथ डेकोटा,সাউথ ডাকোটা,ਦੱਖਣੀ ਡਕੋਟਾ,தெற்கு டகோட்டா,തെക്കൻ ഡക്കോട്ട,รัฐเซาท์ดาโคตา,တောင်ဒါကိုတာပြည်နယ်,სამხრეთი დაკოტა,ደቡብ ዳኮታ,ᑖᑰᑖ ᓂᒋᖅ,サウスダコタ州,南达科他州,南達科他州,사우스다코타 주",US,USA,840,223.22
+United States,Tennessee,"Estado de Tennessee,Keneki,Kenekī,Shtat Tehnesi,State of Tennessee,TN,Tanassee,Tenesi,Tenesii Hahoodzo,Tenesio,Tenesis,Tenessi,Tenessì,Tenesī,Tennesia,Tennesie,Tennessee,Tennessee suyu,Tennessi,Tennessi Shitati,Tenèsi,Thien-nap-si,Thièn-na̍p-sî,Ténnéssi Shitati,Ténésii Hahoodzo,Volunteer State,rath thennessi,tainesi,tenas'si,teneshi zhou,tenesi,tenesi ju,tenisi,tennasi,tennici,tian na xi zhou,tnsy,tnsy ayalty,tynsy,tynysy,Τενεσί,Тенеси,Теннесси,Теннессі,Штат Тэнесі,Թենեսի,טנסי,טענעסי,تئنئسی,تئنسی,تنسی,تنسی ایالتی,تينيسى,تينيسي,تێنێسی,ٹینیسی,टेनिसी,टेनेसी,টেনেসি,টেনেসী,ਟੈਨੇਸੀ,ટેનેસી,டென்னிசி,టేనస్సీ,ടെന്നസി,รัฐเทนเนสซี,ཐེན་ནེ་སི།,တင်နက်ဆီပြည်နယ်,ტენესი,ቴነሲ,テネシー州,田納西州,田纳西州,테네시 주",US,USA,840,319.5
+United States,Texas,"Akalii Bikeyah,Akałii Bikéyah,Estado de Texas,Estado de la Estrella Solitaria,Kekeka,Lone Star State,Shtat Tehkhas,State of Texas,TX,Tehas,Tejas,Tekhas,Teksas,Teksas Shitati,Teksasa,Teksasas,Teksaso,Teksasos,Tet-khiet-sat-su,Tet-khiet-sat-sṳ̂,Texas,Texas shtati,Texas suyu,Texia,Tohaanoehoeva,Toháanoéhoëva,Tèxas,Téksas Shitati,de ke sa si zhou,de sa si zhou,rath theksas,taikasasa,tegsaseu ju,tekcas,tekisasu zhou,teksas,teksasa,teksys,tgzas,tgzas ayalty,tksas,tqss,tygzas,tʻqsʼs,Τέξας,Теексәс,Тексас,Техас,Тєѯасъ,Штат Тэхас,Տեխաս,טעקסאס,טקסס,تئگزاس,تكساس,تگزاس,تگزاس ایالتی,تێکساس,ٹیکساس,टेक्सस,टेक्सास,टेक्सास्,तेक्सास,টেক্সাস,ਟੈਕਸਸ,டெக்சஸ்,టెక్సస్,ಟೆಕ್ಸಸ್,ടെക്സസ്,รัฐเทกซัส,ཋེག་ཟ་སི།,တက္ကဆပ်ပြည်နယ်,ტეხასი,ቴክሳስ,ᑖᒃᓵᔅ,テキサス州,德克萨斯州,德克薩斯州,德薩斯州,텍사스 주",US,USA,840,414.32
+United States,Utah,"Beehive State,Estado de Utah,Giouta,Juta,Jutae,Juto,Juuta,Jūta,Shtat Juta,State of Utah,UT,Uka,Uta,Utah,Utah suyu,Utaho,Utá,Youta,Yu-tha,Yuta,Yuta Shitati,Yutah,Yù-thâ,Yútạh,i'uta,rath yu thah,utaha,you ta zhou,yurra,yuta,yuta ju,yuta zhou,yutah,yutaha,yutta,ywta,ywta ayalty,ywth,ywwta,Áshįįh Biiʼtó Hahoodzo,Γιούτα,Јута,Йуута,Штат Юта,Ютæ,Юта,Юто,Յուտա,יוטא,יוטה,يوتا,یوتا,یوتا ایالتی,یووتا,یوٙتا,یوٹاہ,ܝܘܬܐ,उटाह,युटा,युताः,यूटा,यूटाह,ইউটা,ਯੂਟਾ,யூட்டா,యూటా,ಯೂಟ,യൂറ്റാ,รัฐยูทาห์,ཡུ་ཊ།,ယူးတားပြည်နယ်,იუტა,ዩታህ,ユタ州,犹他州,猶他州,유타 주",US,USA,840,726.57
+United States,Virginia,"Bhirginia,Bijiniyah Hahoodzo,Bijíniyah Hahoodzo,Commonwealth of Virginia,Firginia,Old Dominion,Sadruzhnasc' Virdzhynija,VA,Veginiya,Vi-kit-ni-a,Vijini,Virchinia,Virciniya,Vird'inija,Virdzhini,Virdzhinija,Virdzineje,Virdzinija,Virdžinija,Virdžinėjė,Virdžīnija,Virgini,Virginia,Virginia suyu,Virginie,Virginij,Virginija,Virginio,Virginiya,Virginië,Virginnia,Virginía,Virgìnia,Virgínia,Virjinia,Virjiniya,Virjinya,Virjynni,Virtzinia,Virxinia,Virzhini,Végíníyà,Vì-kit-nì-â,Vîrjînya,Wilikinia,Wirginia,Wirginijo,Wirginiye Shitati,Wirgińijo,Yn Virjeeney,bajinia zhou,beojinia ju,bharjiniya,frjynya,fu ji ni ya zhou,fyrjynya,rath wexrcineiy,varajini'a,varjiniya,vharjiniya,virjinia,vyrjynya,wei zhen ni ya zhou,wrjynya,wwyrdzsynyʻ,wyrgynyh,wyrjynya,wyrjynya ayalty,Βιρτζίνια,Виирҗин,Виргини,Виргиний,Виргиния,Вирджини,Вирджиния,Вирдьиния,Виржини,Вирџинија,Вірджинія,Садружнасць Вірджынія,Վիրջինիա,ווירדזשיניע,וירגיניה,فرجينيا,فيرجينيا,ورجینیا,ویرجینیا,ویرجینیا ایالتی,ڤیرجینیا,ܒܪܓܝܢܝܐ,भर्जिनिया,वर्जिनिया,वर्जीनिया,व्हर्जिनिया,ভার্জিনিয়া,ਵਰਜਿਨੀਆ,வர்ஜீனியா,వర్జీనియా,ವರ್ಜೀನಿಯ,വിർജീനിയ,รัฐเวอร์จิเนีย,ཝིར་ཇི་ནི་ཡ།,ဗာဂျီးနီးယားပြည်နယ်,ვირჯინია,ቨርጂኒያ,バージニア州,弗吉尼亚州,維珍尼亞州,버지니아 주",US,USA,840,288.42
+United States,Vermont,"Bimááʼ Hahoodzo,Fermont,Fu-mung-thit,Fu-mùng-thi̍t,Green Mountain State,Mons Viridis,Shtat Vermont,State of Vermont,VT,Veermont,Vemont,Vermont,Vermont suyu,Vermonta,Vermontas,Vermonte,Vermonto,Vermuonts,Vurmont,Vèmont,Vèrmont,Vērmonta,Welemoneka,Wermont Shitati,Wérmont Shitati,bamonto zhou,beomonteu ju,bharmanta,bharmonta,byrmwnt,fu meng te,fu meng te zhou,fyrmwnt,rath wexrmxnt,varamanta,varamonta,varmanta,varmonta,vermant,vharamamta,vyrmwnt,vێrmۆnt,wrmwnt,wrmwnt ayalty,Βερμόντ,Веермонт,Вермонт,Върмонт,Штат Вермонт,Վերմոնտ,ווערמאנט,ורמונט,فيرمونت,ورمونت,ورمونت ایالتی,ورمونٹ,ڤئرمونت,ڤێرمۆنت,ܒܝܪܡܘܢܬ,भर्मांट,भर्मोन्ट,वरमॉण्ट,वर्मांट,व्हरमाँट,ভার্মন্ট,ਵਰਮਾਂਟ,વર્મોન્ટ,வெர்மான்ட்,వెర్మాంట్,വെർമോണ്ട്,รัฐเวอร์มอนต์,ဗားမောင့်ပြည်နယ်,ვერმონტი,ቬርሞንት,バーモント州,佛蒙特,佛蒙特州,버몬트 주",US,USA,840,23.25
+United States,Washington,"Aheehaltiih Hahoodzo,Ahééhałtį́į́h Hahoodzo,Estado de Washington,Evergreen State,Fa-sun-tun,Fà-sṳn-tun,Hwaesingatun,Hwæsingatūn,Ipinle Washington,Ouasin'nkton,Shtat Vashyngton,Stat Washington,State of Washington,Tieu bang Washington,Tiểu bang Washington,Uashiҥton,Vashington,Vashington Muzh Uls,Vashington shtati,Vasington,Vasingtona,Vasingtonas,Vasingtonio,Vasingtons,Vasinqton stati,Vasintonia,Vaŝingtonio,Vaşington,Vaşinqton ştatı,Vašingtona,Vašingtonas,Vašingtons,Vooshinta,WA,Wachinton,Wachintòn,Wakinekona,Wash,Washingiton Shitati,Washington,Washington State,Washington suyu,Washingtoni osariik,Waszyngton,ayalt washyngtn,hua sheng dun zhou,oyasintana,raasintana,rath wxchingtan,vashingtʼonis shtʼatʼi,vashyngtwn,vasigatana,vasingatana,vasingtan rajya,vasingtana,vasintan,vosingatana rajya,vosingtana,washinton zhou,washngtn,washntn,washyngtn,washyngtn ayalty,wlayt washntn,wosingteon ju,wwsyngtwn,Ìpínlẹ̀ Washington,Ουάσινγκτον,Вашингтон,Вашингтон Муж Улс,Воошинта,Уашиҥтон,Штат Вашынгтон,Վաշինգտոն,וואשינגטאן,וושינגטון,ایالت واشینگتن,ریاست واشنگٹن,واشنطن,واشنگتن,واشنگٹن,واشینگتن,واشینگتن ایالتی,ولاية واشنطن,ڤاشینگتون,वाशिंग्तन,वाशिङ्टन्,वासिंगटन,वॉशिंगटन राज्य,वॉशिंग्टन,ওয়াশিংটন,ৱাশিংটন,ਵਾਸ਼ਿੰਗਟਨ,வாஷிங்டன்,ವಾಶಿಂಗ್ಟನ್ ರಾಜ್ಯ,വാഷിങ്ടൺ,වොෂින්ටන්,รัฐวอชิงตัน,ཝ་ཤིན་ཏྲོན།,ဝါရှင်တန်ပြည်နယ်,ვაშინგტონის შტატი,ዋሽንግተን,ワシントン州,华盛顿州,華盛頓州,워싱턴 주",US,USA,840,135.67
+United States,Wisconsin,"Badger State,Estado de Wisconsin,Hoiskaonsiny,Ouiskonsin,Shtat Viskonsin,State of Wisconsin,Uiskonsin,Uisqonsin,Vi-su-khong-sin,Visconsinia,Viskaansin,Viskonsens,Viskonsin,Viskonsina,Viskonsinas,Viskonsino,Viskonsėns,Vî-sṳ̂-không-sîn,WI,Wikonekina,Wisconsene,Wisconsin,Wisconsin suyu,Wiskaansin Hahoodzo,Wiskonnsenn,Wiskonsin,Wiskonsin Shitati,rath wiskhxnsin,u'icakanacina,u'isakanasina,uisukonshin zhou,vinkosina,visakansana,viskansin,viskansina,viskoncin,viskonsina,vyskansyn,wei si kang xin zhou,wiseukonsin ju,wskwnsn,wyskansyn,wyskansyn ayalty,wyskwnsn,wyskwnsyn,wysqwnsyn,Ουισκόνσιν,Вискаансин,Висконсин,Вісконсин,Уисконсин,Штат Вісконсін,Վիսկոնսին,וויסקאנסין,ויסקונסין,وسکونسن,ويسكونسن,ويسكونسين,ویسکانسین,ویسکانسین ایالتی,ویسکۆنسین,ڤیسکانسین,ܘܝܣܟܘܢܣܢ,विन्कोसिन,विस्कान्सिन,विस्कान्सिन्,विस्कॉन्सिन,উইচকনচিন,উইসকনসিন,ਵਿਸਕਾਂਸਨ,விஸ்கொன்சின்,విస్కాన్సిన్,ವಿಸ್ಕೊನ್‌ಸಿನ್,വിസ്കോൺസിൻ,รัฐวิสคอนซิน,ཝིས་སི་ཁོན་སིན།,ဝစ္စကွန်းဆင်းပြည်နယ်,უისკონსინი,ዊስኮንሲን,ウィスコンシン州,威斯康辛州,위스콘신 주,𐍅𐌹𐍃𐌺𐍉𐌽𐍃𐌹𐌽𐌾𐌰",US,USA,840,559.27
+United States,West Virginia,"Albugang Virginia,Anac Virdzhini,Arevmtyan Virjinia,Argaa Vird'inija,Baruun Virdzhini,Baruun Virzhini,Bati Virginia,Batys Virginija,Batı Virginia,Dytiki Virtzinia,Eʼeʼaahjí Bijiniyah Hahoodzo,G'arbiy Virjiniya,Gorllewin Virginia,Guenbatisi Virginiya,Günbatısı Virginiya,Gʻarbiy Virjiniya,Iwoorun Firginia,Kanlurang Virginia,Kasvel Virginij,Kuarahyrese Virginia,Kuarahyresẽ Virginia,Laeaene-Virginia,Laensi-Virginia,Länsi-Virginia,Lääne-Virginia,Malkhbuzera Virgini,Mendebaldeko Virginia,Mountain State,Nyguylaen Virdzhini,Nyugat-Virginia,Oarje-Virginia,Okcidenta Virginio,Qərbi Virciniya,Rietumvirdzinija,Rietumvirdžīnija,Shtat Zakhodnjaja Virginija,Si Virginia,State of West Virginia,Sî Virginia,Tay Virginia,Tây Virginia,Vadyvel Virgini,Vakaru Virdzineje,Vakaru Virdzinija,Vakarū Virdžinėjė,Vakarų Virdžinija,Vest-Virginia,Vestur-Virginia,Vestur-Virginía,Vijini de Lwes,Vijini de Lwès,Virchinia Occidental,Virginia Barat,Virginia Occidental,Virginia Occidentala,Virginia Occidentale,Virginia Occidentalis,Virginia Ocidental,Virginia Ossidental,Virginia Otzidentale,Virginia Thiar,Virginia Tlapcopa,Virginia Tlāpcopa,Virginia Tutrimt,Virginia Uccidintali,Virginia an Iar,Virginia de Vest,Virginia de lOest,Virginia del West,Virginia du Ponant,Virginie-Occidentale,Virginnia Occidenta,Virginnia Oççidentâ,Virgìnia Otzidentale,Virgínia Occidentala,Virgínia Ocidental,Virgínia de lOest,Virjinyaya Rojava,Virxinia Occidental,Vyrjynia West,Vîrjînyaya Rojava,WV,Wast Virginie,Wes-Virginie,Wes-Virginië,Wescht Wirschini,West Virginia,West Virginia suyu,West-Firginia,West-Virginia,Westal Virginia,Westvirginia,Wilikinia Komohana,Wirginia Zachodnia,Yn Virjeeney Heear,Zachodno Wirginijo,Zachodńo Wirgińijo,Zahodna Virginija,Zakhidna Virdzhinija,Zapadna Virdzhinija,Zapadna Virdzinija,Zapadna Virginia,Zapadnaja Virginija,Zapadni Virginie,Západná Virgínia,Západní Virginie,dasavleti virjinia,fyrjynya alghrbyh,fyrjynya alghrbyt,ghrb wyrjynya ayalty,ghrby wyrjynya,merku varjiniya,mghrby wrjynya,oyesta bharjiniya,pachami varajini'a,pascima bharjiniya,pascima varjiniya,rath west wexrcineiy,uesutobajinia zhou,vest varjiniya,vesta bharjiniya,vesta vharjiniya,vyrjynya aftwnyshyn,vyrjynyay ڕۆzhawa,weseuteubeojinia ju,wyrgynyh hmʻrbyt,wyrjynyay ghrby,xi wei ji ni ya zhou,xi wei zhen ni ya zhou,Ìwọ̀orùn Firginia,Δυτική Βιρτζίνια,Анăç Вирджини,Арҕаа Вирдьиния,Барун Виирҗин,Баруун Вирджини,Баруун Виржини,Батыс Виргиния,Вадывел Виргини,Западна Вирджиния,Западна Вирџинија,Западная Виргиния,Західна Вірджинія,Касвел Виргиний,Көнбайыш Виргиния,Көнбатыш Виргиния,Малхбузера Виргини,Ныгуылæн Вирджини,Штат Заходняя Віргінія,Արևմտյան Վիրջինիա,וועסט ווירדזשיניע,וירגיניה המערבית,غرب ویرجینیا ایالتی,غربی ویرجینیا,غەربىي ۋىرگىنىيە شىتاتى,فيرجينيا الغربية,فيرجينيا الغربيه,مغربی ورجینیا,ویرجینیای غربی,ویسٹ ورجینیا,ڤیرجینیا أفتونئشین,ڤیرجینیای ڕۆژاوا,पश्चिम भर्जिनिया,पश्चिम वर्जीनिया,वेस्ट भर्जिनिया,वेस्ट व्हर्जिनिया,वेस्त भर्जिनिया,वेस्‍ट वर्जिनिया,ওয়েস্ট ভার্জিনিয়া,পশ্চিম ভার্জিনিয়া,ਪੱਛਮੀ ਵਰਜਿਨੀਆ,மேற்கு வர்ஜீனியா,పశ్చిమ వర్జీనియా,ವೆಸ್ಟ್ ವರ್ಜೀನಿಯ,പടിഞ്ഞാറൻ വിർജീന്യ,รัฐเวสต์เวอร์จิเนีย,အနောက် ဗာဂျီးနီးယားပြည်နယ်,დასავლეთი ვირჯინია,ዌስት ቨርጂኒያ,ウェストバージニア州,西維吉尼亞州,西維珍尼亞州,웨스트버지니아 주",US,USA,840,882.35
+United States,Virgin Islands,N/A,US,USA,840,693.548
+United States,Wyoming,"Equality State,Fai-ngo-min,Fài-ngò-mìn,Ouaiomin'nk,Shtat Vajoming,State of Wyoming,Toʼiibezhi,Tóʼííbézhí,Uajoming,Vaiominga,Vajoming,Vajomingas,Vajomingo,Vajomings,Vajoomin,Vayoming,Vayominq,Vyomina,WY,Waiomin,Waiomina,Wayoming,Waịómịn,Wyoming,Wyoming Shitati,Wyoming suyu,huai e ming zhou,oya'iyomim,raa'i'omim,raayamim,rath wixoming,uaiomingi,va'i'omiga,vayeamin,vayomin,vayomina,vayoming,vayominga,vaywmyng,waioming ju,waiomingu zhou,waywmngh,waywmnj,waywmyng,waywmyng ayalty,wayywmng,wywmyng,Ουαϊόμινγκ,Вайоминг,Вайомінг,Вайоомин,Вајоминг,Уайоминг,Уайомиҥ,Штат Ваёмінг,Վայոմինգ,וויאמינג,ויומינג,وائیومنگ,وايومنج,وايومنغ,وایومینگ,وایومینگ ایالتی,وایۆمینگ,ڤایومینگ,ܘܐܝܘܡܝܢܓ,वायोमिंग,वायोमिङ,वायोमिङ्,ওয়াইয়োমিং,ৱাইওমিং,ৱায়মিং,ਵਾਇਓਮਿੰਗ,வயோமிங்,ವಯೋಮಿಂಗ್,വയോമിങ്,รัฐไวโอมิง,ཝ་ཡོ་མིང་།,ဝိုင်အိုးမင်းပြည်နယ်,უაიომინგი,ዋዮሚንግ,ワイオミング州,怀俄明州,懷俄明州,와이오밍 주",US,USA,840,938.48
+United States Virgin Islands,Whole country,N/A,VI,VIR,850,693.548
+Uruguay,Whole country,N/A,UY,URY,858,106.013
+Uzbekistan,Whole country,N/A,UZ,UZB,860,496.78
+Vanuatu,Whole country,N/A,VU,VUT,548,571.429
+Venezuela,Whole country,N/A,VE,VEN,862,192.012
+Vietnam,Whole country,N/A,VN,VNM,704,546.025
+World,Whole country,N/A,WORLD,WORLD,WORLD,436.529
+Yemen,Whole country,N/A,YE,YEM,887,540.698
+Zambia,Whole country,N/A,ZM,ZMB,894,120.776
+Zimbabwe,Whole country,N/A,ZW,ZWE,716,288.24
