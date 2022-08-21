@@ -23,5 +23,6 @@ from eco2ai.utils import (
     get_params,
     define_carbon_index,
     calculate_money,
-    summary
+    summary,
+    calculate_price
 )

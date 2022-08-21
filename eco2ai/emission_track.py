@@ -16,10 +16,11 @@ from eco2ai.utils import  (
     define_carbon_index,
     get_params,
     set_params,
-    calculate_money,
-    summary,
+    # calculate_money,
+    # summary,
     encode,
-    encode_dataframe
+    encode_dataframe,
+    calculate_price
 )
 
 
@@ -53,17 +54,19 @@ class Tracker:
         tracker.stop()
 
     """
-    def __init__(self,
-                 project_name=None,
-                 experiment_description=None,
-                 file_name=None,
-                 measure_period=10,
-                 emission_level=None,
-                 alpha_2_code=None,
-                 region=None,
-                 pue=1,
-                 encode_file=None,
-                 ):
+    def __init__(
+        self,
+        project_name=None,
+        experiment_description=None,
+        file_name=None,
+        measure_period=10,
+        emission_level=None,
+        alpha_2_code=None,
+        region=None,
+        pue=1,
+        encode_file=None,
+        electricity_pricing=None
+        ):
         """
             This class method initializes Thacker object and creates fields of class object
             
@@ -105,6 +108,16 @@ class Tracker:
                 So, default name of file with encoded data will be "encoded_emission.csv"
                 If this parameter is of str type, then name of file with encoded data will be value of encode_file parameter.
                 The default is None. 
+             electricity_pricing: dict
+                Dictionary with time intervals as keys and electricity price during that intervals as values.
+                Electricity price should be set without any currency designation.
+                Every interval must be constructed as follows:
+                    1) "hh:mm-hh:mm", hh - hours, mm - minutes. hh in [0, ..., 23], mm in [0, ..., 59]
+                    2) Intervals should be consistent: the start of a current time interval 
+                    must be equal the end of a previous time interval. 
+                    Instantce of consistent intervals: "8:30-19:00", "19:00-6:00", "6:00-8:30"
+                    Instantce of inconsistent intervals: "8:30-20:00", "18:00-3:00", "6:00-12:30"
+                    3) Total duration of time intervals in hours must be 24 hours(1 day). 
             
             Returns
             -------
@@ -144,6 +157,8 @@ class Tracker:
         self._id = None
         self._consumption = 0
         self._encode_file=encode_file if encode_file != True else "encoded_"+file_name
+        self._electricity_pricing = electricity_pricing
+        self._total_price = "N/A" if self._electricity_pricing is None else 0
         self._os = platform.system()
         if self._os == "Darwin":
             self._os = "MacOS"
@@ -238,6 +253,23 @@ class Tracker:
 
         """
         return self._consumption
+    
+
+    def price(self):
+        """
+            This class method returns total electicity price
+
+            Parameters
+            ----------
+            No parameters
+
+            Returns
+            -------
+            total_price: float
+                Total price for electrical power spent.
+
+        """
+        return self._total_price
     
 
     def id(self):
@@ -336,7 +368,7 @@ class Tracker:
         attributes_dict["GPU_name"] = [f"{self._gpu.name()} {self._gpu.gpu_num()} device(s)"]
         attributes_dict["OS"] = [f"{self._os}"]
         attributes_dict["region/country"] = [f"{self._country}"]
-        attributes_dict["cost"] = [f"N\A"]
+        attributes_dict["cost"] = [f"{self._total_price}"]
 
         if not os.path.isfile(self.file_name):
             while True:
@@ -429,6 +461,8 @@ class Tracker:
         tmp_comsumption += gpu_consumption
         tmp_comsumption += ram_consumption
         tmp_comsumption *= self._pue
+        if self._electricity_pricing is not None:
+            self._total_price += calculate_price(self._electricity_pricing, tmp_comsumption)
         self._consumption += tmp_comsumption
         self._write_to_csv()
         # self._consumption = 0
