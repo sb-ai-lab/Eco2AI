@@ -152,6 +152,100 @@ class IncorrectPricingDict(Exception):
     pass
 
 
+def electricity_pricing_check( 
+    electricity_pricing,
+):
+    """
+    This function takes electricity pricing dictionary and
+    check it if the dictionary is consctructed correctly.
+    Rules for 'electricity_pricing' parameter construction is written below.        
+    
+    Parameters
+    ----------
+    electricity_pricing: dict
+        Dictionary with time intervals as keys and electricity price during that intervals as values.
+        Electricity price should be set without any currency designation.
+        Every interval must be constructed as follows:
+            1) "hh:mm-hh:mm", hh - hours, mm - minutes. hh in [0, ..., 23], mm in [0, ..., 59]
+            ) Intervals should be consistent: they mustn't overlap and they should in chronological order.
+            Instantce of consistent intervals: "8:30-19:00", "19:00-6:00", "6:00-8:30"
+            Instantce of inconsistent intervals: "8:30-20:00", "18:00-3:00", "6:00-12:30"
+            3) Total duration of time intervals in hours must be 24 hours(1 day). 
+
+    Returns
+    -------
+    No returns
+    """
+    if electricity_pricing is None:
+        return True
+    electricity_pricing_array = [] 
+    for key in electricity_pricing:
+        tmp = [[int(i) for i in j.split(":")] for j in key.split("-")]
+        electricity_pricing_array.append(tmp)
+    electricity_pricing_array = np.array(electricity_pricing_array)
+    
+    # First check
+    if (electricity_pricing_array[:, :, 0] >= 24).sum() > 0:
+        raise IncorrectPricingDict(
+            "Hour must be in 0..23"
+        )
+    
+    # Second check
+    if (electricity_pricing_array[:, :, 1] >= 60).sum() > 0:
+        raise IncorrectPricingDict(
+            "Minutes must be in 0..59"
+        )
+        
+    today_date = datetime.datetime.today().timetuple()    
+
+    dates = [[] for i in range(len(electricity_pricing_array))]
+    for index, intervals in enumerate(electricity_pricing_array):
+        add = 0
+        if intervals[0][0] > intervals[1][0]:
+            add += 1
+        dt1 = datetime.datetime(
+            year=today_date.tm_year,
+            month=today_date.tm_mon,
+            day=today_date.tm_mday,
+            hour=intervals[0][0],
+            minute=intervals[0][1],
+        )
+        dt2 = datetime.datetime(
+            year=today_date.tm_year,
+            month=today_date.tm_mon,
+            day=today_date.tm_mday,
+            hour=intervals[1][0],
+            minute=intervals[1][1],
+        )
+        dt2 += datetime.timedelta(days=add)
+        dates[index].append(dt1)
+        dates[index].append(dt2)
+            
+    # Third check
+    summ = 0
+    for i in dates:
+        summ += (i[1] - i[0]).total_seconds()
+    summ /= 3600
+    if summ != 24:
+        raise IncorrectPricingDict(
+            f"""
+Total duration of time intervals in hours must be 24 hours!
+Now, total duration equals: {summ}
+"""
+        )
+
+    # Fourth check
+    flag = True
+    for index, _ in enumerate(dates):
+        diff = (dates[index][0] - dates[index-1][1]).total_seconds() % (86400)
+        if diff != 0:
+            flag=False
+    if not flag:
+        raise IncorrectPricingDict(
+            "Time intervals mustn't overlap and they should be sorted by time"
+        )
+
+
 def calculate_price( 
     electricity_pricing,
     kwh_energy,
@@ -168,8 +262,7 @@ def calculate_price(
         Electricity price should be set without any currency designation.
         Every interval must be constructed as follows:
             1) "hh:mm-hh:mm", hh - hours, mm - minutes. hh in [0, ..., 23], mm in [0, ..., 59]
-            2) Intervals should be consistent: the start of a current time interval 
-            must be equal the end of a previous time interval. 
+            ) Intervals should be consistent: they mustn't overlap and they should in chronological order.
             Instantce of consistent intervals: "8:30-19:00", "19:00-6:00", "6:00-8:30"
             Instantce of inconsistent intervals: "8:30-20:00", "18:00-3:00", "6:00-12:30"
             3) Total duration of time intervals in hours must be 24 hours(1 day). 
@@ -188,18 +281,6 @@ def calculate_price(
         tmp = [[int(i) for i in j.split(":")] for j in key.split("-")]
         electricity_pricing_array.append(tmp)
     electricity_pricing_array = np.array(electricity_pricing_array)
-    
-    # First check
-    if (electricity_pricing_array[:, :, 0] >= 24).sum() > 0:
-        raise IncorrectPricingDict(
-            "Hour must be in 0..23"
-        )
-    
-    # Second check
-    if (electricity_pricing_array[:, :, 1] >= 60).sum() > 0:
-        raise IncorrectPricingDict(
-            "Minutes must be in 0..59"
-        )
         
     today_date = datetime.datetime.today().timetuple()    
     interval_index = None
@@ -228,30 +309,7 @@ def calculate_price(
         dates[index].append(dt2)
         if (dt1-datetime.datetime.today()).total_seconds() * (dt2-datetime.datetime.today()).total_seconds() < 0:
             interval_index = index
-            
-    # Third check
-    summ = 0
-    for i in dates:
-        summ += (i[1] - i[0]).total_seconds()
-    summ /= 3600
-    if summ != 24:
-        raise IncorrectPricingDict(
-            f"""
-Total duration of time intervals in hours must be 24 hours!
-Now, total duration equals: {summ}
-"""
-        )
 
-    # Fourth check
-    flag = True
-    for index, interval in enumerate(dates):
-        diff = (dates[index][0] - dates[index-1][1]).total_seconds() % (86400)
-        if diff != 0:
-            flag=False
-    if not flag:
-        raise IncorrectPricingDict(
-            "The start of a current time interval must be equal the end of a previous time interval"
-        )
     electricity_price = list(electricity_pricing.values())[interval_index] * kwh_energy
     return electricity_price
 

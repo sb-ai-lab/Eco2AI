@@ -4,6 +4,7 @@ import platform
 import pandas as pd
 import uuid
 import warnings
+import tzlocal
 from re import sub
 from pkg_resources import resource_stream
 from apscheduler.schedulers.background import BackgroundScheduler
@@ -20,7 +21,8 @@ from eco2ai.utils import  (
     # summary,
     encode,
     encode_dataframe,
-    calculate_price
+    electricity_pricing_check,
+    calculate_price,
 )
 
 
@@ -108,16 +110,15 @@ class Tracker:
                 So, default name of file with encoded data will be "encoded_emission.csv"
                 If this parameter is of str type, then name of file with encoded data will be value of encode_file parameter.
                 The default is None. 
-             electricity_pricing: dict
+            electricity_pricing: dict
                 Dictionary with time intervals as keys and electricity price during that intervals as values.
                 Electricity price should be set without any currency designation.
                 Every interval must be constructed as follows:
                     1) "hh:mm-hh:mm", hh - hours, mm - minutes. hh in [0, ..., 23], mm in [0, ..., 59]
-                    2) Intervals should be consistent: the start of a current time interval 
-                    must be equal the end of a previous time interval. 
+                    2) Intervals should be consistent: they mustn't overlap and they should in chronological order.
                     Instantce of consistent intervals: "8:30-19:00", "19:00-6:00", "6:00-8:30"
                     Instantce of inconsistent intervals: "8:30-20:00", "18:00-3:00", "6:00-12:30"
-                    3) Total duration of time intervals in hours must be 24 hours(1 day). 
+                    3) Total duration of time intervals in hours must be 24 hours(1 day).  
             
             Returns
             -------
@@ -149,7 +150,11 @@ class Tracker:
         self.get_set_params(self.project_name, self.experiment_description, self.file_name, self._measure_period, self._pue)
 
         self._emission_level, self._country = define_carbon_index(emission_level, alpha_2_code, region)
-        self._scheduler = BackgroundScheduler(job_defaults={'max_instances': 10}, misfire_grace_time=None)
+        self._scheduler = BackgroundScheduler(
+            job_defaults={'max_instances': 10}, 
+            timezone=str(tzlocal.get_localzone()),
+            misfire_grace_time=None
+            )
         self._start_time = None
         self._cpu = None
         self._gpu = None
@@ -157,6 +162,7 @@ class Tracker:
         self._id = None
         self._consumption = 0
         self._encode_file=encode_file if encode_file != True else "encoded_"+file_name
+        electricity_pricing_check(electricity_pricing)
         self._electricity_pricing = electricity_pricing
         self._total_price = "N/A" if self._electricity_pricing is None else 0
         self._os = platform.system()
