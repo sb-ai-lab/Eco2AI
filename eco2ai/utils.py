@@ -12,6 +12,14 @@ from eco2ai.tools.tools_cpu import all_available_cpu
 from eco2ai.tools.tools_gpu import all_available_gpu
 
 
+class FileDoesNotExistsError(Exception):
+    pass
+
+
+class NotNeededExtensionError(Exception):
+    pass
+
+
 def available_devices():
     """
         This function prints all the available CPU & GPU devices
@@ -476,9 +484,9 @@ def calculate_money(
     
     """
     if not os.path.exists(filename):
-        raise FileDoesNotExists(f'File \'{filename}\' does not exist')
+        raise FileDoesNotExistsError(f'File \'{filename}\' does not exist')
     if not filename.endswith('.csv'):
-        raise NotNeededExtension('File need to be with extension \'.csv\'')
+        raise FileDoesNotExistsError('File need to be with extension \'.csv\'')
     df = pd.read_csv(filename)
     if project_name != 'all':
         df = df[df['project_name'] == project_name]
@@ -540,9 +548,9 @@ def summary(
     
     """
     if not os.path.exists(filename):
-        raise FileDoesNotExists(f'File \'{filename}\' does not exist')
+        raise FileDoesNotExistsError(f'File \'{filename}\' does not exist')
     if not filename.endswith('.csv'):
-        raise NotNeededExtension('File need to be with extension \'.csv\'')
+        raise NotNeededExtensionError('File need to be with extension \'.csv\'')
     df = pd.read_csv(filename)
     projects = np.unique(df['project_name'].values)
     summary_data = []

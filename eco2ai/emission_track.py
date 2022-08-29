@@ -1,7 +1,9 @@
 import os
 import time
 import platform
+from tracemalloc import start
 import pandas as pd
+import numpy as np
 import uuid
 import warnings
 import tzlocal
@@ -23,6 +25,8 @@ from eco2ai.utils import  (
     encode_dataframe,
     electricity_pricing_check,
     calculate_price,
+    FileDoesNotExistsError,
+    NotNeededExtensionError,
 )
 
 
@@ -30,13 +34,8 @@ FROM_mWATTS_TO_kWATTH = 1000*1000*3600
 FROM_kWATTH_TO_MWATTH = 1000
 
 
-class FileDoesNotExists(Exception):
+class IncorrectMethodSequenceError(Exception):
     pass
-
-
-class NotNeededExtension(Exception):
-    pass
-
 
 class Tracker:
     """
@@ -67,10 +66,10 @@ class Tracker:
         region=None,
         pue=1,
         encode_file=None,
-        electricity_pricing=None
+        electricity_pricing=None, 
         ):
         """
-            This class method initializes Thacker object and creates fields of class object
+            This class method initializes a Tracker object and creates fields of class object
             
             Parameters
             ----------
@@ -118,7 +117,7 @@ class Tracker:
                     2) Intervals should be consistent: they mustn't overlap and they should in chronological order.
                     Instantce of consistent intervals: "8:30-19:00", "19:00-6:00", "6:00-8:30"
                     Instantce of inconsistent intervals: "8:30-20:00", "18:00-3:00", "6:00-12:30"
-                    3) Total duration of time intervals in hours must be 24 hours(1 day).  
+                    3) Total duration of time intervals in hours must be 24 hours(1 day). 
             
             Returns
             -------
@@ -140,7 +139,12 @@ class Tracker:
             if type(encode_file) is not str and not (encode_file is True):
                 raise TypeError(f"'encode_file' parameter should have str type, not {type(encode_file)}")
             if type(encode_file) is str and not encode_file.endswith('.csv'):
-                raise NotNeededExtension(f"'encode_file' name need to be with extension \'.csv\'")
+                raise NotNeededExtensionError(f"'encode_file' name need to be with extension \'.csv\'")
+        if file_name is not None:
+            if type(file_name) is not str and not (file_name is True):
+                raise TypeError(f"'file_name' parameter should have str type, not {type(file_name)}")
+            if type(file_name) is str and not file_name.endswith('.csv'):
+                raise NotNeededExtensionError(f"'file_name' name need to be with extension \'.csv\'")
         self._params_dict = get_params()
         self.project_name = project_name if project_name is not None else self._params_dict["project_name"]
         self.experiment_description = experiment_description if experiment_description is not None else self._params_dict["experiment_description"]
@@ -160,18 +164,22 @@ class Tracker:
         self._gpu = None
         self._ram = None
         self._id = None
+        self._current_epoch = "N/A"
         self._consumption = 0
         self._encode_file=encode_file if encode_file != True else "encoded_"+file_name
         electricity_pricing_check(electricity_pricing)
         self._electricity_pricing = electricity_pricing
-        self._total_price = "N/A" if self._electricity_pricing is None else 0
+        self._total_price = np.nan if self._electricity_pricing is None else 0
         self._os = platform.system()
         if self._os == "Darwin":
             self._os = "MacOS"
         # self._mode == "first_time" means that the Tracker is just initialized
         # self._mode == "run time" means that CO2 tracker is now running
         # self._mode == "shut down" means that CO2 tracker is stopped
+        # self._mode == "training" means that CO2 tracker tracks training process
         self._mode = "first_time"
+        # parameters to save during model training
+        self._parameters_to_save = ""
     
 
     def get_set_params(
@@ -333,6 +341,7 @@ class Tracker:
 
     def _write_to_csv(
         self,
+        add_new=False,
         ):
         """
             This class method writes to .csv file calculation results.
@@ -350,7 +359,12 @@ class Tracker:
 
             Parameters
             ----------
-            No parameters
+            add_new: bool
+                Parameter, defining if function should add additional row to the dataframe
+                "add_new" == True when new epoch in training was started
+            parameters_to_save: str
+                String with parameters user wants to save.
+                The string come from ".new_epoch" method.
 
             Returns
             -------
@@ -365,7 +379,7 @@ class Tracker:
         attributes_dict["id"] = [self._id]
         attributes_dict["project_name"] = [f"{self.project_name}"]
         attributes_dict["experiment_description"] = [f"{self.experiment_description}"]
-        attributes_dict["epoch"] = [f"N\A"]
+        attributes_dict["epoch"] = ["epoch: " + str(self._current_epoch) + self._parameters_to_save]
         attributes_dict["start_time"] = [f"{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(self._start_time))}"]
         attributes_dict["duration(s)"] = [f"{time.time() - self._start_time}"]
         attributes_dict["power_consumption(kWTh)"] = [f"{self._consumption}"]
@@ -390,6 +404,8 @@ class Tracker:
         else:
             while True:
                 if not is_file_opened(self.file_name):
+                    # we open a file in order to the current system process know that this file is opened somewhere
+                    # Thus, if it's open in the process, other processes won't open it, until it will be closed
                     tmp = open(self.file_name, "r")
 
                     attributes_dataframe = pd.read_csv(self.file_name)
@@ -403,15 +419,26 @@ class Tracker:
                     if attributes_dataframe[attributes_dataframe['id'] == self._id].shape[0] == 0:
                         attributes_dataframe.loc[attributes_dataframe.shape[0]] = attributes_array
                     else:
-                        row_index = attributes_dataframe[attributes_dataframe['id'] == self._id].index.values[0]
-                        attributes_dataframe.loc[row_index] = attributes_array
+                        row_index = attributes_dataframe[attributes_dataframe['id'] == self._id].index.values[-1]
+                        # check, if it's necessary to add a new row to the dataframe
+                        if add_new:
+                            attributes_dataframe = pd.DataFrame(
+                                np.vstack((
+                                    attributes_dataframe.values[:row_index+1], 
+                                    attributes_array,
+                                    attributes_dataframe.values[row_index+1:]
+                                    )),
+                                columns=attributes_dataframe.columns
+                            )
+                        else:
+                            attributes_dataframe.loc[row_index] = attributes_array
                     attributes_dataframe.to_csv(self.file_name, index=False)
 
                     tmp.close()
                     break
                 else: 
                     time.sleep(0.5)
-        self._mode = "run time"
+        self._mode = "run time" if self._mode != "training" else "training"
         return attributes_dict
 
 
@@ -436,20 +463,22 @@ class Tracker:
         # print("1: ", new_columns, current_columns)
         for column in new_columns:
             if column not in current_columns:
-                attributes_dataframe[column] = "N\A"
+                attributes_dataframe[column] = "N/A"
         attributes_dataframe = attributes_dataframe[new_columns]
 
         return attributes_dataframe
 
 
-    def _func_for_sched(self,):
+    def _func_for_sched(self, add_new=False):
         """
-            This class method is a function, that puts in a scheduler and runs periodically during Thacker work.
+            This class method is a function, that puts in a scheduler and runs periodically during a Tracker work.
             It calculates CPU, GPU and RAM power consumption and writes results to a .csv file.
 
             Parameters
             ----------
-            No parameters
+            add_new: bool
+                Parameter, defining if function should add additional row to the dataframe
+                "add_new" == True when new epoch in training was started
 
             Returns
             -------
@@ -470,18 +499,85 @@ class Tracker:
         if self._electricity_pricing is not None:
             self._total_price += calculate_price(self._electricity_pricing, tmp_comsumption)
         self._consumption += tmp_comsumption
-        self._write_to_csv()
+        self._write_to_csv(add_new)
         # self._consumption = 0
         # self._start_time = time.time()
         if self._mode == "shut down":
             self._scheduler.remove_job("job")
             self._scheduler.shutdown()
 
+    
+    def start_training(self, start_epoch=1):
+        """
+            This class method starts the Tracker work and signalize that it should track the training process. 
+            It initializes fields of CPU and GPU classes, initializes scheduler, 
+            puts the self._func_for_sched function into it and starts its work.
+
+            Parameters
+            ----------
+            start_epoch: int
+                Number of epoch a training should start with.
+
+            Returns
+            -------
+            No returns
+        
+        """
+        if not isinstance(start_epoch, int):
+            raise TypeError(
+                f"\"start_epoch\" paramenet must be of int type. Now, it is {type(start_epoch)}"
+            )
+
+        self._mode = "training"
+        # print("start_training", self._mode)
+        
+        self._current_epoch = start_epoch
+        self._cpu = CPU()
+        self._gpu = GPU()
+        self._ram = RAM()
+        self._id = str(uuid.uuid4())
+        self._start_time = time.time()
+        # self._func_for_sched()
+        
+
+
+    
+    def new_epoch(self, parameters_dict):
+        """
+            This class method starts tracking new epoch.
+            It calls "._func_for_sched" method, and signalize that new row should be created and added to the dataframe
+
+            Parameters
+            ----------
+            parameters_dict: dict
+                Dictionary with parameters user wants to save during current epoch
+
+            Returns
+            -------
+            No returns
+        
+        """
+        if self._mode != "training":
+            # print("new_epoch", self._mode)
+            raise IncorrectMethodSequenceError(
+                "You can run method \".new_epoch\" only after method \".start_training\" was run"
+            )
+        self._parameters_to_save = ", "
+        for key in parameters_dict:
+            self._parameters_to_save += key + ": "
+            self._parameters_to_save += str(parameters_dict[key]) + ", "
+        self._func_for_sched(add_new=True)
+        self._current_epoch += 1
+        self._parameters_to_save = ""
+        self._consumption = 0
+        self._total_price = np.nan if self._electricity_pricing is None else 0
+        self._start_time = time.time()
+
 
     def start(self):
         """
             This class method starts the Tracker work. It initializes fields of CPU and GPU classes,
-            initializes scheduler, put the self._func_for_sched function into it and starts its work.
+            initializes scheduler, puts the self._func_for_sched function into it and starts its work.
 
             Parameters
             ----------
@@ -492,6 +588,13 @@ class Tracker:
             No returns
         
         """
+        if self._mode == "training":
+            raise IncorrectMethodSequenceError(
+                """
+You have already run ".start_training" method.
+Please, use the interface for training: ."start_trainig", ".new_epoch", and "stop_training"
+                """
+            )
         if self._start_time is not None:
             try:
                 self._scheduler.remove_job("job")
@@ -509,6 +612,88 @@ class Tracker:
         self._scheduler.start()
 
 
+    def stop_training(self,):
+        # remove job from scheduler
+        if self._mode != "training":
+            raise IncorrectMethodSequenceError(
+                """
+You should run ".start_training" method before ".stop_training" method
+                """
+            )
+        # self._func_for_sched()
+        if self._start_time is None:
+            raise Exception("Need to first start the tracker by running tracker.start() or tracker.start_training()")
+        # calculating additional array
+        duration = time.time() - self._start_time
+        cpu_consumption = self._cpu.calculate_consumption()
+        ram_consumption = self._ram.calculate_consumption()
+        if self._gpu.is_gpu_available:
+            gpu_consumption = self._gpu.calculate_consumption()
+        else:
+            gpu_consumption = 0
+        tmp_comsumption = 0
+        tmp_comsumption += cpu_consumption
+        tmp_comsumption += gpu_consumption
+        tmp_comsumption += ram_consumption
+        tmp_comsumption *= self._pue
+        if self._electricity_pricing is not None:
+            self._total_price += calculate_price(self._electricity_pricing, tmp_comsumption)
+        self._consumption += tmp_comsumption
+        additional_array = np.array(
+            [duration, self._consumption, self._consumption * self._emission_level / FROM_kWATTH_TO_MWATTH]
+            )
+
+        # saving to file new dataframe
+        while True:
+            if not is_file_opened(self.file_name):
+                tmp = open(self.file_name, "r")
+
+                dataframe = pd.read_csv(self.file_name)
+                
+                row_index = dataframe[dataframe['id'] == self._id].index.values[-1]
+
+                values = dataframe[dataframe["id"] == self._id].values
+                if values.shape[0] == 0:
+                    return
+                attributes_array = np.hstack(
+                    (
+                        values[0][:3], 
+                        values[-1][3],
+                        values[0][4],
+                        values[:, 5:8].sum(axis=0)+additional_array, 
+                        values[0][8:-1],
+                        values[:, -1].sum(axis=0)+self._total_price
+                    )
+                )
+
+                dataframe = pd.DataFrame(
+                    np.vstack((
+                        dataframe.values[:row_index+1], 
+                        attributes_array,
+                        dataframe.values[row_index+1:]
+                        )),
+                    columns=dataframe.columns
+                )
+                
+                dataframe.to_csv(self.file_name, index=False)
+
+                tmp.close()
+                break
+            else: 
+                time.sleep(0.5)
+
+        # encoding all the data
+        if self._encode_file is not None:
+            attributes_dict = dataframe[dataframe["id"] == self._id].to_dict()
+            for i in attributes_dict:
+                attributes_dict[i] = list(attributes_dict[i].values())
+            self._func_for_encoding(attributes_dict)
+        self._consumption = 0
+        self._mode = "shut down"
+
+        # np.hstack((df[1:6].values[0][:5], df[1:6].values[:, 5:8].sum(axis=0), df[1:6].values[0][8:]))
+
+
     def stop(self, ):
         """
             This class method stops the Tracker work, removes self._func_for_sched from the scheduler
@@ -523,8 +708,11 @@ class Tracker:
             No returns
         
         """
+        if self._mode == "training":
+            self.stop_training()
+            return
         if self._start_time is None:
-            raise Exception("Need to first start the tracker by running tracker.start()")
+            raise Exception("Need to first start the tracker by running tracker.start() or tracker.start_training()")
         self._scheduler.remove_job("job")
         self._scheduler.shutdown()
         self._func_for_sched() 
@@ -554,14 +742,14 @@ class Tracker:
         """
 
         for key in attributes_dict.keys():
-            attributes_dict[key] = [encode(str(attributes_dict[key][0]))]
+            # attributes_dict[key] = [encode(str(attributes_dict[key][0]))]
+            attributes_dict[key] = [encode(str(value)) for value in attributes_dict[key]]
 
         if not os.path.isfile(self._encode_file):
             while True:
                 if not is_file_opened(self._encode_file):
                     open(self._encode_file, "w").close()
                     tmp = open(self._encode_file, "r")
-
                     pd.DataFrame(attributes_dict).to_csv(self._encode_file, index=False)
 
                     tmp.close()
@@ -575,12 +763,17 @@ class Tracker:
                     tmp = open(self._encode_file, "r")
 
                     attributes_dataframe = pd.read_csv(self._encode_file)
-                    attributes_array = []
-                    for element in attributes_dict.values():
-                        attributes_array += element
-                    attributes_dataframe.loc[attributes_dataframe.shape[0]] = attributes_array
+                                        
+                    attributes_dataframe = pd.concat(
+                        [
+                            attributes_dataframe,
+                            pd.DataFrame(attributes_dict).to_csv(self._encode_file, index=False), 
+                        ], 
+                        ignore_index=True, 
+                        axis=0
+                    )
+                        
                     attributes_dataframe.to_csv(self._encode_file, index=False)
-
                     tmp.close()
                     break
                 else: 

@@ -32,7 +32,7 @@ class GPU():
         self._consumption = 0
         self.is_gpu_available = is_gpu_available()
         if not self.is_gpu_available:
-            warnings.warn(message="\n\nThere is no any available GPU devices or your GPU is not supported by Nvidia library!\nThe thacker will consider CPU usage only\n",
+            warnings.warn(message="\n\nThere is no any available GPU devices or your GPU is not supported by Nvidia library!\nThe tracker will consider CPU usage only\n",
                           category=NoGPUWarning)
         if self.is_gpu_available:
             self._start = time.time()
