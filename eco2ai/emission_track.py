@@ -379,7 +379,9 @@ class Tracker:
         attributes_dict["id"] = [self._id]
         attributes_dict["project_name"] = [f"{self.project_name}"]
         attributes_dict["experiment_description"] = [f"{self.experiment_description}"]
-        attributes_dict["epoch"] = ["epoch: " + str(self._current_epoch) + self._parameters_to_save]
+        attributes_dict["epoch"] = [
+            "epoch: " + str(self._current_epoch) + self._parameters_to_save if self._mode == "training" else "N/A"
+            ]
         attributes_dict["start_time"] = [f"{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(self._start_time))}"]
         attributes_dict["duration(s)"] = [f"{time.time() - self._start_time}"]
         attributes_dict["power_consumption(kWTh)"] = [f"{self._consumption}"]
