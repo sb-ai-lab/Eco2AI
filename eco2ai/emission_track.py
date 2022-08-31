@@ -384,7 +384,7 @@ class Tracker:
             ]
         attributes_dict["start_time"] = [f"{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(self._start_time))}"]
         attributes_dict["duration(s)"] = [f"{time.time() - self._start_time}"]
-        attributes_dict["power_consumption(kWTh)"] = [f"{self._consumption}"]
+        attributes_dict["power_consumption(kWh)"] = [f"{self._consumption}"]
         attributes_dict["CO2_emissions(kg)"] = [f"{self._consumption * self._emission_level / FROM_kWATTH_TO_MWATTH}"]
         attributes_dict["CPU_name"] = [f"{self._cpu.name()}/{self._cpu.cpu_num()} device(s), TDP:{self._cpu.tdp()}"]
         attributes_dict["GPU_name"] = [f"{self._gpu.name()} {self._gpu.gpu_num()} device(s)"]

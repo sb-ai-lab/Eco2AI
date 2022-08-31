@@ -1,4 +1,4 @@
-country,region,alternative_name,alpha_2_code,alpha_3_code,un_code,carbon_index
+country,region,alternative_name,alpha_2_code,alpha_3_code,un_code,"Emission intensity, kg/MWh"
 Afghanistan,Whole country,N/A,AF,AFG,4,166.667
 Albania,Whole country,N/A,AL,ALB,8,24.482
 Algeria,Whole country,N/A,DZ,DZA,12,485.45
