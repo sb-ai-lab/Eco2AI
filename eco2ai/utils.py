@@ -317,6 +317,11 @@ def calculate_price(
         dates[index].append(dt2)
         if (dt1-datetime.datetime.today()).total_seconds() * (dt2-datetime.datetime.today()).total_seconds() < 0:
             interval_index = index
+        elif (
+            (dt1-datetime.datetime.today()-datetime.timedelta(days=1)).total_seconds() * 
+            (dt2-datetime.datetime.today()-datetime.timedelta(days=1)).total_seconds()
+            ) < 0:
+            interval_index = index
 
     electricity_price = list(electricity_pricing.values())[interval_index] * kwh_energy
     return electricity_price
