@@ -21,8 +21,5 @@ from eco2ai.utils import (
     available_devices,
     set_params,
     get_params,
-    define_carbon_index,
-    calculate_money,
     summary,
-    calculate_price
 )

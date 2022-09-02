@@ -514,6 +514,7 @@ class Tracker:
             This class method starts the Tracker work and signalize that it should track the training process. 
             It initializes fields of CPU and GPU classes, initializes scheduler, 
             puts the self._func_for_sched function into it and starts its work.
+            IMPORTANT: during training tracking all the calculations is written to file only after ".new_epoch" method was run
 
             Parameters
             ----------
@@ -594,7 +595,7 @@ class Tracker:
             raise IncorrectMethodSequenceError(
                 """
 You have already run ".start_training" method.
-Please, use the interface for training: ."start_trainig", ".new_epoch", and "stop_training"
+Please, use the interface for training: ".start_trainig", ".new_epoch", and "stop_training"
                 """
             )
         if self._start_time is not None:
@@ -615,6 +616,22 @@ Please, use the interface for training: ."start_trainig", ".new_epoch", and "sto
 
 
     def stop_training(self,):
+        """
+            This class method stops the Tracker 
+             work and signalize that it should track the training process. 
+            It initializes fields of CPU and GPU classes, initializes scheduler, 
+            puts the self._func_for_sched function into it and starts its work.
+
+            Parameters
+            ----------
+            start_epoch: int
+                Number of epoch a training should start with.
+
+            Returns
+            -------
+            No returns
+        
+        """
         # remove job from scheduler
         if self._mode != "training":
             raise IncorrectMethodSequenceError(
@@ -624,7 +641,7 @@ You should run ".start_training" method before ".stop_training" method
             )
         # self._func_for_sched()
         if self._start_time is None:
-            raise Exception("Need to first start the tracker by running tracker.start() or tracker.start_training()")
+            raise Exception("Need the first to start the tracker by running tracker.start() or tracker.start_training()")
         # calculating additional array
         duration = time.time() - self._start_time
         cpu_consumption = self._cpu.calculate_consumption()
@@ -692,8 +709,6 @@ You should run ".start_training" method before ".stop_training" method
             self._func_for_encoding(attributes_dict)
         self._consumption = 0
         self._mode = "shut down"
-
-        # np.hstack((df[1:6].values[0][:5], df[1:6].values[:, 5:8].sum(axis=0), df[1:6].values[0][8:]))
 
 
     def stop(self, ):
