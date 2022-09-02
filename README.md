@@ -152,19 +152,21 @@ Create a new “Tracker” for every new calculation.
 
 The Eco2AI is licensed under a [Apache licence 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
-Please consider citing the following paper in any research manuscript using the Eco2AI library:
+Please read our [preprint paper](https://arxiv.org/abs/2208.00406) and consider citing it in any research manuscript using the Eco2AI library:
 
 ```
 @article{eco2ai_lib,
-    author = {Semen Budennyy*, Vladimir Lazarev, Nikita Zakharenko, Alexey Korovin, Olga Plosskaya, Denis Dimitrov, Vladimir Arkhipkin, Ivan Barsola, Ilya Egorov, Aleksandra Kosterina, Leonid Zhukov
+    author = {Semen, Budennyy* and Vladimir, Lazarev and Nikita, Zakharenko and Alexey, Korovin and Olga, Plosskaya and Denis, Dimitrov and Vladimir, Arkhipkin and Ivan, Barsola and Ilya, Egorov and Aleksandra, Kosterina and Leonid, Zhukov
     
 },
     title = {eco2AI: open-source library for carbon emission tracking of machine learning models},
     year = {2022},
     journal={arXiv preprint arXiv:2208.00406},
+    doi={10.48550/arXiv.2208.00406}
 }
 ```
 
+## Use case
 
 ## Feedback :envelope:<a name="6"></a> 
 
