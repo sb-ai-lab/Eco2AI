@@ -461,58 +461,8 @@ def encode_dataframe(values):
     return values
 
 
-def calculate_money(
-    kwh_price,
-    filename,
-    project_name='all',
-    experiment_description=None
-):
-    """
-        This function calculates amount of money according to price of one kilo-watt-hour.
-
-        Parameters
-        ----------
-        kwh_price: float
-            Price of one kilo-watt-hour of energy.
-        filename: str
-            Name of file the user wants to analyse.
-        project_name: str
-            Name of project for which the user wants to calculate money.
-            Default is 'all'.
-        experiment_description:
-            Experiment description of the project for which the user wants to calculate money.
-            Default is None. None means user wants to analyse all that is connected to the specified project name.
-
-        Returns
-        -------
-        
-    
-    """
-    if not os.path.exists(filename):
-        raise FileDoesNotExistsError(f'File \'{filename}\' does not exist')
-    if not filename.endswith('.csv'):
-        raise FileDoesNotExistsError('File need to be with extension \'.csv\'')
-    df = pd.read_csv(filename)
-    if project_name != 'all':
-        df = df[df['project_name'] == project_name]
-    if experiment_description is not None:
-        df = df[df['experiment_description(model type etc.)'] == experiment_description]
-    if df.shape[0] == 0:
-        warnings.warn(
-            '''
-            There is no any projects with your specified project_name and experiment_description arguments
-            '''
-        )
-        
-    consumption = df['power_consumption(kWTh)'].values
-    consumption = consumption.sum()
-    
-    return consumption * kwh_price
-
-
 def summary(
     filename,
-    kwh_price=None,
     write_to_file=False,
 ):
     """
@@ -524,16 +474,13 @@ def summary(
             total duration(s)
             total power_consumption(kWTh)
             total CO2_emissions(kg)
-            total electricity price (only if 'kwh_price' parameter is not None)
+            total electricity cost
         Number of lines equals number of projects + 1, as the last line is summary for all the projects.
         
         Parameters
         ----------
         filename: str
             Name of file the user wants to analyse.
-        kwh_price: float
-            Price of one kilo-watt-hour of energy.
-            Default is None,
         write_to_file: str
             If this parameter is not None the resultant dataframe will be written to file with name of this parameter.
             For example, is write_to_file == 'total_summary_project_1.csv', 
@@ -549,7 +496,7 @@ def summary(
                 total duration(s)
                 total power_consumption(kWTh)
                 total CO2_emissions(kg)
-                total electricity price (only if 'kwh_price' parameter is not None)
+                total electricity cost
     
     """
     if not os.path.exists(filename):
@@ -562,26 +509,22 @@ def summary(
     columns = [
             'project_name', 
             'total duration(s)', 
-            'total power_consumption(kWTh)', 
+            'total power_consumption(kWh)', 
             'total CO2_emissions(kg)',
+            'total electricity cost',
         ]
-    summ = np.zeros(3)
+    summ = np.zeros(4)
     for project in projects:
         values = df[df['project_name'] == project][
-                ['duration(s)', 'power_consumption(kWTh)', 'CO2_emissions(kg)']
+                ['duration(s)', 'power_consumption(kWh)', 'CO2_emissions(kg)', 'cost']
             ].values.sum(axis=0)
         summ += values
         values = list(values)
         values.insert(0, project)
-        if kwh_price is not None:
-            values.append(values[2] * kwh_price)
         summary_data.append(values)
         
     summ = list(summ)
     summ.insert(0, 'All the projects')
-    if kwh_price is not None:
-        summ.append(summ[2] * kwh_price)
-        columns.append('total electricity price')
     summary_data.append(summ)
     summary_data = pd.DataFrame(
         summary_data,

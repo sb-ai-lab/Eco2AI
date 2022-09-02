@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "eco2ai"
-version = "0.2.8"
+version = "0.3.0"
 description = "emission tracking library"
 authors = ["AI Lab",
             "Vladimir Lazarev <lazarev@airi.net>",

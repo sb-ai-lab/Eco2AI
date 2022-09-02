@@ -501,12 +501,14 @@ class Tracker:
         if self._electricity_pricing is not None:
             self._total_price += calculate_price(self._electricity_pricing, tmp_comsumption)
         self._consumption += tmp_comsumption
-        self._write_to_csv(add_new)
+        attributes_dict = self._write_to_csv(add_new)
         # self._consumption = 0
         # self._start_time = time.time()
         if self._mode == "shut down":
             self._scheduler.remove_job("job")
             self._scheduler.shutdown()
+        return attributes_dict
+        
 
     
     def start_training(self, start_epoch=1):
@@ -569,12 +571,16 @@ class Tracker:
         for key in parameters_dict:
             self._parameters_to_save += key + ": "
             self._parameters_to_save += str(parameters_dict[key]) + ", "
-        self._func_for_sched(add_new=True)
+        attributes_dict = self._func_for_sched(add_new=True)
         self._current_epoch += 1
         self._parameters_to_save = ""
         self._consumption = 0
         self._total_price = np.nan if self._electricity_pricing is None else 0
         self._start_time = time.time()
+        if self._encode_file is not None:
+            self._func_for_encoding(attributes_dict)
+        self._consumption = 0
+
 
 
     def start(self):
@@ -639,74 +645,75 @@ Please, use the interface for training: ".start_trainig", ".new_epoch", and "sto
 You should run ".start_training" method before ".stop_training" method
                 """
             )
-        # self._func_for_sched()
-        if self._start_time is None:
-            raise Exception("Need the first to start the tracker by running tracker.start() or tracker.start_training()")
-        # calculating additional array
-        duration = time.time() - self._start_time
-        cpu_consumption = self._cpu.calculate_consumption()
-        ram_consumption = self._ram.calculate_consumption()
-        if self._gpu.is_gpu_available:
-            gpu_consumption = self._gpu.calculate_consumption()
-        else:
-            gpu_consumption = 0
-        tmp_comsumption = 0
-        tmp_comsumption += cpu_consumption
-        tmp_comsumption += gpu_consumption
-        tmp_comsumption += ram_consumption
-        tmp_comsumption *= self._pue
-        if self._electricity_pricing is not None:
-            self._total_price += calculate_price(self._electricity_pricing, tmp_comsumption)
-        self._consumption += tmp_comsumption
-        additional_array = np.array(
-            [duration, self._consumption, self._consumption * self._emission_level / FROM_kWATTH_TO_MWATTH]
-            )
+        # # self._func_for_sched()
+        # if self._start_time is None:
+        #     raise Exception("Need the first to start the tracker by running tracker.start() or tracker.start_training()")
+        # # calculating additional array
+        # duration = time.time() - self._start_time
+        # cpu_consumption = self._cpu.calculate_consumption()
+        # ram_consumption = self._ram.calculate_consumption()
+        # if self._gpu.is_gpu_available:
+        #     gpu_consumption = self._gpu.calculate_consumption()
+        # else:
+        #     gpu_consumption = 0
+        # tmp_comsumption = 0
+        # tmp_comsumption += cpu_consumption
+        # tmp_comsumption += gpu_consumption
+        # tmp_comsumption += ram_consumption
+        # tmp_comsumption *= self._pue
+        # if self._electricity_pricing is not None:
+        #     self._total_price += calculate_price(self._electricity_pricing, tmp_comsumption)
+        # self._consumption += tmp_comsumption
+        # additional_array = np.array(
+        #     [duration, self._consumption, self._consumption * self._emission_level / FROM_kWATTH_TO_MWATTH]
+        #     )
 
-        # saving to file new dataframe
-        while True:
-            if not is_file_opened(self.file_name):
-                tmp = open(self.file_name, "r")
+        # # saving to file new dataframe
+        # while True:
+        #     if not is_file_opened(self.file_name):
+        #         tmp = open(self.file_name, "r")
 
-                dataframe = pd.read_csv(self.file_name)
+        #         dataframe = pd.read_csv(self.file_name)
                 
-                row_index = dataframe[dataframe['id'] == self._id].index.values[-1]
+        #         row_index = dataframe[dataframe['id'] == self._id].index.values[-1]
 
-                values = dataframe[dataframe["id"] == self._id].values
-                if values.shape[0] == 0:
-                    return
-                attributes_array = np.hstack(
-                    (
-                        values[0][:3], 
-                        values[-1][3],
-                        values[0][4],
-                        values[:, 5:8].sum(axis=0)+additional_array, 
-                        values[0][8:-1],
-                        values[:, -1].sum(axis=0)+self._total_price
-                    )
-                )
+        #         values = dataframe[dataframe["id"] == self._id].values
+        #         if values.shape[0] == 0:
+        #             return
+        #         attributes_array = np.hstack(
+        #             (
+        #                 values[0][:3], 
+        #                 values[-1][3],
+        #                 values[0][4],
+        #                 values[:, 5:8].sum(axis=0)+additional_array, 
+        #                 values[0][8:-1],
+        #                 values[:, -1].sum(axis=0)+self._total_price
+        #             )
+        #         )
 
-                dataframe = pd.DataFrame(
-                    np.vstack((
-                        dataframe.values[:row_index+1], 
-                        attributes_array,
-                        dataframe.values[row_index+1:]
-                        )),
-                    columns=dataframe.columns
-                )
+        #         dataframe = pd.DataFrame(
+        #             np.vstack((
+        #                 dataframe.values[:row_index+1], 
+        #                 attributes_array,
+        #                 dataframe.values[row_index+1:]
+        #                 )),
+        #             columns=dataframe.columns
+        #         )
                 
-                dataframe.to_csv(self.file_name, index=False)
+        #         dataframe.to_csv(self.file_name, index=False)
 
-                tmp.close()
-                break
-            else: 
-                time.sleep(0.5)
+        #         tmp.close()
+        #         break
+        #     else: 
+        #         time.sleep(0.5)
 
         # encoding all the data
-        if self._encode_file is not None:
-            attributes_dict = dataframe[dataframe["id"] == self._id].to_dict()
-            for i in attributes_dict:
-                attributes_dict[i] = list(attributes_dict[i].values())
-            self._func_for_encoding(attributes_dict)
+        # if self._encode_file is not None:
+        #     attributes_dict = dataframe[dataframe["id"] == self._id].to_dict()
+        #     for i in attributes_dict:
+        #         attributes_dict[i] = list(attributes_dict[i].values())
+        #     self._func_for_encoding(attributes_dict)
+        self._start_time = None
         self._consumption = 0
         self._mode = "shut down"
 
@@ -736,6 +743,7 @@ You should run ".start_training" method before ".stop_training" method
         attributes_dict = self._write_to_csv()
         if self._encode_file is not None:
             self._func_for_encoding(attributes_dict)
+        self._start_time = None
         self._consumption = 0
         self._mode = "shut down"
 
