@@ -17,7 +17,7 @@
 + [Use examples :computer:](#3)
 + [Important note :blue_book:](#4)
 + [Citing](#5)
-+ [Feedback :envelope:](#6)
++ [Feedback :envelope:](#6) 
 
 
 
@@ -155,12 +155,13 @@ Please consider citing the following paper in any research manuscript using the 
 
 ```
 @article{eco2ai_lib,
-    author = {Semen Budennyy*, Vladimir Lazarev, Nikita Zakharenko, Alexey Korovin, Olga Plosskaya, Denis Dimitrov, Vladimir Arkhipkin, Ivan Barsola, Ilya Egorov, Aleksandra Kosterina, Leonid Zhukov
+    author = {author = {Semen, Budennyy and Vladimir, Lazarev and Nikita, Zakharenko and Alexey, Korovin and Olga, Plosskaya and Denis, Dimitrov and Vladimir, Arkhipkin and Ivan, Barsola and Ilya, Egorov and Aleksandra, Kosterina and Leonid, Zhukov
     
 },
     title = {eco2AI: open-source library for carbon emission tracking of machine learning models},
     year = {2022},
     journal={arXiv preprint arXiv:2208.00406},
+    doi={10.48550/arXiv.2208.00406}
 }
 ```
 
