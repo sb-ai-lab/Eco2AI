@@ -156,7 +156,7 @@ Properly accounted carbon emissions and power consumption Malevich and Kandinsky
    | **Malevich**| 4h 19m | 1.37 | **0.33** | A100 Graphics, 1 | AMD EPYC 7742 64-Core | 4 |
    | **Kandinsky** | 9h 45m | 24.50 | **5.89** | A100 Graphics, 8 | AMD EPYC 7742 64-Core | 12 |
 
-Also we presented results for training of Malevich with optimized variation of [GELU](https://arxiv.org/abs/1606.08415) activation function. Training of the Malevich with the [8-bit version of GELU](https://arxiv.org/abs/2110.02861) allows us to spent about $10\%$ less enerfy and, consequently, produce less equivalent CO<sub>2</sub> emissions.
+Also we presented results for training of Malevich with optimized variation of [GELU](https://arxiv.org/abs/1606.08415) activation function. Training of the Malevich with the [8-bit version of GELU](https://arxiv.org/abs/2110.02861) allows us to spent about 10\% less energy and, consequently, produce less equivalent CO<sub>2</sub> emissions.
 
 # Citing Eco2AI
 [![DOI](https://img.shields.io/badge/DOI-eco2AI%20article-brightgreen)](https://arxiv.org/abs/2208.00406)
