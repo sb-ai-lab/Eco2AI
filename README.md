@@ -42,7 +42,7 @@ Every single run of Tracker() accompanies by a session description added to the 
 + country
 
 ##  Installation <a name="2"></a> 
-To install the eco2ai library, run the following command:
+To install the eco2AI library, run the following command:
 
 ```
 pip install eco2ai
@@ -50,10 +50,10 @@ pip install eco2ai
 
 ## Use examples <a name="3"></a> 
 
-Example usage eco2ai [![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1hn0DQiKHeyXwvOOR3UEXaGsD6DqVm6b7?authuser=1)
+Example usage eco2AI [![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1hn0DQiKHeyXwvOOR3UEXaGsD6DqVm6b7?authuser=1)
 
 
-The eco2ai interface is quite simple. Here is the simplest usage example:
+The eco2AI interface is quite simple. Here is the simplest usage example:
 
 ```python
 
@@ -68,7 +68,7 @@ tracker.start()
 tracker.stop()
 ```
 
-The eco2ai also supports decorators. As soon as the decorated function is executed, the information about the emissions will be written to the emission.csv file:
+The eco2AI also supports decorators. As soon as the decorated function is executed, the information about the emissions will be written to the emission.csv file:
 
 ```python
 from eco2ai import track
@@ -145,6 +145,18 @@ If for some reasons it is not possible to define country, then emission coeffici
 For proper calculation of gpu and cpu power consumption, you should create a "Tracker" before any gpu or CPU usage.
 
 Create a new “Tracker” for every new calculation.
+
+# Usage of Eco2AI
+
+An example of using the library is given in the [publication](https://arxiv.org/abs/2208.00406). It the paper we presented experiments of tracking equivalent CO<sub>2</sub> emissions using eco2AI while training [ruDALL-E](https://github.com/sberbank-ai/ru-dalle) models with with 1.3 billion ([Malevich](https://habr.com/ru/company/sberbank/blog/589673/), ruDALL-E XL 1.3B) and 12 billion parameters ([Kandinsky](https://github.com/sberbank-ai/ru-dalle), ruDALL-E XL 12B). These are [multimodal](https://arxiv.org/abs/2202.10435) pre-trained transformers that learn the conditional distribution of images with by some string of text capable of generating arbitrary images from a russian text prompt that describes the desired result.
+Properly accounted carbon emissions and power consumption Malevich and Kandinsky fine-tuning Malevich and Kandinsky on the [Emojis dataset](https://arxiv.org/abs/2112.02448) is given in the table below.
+   
+   | **Model** | **Train time** | **Power, kWh** | **CO<sub>2</sub>, kg** | **GPU** | **CPU** | **Batch Size** |
+   |:----------|:-------------:|:------:| :-----: |:-----:|:------:|:------:|
+   | **Malevich**| 4h 19m | 1.37 | **0.33** | A100 Graphics, 1 | AMD EPYC 7742 64-Core | 4 |
+   | **Kandinsky** | 9h 45m | 24.50 | **5.89** | A100 Graphics, 8 | AMD EPYC 7742 64-Core | 12 |
+
+Also we presented results for training of Malevich with optimized variation of [GELU](https://arxiv.org/abs/1606.08415) activation function. Training of the Malevich with the [8-bit version of GELU](https://arxiv.org/abs/2110.02861) allows us to spent about $10\%$ less enerfy and, consequently, produce less equivalent CO<sub>2</sub> emissions.
 
 # Citing Eco2AI
 [![DOI](https://img.shields.io/badge/DOI-eco2AI%20article-brightgreen)](https://arxiv.org/abs/2208.00406)
