@@ -166,14 +166,22 @@ The Eco2AI is licensed under a [Apache licence 2.0](https://www.apache.org/licen
 Please consider citing the following paper in any research manuscript using the Eco2AI library:
 
 ```
-@article{eco2ai_lib,
-    author = {author = {Semen, Budennyy and Vladimir, Lazarev and Nikita, Zakharenko and Alexey, Korovin and Olga, Plosskaya and Denis, Dimitrov and Vladimir, Arkhipkin and Ivan, Barsola and Ilya, Egorov and Aleksandra, Kosterina and Leonid, Zhukov
-    
-},
-    title = {eco2AI: open-source library for carbon emission tracking of machine learning models},
-    year = {2022},
-    journal={arXiv preprint arXiv:2208.00406},
-    doi={10.48550/arXiv.2208.00406}
+@misc{https://doi.org/10.48550/arxiv.2208.00406,
+  doi = {10.48550/ARXIV.2208.00406},
+  
+  url = {https://arxiv.org/abs/2208.00406},
+  
+  author = {Budennyy, Semen and Lazarev, Vladimir and Zakharenko, Nikita and Korovin, Alexey and Plosskaya, Olga and Dimitrov, Denis and Arkhipkin, Vladimir and Oseledets, Ivan and Barsola, Ivan and Egorov, Ilya and Kosterina, Aleksandra and Zhukov, Leonid},
+  
+  keywords = {Machine Learning (cs.LG), Artificial Intelligence (cs.AI), Computational Engineering, Finance, and Science (cs.CE), Computers and Society (cs.CY), FOS: Computer and information sciences, FOS: Computer and information sciences},
+  
+  title = {Eco2AI: carbon emissions tracking of machine learning models as the first step towards sustainable AI},
+  
+  publisher = {arXiv},
+  
+  year = {2022},
+  
+  copyright = {arXiv.org perpetual, non-exclusive license}
 }
 ```
 
