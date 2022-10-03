@@ -185,10 +185,5 @@ Please consider citing the following paper in any research manuscript using the 
 }
 ```
 
-
-## Feedback :envelope:<a name="6"></a> 
-
-If you have any problems working with our tracker, please make comments on [document](https://docs.google.com/spreadsheets/d/1927TwoFaW7R_IFC6-4xKG_sjlPUaYCX9vLqzrOsASB4/edit#gid=0)
-
 ## In collaboration with
 [<img src="https://github.com/sb-ai-lab/Eco2AI/blob/main/images/AIRI%20-%20Full%20logo%20(2).png" width="200"/>](https://airi.net/)
