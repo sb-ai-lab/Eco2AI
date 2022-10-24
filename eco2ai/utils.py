@@ -117,7 +117,10 @@ def define_carbon_index(
         raise NoCountryCodeError("In order to set 'region' parameter, 'alpha_2_code' parameter should be set")
     carbon_index_table_name = resource_stream('eco2ai', 'data/carbon_index.csv').name
     if alpha_2_code is None:
-        ip_dict = eval(requests.get("https://ipinfo.io/").content.decode('ascii'))
+        try:
+            ip_dict = eval(requests.get("https://ipinfo.io/").content)
+        except:
+            ip_dict = eval(requests.get("https://ipinfo.io/").content.decode('ascii'))
         country = ip_dict['country']
         region = ip_dict['region']
     else:

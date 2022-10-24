@@ -820,11 +820,11 @@ def track(func):
         No returns. 
     
     """
-    def inner(*args):
+    def inner(*args, **kwargs):
         tracker = Tracker()
         tracker.start()
         try:
-            returned = func(*args)
+            returned = func(*args, **kwargs)
         except Exception:
             tracker.stop()
             del tracker
