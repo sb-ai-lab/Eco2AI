@@ -610,6 +610,10 @@ class Tracker:
         self._consumption = 0
         self._total_price = np.nan if self._electricity_pricing is None else 0
         self._start_time = time.time()
+        if self._encode_file is not None:
+            self._func_for_encoding(attributes_dict)
+        self._consumption = 0
+
 
 
     def start(self):
@@ -700,6 +704,7 @@ You should run ".start_training" method before ".stop_training" method
         attributes_dict = self._write_to_csv()
         if self._encode_file is not None:
             self._func_for_encoding(attributes_dict)
+        self._start_time = None
         self._consumption = 0
         self._mode = "shut down"
 
