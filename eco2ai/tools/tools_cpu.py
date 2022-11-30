@@ -28,17 +28,16 @@ class CPU():
         The CPU class is not intended for separate usage, outside the Tracker class
 
     """
-    def __init__(self, measure_period=10):
+    def __init__(self, cpu_processes="current"):
         """
             This class method initializes CPU object.
             Creates fields of class object. All the fields are private variables
 
             Parameters
             ----------
-            measure_period: float
-                Period of power consumption measurements in seconds.
-                The more period the more time between measurements
-                The default is 10
+            cpu_processes: str
+                if cpu_processes == "current", then calculates CPU utilization percent only for the current running process
+                if cpu_processes == "all", then calculates full CPU utilization percent(sum of all running processes)
 
             Returns
             -------
@@ -46,13 +45,15 @@ class CPU():
                 Object of class CPU with specified parameters
 
         """
+        self._cpu_processes = cpu_processes
         self._cpu_dict = get_cpu_info()
-        self._measure_period = measure_period
         self._name = self._cpu_dict["brand_raw"]
         self._tdp = find_tdp_value(self._name, CPU_TABLE_NAME)
         self._consumption = 0
         self._cpu_num = number_of_cpu()
         self._start = time.time()
+        self._operating_system = platform.system()
+
 
     def tdp(self):
         """
@@ -120,13 +121,12 @@ class CPU():
                 The current cpu utilization from python processes
         
         """
-        operating_system = platform.system()
         os_dict = {
             'Linux': get_cpu_percent_linux,
             'Windows': get_cpu_percent_windows,
             'Darwin': get_cpu_percent_mac_os
         }
-        cpu_percent = os_dict[operating_system]()
+        cpu_percent = os_dict[self._operating_system](self._cpu_processes)
         return cpu_percent
 
     def calculate_consumption(self):
@@ -437,89 +437,123 @@ def find_tdp_value(cpu_name, f_table_name, constant_value=CONSTANT_CONSUMPTION):
 
 
 
-def get_cpu_percent_mac_os():
+def get_cpu_percent_mac_os(cpu_processes="current"):
     """
         This function calculates CPU utlization on MacOS.
         
         Parameters
         ----------
-        No parameters
+        cpu_processes: str
+            if cpu_processes == "current", then calculates CPU utilization percent only for the current running process
+            if cpu_processes == "all", then calculates full CPU utilization percent(sum of all running processes)
         
         Returns
         -------
         cpu_percent: float
-            CPU utilization fraction. 'cpu_percent' in [0, 1]. 
+            CPU utilization fraction. 'cpu_percent' is in [0, 1]. 
 
     """
-    cpu_num = psutil.cpu_count()
-    current_pid = os.getpid()
-    cpu_percent = 0
-    strings = os.popen('top -stats "command,cpu,pgrp" -l 2| grep -E "(python)|(%CPU)"').read().split('\n')
-    strings.pop()
-    strings = strings[int(len(strings) / 2) + 1:]
-    for index in range(len(strings)):
-        if int(strings[index].split()[-1]) == current_pid:
-            cpu_percent = float(strings[index].split()[1])
-    return cpu_percent / cpu_num / 100
+    if cpu_processes == "current":
+        strings = os.popen('top -stats "command,cpu,pgrp" -l 2| grep -E "(python)|(%CPU)"').read().split('\n')
+        strings.pop()
+        cpu_num = psutil.cpu_count()
+        current_pid = os.getpid()
+        cpu_percent = 0
+        strings = strings[int(len(strings) / 2) + 1:]
+        for index in range(len(strings)):
+            if int(strings[index].split()[-1]) == current_pid:
+                cpu_percent = float(strings[index].split()[1]) / cpu_num
+                break
+    elif cpu_processes == "all":
+        strings = os.popen('top -stats "command,cpu,pgrp" -l 2| grep -E "(CPU usage:)"').read().split("\n")
+        strings.pop()
+        strings = strings[-1].split()
+        cpu_percent = float(strings[2][:-1]) + float(strings[4][:-1])
+    return cpu_percent / 100
 
 
-def get_cpu_percent_linux():
+def get_cpu_percent_linux(cpu_processes="current"):
     """
         This function calculates CPU utlization on Linux.
         
         Parameters
         ----------
-        No parameters
+        cpu_processes: str
+            if cpu_processes == "current", then calculates CPU utilization percent only for the current running process
+            if cpu_processes == "all", then calculates full CPU utilization percent(sum of all running processes)
         
         Returns
         -------
         cpu_percent: float
-            CPU utilization fraction. 'cpu_percent' in [0, 1]. 
+            CPU utilization fraction. 'cpu_percent' is in [0, 1]. 
 
     """
+    cpu_percent = 0
     cpu_num = psutil.cpu_count()
-    current_pid = os.getpid()
-    strings = os.popen('top -b -n 1 | grep -E -w -i "python.*|jupyter.*|COMMAND"').read().split('\n')
-    strings.pop()
-    index_cpu = strings[0].split().index('%CPU')
-    for index, string in enumerate(strings[1:]):
-        if int(string.split()[0]) == current_pid:
-            cpu_percent = float(string.split()[index_cpu].replace(',', '.'))
-            break
-    return cpu_percent / cpu_num / 100
+    cpu_sum = 0
+    if cpu_processes == "current":
+        current_pid = os.getpid()
+        strings = os.popen('top -i -b -n 1 | grep -E -w -i "python.*|jupyter.*|COMMAND"').read().split('\n')
+        strings.pop()
+        index_cpu = strings[0].split().index('%CPU')
+        for index, string in enumerate(strings[1:]):
+            cpu_sum += float(string.split()[index_cpu].replace(',', '.'))
+            if int(string.split()[0]) == current_pid:
+                cpu_percent = float(string.split()[index_cpu].replace(',', '.'))
+                break
+        cpu_percent /= (cpu_num * 100)
+    elif cpu_processes == "all":
+        strings = os.popen('top -i -b -n 1').read()
+        strings = strings.split('\n')
+        strings.pop()
+        flag_string = '  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND'
+        index_cpu = strings.index(flag_string)
+        strings = strings[index_cpu+1:]
+        try:
+            index_cpu = strings[0].split().index('R') + 1
+            for string in strings:
+                cpu_sum += float(string.split()[index_cpu])
+        except IndexError: 
+            pass
+        cpu_percent = cpu_sum / cpu_num / 100
+    return cpu_percent
 
 
-def get_cpu_percent_windows():
+def get_cpu_percent_windows(cpu_processes="current"):
     """
         This function calculates CPU utlization on Windows.
         
         Parameters
         ----------
-        No parameters
+        cpu_processes: str
+            if cpu_processes == "current", then calculates CPU utilization percent only for the current running process
+            if cpu_processes == "all", then calculates full CPU utilization percent(sum of all running processes)
         
         Returns
         -------
         cpu_percent: float
-            CPU utilization fraction. 'cpu_percent' in [0, 1]. 
+            CPU utilization fraction. 'cpu_percent' is in [0, 1]. 
 
     """
-    current_pid = os.getpid()
     cpu_percent = 0
-    list_of_all_processes = []
-    #Iterate over the all the running process
-    for proc in psutil.process_iter():
-        try:
-            pinfo = proc.as_dict(attrs=['name', 'cpu_percent', 'pid'])
-           # Check if process pid equals the current one.
-            if pinfo['cpu_percent'] is not None:
-                list_of_all_processes.append(pinfo['cpu_percent'])
-                if pinfo['pid'] == current_pid:
-                    # print(pinfo)
-                    cpu_percent = pinfo['cpu_percent']
-        except (psutil.NoSuchProcess, psutil.AccessDenied , psutil.ZombieProcess) :
-            pass
-    sum_all = sum(list_of_all_processes)
-    if sum_all != 0:
-        return cpu_percent / sum_all
-    else:
-        return 0
+    if cpu_processes == "current":
+        current_pid = os.getpid()
+        sum_all = 0
+        #Iterate over the all running processes
+        for proc in psutil.process_iter():
+            try:
+                pinfo = proc.as_dict(attrs=['name', 'cpu_percent', 'pid'])
+            # Check if process pid equals to the current one.
+                if pinfo['cpu_percent'] is not None:
+                    sum_all += pinfo['cpu_percent']
+                    if pinfo['pid'] == current_pid:
+                        cpu_percent = pinfo['cpu_percent']
+            except (psutil.NoSuchProcess, psutil.AccessDenied , psutil.ZombieProcess) :
+                pass
+        if sum_all != 0:
+            cpu_percent /= sum_all
+        else:
+            cpu_percent = 0
+    elif cpu_processes == "all":
+        cpu_percent = psutil.cpu_percent()/100
+    return cpu_percent
