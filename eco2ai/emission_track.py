@@ -1,14 +1,11 @@
 import os
 import time
 import platform
-from tracemalloc import start
 import pandas as pd
 import numpy as np
 import uuid
 import warnings
 import tzlocal
-from re import sub
-from pkg_resources import resource_stream
 from apscheduler.schedulers.background import BackgroundScheduler
 
 from eco2ai.tools.tools_gpu import GPU, all_available_gpu
@@ -64,6 +61,7 @@ class Tracker:
         emission_level=None,
         alpha_2_code=None,
         region=None,
+        cpu_processes="current", 
         pue=1,
         encode_file=None,
         electricity_pricing=None, 
@@ -96,6 +94,9 @@ class Tracker:
             region: str
                 User specified country region/state/district.
                 Default is None
+            cpu_processes: str
+                if cpu_processes == "current", then calculates CPU utilization percent only for the current running process
+                if cpu_processes == "all", then calculates full CPU utilization percent(sum of all running processes)
             pue: float
                 Power utilization efficiency. 
                 It is ration of the total 'facility power' and 'IT equipment energy consumption'. 
@@ -154,6 +155,7 @@ class Tracker:
         self.get_set_params(self.project_name, self.experiment_description, self.file_name, self._measure_period, self._pue)
 
         self._emission_level, self._country = define_carbon_index(emission_level, alpha_2_code, region)
+        self._cpu_processes = cpu_processes
         self._scheduler = BackgroundScheduler(
             job_defaults={'max_instances': 10}, 
             timezone=str(tzlocal.get_localzone()),
@@ -338,6 +340,53 @@ class Tracker:
         """
         return self._measure_period
 
+    def _construct_attributes_dict(self,):
+        """
+            This class method constructs dictionary with the following keys:
+            Results is a table with the following columns:
+                project_name
+                experiment_description(model type etc.)
+                start_time
+                duration(s)
+                power_consumption(kWTh)
+                CO2_emissions(kg)
+                CPU_name
+                GPU_name
+                OS
+                region/country
+
+            Parameters
+            ----------
+            No parameters
+
+            Returns
+            -------
+            attributes_dict: dict
+                Dictionary with all the attibutes that should be written to .csv file
+               
+        """
+        # if user used older versions, it may be needed to upgrade his .csv file
+        # but after all, such verification should be deleted
+        # self.check_for_older_versions()
+        attributes_dict = dict()
+        attributes_dict["id"] = [self._id]
+        attributes_dict["project_name"] = [f"{self.project_name}"]
+        attributes_dict["experiment_description"] = [f"{self.experiment_description}"]
+        attributes_dict["epoch"] = [
+            "epoch: " + str(self._current_epoch) + self._parameters_to_save if self._mode == "training" else "N/A"
+            ]
+        attributes_dict["start_time"] = [f"{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(self._start_time))}"]
+        attributes_dict["duration(s)"] = [f"{time.time() - self._start_time}"]
+        attributes_dict["power_consumption(kWh)"] = [f"{self._consumption}"]
+        attributes_dict["CO2_emissions(kg)"] = [f"{self._consumption * self._emission_level / FROM_kWATTH_TO_MWATTH}"]
+        attributes_dict["CPU_name"] = [f"{self._cpu.name()}/{self._cpu.cpu_num()} device(s), TDP:{self._cpu.tdp()}"]
+        attributes_dict["GPU_name"] = [f"{self._gpu.name()} {self._gpu.gpu_num()} device(s)"]
+        attributes_dict["OS"] = [f"{self._os}"]
+        attributes_dict["region/country"] = [f"{self._country}"]
+        attributes_dict["cost"] = [f"{self._total_price}"]
+
+        return attributes_dict
+
 
     def _write_to_csv(
         self,
@@ -375,22 +424,7 @@ class Tracker:
         # if user used older versions, it may be needed to upgrade his .csv file
         # but after all, such verification should be deleted
         # self.check_for_older_versions()
-        attributes_dict = dict()
-        attributes_dict["id"] = [self._id]
-        attributes_dict["project_name"] = [f"{self.project_name}"]
-        attributes_dict["experiment_description"] = [f"{self.experiment_description}"]
-        attributes_dict["epoch"] = [
-            "epoch: " + str(self._current_epoch) + self._parameters_to_save if self._mode == "training" else "N/A"
-            ]
-        attributes_dict["start_time"] = [f"{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(self._start_time))}"]
-        attributes_dict["duration(s)"] = [f"{time.time() - self._start_time}"]
-        attributes_dict["power_consumption(kWh)"] = [f"{self._consumption}"]
-        attributes_dict["CO2_emissions(kg)"] = [f"{self._consumption * self._emission_level / FROM_kWATTH_TO_MWATTH}"]
-        attributes_dict["CPU_name"] = [f"{self._cpu.name()}/{self._cpu.cpu_num()} device(s), TDP:{self._cpu.tdp()}"]
-        attributes_dict["GPU_name"] = [f"{self._gpu.name()} {self._gpu.gpu_num()} device(s)"]
-        attributes_dict["OS"] = [f"{self._os}"]
-        attributes_dict["region/country"] = [f"{self._country}"]
-        attributes_dict["cost"] = [f"{self._total_price}"]
+        attributes_dict = self._construct_attributes_dict()
 
         if not os.path.isfile(self.file_name):
             while True:
@@ -411,9 +445,9 @@ class Tracker:
                     tmp = open(self.file_name, "r")
 
                     attributes_dataframe = pd.read_csv(self.file_name)
-                    if list(attributes_dataframe.columns) != list(attributes_dict.keys()):
-                        attributes_dataframe = self._update_to_new_version(attributes_dataframe, list(attributes_dict.keys()))
-                    # constructing an array of attributes
+                    # if list(attributes_dataframe.columns) != list(attributes_dict.keys()):
+                    #     attributes_dataframe = self._update_to_new_version(attributes_dataframe, list(attributes_dict.keys()))
+                    # constructing an array of attributes, values of attributes_dict are lists
                     attributes_array = []
                     for element in attributes_dict.values():
                         attributes_array += element
@@ -440,6 +474,7 @@ class Tracker:
                     break
                 else: 
                     time.sleep(0.5)
+
         self._mode = "run time" if self._mode != "training" else "training"
         return attributes_dict
 
@@ -462,7 +497,6 @@ class Tracker:
         
         """
         current_columns = list(attributes_dataframe.columns)
-        # print("1: ", new_columns, current_columns)
         for column in new_columns:
             if column not in current_columns:
                 attributes_dataframe[column] = "N/A"
@@ -473,7 +507,8 @@ class Tracker:
 
     def _func_for_sched(self, add_new=False):
         """
-            This class method is a function, that puts in a scheduler and runs periodically during a Tracker work.
+            This class method is a function, that is put in a scheduler and 
+            is run during a Tracker work with period "measure_period"(The Tracker class parameter).
             It calculates CPU, GPU and RAM power consumption and writes results to a .csv file.
 
             Parameters
@@ -484,7 +519,8 @@ class Tracker:
 
             Returns
             -------
-            No returns
+            attributes_dict: dict
+                Dictionary with all the attibutes that should be written to .csv file
         
         """
         cpu_consumption = self._cpu.calculate_consumption()
@@ -501,21 +537,20 @@ class Tracker:
         if self._electricity_pricing is not None:
             self._total_price += calculate_price(self._electricity_pricing, tmp_comsumption)
         self._consumption += tmp_comsumption
-        attributes_dict = self._write_to_csv(add_new)
+        
         # self._consumption = 0
         # self._start_time = time.time()
         if self._mode == "shut down":
             self._scheduler.remove_job("job")
             self._scheduler.shutdown()
-        return attributes_dict
-        
+        # self._write_to_csv returns attributes_dict
+        return self._write_to_csv(add_new)
 
     
     def start_training(self, start_epoch=1):
         """
             This class method starts the Tracker work and signalize that it should track the training process. 
-            It initializes fields of CPU and GPU classes, initializes scheduler, 
-            puts the self._func_for_sched function into it and starts its work.
+            It initializes fields of CPU and GPU classes, 
             IMPORTANT: during training tracking all the calculations is written to file only after ".new_epoch" method was run
 
             Parameters
@@ -534,17 +569,13 @@ class Tracker:
             )
 
         self._mode = "training"
-        # print("start_training", self._mode)
         
         self._current_epoch = start_epoch
-        self._cpu = CPU()
+        self._cpu = CPU(cpu_processes=self._cpu_processes)
         self._gpu = GPU()
         self._ram = RAM()
         self._id = str(uuid.uuid4())
         self._start_time = time.time()
-        # self._func_for_sched()
-        
-
 
     
     def new_epoch(self, parameters_dict):
@@ -563,7 +594,6 @@ class Tracker:
         
         """
         if self._mode != "training":
-            # print("new_epoch", self._mode)
             raise IncorrectMethodSequenceError(
                 "You can run method \".new_epoch\" only after method \".start_training\" was run"
             )
@@ -571,7 +601,10 @@ class Tracker:
         for key in parameters_dict:
             self._parameters_to_save += key + ": "
             self._parameters_to_save += str(parameters_dict[key]) + ", "
-        attributes_dict = self._func_for_sched(add_new=True)
+        # self._func_for_sched returns attributes_dict. 
+        # We put it into self._func_for_encoding method in order to encode calculations
+        if self._encode_file:
+            self._func_for_encoding(self._func_for_sched(add_new=True))
         self._current_epoch += 1
         self._parameters_to_save = ""
         self._consumption = 0
@@ -611,7 +644,7 @@ Please, use the interface for training: ".start_trainig", ".new_epoch", and "sto
             except:
                 pass
             self._scheduler = BackgroundScheduler(job_defaults={'max_instances': 10}, misfire_grace_time=None)
-        self._cpu = CPU()
+        self._cpu = CPU(cpu_processes=self._cpu_processes)
         self._gpu = GPU()
         self._ram = RAM()
         self._id = str(uuid.uuid4())
@@ -623,15 +656,12 @@ Please, use the interface for training: ".start_trainig", ".new_epoch", and "sto
 
     def stop_training(self,):
         """
-            This class method stops the Tracker 
-             work and signalize that it should track the training process. 
-            It initializes fields of CPU and GPU classes, initializes scheduler, 
-            puts the self._func_for_sched function into it and starts its work.
+            This class method stops the Tracker work during a training process. 
+            It also writes to file final calculation results.
 
             Parameters
             ----------
-            start_epoch: int
-                Number of epoch a training should start with.
+            No returns
 
             Returns
             -------
@@ -639,81 +669,12 @@ Please, use the interface for training: ".start_trainig", ".new_epoch", and "sto
         
         """
         # remove job from scheduler
-        if self._mode != "training":
+        if self._mode != "training" or self._start_time is None:
             raise IncorrectMethodSequenceError(
                 """
 You should run ".start_training" method before ".stop_training" method
                 """
             )
-        # # self._func_for_sched()
-        # if self._start_time is None:
-        #     raise Exception("Need the first to start the tracker by running tracker.start() or tracker.start_training()")
-        # # calculating additional array
-        # duration = time.time() - self._start_time
-        # cpu_consumption = self._cpu.calculate_consumption()
-        # ram_consumption = self._ram.calculate_consumption()
-        # if self._gpu.is_gpu_available:
-        #     gpu_consumption = self._gpu.calculate_consumption()
-        # else:
-        #     gpu_consumption = 0
-        # tmp_comsumption = 0
-        # tmp_comsumption += cpu_consumption
-        # tmp_comsumption += gpu_consumption
-        # tmp_comsumption += ram_consumption
-        # tmp_comsumption *= self._pue
-        # if self._electricity_pricing is not None:
-        #     self._total_price += calculate_price(self._electricity_pricing, tmp_comsumption)
-        # self._consumption += tmp_comsumption
-        # additional_array = np.array(
-        #     [duration, self._consumption, self._consumption * self._emission_level / FROM_kWATTH_TO_MWATTH]
-        #     )
-
-        # # saving to file new dataframe
-        # while True:
-        #     if not is_file_opened(self.file_name):
-        #         tmp = open(self.file_name, "r")
-
-        #         dataframe = pd.read_csv(self.file_name)
-                
-        #         row_index = dataframe[dataframe['id'] == self._id].index.values[-1]
-
-        #         values = dataframe[dataframe["id"] == self._id].values
-        #         if values.shape[0] == 0:
-        #             return
-        #         attributes_array = np.hstack(
-        #             (
-        #                 values[0][:3], 
-        #                 values[-1][3],
-        #                 values[0][4],
-        #                 values[:, 5:8].sum(axis=0)+additional_array, 
-        #                 values[0][8:-1],
-        #                 values[:, -1].sum(axis=0)+self._total_price
-        #             )
-        #         )
-
-        #         dataframe = pd.DataFrame(
-        #             np.vstack((
-        #                 dataframe.values[:row_index+1], 
-        #                 attributes_array,
-        #                 dataframe.values[row_index+1:]
-        #                 )),
-        #             columns=dataframe.columns
-        #         )
-                
-        #         dataframe.to_csv(self.file_name, index=False)
-
-        #         tmp.close()
-        #         break
-        #     else: 
-        #         time.sleep(0.5)
-
-        # encoding all the data
-        # if self._encode_file is not None:
-        #     attributes_dict = dataframe[dataframe["id"] == self._id].to_dict()
-        #     for i in attributes_dict:
-        #         attributes_dict[i] = list(attributes_dict[i].values())
-        #     self._func_for_encoding(attributes_dict)
-        self._start_time = None
         self._consumption = 0
         self._mode = "shut down"
 
@@ -752,8 +713,8 @@ You should run ".start_training" method before ".stop_training" method
     def _func_for_encoding(self, attributes_dict):
         """
             This function encodes all calculated data and attributes and writes it to file.
-            File name depenвs on 'encode_file' parameter. 
-            More details can be seen in 'encode_file' parameter description in Tracker class.
+            File name depends on 'encode_file' parameter. 
+            More details on file name can be seen in 'encode_file' parameter description in the Tracker class.
 
             Parameters
             ----------
@@ -792,7 +753,7 @@ You should run ".start_training" method before ".stop_training" method
                     attributes_dataframe = pd.concat(
                         [
                             attributes_dataframe,
-                            pd.DataFrame(attributes_dict).to_csv(self._encode_file, index=False), 
+                            pd.DataFrame(attributes_dict), 
                         ], 
                         ignore_index=True, 
                         axis=0
