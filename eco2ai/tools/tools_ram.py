@@ -12,24 +12,24 @@ class RAM():
         The RAM class is not intended for separate usage, outside the Tracker class
 
     """
-    def __init__(self, measure_period=10):
+    def __init__(self, enable_warnings=True):
         """
             This class method initializes RAM object.
             Creates fields of class object. All the fields are private variables
 
             Parameters
             ----------
-            measure_period: float
-                Period of power consumption measurements in seconds.
-                The more period the more time between measurements
-                The default is 10
+            enable_warnings: bool
+                If true, then user will be notified of all the warnings. If False, there won't be any warnings.
+                The default is True.
 
             Returns
             -------
+            No returns
 
         """
-        self._measure_period = measure_period
         self._consumption = 0
+        self._enable_warnings = enable_warnings
         self._start = time.time()
 
 

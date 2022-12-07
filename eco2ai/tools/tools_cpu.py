@@ -28,7 +28,7 @@ class CPU():
         The CPU class is not intended for separate usage, outside the Tracker class
 
     """
-    def __init__(self, cpu_processes="current"):
+    def __init__(self, cpu_processes="current", enable_warnings=True):
         """
             This class method initializes CPU object.
             Creates fields of class object. All the fields are private variables
@@ -38,6 +38,8 @@ class CPU():
             cpu_processes: str
                 if cpu_processes == "current", then calculates CPU utilization percent only for the current running process
                 if cpu_processes == "all", then calculates full CPU utilization percent(sum of all running processes)
+            enable_warnings: bool
+                If true, then user will be notified of all the warnings. If False, there won't be any warnings.
 
             Returns
             -------
@@ -45,12 +47,13 @@ class CPU():
                 Object of class CPU with specified parameters
 
         """
+        self._enable_warnings = enable_warnings
         self._cpu_processes = cpu_processes
         self._cpu_dict = get_cpu_info()
         self._name = self._cpu_dict["brand_raw"]
-        self._tdp = find_tdp_value(self._name, CPU_TABLE_NAME)
+        self._tdp = find_tdp_value(self._name, CPU_TABLE_NAME, self._enable_warnings)
         self._consumption = 0
-        self._cpu_num = number_of_cpu()
+        self._cpu_num = number_of_cpu(self._enable_warnings)
         self._start = time.time()
         self._operating_system = platform.system()
 
@@ -181,14 +184,16 @@ def all_available_cpu():
         print("There is no any available cpu device(s)")
 
 
-def number_of_cpu():
+def number_of_cpu(enable_warnings=True):
     """
         This function returns number of CPU sockets(physical CPU processors)
         If the body of the function runs with error, number of available cpu devices will be set to 1
         
         Parameters
         ----------
-        No parameters
+        enable_warnings: bool
+            If true, then user will be notified of all the warnings. If False, there won't be any warnings.
+            The default is True.
         
         Returns
         -------
@@ -213,8 +218,11 @@ def number_of_cpu():
                     dictionary[tmp[0]] = tmp[1]
             cpu_num = min(int(dictionary["Socket(s)"]), int(dictionary["NUMA node(s)"]))
         except:
-            warnings.warn(message="\nYou probably should have installed 'util-linux' to deretmine cpu number correctly\nFor now, number of cpu devices is set to 1\n\n", 
-                          category=NoNeededLibrary)
+            if enable_warnings:
+                warnings.warn(
+                    message="\nYou probably should have installed 'util-linux' to deretmine cpu number correctly\nFor now, number of cpu devices is set to 1\n\n", 
+                    category=NoNeededLibrary
+                    )
             cpu_num = 1
     elif operating_system == "Windows":
         try:
@@ -237,8 +245,11 @@ def number_of_cpu():
                 processor_string = dictionary['Процессор(ы)']
             cpu_num = int(re.findall('- (\d)\.', processor_string)[0])
         except:
-            warnings.warn(message="\nIt's impossible to deretmine cpu number correctly\nFor now, number of cpu devices is set to 1\n\n", 
-                          category=NoNeededLibrary)
+            if enable_warnings:
+                warnings.warn(
+                    message="\nIt's impossible to deretmine cpu number correctly\nFor now, number of cpu devices is set to 1\n\n", 
+                    category=NoNeededLibrary
+                    )
             cpu_num = 1
     elif operating_system == "Darwin":
         try:
@@ -259,8 +270,11 @@ def number_of_cpu():
                 pass
             cpu_num = int(re.findall('(\d)', processor_string)[0])
         except:
-            warnings.warn(message="\nIt's impossible to deretmine cpu number correctly\nFor now, number of cpu devices is set to 1\n\n", 
-                          category=NoNeededLibrary)
+            if enable_warnings:
+                warnings.warn(
+                    message="\nIt's impossible to deretmine cpu number correctly\nFor now, number of cpu devices is set to 1\n\n", 
+                    ategory=NoNeededLibrary
+                    )
             cpu_num = 1
     else: 
         cpu_num = 1
@@ -364,7 +378,7 @@ def find_max_tdp(elements):
 
 
 # searching cpu name in cpu table
-def find_tdp_value(cpu_name, f_table_name, constant_value=CONSTANT_CONSUMPTION):
+def find_tdp_value(cpu_name, f_table_name, constant_value=CONSTANT_CONSUMPTION, enable_warnings=True):
     """
         This function finds and returns TDP of user CPU device.
         
@@ -380,6 +394,10 @@ def find_tdp_value(cpu_name, f_table_name, constant_value=CONSTANT_CONSUMPTION):
             The value, that is assigned to CPU TDP if 
             user CPU device is not found in CPU TDP database
             The default is CONSTANT_CONSUMPTION(a global value, initialized in the beginning of the file)
+
+        enable_warnings: bool
+            If true, then user will be notified of all the warnings. If False, there won't be any warnings.
+            The default is True.
         
         Returns
         -------
@@ -399,8 +417,11 @@ def find_tdp_value(cpu_name, f_table_name, constant_value=CONSTANT_CONSUMPTION):
     # then we try to find patterns in cpu names and return suitable values:
     # if there is no any patterns in cpu name, we simply return constant consumption value
     if len(patterns) == 0:
-        warnings.warn(message="\n\nYour CPU device is not found in our database\nCPU TDP is set to constant value 100\n", 
-                      category=NoCPUinTableWarning)
+        if enable_warnings:
+            warnings.warn(
+                message="\n\nYour CPU device is not found in our database\nCPU TDP is set to constant value 100\n", 
+                category=NoCPUinTableWarning
+                )
         return constant_value
     # appending to array all suitable for at least one of the patterns elements
     suitable_elements = []
@@ -420,8 +441,11 @@ def find_tdp_value(cpu_name, f_table_name, constant_value=CONSTANT_CONSUMPTION):
     # If there are such elements(one or more), we return the value with maximum TDP among them.
     # If there is no, we return the value with maximum TDP among all the suitable elements
     if len(suitable_elements) == 0:
-        warnings.warn(message="\n\nYour CPU device is not found in our database\nCPU TDP is set to constant value 100\n", 
-                      category=NoCPUinTableWarning)
+        if enable_warnings:
+            warnings.warn(
+                message="\n\nYour CPU device is not found in our database\nCPU TDP is set to constant value 100\n", 
+                category=NoCPUinTableWarning
+                )
         return CONSTANT_CONSUMPTION
     elif len(suitable_elements) == 1:
         return float(suitable_elements[0][0][1])

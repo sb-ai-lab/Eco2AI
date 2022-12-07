@@ -14,14 +14,16 @@ class GPU():
         The GPU class is not intended for separate usage, outside the Tracker class
 
     """
-    def __init__(self,):
+    def __init__(self, enable_warnings=True):
         """
             This class method initializes GPU object.
             Creates fields of class object. All the fields are private variables
 
             Parameters
             ----------
-            No parameters
+            enable_warnings: bool
+                If true, then user will be notified of all the warnings. If False, there won't be any warnings.
+                The default is True.
 
             Returns
             -------
@@ -30,8 +32,10 @@ class GPU():
 
         """
         self._consumption = 0
+        self._enable_warnings = enable_warnings
         self.is_gpu_available = is_gpu_available()
-        if not self.is_gpu_available:
+
+        if not self.is_gpu_available and self._enable_warnings:
             warnings.warn(message="\n\nThere is no any available GPU devices or your GPU is not supported by Nvidia library!\nThe tracker will consider CPU usage only\n",
                           category=NoGPUWarning)
         if self.is_gpu_available:

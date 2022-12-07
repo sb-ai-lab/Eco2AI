@@ -65,6 +65,7 @@ class Tracker:
         pue=1,
         encode_file=None,
         electricity_pricing=None, 
+        enable_warnings=True,
         ):
         """
             This class method initializes a Tracker object and creates fields of class object
@@ -119,6 +120,9 @@ class Tracker:
                     Instantce of consistent intervals: "8:30-19:00", "19:00-6:00", "6:00-8:30"
                     Instantce of inconsistent intervals: "8:30-20:00", "18:00-3:00", "6:00-12:30"
                     3) Total duration of time intervals in hours must be 24 hours(1 day). 
+            enable_warnings: bool
+                If true, then user will be notified of all the warnings. If False, there won't be any warnings.
+                The default is True.
             
             Returns
             -------
@@ -126,13 +130,15 @@ class Tracker:
                 Object of class Tracker
 
         """
-        warnings.warn(
-    message="""
-    If you use a VPN, you may have problems with identifying your country by IP.
-    It is recommended to disable VPN or
-    manually install the ISO-Alpha-2 code of your country during initialization of the Tracker() class.
-    You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/country-codes
-    """
+        self._enable_warnings = enable_warnings
+        if self._enable_warnings:
+            warnings.warn(
+                message="""
+If you use a VPN, you may have problems with identifying your country by IP.
+It is recommended to disable VPN or
+manually install the ISO-Alpha-2 code of your country during initialization of the Tracker() class.
+You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/country-codes
+"""
 )
         if (type(measure_period) == int or type(measure_period) == float) and measure_period <= 0:
             raise ValueError("\'measure_period\' should be positive number")
@@ -571,9 +577,9 @@ class Tracker:
         self._mode = "training"
         
         self._current_epoch = start_epoch
-        self._cpu = CPU(cpu_processes=self._cpu_processes)
-        self._gpu = GPU()
-        self._ram = RAM()
+        self._cpu = CPU(cpu_processes=self._cpu_processes, enable_warnings=self._enable_warnings)
+        self._gpu = GPU(enable_warnings=self._enable_warnings)
+        self._ram = RAM(enable_warnings=self._enable_warnings)
         self._id = str(uuid.uuid4())
         self._start_time = time.time()
 
@@ -644,9 +650,9 @@ Please, use the interface for training: ".start_trainig", ".new_epoch", and "sto
             except:
                 pass
             self._scheduler = BackgroundScheduler(job_defaults={'max_instances': 10}, misfire_grace_time=None)
-        self._cpu = CPU(cpu_processes=self._cpu_processes)
-        self._gpu = GPU()
-        self._ram = RAM()
+        self._cpu = CPU(cpu_processes=self._cpu_processes, enable_warnings=self._enable_warnings)
+        self._gpu = GPU(enable_warnings=self._enable_warnings)
+        self._ram = RAM(enable_warnings=self._enable_warnings)
         self._id = str(uuid.uuid4())
         self._mode = "first_time"
         self._start_time = time.time()
