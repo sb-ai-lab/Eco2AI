@@ -7,7 +7,7 @@
 
 [![PyPI - Downloads](https://img.shields.io/badge/%20PyPI%20-link%20for%20download-brightgreen)](https://pypi.org/project/eco2ai/)
 ![PyPI - Downloads](https://img.shields.io/pypi/v/eco2ai?color=bright-green&label=PyPI&logo=pypi&logoColor=yellow)
-[![DOI](https://img.shields.io/badge/DOI-eco2AI%20article-brightgreen)](https://arxiv.org/abs/2208.00406)
+[![DOI](https://img.shields.io/badge/DOI-eco2AI%20article-brightgreen)](https://link.springer.com/article/10.1134/S1064562422060230)
 [![telegram support](https://img.shields.io/twitter/url?label=eco2ai%20support&logo=telegram&style=social&url=https%3A%2F%2Ft.me%2F%2BjsaoAgioprQ4Zjk6)](https://t.me/eco2ai)
 
 # Eco2AI
