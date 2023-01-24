@@ -529,14 +529,14 @@ def get_cpu_percent_linux(cpu_processes="current"):
     elif cpu_processes == "all":
         strings = os.popen('top -i -b -n 1').read()
         strings = strings.split('\n')
-        strings.pop()
-        flag_string = '  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND'
-        index_cpu = strings.index(flag_string)
+        index_cpu = [i for i, elem in enumerate(strings) if 'PID USER' in elem]
+        index_cpu = index_cpu[-1]
         strings = strings[index_cpu+1:]
         try:
-            index_cpu = strings[0].split().index('R') + 1
             for string in strings:
-                cpu_sum += float(string.split()[index_cpu])
+                string_list = string.split()
+                if string_list[7] == "R":
+                    cpu_sum += float(string.split()[8])
         except IndexError: 
             pass
         cpu_percent = cpu_sum / cpu_num / 100
