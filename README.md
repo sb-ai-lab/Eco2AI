@@ -159,29 +159,28 @@ Properly accounted carbon emissions and power consumption Malevich and Kandinsky
 Also we presented results for training of Malevich with optimized variation of [GELU](https://arxiv.org/abs/1606.08415) activation function. Training of the Malevich with the [8-bit version of GELU](https://arxiv.org/abs/2110.02861) allows us to spent about 10\% less energy and, consequently, produce less equivalent CO<sub>2</sub> emissions.
 
 # Citing Eco2AI
-[![DOI](https://img.shields.io/badge/DOI-eco2AI%20article-brightgreen)](https://arxiv.org/abs/2208.00406)
+[![DOI](https://img.shields.io/badge/DOI-eco2AI%20article-brightgreen)](https://link.springer.com/article/10.1134/S1064562422060230)
 
 The Eco2AI is licensed under a [Apache licence 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 Please consider citing the following paper in any research manuscript using the Eco2AI library:
 
 ```
-@misc{https://doi.org/10.48550/arxiv.2208.00406,
-  doi = {10.48550/ARXIV.2208.00406},
-  
-  url = {https://arxiv.org/abs/2208.00406},
-  
-  author = {Budennyy, Semen and Lazarev, Vladimir and Zakharenko, Nikita and Korovin, Alexey and Plosskaya, Olga and Dimitrov, Denis and Arkhipkin, Vladimir and Oseledets, Ivan and Barsola, Ivan and Egorov, Ilya and Kosterina, Aleksandra and Zhukov, Leonid},
-  
-  keywords = {Machine Learning (cs.LG), Artificial Intelligence (cs.AI), Computational Engineering, Finance, and Science (cs.CE), Computers and Society (cs.CY), FOS: Computer and information sciences, FOS: Computer and information sciences},
-  
-  title = {Eco2AI: carbon emissions tracking of machine learning models as the first step towards sustainable AI},
-  
-  publisher = {arXiv},
-  
-  year = {2022},
-  
-  copyright = {arXiv.org perpetual, non-exclusive license}
+@article{budennyyEco2AICarbonEmissions2023,
+	title = {eco2AI: Carbon Emissions Tracking of Machine Learning Models as the First Step Towards Sustainable {AI}},
+	issn = {1531-8362},
+	url = {https://doi.org/10.1134/S1064562422060230},
+	doi = {10.1134/S1064562422060230},
+	shorttitle = {eco2AI},
+	abstract = {The size and complexity of deep neural networks used in {AI} applications continue to grow exponentially, significantly increasing energy consumption for training and inference by these models. We introduce an open-source package eco2AI to help data scientists and researchers to track the energy consumption and equivalent {CO}2 emissions of their models in a straightforward way. In eco2AI we focus on accurate tracking of energy consumption and regional {CO}2 emissions accounting. We encourage the research for community to search for new optimal Artificial Intelligence ({AI}) architectures with lower computational cost. The motivation also comes from the concept of {AI}-based greenhouse gases sequestrating cycle with both Sustainable {AI} and Green {AI} pathways. The code and documentation are hosted on Github under the Apache 2.0 license https://github.com/sb-ai-lab/Eco2AI.},
+	journaltitle = {Doklady Mathematics},
+	shortjournal = {Dokl. Math.},
+	author = {Budennyy, S. A. and Lazarev, V. D. and Zakharenko, N. N. and Korovin, A. N. and Plosskaya, O. A. and Dimitrov, D. V. and Akhripkin, V. S. and Pavlov, I. V. and Oseledets, I. V. and Barsola, I. S. and Egorov, I. V. and Kosterina, A. A. and Zhukov, L. E.},
+	urldate = {2023-01-23},
+	date = {2023-01-19},
+	langid = {english},
+	keywords = {{AI}, carbon footprint, {CO}2 emissions, ecology, {ESG}, {GHG}, sustainability},
+	file = {Budennyy et al_2023_eco2AI.pdf:/Users/korovin/Zotero/storage/IC3VU6ZT/Budennyy et al_2023_eco2AI.pdf:application/pdf},
 }
 ```
 
