@@ -167,20 +167,12 @@ Please consider citing the following paper in any research manuscript using the 
 
 ```
 @article{budennyyEco2AICarbonEmissions2023,
-	title = {eco2AI: Carbon Emissions Tracking of Machine Learning Models as the First Step Towards Sustainable {AI}},
-	issn = {1531-8362},
-	url = {https://doi.org/10.1134/S1064562422060230},
-	doi = {10.1134/S1064562422060230},
-	shorttitle = {eco2AI},
-	abstract = {The size and complexity of deep neural networks used in {AI} applications continue to grow exponentially, significantly increasing energy consumption for training and inference by these models. We introduce an open-source package eco2AI to help data scientists and researchers to track the energy consumption and equivalent {CO}2 emissions of their models in a straightforward way. In eco2AI we focus on accurate tracking of energy consumption and regional {CO}2 emissions accounting. We encourage the research for community to search for new optimal Artificial Intelligence ({AI}) architectures with lower computational cost. The motivation also comes from the concept of {AI}-based greenhouse gases sequestrating cycle with both Sustainable {AI} and Green {AI} pathways. The code and documentation are hosted on Github under the Apache 2.0 license https://github.com/sb-ai-lab/Eco2AI.},
-	journaltitle = {Doklady Mathematics},
-	shortjournal = {Dokl. Math.},
-	author = {Budennyy, S. A. and Lazarev, V. D. and Zakharenko, N. N. and Korovin, A. N. and Plosskaya, O. A. and Dimitrov, D. V. and Akhripkin, V. S. and Pavlov, I. V. and Oseledets, I. V. and Barsola, I. S. and Egorov, I. V. and Kosterina, A. A. and Zhukov, L. E.},
-	urldate = {2023-01-23},
-	date = {2023-01-19},
-	langid = {english},
-	keywords = {{AI}, carbon footprint, {CO}2 emissions, ecology, {ESG}, {GHG}, sustainability},
-	file = {Budennyy et al_2023_eco2AI.pdf:/Users/korovin/Zotero/storage/IC3VU6ZT/Budennyy et al_2023_eco2AI.pdf:application/pdf},
+title = {eco2AI: Carbon Emissions Tracking of Machine Learning Models as the First Step Towards Sustainable {AI}},
+  doi = {10.1134/S1064562422060230},
+  journaltitle = {Doklady Mathematics},
+  shortjournal = {Dokl. Math.},
+  author = {Budennyy, S. A. and Lazarev, V. D. and Zakharenko, N. N. and Korovin, A. N. and Plosskaya, O. A. and Dimitrov, D. V. and Akhripkin, V. S. and Pavlov, I. V. and Oseledets, I. V. and Barsola, I. S. and Egorov, I. V. and Kosterina, A. A. and Zhukov, L. E.},
+  date = {2023-01-19}
 }
 ```
 
