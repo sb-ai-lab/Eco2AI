@@ -1,6 +1,7 @@
 from cpuinfo import get_cpu_info
 import psutil
 import time
+import subprocess
 import re
 import os
 import pandas as pd
@@ -252,30 +253,30 @@ def number_of_cpu(ignore_warnings=True):
                     )
             cpu_num = 1
     elif operating_system == "Darwin":
-        try:
-            # running terminal command, getting output
-            string = os.popen("sysctl -a| sort | grep cpu")
-            output = string.read()
-            output
-            # dictionary creation
-            dictionary = dict()
-            for i in output.split('\n'):
-                tmp = i.split(':')
-                if len(tmp) == 2:
-                    dictionary[tmp[0]] = tmp[1]
-            processor_string = 'something'
-            if 'hw.cpu64bit_capable' in dictionary:
-                processor_string = dictionary['hw.cpu64bit_capable']
-            else:
-                pass
-            cpu_num = int(re.findall('(\d)', processor_string)[0])
-        except:
-            if not ignore_warnings:
-                warnings.warn(
-                    message="\nIt's impossible to deretmine cpu number correctly\nFor now, number of cpu devices is set to 1\n\n", 
-                    ategory=NoNeededLibrary
-                    )
-            cpu_num = 1
+        # try:
+        #     # running terminal command, getting output
+        #     string = os.popen("sysctl -a| sort | grep cpu")
+        #     output = string.read()
+        #     output
+        #     # dictionary creation
+        #     dictionary = dict()
+        #     for i in output.split('\n'):
+        #         tmp = i.split(':')
+        #         if len(tmp) == 2:
+        #             dictionary[tmp[0]] = tmp[1]
+        #     processor_string = 'something'
+        #     if 'hw.cpu64bit_capable' in dictionary:
+        #         processor_string = dictionary['hw.cpu64bit_capable']
+        #     else:
+        #         pass
+        #     cpu_num = int(re.findall('(\d)', processor_string)[0])
+        # except:
+        #     if not ignore_warnings:
+        #         warnings.warn(
+        #             message="\nIt's impossible to deretmine cpu number correctly\nFor now, number of cpu devices is set to 1\n\n", 
+        #             category=NoNeededLibrary
+        #             )
+        cpu_num = 1
     else: 
         cpu_num = 1
     return cpu_num
@@ -463,7 +464,7 @@ def find_tdp_value(cpu_name, f_table_name, constant_value=CONSTANT_CONSUMPTION, 
 
 def get_cpu_percent_mac_os(cpu_processes="current"):
     """
-        This function calculates CPU utlization on MacOS.
+        This function calculates CPU utilization on MacOS.
         
         Parameters
         ----------
@@ -480,6 +481,7 @@ def get_cpu_percent_mac_os(cpu_processes="current"):
     if cpu_processes == "current":
         strings = os.popen('top -stats "command,cpu,pgrp" -l 2| grep -E "(python)|(%CPU)"').read().split('\n')
         strings.pop()
+        # number of cpu cores
         cpu_num = psutil.cpu_count()
         current_pid = os.getpid()
         cpu_percent = 0
@@ -498,7 +500,7 @@ def get_cpu_percent_mac_os(cpu_processes="current"):
 
 def get_cpu_percent_linux(cpu_processes="current"):
     """
-        This function calculates CPU utlization on Linux.
+        This function calculates CPU utilization on Linux.
         
         Parameters
         ----------
@@ -512,40 +514,49 @@ def get_cpu_percent_linux(cpu_processes="current"):
             CPU utilization fraction. 'cpu_percent' is in [0, 1]. 
 
     """
-    cpu_percent = 0
-    cpu_num = psutil.cpu_count()
-    cpu_sum = 0
+    # number of cpu cores
     if cpu_processes == "current":
-        current_pid = os.getpid()
-        strings = os.popen('top -i -b -n 1 | grep -E -w -i "python.*|jupyter.*|COMMAND"').read().split('\n')
-        strings.pop()
-        index_cpu = strings[0].split().index('%CPU')
-        for index, string in enumerate(strings[1:]):
-            cpu_sum += float(string.split()[index_cpu].replace(',', '.'))
-            if int(string.split()[0]) == current_pid:
-                cpu_percent = float(string.split()[index_cpu].replace(',', '.'))
-                break
-        cpu_percent /= (cpu_num * 100)
+        pid = os.getpid()
+        # execute the top command with the pid filter 
+        output = subprocess.run(["top", "-b", "-n1", "-p", str(pid)], capture_output=True, text=True)
     elif cpu_processes == "all":
-        strings = os.popen('top -i -b -n 1').read()
-        strings = strings.split('\n')
-        strings.pop()
-        flag_string = '  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND'
-        index_cpu = strings.index(flag_string)
-        strings = strings[index_cpu+1:]
-        try:
-            index_cpu = strings[0].split().index('R') + 1
-            for string in strings:
-                cpu_sum += float(string.split()[index_cpu])
-        except IndexError: 
-            pass
-        cpu_percent = cpu_sum / cpu_num / 100
-    return cpu_percent
+        # execute the top command with the grep command to filter the output
+        output = subprocess.run(["top", "-b", "-n1"], capture_output=True, text=True)
+    else: 
+        raise ValueError(f"'cpu_processes' parameter can be only 'current' or 'all', now it is '{cpu_processes}'")
+    cpu_num = psutil.cpu_count()
+    # check if the output is empty
+    if not output.stdout:
+        return 0
+    else:
+        # split the output into lines
+        lines = output.stdout.split('\n')
+        # display(lines)
+        # variable to store the sum of all process CPU usage
+        sum_cpu = 0
+        # flag to check if we are at the processes section
+        process_section = False
+        # iterate through the lines
+        for line in lines:
+            # check if we are at the processes section
+            if 'PID' in line:
+                process_section = True
+            elif process_section:
+                # check if we reached the end of the processes section
+                if not line:
+                    break
+                # split the line into words
+                words = line.split()
+                # check if the line contains a process
+                if len(words) > 0:
+                    # the CPU usage percentage is the 8th word
+                    sum_cpu += float(words[8])
+    return sum_cpu / (cpu_num * 100)
 
 
 def get_cpu_percent_windows(cpu_processes="current"):
     """
-        This function calculates CPU utlization on Windows.
+        This function calculates CPU utilization on Windows.
         
         Parameters
         ----------
