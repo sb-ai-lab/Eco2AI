@@ -166,13 +166,13 @@ The Eco2AI is licensed under a [Apache licence 2.0](https://www.apache.org/licen
 Please consider citing the following paper in any research manuscript using the Eco2AI library:
 
 ```
-@article{budennyyEco2AICarbonEmissions2023,
-title = {eco2AI: Carbon Emissions Tracking of Machine Learning Models as the First Step Towards Sustainable {AI}},
-  doi = {10.1134/S1064562422060230},
-  journaltitle = {Doklady Mathematics},
-  shortjournal = {Dokl. Math.},
-  author = {Budennyy, S. A. and Lazarev, V. D. and Zakharenko, N. N. and Korovin, A. N. and Plosskaya, O. A. and Dimitrov, D. V. and Akhripkin, V. S. and Pavlov, I. V. and Oseledets, I. V. and Barsola, I. S. and Egorov, I. V. and Kosterina, A. A. and Zhukov, L. E.},
-  date = {2023-01-19}
+@inproceedings{budennyy2023eco2ai,
+  title={Eco2ai: carbon emissions tracking of machine learning models as the first step towards sustainable ai},
+  author={Budennyy, SA and Lazarev, VD and Zakharenko, NN and Korovin, AN and Plosskaya, OA and Dimitrov, DV and Akhripkin, VS and Pavlov, IV and Oseledets, IV and Barsola, IS and others},
+  booktitle={Doklady Mathematics},
+  pages={1--11},
+  year={2023},
+  organization={Springer}
 }
 ```
 
