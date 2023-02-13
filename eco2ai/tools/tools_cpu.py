@@ -550,7 +550,7 @@ def get_cpu_percent_linux(cpu_processes="current"):
                 # check if the line contains a process
                 if len(words) > 0:
                     # the CPU usage percentage is the 8th word
-                    sum_cpu += float(words[8])
+                    sum_cpu += float(words[8].replace(',','.'))
     return sum_cpu / (cpu_num * 100)
 
 
