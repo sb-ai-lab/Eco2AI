@@ -177,7 +177,7 @@ You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/cou
         self._encode_file=encode_file if encode_file != True else "encoded_"+file_name
         electricity_pricing_check(electricity_pricing)
         self._electricity_pricing = electricity_pricing
-        self._total_price = np.nan if self._electricity_pricing is None else 0
+        self._total_price = 0
         self._os = platform.system()
         if self._os == "Darwin":
             self._os = "MacOS"
@@ -608,13 +608,14 @@ You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/cou
             self._parameters_to_save += key + ": "
             self._parameters_to_save += str(parameters_dict[key]) + ", "
         # self._func_for_sched returns attributes_dict. 
+        attributes_dict = self._func_for_sched(add_new=True)
         # We put it into self._func_for_encoding method in order to encode calculations
         if self._encode_file:
-            self._func_for_encoding(self._func_for_sched(add_new=True))
+            self._func_for_encoding(attributes_dict)
         self._current_epoch += 1
         self._parameters_to_save = ""
         self._consumption = 0
-        self._total_price = np.nan if self._electricity_pricing is None else 0
+        self._total_price = 0
         self._start_time = time.time()
         if self._encode_file is not None:
             self._func_for_encoding(attributes_dict)
