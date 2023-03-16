@@ -397,6 +397,14 @@ You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/cou
         return attributes_dict
 
     def send_json(self, data):
+        """
+            This class method send data to webhook.
+
+            Parameters
+            ----------
+            data: dict
+                Dictionary with all the attributes that should be sended.
+        """
         try:
             response = requests.post(self.webhook_url, json=data,
                                      timeout=self._measure_period/2)
