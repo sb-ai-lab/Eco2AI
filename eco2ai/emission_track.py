@@ -6,6 +6,7 @@ import numpy as np
 import uuid
 import warnings
 import tzlocal
+import requests
 from apscheduler.schedulers.background import BackgroundScheduler
 
 from eco2ai.tools.tools_gpu import GPU, all_available_gpu
@@ -56,6 +57,7 @@ class Tracker:
         self,
         project_name=None,
         experiment_description=None,
+        webhook_url=None,
         file_name=None,
         measure_period=10,
         emission_level=None,
@@ -155,6 +157,7 @@ You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/cou
         self._params_dict = get_params()
         self.project_name = project_name if project_name is not None else self._params_dict["project_name"]
         self.experiment_description = experiment_description if experiment_description is not None else self._params_dict["experiment_description"]
+        self.webhook_url = webhook_url
         self.file_name = file_name if file_name is not None else self._params_dict["file_name"]
         self._measure_period = measure_period if measure_period is not None else self._params_dict["measure_period"]
         self._pue = pue if pue is not None else self._params_dict["pue"]
@@ -393,6 +396,14 @@ You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/cou
 
         return attributes_dict
 
+    def send_json(self, data):
+        try:
+            response = requests.post(self.webhook_url, json=data,
+                                     timeout=self._measure_period/2)
+            if response.status_code != 200:
+                warnings.warn("Unexpected status code from host")
+        except Exception as ex:
+            warnings.warn(f"Exception during sending request to host, {ex}")
 
     def _write_to_csv(
         self,
@@ -550,7 +561,10 @@ You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/cou
             self._scheduler.remove_job("job")
             self._scheduler.shutdown()
         # self._write_to_csv returns attributes_dict
-        return self._write_to_csv(add_new)
+        res = self._write_to_csv(add_new)
+        if self.webhook_url:
+            self.send_json(res)
+        return res
 
     
     def start_training(self, start_epoch=1):
