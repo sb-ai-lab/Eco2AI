@@ -58,6 +58,7 @@ class Tracker:
         project_name=None,
         experiment_description=None,
         webhook_url=None,
+        webhook_timeout=2,
         file_name=None,
         measure_period=10,
         emission_level=None,
@@ -158,6 +159,7 @@ You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/cou
         self.project_name = project_name if project_name is not None else self._params_dict["project_name"]
         self.experiment_description = experiment_description if experiment_description is not None else self._params_dict["experiment_description"]
         self.webhook_url = webhook_url
+        self.webhook_timeout = webhook_timeout
         self.file_name = file_name if file_name is not None else self._params_dict["file_name"]
         self._measure_period = measure_period if measure_period is not None else self._params_dict["measure_period"]
         self._pue = pue if pue is not None else self._params_dict["pue"]
@@ -406,8 +408,11 @@ You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/cou
                 Dictionary with all the attributes that should be sended.
         """
         try:
-            response = requests.post(self.webhook_url, json=data,
-                                     timeout=self._measure_period/2)
+            response = requests.post(
+                self.webhook_url,
+                json=data,
+                timeout=self.webhook_timeout,
+            )
             if response.status_code != 200:
                 warnings.warn("Unexpected status code from host")
         except Exception as ex:
