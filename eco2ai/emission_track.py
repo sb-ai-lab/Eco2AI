@@ -81,6 +81,12 @@ class Tracker:
             experiment_description: str 
                 Specified by user experiment description.
                 The default is None
+            webhook_url: str
+                Endpoint for sending consumption data.
+                The default is None
+            webhook_timeout: float
+                The timeout period for the webhook in seconds.
+                The default is 2
             file_name: str
                 Name of file to save the the results of calculations.
                 The default is None
