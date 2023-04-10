@@ -209,7 +209,7 @@ class GPU():
                 pynvml.nvmlDeviceGetPowerUsage(handle)
                 gpus_name.append(pynvml.nvmlDeviceGetName(handle))
             pynvml.nvmlShutdown()
-            return gpus_name[0].decode("UTF-8")
+            return gpus_name[0].encode().decode("UTF-8")
         except:
             return ""
     
