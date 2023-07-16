@@ -106,7 +106,7 @@ class Tracker:
                 The default is 1.
             encode_file: str
                 If this parameter is not None, results of calculations will be encoded
-                and the results will be writen to file.
+                and the results will be written to file.
                 If this parameter == True encoded data will be written to file "encoded_" + value of file_name parameter.
                 So, default name of file with encoded data will be "encoded_emission.csv"
                 If this parameter is of str type, then name of file with encoded data will be value of encode_file parameter.
@@ -117,8 +117,8 @@ class Tracker:
                 Every interval must be constructed as follows:
                     1) "hh:mm-hh:mm", hh - hours, mm - minutes. hh in [0, ..., 23], mm in [0, ..., 59]
                     2) Intervals should be consistent: they mustn't overlap and they should in chronological order.
-                    Instantce of consistent intervals: "8:30-19:00", "19:00-6:00", "6:00-8:30"
-                    Instantce of inconsistent intervals: "8:30-20:00", "18:00-3:00", "6:00-12:30"
+                    Instance of consistent intervals: "8:30-19:00", "19:00-6:00", "6:00-8:30"
+                    Instance of inconsistent intervals: "8:30-20:00", "18:00-3:00", "6:00-12:30"
                     3) Total duration of time intervals in hours must be 24 hours(1 day). 
             ignore_warnings: bool
                 If true, then user will be notified of all the warnings. If False, there won't be any warnings.
@@ -279,7 +279,7 @@ You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/cou
 
     def price(self):
         """
-            This class method returns total electicity price
+            This class method returns total electricity price
 
             Parameters
             ----------
@@ -368,7 +368,7 @@ You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/cou
             Returns
             -------
             attributes_dict: dict
-                Dictionary with all the attibutes that should be written to .csv file
+                Dictionary with all the attributes that should be written to .csv file
                
         """
         # if user used older versions, it may be needed to upgrade his .csv file
@@ -424,7 +424,7 @@ You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/cou
             Returns
             -------
             attributes_dict: dict
-                Dictionary with all the attibutes that should be written to .csv file
+                Dictionary with all the attributes that should be written to .csv file
                 
         """
         # if user used older versions, it may be needed to upgrade his .csv file
@@ -526,7 +526,7 @@ You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/cou
             Returns
             -------
             attributes_dict: dict
-                Dictionary with all the attibutes that should be written to .csv file
+                Dictionary with all the attributes that should be written to .csv file
         
         """
         cpu_consumption = self._cpu.calculate_consumption()
@@ -535,14 +535,14 @@ You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/cou
             gpu_consumption = self._gpu.calculate_consumption()
         else:
             gpu_consumption = 0
-        tmp_comsumption = 0
-        tmp_comsumption += cpu_consumption
-        tmp_comsumption += gpu_consumption
-        tmp_comsumption += ram_consumption
-        tmp_comsumption *= self._pue
+        tmp_consumption = 0
+        tmp_consumption += cpu_consumption
+        tmp_consumption += gpu_consumption
+        tmp_consumption += ram_consumption
+        tmp_consumption *= self._pue
         if self._electricity_pricing is not None:
-            self._total_price += calculate_price(self._electricity_pricing, tmp_comsumption)
-        self._consumption += tmp_comsumption
+            self._total_price += calculate_price(self._electricity_pricing, tmp_consumption)
+        self._consumption += tmp_consumption
         
         # self._consumption = 0
         # self._start_time = time.time()
@@ -571,7 +571,7 @@ You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/cou
         """
         if not isinstance(start_epoch, int):
             raise TypeError(
-                f"\"start_epoch\" paramenet must be of int type. Now, it is {type(start_epoch)}"
+                f"\"start_epoch\" parameter must be of int type. Now, it is {type(start_epoch)}"
             )
 
         self._mode = "training"
@@ -641,7 +641,7 @@ You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/cou
             raise IncorrectMethodSequenceError(
                 """
 You have already run ".start_training" method.
-Please, use the interface for training: ".start_trainig", ".new_epoch", and "stop_training"
+Please, use the interface for training: ".start_training", ".new_epoch", and "stop_training"
                 """
             )
         if self._start_time is not None:
@@ -726,7 +726,7 @@ You should run ".start_training" method before ".stop_training" method
             Parameters
             ----------
             attributes_dict: dict
-                Dictionary with all the attibutes that should be written to .csv file
+                Dictionary with all the attributes that should be written to .csv file
 
             Returns
             -------
