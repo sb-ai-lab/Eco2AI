@@ -169,7 +169,7 @@ You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/cou
                  
         self._scheduler = BackgroundScheduler(
             job_defaults={'max_instances': 10}, 
-            timezone=timezone),
+            timezone=timezone,
             misfire_grace_time=None
             )
         self._start_time = None
