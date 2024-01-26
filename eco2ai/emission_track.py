@@ -66,6 +66,7 @@ class Tracker:
         encode_file=None,
         electricity_pricing=None, 
         ignore_warnings=False,
+        timezone=False
         ):
         """
             This class method initializes a Tracker object and creates fields of class object
@@ -123,6 +124,7 @@ class Tracker:
             ignore_warnings: bool
                 If true, then user will be notified of all the warnings. If False, there won't be any warnings.
                 The default is False.
+            timezone: directly set defauls timezone. Can be useful if timezone can not be automatically detected
             
             Returns
             -------
@@ -162,9 +164,12 @@ You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/cou
 
         self._emission_level, self._country = define_carbon_index(emission_level, alpha_2_code, region)
         self._cpu_processes = cpu_processes
+        if not timezone:
+            timezone = str(tzlocal.get_localzone())
+                 
         self._scheduler = BackgroundScheduler(
             job_defaults={'max_instances': 10}, 
-            timezone=str(tzlocal.get_localzone()),
+            timezone=timezone),
             misfire_grace_time=None
             )
         self._start_time = None
