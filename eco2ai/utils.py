@@ -26,7 +26,7 @@ def available_devices():
 
         Parameters
         ----------
-        No paarameters
+        No parameters
 
         Returns
         -------
@@ -85,7 +85,7 @@ def define_carbon_index(
 ):
     """
         This function get an IP of user, defines country and region.
-        Then, it searchs user emission level by country and region in the emission level database.
+        Then, it searches user emission level by country and region in the emission level database.
         If there is no certain country, then it returns worldwide constant. 
         If there is certain country in the database, but no certain region, 
         then it returns average country emission level. 
@@ -150,7 +150,7 @@ def define_carbon_index(
             if flag is False:
                 warnings.warn(
                     message=f"""
-    Your 'region' parameter value, which is '{region}', is not found in our region database for choosed country. 
+    Your 'region' parameter value, which is '{region}', is not found in our region database for chosen country. 
     Please, check, if your region name is written correctly
     """
                 )
@@ -168,7 +168,7 @@ def electricity_pricing_check(
 ):
     """
     This function takes electricity pricing dictionary and
-    check it if the dictionary is consctructed correctly.
+    check it if the dictionary is constructed correctly.
     Rules for 'electricity_pricing' parameter construction is written below.        
     
     Parameters
@@ -179,8 +179,8 @@ def electricity_pricing_check(
         Every interval must be constructed as follows:
             1) "hh:mm-hh:mm", hh - hours, mm - minutes. hh in [0, ..., 23], mm in [0, ..., 59]
             ) Intervals should be consistent: they mustn't overlap and they should in chronological order.
-            Instantce of consistent intervals: "8:30-19:00", "19:00-6:00", "6:00-8:30"
-            Instantce of inconsistent intervals: "8:30-20:00", "18:00-3:00", "6:00-12:30"
+            Instance of consistent intervals: "8:30-19:00", "19:00-6:00", "6:00-8:30"
+            Instance of inconsistent intervals: "8:30-20:00", "18:00-3:00", "6:00-12:30"
             3) Total duration of time intervals in hours must be 24 hours(1 day). 
 
     Returns
@@ -274,8 +274,8 @@ def calculate_price(
         Every interval must be constructed as follows:
             1) "hh:mm-hh:mm", hh - hours, mm - minutes. hh in [0, ..., 23], mm in [0, ..., 59]
             ) Intervals should be consistent: they mustn't overlap and they should in chronological order.
-            Instantce of consistent intervals: "8:30-19:00", "19:00-6:00", "6:00-8:30"
-            Instantce of inconsistent intervals: "8:30-20:00", "18:00-3:00", "6:00-12:30"
+            Instance of consistent intervals: "8:30-19:00", "19:00-6:00", "6:00-8:30"
+            Instance of inconsistent intervals: "8:30-20:00", "18:00-3:00", "6:00-12:30"
             3) Total duration of time intervals in hours must be 24 hours(1 day). 
         
             
@@ -397,7 +397,7 @@ def get_params():
             dictionary = json.loads(json_file.read())
         else:
             dictionary = {
-                "project_name": "Deafult project name",
+                "project_name": "Default project name",
                 "experiment_description": "no experiment description",
                 "file_name": "emission.csv",
                 "measure_period": 10,
@@ -443,7 +443,7 @@ def encode(f_string):
 
 def encode_dataframe(values):
     """
-        This function encodes every value of a two-dimentional array
+        This function encodes every value of a two-dimensional array
 
         Parameters
         ----------

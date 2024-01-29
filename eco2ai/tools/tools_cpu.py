@@ -77,7 +77,7 @@ class CPU():
 
     def set_consumption_zero(self):
         """
-            This class method sets CPU consumtion to zero.
+            This class method sets CPU consumption to zero.
 
             Parameters
             ----------
@@ -92,7 +92,7 @@ class CPU():
 
     def get_consumption(self):
         """
-            This class method returns CPU power consupmtion amount.
+            This class method returns CPU power consumption amount.
 
             Parameters
             ----------
@@ -110,7 +110,7 @@ class CPU():
     def get_cpu_percent(self,):
         """
             This class method calculates CPU utilization
-            taking into acount only python processes. 
+            taking into account only python processes. 
             Method of calculating CPU utilization depends on operating system: 
             Windows, MacOS or Linux are only supported operating systems
 
@@ -221,7 +221,7 @@ def number_of_cpu(ignore_warnings=True):
         except:
             if not ignore_warnings:
                 warnings.warn(
-                    message="\nYou probably should have installed 'util-linux' to deretmine cpu number correctly\nFor now, number of cpu devices is set to 1\n\n", 
+                    message="\nYou probably should have installed 'util-linux' to determine cpu number correctly\nFor now, number of cpu devices is set to 1\n\n", 
                     category=NoNeededLibrary
                     )
             cpu_num = 1
@@ -248,7 +248,7 @@ def number_of_cpu(ignore_warnings=True):
         except:
             if not ignore_warnings:
                 warnings.warn(
-                    message="\nIt's impossible to deretmine cpu number correctly\nFor now, number of cpu devices is set to 1\n\n", 
+                    message="\nIt's impossible to determine cpu number correctly\nFor now, number of cpu devices is set to 1\n\n", 
                     category=NoNeededLibrary
                     )
             cpu_num = 1
@@ -273,7 +273,7 @@ def number_of_cpu(ignore_warnings=True):
         # except:
         #     if not ignore_warnings:
         #         warnings.warn(
-        #             message="\nIt's impossible to deretmine cpu number correctly\nFor now, number of cpu devices is set to 1\n\n", 
+        #             message="\nIt's impossible to determine cpu number correctly\nFor now, number of cpu devices is set to 1\n\n", 
         #             category=NoNeededLibrary
         #             )
         cpu_num = 1
