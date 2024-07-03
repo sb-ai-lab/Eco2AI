@@ -138,7 +138,7 @@ class Tracker:
                 message="""
 If you use a VPN, you may have problems with identifying your country by IP.
 It is recommended to disable VPN or
-manually install the ISO-Alpha-2 code of your country during initialization of the Tracker() class.
+manually set up the ISO-Alpha-2 code of your country during initialization of the Tracker() class.
 You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/country-codes
 """
 )
