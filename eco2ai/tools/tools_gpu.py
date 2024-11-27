@@ -2,33 +2,36 @@ import pynvml
 import time
 import warnings
 
-FROM_mWATTS_TO_kWATTH = 1000*1000*3600
+FROM_mWATTS_TO_kWATTH = 1000 * 1000 * 3600
+
 
 class NoGPUWarning(Warning):
     pass
 
-class GPU():
+
+class GPU:
     """
-        This class is interface for tracking gpu consumption.
-        All methods are done here on the assumption that all gpu devices are of equal model.
-        The GPU class is not intended for separate usage, outside the Tracker class
+    This class is interface for tracking gpu consumption.
+    All methods are done here on the assumption that all gpu devices are of equal model.
+    The GPU class is not intended for separate usage, outside the Tracker class
 
     """
+
     def __init__(self, ignore_warnings=False):
         """
-            This class method initializes GPU object.
-            Creates fields of class object. All the fields are private variables
+        This class method initializes GPU object.
+        Creates fields of class object. All the fields are private variables
 
-            Parameters
-            ----------
-            ignore_warnings: bool
-                If true, then user will be notified of all the warnings. If False, there won't be any warnings.
-                The default is False.
+        Parameters
+        ----------
+        ignore_warnings: bool
+            If true, then user will be notified of all the warnings. If False, there won't be any warnings.
+            The default is False.
 
-            Returns
-            -------
-            GPU: GPU
-                Object of class GPU
+        Returns
+        -------
+        GPU: GPU
+            Object of class GPU
 
         """
         self._consumption = 0
@@ -36,23 +39,25 @@ class GPU():
         self.is_gpu_available = is_gpu_available()
 
         if not self.is_gpu_available and not self._ignore_warnings:
-            warnings.warn(message="\n\nThere is no any available GPU devices or your GPU is not supported by Nvidia library!\nThe tracker will consider CPU usage only\n",
-                          category=NoGPUWarning)
+            warnings.warn(
+                message="""There is no any available GPU devices or your GPU is not supported by Nvidia library!\nThe tracker will consider CPU usage only""",
+                category=NoGPUWarning,
+            )
         if self.is_gpu_available:
             self._start = time.time()
-    
+
     def calculate_consumption(self):
         """
-            This class method calculates GPU power consumption.
-            
-            Parameters
-            ----------
-            No parameters
-            
-            Returns
-            -------
-            consumption: float
-                CPU power consumption
+        This class method calculates GPU power consumption.
+
+        Parameters
+        ----------
+        No parameters
+
+        Returns
+        -------
+        consumption: float
+            CPU power consumption
         """
         if not self.is_gpu_available:
             return 0
@@ -65,37 +70,37 @@ class GPU():
             consumption = 0
         self._consumption += consumption
         return consumption
-    
+
     def get_consumption(self):
         """
-            This class method returns GPU power consupmtion amount.
+        This class method returns GPU power consupmtion amount.
 
-            Parameters
-            ----------
-            No parameters
+        Parameters
+        ----------
+        No parameters
 
-            Returns
-            -------
-            self._consumption: float
-                CPU power consumption
+        Returns
+        -------
+        self._consumption: float
+            CPU power consumption
 
         """
         if not self.is_gpu_available:
             return 0
         return self._consumption
-    
+
     def gpu_memory(self):
         """
-            This class method returns GPU Memory used. Pynvml library is used.
+        This class method returns GPU Memory used. Pynvml library is used.
 
-            Parameters
-            ----------
-            No parameters
+        Parameters
+        ----------
+        No parameters
 
-            Returns
-            -------
-            gpus_memory: list
-                list of GPU Memory used per every GPU
+        Returns
+        -------
+        gpus_memory: list
+            list of GPU Memory used per every GPU
 
         """
         if not self.is_gpu_available:
@@ -111,16 +116,16 @@ class GPU():
 
     def gpu_temperature(self):
         """
-            This class method returns GPU temperature. Pynvml library is used.
+        This class method returns GPU temperature. Pynvml library is used.
 
-            Parameters
-            ----------
-            No parameters
+        Parameters
+        ----------
+        No parameters
 
-            Returns
-            -------
-            gpus_temps: list
-                list of GPU temperature per every GPU
+        Returns
+        -------
+        gpus_temps: list
+            list of GPU temperature per every GPU
 
         """
         if not self.is_gpu_available:
@@ -136,16 +141,16 @@ class GPU():
 
     def gpu_power(self):
         """
-            This class method returns GPU power consumption. Pynvml library is used.
+        This class method returns GPU power consumption. Pynvml library is used.
 
-            Parameters
-            ----------
-            No parameters
+        Parameters
+        ----------
+        No parameters
 
-            Returns
-            -------
-            gpus_powers: list
-                list of GPU power consumption per every GPU
+        Returns
+        -------
+        gpus_powers: list
+            list of GPU power consumption per every GPU
 
         """
         if not self.is_gpu_available:
@@ -161,16 +166,16 @@ class GPU():
 
     def gpu_power_limit(self):
         """
-            This class method returns GPU power limits. Pynvml library is used.
+        This class method returns GPU power limits. Pynvml library is used.
 
-            Parameters
-            ----------
-            No parameters
+        Parameters
+        ----------
+        No parameters
 
-            Returns
-            -------
-            gpus_limits: list
-                list of GPU power limits per every GPU
+        Returns
+        -------
+        gpus_limits: list
+            list of GPU power limits per every GPU
 
         """
         if not self.is_gpu_available:
@@ -183,21 +188,23 @@ class GPU():
             gpus_limits.append(pynvml.nvmlDeviceGetEnforcedPowerLimit(handle))
         pynvml.nvmlShutdown()
         return gpus_limits
-    
-    def name(self,):
+
+    def name(
+        self,
+    ):
         """
-            This class method returns GPU name if there are any GPU visible
-            or it returns empty string. All the GPU devices are intended to be of the same model
-            Pynvml library is used.
+        This class method returns GPU name if there are any GPU visible
+        or it returns empty string. All the GPU devices are intended to be of the same model
+        Pynvml library is used.
 
-            Parameters
-            ----------
-            No parameters
+        Parameters
+        ----------
+        No parameters
 
-            Returns
-            -------
-            gpus_name: string
-                string with GPU name. 
+        Returns
+        -------
+        gpus_name: string
+            string with GPU name.
 
         """
         try:
@@ -212,20 +219,20 @@ class GPU():
             return gpus_name[0].encode().decode("UTF-8")
         except:
             return ""
-    
+
     def gpu_num(self):
         """
-            This class method returns number of visible GPU devices.
-            Pynvml library is used.
+        This class method returns number of visible GPU devices.
+        Pynvml library is used.
 
-            Parameters
-            ----------
-            No parameters
+        Parameters
+        ----------
+        No parameters
 
-            Returns
-            -------
-            deviceCount: int
-                Number of visible GPU devices. 
+        Returns
+        -------
+        deviceCount: int
+            Number of visible GPU devices.
 
         """
         try:
@@ -236,24 +243,24 @@ class GPU():
                 pynvml.nvmlDeviceGetPowerUsage(handle)
             pynvml.nvmlShutdown()
             return deviceCount
-        except: 
+        except:
             return 0
 
 
 def is_gpu_available():
     """
-        This function checks if there are any available GPU devices
-        All the GPU devices are intended to be of the same model
-        
-        Parameters
-        ----------
-        No parameters
-        
-        Returns
-        -------
-        gpu_availability: bool
-            If there are any visible GPU devices, 
-            then gpu_availability = True, else gpu_availability = False
+    This function checks if there are any available GPU devices
+    All the GPU devices are intended to be of the same model
+
+    Parameters
+    ----------
+    No parameters
+
+    Returns
+    -------
+    gpu_availability: bool
+        If there are any visible GPU devices,
+        then gpu_availability = True, else gpu_availability = False
 
     """
     try:
@@ -268,18 +275,19 @@ def is_gpu_available():
     except pynvml.NVMLError:
         return False
 
+
 def all_available_gpu():
     """
-        This function prints all seeable GPU devices
-        All the GPU devices are intended to be of the same model
-        
-        Parameters
-        ----------
-        No parameters
-        
-        Returns
-        -------
-        No returns
+    This function prints all seeable GPU devices
+    All the GPU devices are intended to be of the same model
+
+    Parameters
+    ----------
+    No parameters
+
+    Returns
+    -------
+    No returns
 
     """
     try:

@@ -1,0 +1,4 @@
+test.ipnb
+venv/*
+my_emission_file.csv
+.DS_Store

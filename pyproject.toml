@@ -1,12 +1,14 @@
 [tool.poetry]
 name = "eco2ai"
-version = "0.3.9"
+version = "0.3.10"
 description = "emission tracking library"
 authors = ["AI Lab",
             "Vladimir Lazarev <lazarev@airi.net>",
             "Nikita Zakharenko <nnzakharenko@sberbank.ru>",
             "Semyon Budyonny  <sanbudenny@sberbank.ru>",
-            "leonid zhukov <lezhukov@sberbank.ru>"]
+            "Leonid Zhukov <lezhukov@sberbank.ru>",
+            "Alexey Korovin <korovin@airi.net>"]
+
 
 homepage = "https://github.com/sb-ai-lab/Eco2AI"
 repository = "https://github.com/sb-ai-lab/Eco2AI"
@@ -30,10 +32,10 @@ packages = [
 python = "*"
 pandas = [
     {version = ">=1.2.1,<=1.3.5", python = ">=3.7.1, <3.8" },
-    {version = ">=1.4.0,<=1.4.3", python = ">=3.8"}
+    {version = ">=1.4.0", python = ">=3.8"}
     ]
 
-#{version = ">=1.0.0,<=1.1.5", python = ">=3.6.1"},
+setuptools = "*"
 
 APScheduler = [
     {version = "*",python = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, <4"}
@@ -46,7 +48,7 @@ pynvml = [
     {version = "*",python = ">=3.6"}
     ]
 
-psutil = "^5.9.1"
+psutil = ">=5.9.1"
 
 tzlocal = [
     {version = "*",python = ">=3.6"}
