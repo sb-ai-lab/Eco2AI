@@ -1,6 +1,8 @@
 from .emission_track import (
     Tracker, 
     track,
+    __version__
+
 )
 
 from eco2ai.tools.tools_cpu import (

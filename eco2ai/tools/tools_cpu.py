@@ -244,7 +244,7 @@ def number_of_cpu(ignore_warnings=True):
                 processor_string = dictionary['Џа®жҐбб®а(л)']
             if 'Процессор(ы)' in dictionary:
                 processor_string = dictionary['Процессор(ы)']
-            cpu_num = int(re.findall('- (\d)\.', processor_string)[0])
+            cpu_num = int(re.findall(r'- (\d)\.', processor_string)[0])
         except:
             if not ignore_warnings:
                 warnings.warn(
@@ -297,7 +297,7 @@ def transform_cpu_name(cpu_name):
 
     """
     # dropping all the waste tokens and patterns:
-    cpu_name = re.sub('(\(R\))|(®)|(™)|(\(TM\))|(@.*)|(\S*GHz\S*)|(\[.*\])|( \d-Core)|(\(.*\))', '', cpu_name)
+    cpu_name = re.sub(r'(\(R\))|(®)|(™)|(\(TM\))|(@.*)|(\S*GHz\S*)|(\[.*\])|( \d-Core)|(\(.*\))', '', cpu_name)
 
     # dropping all the waste words:
     array = re.split(" ", cpu_name)
@@ -305,7 +305,7 @@ def transform_cpu_name(cpu_name):
         if ("CPU" in i) or ("Processor" in i) or (i == ''):
             array.remove(i)
     cpu_name = " ".join(array)
-    patterns = re.findall("(\S*\d+\S*)", cpu_name)
+    patterns = re.findall(r"(\S*\d+\S*)", cpu_name)
     for i in re.findall(
         "(Ryzen Threadripper)|(Ryzen)|(EPYC)|(Athlon)|(Xeon Gold)|(Xeon Bronze)|(Xeon Silver)|(Xeon Platinum)|(Xeon)|(Core)|(Celeron)|(Atom)|(Pentium)", 
         cpu_name
@@ -336,7 +336,7 @@ def transform_cpu_name_2(cpu_name):
 
     """
     # dropping all the waste tokens and patterns:
-    cpu_name = re.sub('(\(R\))|(®)|(™)|(\(TM\))|(@.*)|(\S*GHz\S*)|(\[.*\])|( \d-Core)|(\(.*\))', '', cpu_name)
+    cpu_name = re.sub(r'(\(R\))|(®)|(™)|(\(TM\))|(@.*)|(\S*GHz\S*)|(\[.*\])|( \d-Core)|(\(.*\))', '', cpu_name)
 
     # dropping all the waste words:
     array = re.split(" ", cpu_name)
@@ -344,7 +344,7 @@ def transform_cpu_name_2(cpu_name):
         if ("CPU" in i) or ("Processor" in i) or (i == ''):
             array.remove(i)
     cpu_name = " ".join(array)
-    patterns = re.findall("(\S*\d+\S*)", cpu_name)
+    patterns = re.findall(r"(\S*\d+\S*)", cpu_name)
     for i in re.findall(
         "(Ryzen Threadripper)|(Ryzen)|(EPYC)|(Athlon)|(Xeon Gold)|(Xeon Bronze)|(Xeon Silver)|(Xeon Platinum)|(Xeon)|(Core)|(Celeron)|(Atom)|(Pentium)", 
         cpu_name
@@ -373,7 +373,7 @@ def get_patterns(cpu_name):
             Array with all the patterns
 
     """
-    patterns = re.findall("(\S*\d+\S*)", cpu_name)
+    patterns = re.findall(r"(\S*\d+\S*)", cpu_name)
     for i in re.findall(
         "(Ryzen Threadripper)|(Ryzen)|(EPYC)|(Athlon)|(Xeon Gold)|(Xeon Bronze)|(Xeon Silver)|(Xeon Platinum)|(Xeon)|(Core)|(Celeron)|(Atom)|(Pentium)",
         cpu_name

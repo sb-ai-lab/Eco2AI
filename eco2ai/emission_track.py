@@ -30,7 +30,7 @@ from pandas.api.types import is_numeric_dtype, is_string_dtype, is_categorical_d
 
 FROM_mWATTS_TO_kWATTH = 1000 * 1000 * 3600
 FROM_kWATTH_TO_MWATTH = 1000
-
+__version__ = '0.3.12'
 
 class IncorrectMethodSequenceError(Exception):
     pass
@@ -382,7 +382,7 @@ You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/cou
         attributes_dict["project_name"] = [f"{self.project_name}"]
         attributes_dict["experiment_description"] = [f"{self.experiment_description}"]
         attributes_dict["epoch"] = [
-            "epoch: " + str(self._current_epoch) + self._parameters_to_save if self._mode == "training" else "N/A"
+            "epoch: " + str(self._current_epoch) + str(self._parameters_to_save) if self._mode == "training" else "N/A"
         ]
         attributes_dict["start_time"] = [f"{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(self._start_time))}"]
         attributes_dict["duration(s)"] = [f"{time.time() - self._start_time}"]
@@ -484,11 +484,11 @@ You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/cou
                         for element in attributes_dict.values():
                             attributes_array += element
 
-                        # Ensure consistent types
-                        attributes_array = [
-                            self.align_value_to_dtype(val, dtype)
-                            for val, dtype in zip(attributes_array, attributes_dataframe.dtypes)
-                        ]
+                        # # Ensure consistent types
+                        # attributes_array = [
+                        #     self.align_value_to_dtype(val, dtype)
+                        #     for val, dtype in zip(attributes_array, attributes_dataframe.dtypes)
+                        # ]
 
                         if attributes_dataframe[attributes_dataframe["id"] == self._id].shape[0] == 0:
                             # Adding a new row
