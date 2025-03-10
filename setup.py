@@ -12,8 +12,7 @@ DEPENDENCIES = [
 
 setup(
     name = 'eco2ai',
-    version = '0.3.11',
-    author=["Vladimir Lazarev", 'Nikita Zakharenko', 'Semyon Budyonny', 'Leonid Zhukov'],
+    author=["Vladimir Lazarev", 'Nikita Zakharenko', 'Alexey Korovin', 'Semyon Budyonny', 'Leonid Zhukov'],
     description = long_description,
     packages = ['eco2ai'],
     install_requires=DEPENDENCIES,
@@ -24,5 +23,6 @@ setup(
             "data/carbon_index.csv"
         ]
     },
-    include_package_data=True
+    include_package_data=True,
+    version=__version__
 )
