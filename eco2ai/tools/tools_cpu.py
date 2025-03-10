@@ -255,21 +255,16 @@ def number_of_cpu(ignore_warnings=True):
     elif operating_system == "Darwin":
         # try:
         #     # running terminal command, getting output
-        #     string = os.popen("sysctl -a| sort | grep cpu")
+        #     string = os.popen("sysctl hw.packages")
         #     output = string.read()
-        #     output
-        #     # dictionary creation
-        #     dictionary = dict()
-        #     for i in output.split('\n'):
-        #         tmp = i.split(':')
-        #         if len(tmp) == 2:
-        #             dictionary[tmp[0]] = tmp[1]
-        #     processor_string = 'something'
-        #     if 'hw.cpu64bit_capable' in dictionary:
-        #         processor_string = dictionary['hw.cpu64bit_capable']
-        #     else:
-        #         pass
-        #     cpu_num = int(re.findall('(\d)', processor_string)[0])
+        #     # Extract the number of physical CPU packages (sockets)
+        #     cpu_num = int(output.split(':')[1].strip())
+            
+        #     # If packages info not available, try alternative
+        #     if cpu_num <= 0:
+        #         string = os.popen("sysctl -n hw.physicalcpu")
+        #         output = string.read().strip()
+        #         cpu_num = int(output)
         # except:
         #     if not ignore_warnings:
         #         warnings.warn(
@@ -283,6 +278,45 @@ def number_of_cpu(ignore_warnings=True):
 
 
 def transform_cpu_name(cpu_name):
+    """
+        This function drops all the waste tokens, and words from a cpu name
+        It finds patterns. Patterns include processor's family and 
+        some certain specifications like 9400F in Intel Core i5-9400F
+        
+        Parameters
+        ----------
+        cpu_name: str
+            A string, containing CPU name, taken from psutil library
+        
+        Returns
+        -------
+        cpu_name: str
+            Modified CPU name, containing patterns only
+        patterns: list of str
+            Array with all the patterns
+
+    """
+    # dropping all the waste tokens and patterns:
+    cpu_name = re.sub('(\(R\))|(®)|(™)|(\(TM\))|(@.*)|(\S*GHz\S*)|(\[.*\])|( \d-Core)|(\(.*\))', '', cpu_name)
+
+    # dropping all the waste words:
+    array = re.split(" ", cpu_name)
+    for i in array[::-1]:
+        if ("CPU" in i) or ("Processor" in i) or (i == ''):
+            array.remove(i)
+    cpu_name = " ".join(array)
+    patterns = re.findall("(\S*\d+\S*)", cpu_name)
+    for i in re.findall(
+        "(Ryzen Threadripper)|(Ryzen)|(EPYC)|(Athlon)|(Xeon Gold)|(Xeon Bronze)|(Xeon Silver)|(Xeon Platinum)|(Xeon)|(Core)|(Celeron)|(Atom)|(Pentium)", 
+        cpu_name
+        ):
+        patterns += i
+    patterns = list(set(patterns))
+    if '' in patterns:
+        patterns.remove('')
+    return cpu_name, patterns
+
+def transform_cpu_name_2(cpu_name):
     """
         This function drops all the waste tokens, and words from a cpu name
         It finds patterns. Patterns include processor's family and 
@@ -408,9 +442,9 @@ def find_tdp_value(cpu_name, f_table_name, constant_value=CONSTANT_CONSUMPTION, 
     """
     # firstly, we try to find transformed cpu name in the cpu table:
     f_table = pd.read_csv(f_table_name)
-    cpu_name, patterns = transform_cpu_name(cpu_name)
+    cpu_name_mod, patterns = transform_cpu_name(cpu_name)
     f_table = f_table[["Model", "TDP"]].values
-    suitable_elements = f_table[f_table[:, 0] == cpu_name]
+    suitable_elements = f_table[f_table[:, 0] == cpu_name_mod]
     if suitable_elements.shape[0] > 0:
         # if there are more than one suitable elements, return one with maximum TDP value
         return find_max_tdp(suitable_elements)
@@ -460,7 +494,87 @@ def find_tdp_value(cpu_name, f_table_name, constant_value=CONSTANT_CONSUMPTION, 
                 tmp_elements.append(element[0])
         return find_max_tdp(tmp_elements)
 
+# searching cpu name in cpu table
+def find_tdp_value_2(cpu_name, f_table_name, constant_value=CONSTANT_CONSUMPTION, ignore_warnings=True):
+    """
+        This function finds and returns TDP of user CPU device.
+        
+        Parameters
+        ----------
+        cpu_name: str
+            Name of user CPU device, taken from psutil library
 
+        f_table_name: str
+            A file name of CPU TDP values Database
+
+        constant_value: constant_value
+            The value, that is assigned to CPU TDP if 
+            user CPU device is not found in CPU TDP database
+            The default is CONSTANT_CONSUMPTION(a global value, initialized in the beginning of the file)
+
+        ignore_warnings: bool
+            If true, then user will be notified of all the warnings. If False, there won't be any warnings.
+            The default is True.
+        
+        Returns
+        -------
+        CPU TDP: float
+            TDP of user CPU device
+
+    """
+    # firstly, we try to find transformed cpu name in the cpu table:
+    f_table = pd.read_csv(f_table_name)
+    cpu_name_mod, patterns = transform_cpu_name(cpu_name)
+    f_table = f_table[["Model", "TDP"]].values
+    suitable_elements = f_table[f_table[:, 0] == cpu_name_mod]
+    if suitable_elements.shape[0] > 0:
+        # if there are more than one suitable elements, return one with maximum TDP value
+        return find_max_tdp(suitable_elements), cpu_name_mod, "in_table"
+    # secondly, if needed element isn't found in the table,
+    # then we try to find patterns in cpu names and return suitable values:
+    # if there is no any patterns in cpu name, we simply return constant consumption value
+    if len(patterns) == 0:
+        if not ignore_warnings:
+            warnings.warn(
+                message="\n\nYour CPU device is not found in our database\nCPU TDP is set to constant value 100\n", 
+                category=NoCPUinTableWarning
+                )
+        return constant_value, cpu_name_mod, "not_in_table"
+    # appending to array all suitable for at least one of the patterns elements
+    suitable_elements = []
+    for element in f_table:
+        flag = 0
+        tmp_patterns = get_patterns(element[0])
+        for pattern in patterns:
+            if pattern in tmp_patterns:
+                flag += 1
+        if flag:
+            # suitable_elements.append(element)
+            suitable_elements.append((element, flag))
+
+    # if there is only one suitable element, we return this element.
+    # If there is no suitable elements, we return constant value
+    # If there are more than one element, we check existence of elements suitable for all the patterns simultaneously.
+    # If there are such elements(one or more), we return the value with maximum TDP among them.
+    # If there is no, we return the value with maximum TDP among all the suitable elements
+    if len(suitable_elements) == 0:
+        if not ignore_warnings:
+            warnings.warn(
+                message="\n\nYour CPU device is not found in our database\nCPU TDP is set to constant value 100\n", 
+                category=NoCPUinTableWarning
+                )
+        return CONSTANT_CONSUMPTION, cpu_name_mod, "no_suitable_elements"
+    elif len(suitable_elements) == 1:
+        return float(suitable_elements[0][0][1]), cpu_name_mod, "one_in_table"
+    else:
+        suitable_elements.sort(key=lambda x: x[1], reverse=True)
+        max_coincidence = suitable_elements[0][1]
+
+        tmp_elements = []
+        for element in suitable_elements:
+            if element[1] == max_coincidence:
+                tmp_elements.append(element[0])
+        return find_max_tdp(tmp_elements), cpu_name_mod, "many_in_table"
 
 def get_cpu_percent_mac_os(cpu_processes="current"):
     """
