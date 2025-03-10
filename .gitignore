@@ -2,3 +2,12 @@ test.ipnb
 venv/*
 my_emission_file.csv
 .DS_Store
+PyPiUpdate.md
+__pycache__/*
+dist/*
+*.pyc
+*.pyo
+*.pyd
+*.pyw
+*.pyz
+eco2ai/__pycache__/*

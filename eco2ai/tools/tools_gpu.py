@@ -46,7 +46,7 @@ class GPU:
         if self.is_gpu_available:
             self._start = time.time()
 
-    def calculate_consumption(self):
+    def calculate_consumption(self): 
         """
         This class method calculates GPU power consumption.
 
@@ -304,3 +304,4 @@ def all_available_gpu():
         pynvml.nvmlShutdown()
     except:
         print("There is no any available gpu device(s)")
+        
