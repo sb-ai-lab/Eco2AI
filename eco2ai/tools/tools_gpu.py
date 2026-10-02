@@ -57,7 +57,7 @@ class GPU:
         Returns
         -------
         consumption: float
-            CPU power consumption
+            GPU power consumption
         """
         if not self.is_gpu_available:
             return 0
@@ -82,7 +82,7 @@ class GPU:
         Returns
         -------
         self._consumption: float
-            CPU power consumption
+            GPU power consumption
 
         """
         if not self.is_gpu_available:
