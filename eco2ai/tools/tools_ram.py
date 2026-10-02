@@ -80,7 +80,7 @@ class RAM():
         return memory_percent * total_memory / 100
 
 
-    def calculate_consumption(self):
+    def calculate_consumption(self) -> float:
         """
             This class method calculates RAM power consumption.
             
@@ -97,7 +97,8 @@ class RAM():
         time_period = time.time() - self._start
         self._start = time.time()
         consumption = self._get_memory_used() * (3 / 8) * time_period / FROM_WATTs_TO_kWATTh
-
+        if consumption < 0:  # ensure no negative values
+            consumption = 0
         self._consumption += consumption
         # print(self._consumption)
         return consumption

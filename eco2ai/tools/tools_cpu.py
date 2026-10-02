@@ -244,7 +244,9 @@ def number_of_cpu(ignore_warnings=True):
                 processor_string = dictionary['Џа®жҐбб®а(л)']
             if 'Процессор(ы)' in dictionary:
                 processor_string = dictionary['Процессор(ы)']
-            cpu_num = int(re.findall(r'- (\d)\.', processor_string)[0])
+            # Use regex for multi-digit CPU numbers
+            match = re.findall(r'- (\d+)\.', processor_string)
+            cpu_num = int(match[0]) if match else 1
         except:
             if not ignore_warnings:
                 warnings.warn(
@@ -271,7 +273,26 @@ def number_of_cpu(ignore_warnings=True):
         #             message="\nIt's impossible to determine cpu number correctly\nFor now, number of cpu devices is set to 1\n\n", 
         #             category=NoNeededLibrary
         #             )
+        try:
+            # Try to get the number of physical CPU packages
+            out = subprocess.check_output(
+            ["sysctl", "-n", "hw.packages"], text=True).strip()
+            cpu_num = int(out)
+        except (subprocess.CalledProcessError, ValueError): cpu_num = 0
+
+        if cpu_num <= 0:
+            try:
+                # Fallback: number of physical cores
+                out = subprocess.check_output(["sysctl", "-n", "hw.physicalcpu"], text=True).strip()
+                cpu_num = int(out)
+            except (subprocess.CalledProcessError, ValueError):
+                if not ignore_warnings:
+                    warnings.warn(
+                        "Unable to determine the number of CPU sockets on Darwin; defaulting to 1",
+                        category=UserWarning
+                    )
         cpu_num = 1
+
     else: 
         cpu_num = 1
     return cpu_num

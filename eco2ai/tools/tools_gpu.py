@@ -105,14 +105,17 @@ class GPU:
         """
         if not self.is_gpu_available:
             return None
-        pynvml.nvmlInit()
-        deviceCount = pynvml.nvmlDeviceGetCount()
-        gpus_memory = []
-        for i in range(deviceCount):
-            handle = pynvml.nvmlDeviceGetHandleByIndex(i)
-            gpus_memory.append(pynvml.nvmlDeviceGetMemoryInfo(handle))
-        pynvml.nvmlShutdown()
-        return gpus_memory
+        try:
+            pynvml.nvmlInit()
+            deviceCount = pynvml.nvmlDeviceGetCount()
+            gpus_memory = []
+            for i in range(deviceCount):
+                handle = pynvml.nvmlDeviceGetHandleByIndex(i)
+                gpus_memory.append(pynvml.nvmlDeviceGetMemoryInfo(handle))
+            pynvml.nvmlShutdown()
+            return gpus_memory
+        except Exception:
+            return None  # standardized error return
 
     def gpu_temperature(self):
         """
@@ -130,14 +133,17 @@ class GPU:
         """
         if not self.is_gpu_available:
             return None
-        pynvml.nvmlInit()
-        deviceCount = pynvml.nvmlDeviceGetCount()
-        gpus_temps = []
-        for i in range(deviceCount):
-            handle = pynvml.nvmlDeviceGetHandleByIndex(i)
-            gpus_temps.append(pynvml.nvmlDeviceGetTemperature(handle, pynvml.NVML_TEMPERATURE_GPU))
-        pynvml.nvmlShutdown()
-        return gpus_temps
+        try:
+            pynvml.nvmlInit()
+            deviceCount = pynvml.nvmlDeviceGetCount()
+            gpus_temps = []
+            for i in range(deviceCount):
+                handle = pynvml.nvmlDeviceGetHandleByIndex(i)
+                gpus_temps.append(pynvml.nvmlDeviceGetTemperature(handle, pynvml.NVML_TEMPERATURE_GPU))
+            pynvml.nvmlShutdown()
+            return gpus_temps
+        except Exception:
+            return None
 
     def gpu_power(self):
         """
@@ -155,14 +161,17 @@ class GPU:
         """
         if not self.is_gpu_available:
             return None
-        pynvml.nvmlInit()
-        deviceCount = pynvml.nvmlDeviceGetCount()
-        gpus_powers = []
-        for i in range(deviceCount):
-            handle = pynvml.nvmlDeviceGetHandleByIndex(i)
-            gpus_powers.append(pynvml.nvmlDeviceGetPowerUsage(handle))
-        pynvml.nvmlShutdown()
-        return gpus_powers
+        try:
+            pynvml.nvmlInit()
+            deviceCount = pynvml.nvmlDeviceGetCount()
+            gpus_powers = []
+            for i in range(deviceCount):
+                handle = pynvml.nvmlDeviceGetHandleByIndex(i)
+                gpus_powers.append(pynvml.nvmlDeviceGetPowerUsage(handle))
+            pynvml.nvmlShutdown()
+            return gpus_powers
+        except Exception:
+            return None
 
     def gpu_power_limit(self):
         """
@@ -180,18 +189,19 @@ class GPU:
         """
         if not self.is_gpu_available:
             return None
-        pynvml.nvmlInit()
-        deviceCount = pynvml.nvmlDeviceGetCount()
-        gpus_limits = []
-        for i in range(deviceCount):
-            handle = pynvml.nvmlDeviceGetHandleByIndex(i)
-            gpus_limits.append(pynvml.nvmlDeviceGetEnforcedPowerLimit(handle))
-        pynvml.nvmlShutdown()
-        return gpus_limits
+        try:
+            pynvml.nvmlInit()
+            deviceCount = pynvml.nvmlDeviceGetCount()
+            gpus_limits = []
+            for i in range(deviceCount):
+                handle = pynvml.nvmlDeviceGetHandleByIndex(i)
+                gpus_limits.append(pynvml.nvmlDeviceGetEnforcedPowerLimit(handle))
+            pynvml.nvmlShutdown()
+            return gpus_limits
+        except Exception:
+            return None
 
-    def name(
-        self,
-    ):
+    def name(self,):
         """
         This class method returns GPU name if there are any GPU visible
         or it returns empty string. All the GPU devices are intended to be of the same model
@@ -216,11 +226,14 @@ class GPU:
                 pynvml.nvmlDeviceGetPowerUsage(handle)
                 gpus_name.append(pynvml.nvmlDeviceGetName(handle))
             pynvml.nvmlShutdown()
-            return gpus_name[0].encode().decode("UTF-8")
-        except:
+            if gpus_name:
+                return gpus_name[0].encode().decode("UTF-8")
+            else:
+                return ""
+        except Exception:
             return ""
 
-    def gpu_num(self):
+    def gpu_num(self) -> int:
         """
         This class method returns number of visible GPU devices.
         Pynvml library is used.
@@ -243,11 +256,11 @@ class GPU:
                 pynvml.nvmlDeviceGetPowerUsage(handle)
             pynvml.nvmlShutdown()
             return deviceCount
-        except:
+        except Exception:
             return 0
 
 
-def is_gpu_available():
+def is_gpu_available() -> bool:
     """
     This function checks if there are any available GPU devices
     All the GPU devices are intended to be of the same model
@@ -272,7 +285,7 @@ def is_gpu_available():
             gpus_powers.append(pynvml.nvmlDeviceGetPowerUsage(handle))
         pynvml.nvmlShutdown()
         return True
-    except pynvml.NVMLError:
+    except Exception:  # catch all exceptions for robustness
         return False
 
 
@@ -298,10 +311,12 @@ def all_available_gpu():
             handle = pynvml.nvmlDeviceGetHandleByIndex(i)
             pynvml.nvmlDeviceGetPowerUsage(handle)
             gpus_name.append(pynvml.nvmlDeviceGetName(handle))
-        string = f"""Seeable gpu device(s):
+        if gpus_name:
+            string = f"""Seeable gpu device(s):
         {gpus_name[0].decode("UTF-8")}: {deviceCount} device(s)"""
-        print(string)
+            print(string)
+        else:
+            print("There is no any available gpu device(s)")
         pynvml.nvmlShutdown()
-    except:
+    except Exception:
         print("There is no any available gpu device(s)")
-        
