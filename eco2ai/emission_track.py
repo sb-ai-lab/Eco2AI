@@ -610,6 +610,40 @@ You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/cou
         except OSError:
             pass
 
+    def _accumulate_sample(self):
+        """
+        Add one CPU, GPU, and RAM sample to the running totals.
+        Returns the energy added by this sample, in kWh, after PUE.
+        """
+        cpu_consumption = self._cpu.calculate_consumption() * self._pue
+        ram_consumption = self._ram.calculate_consumption() * self._pue
+        if self._gpu.is_gpu_available:
+            gpu_consumption = self._gpu.calculate_consumption() * self._pue
+        else:
+            gpu_consumption = 0
+        self._cpu_consumption += cpu_consumption
+        self._gpu_consumption += gpu_consumption
+        self._ram_consumption += ram_consumption
+        tmp_consumption = cpu_consumption + gpu_consumption + ram_consumption
+        if self._electricity_pricing is not None:
+            self._total_price += calculate_price(self._electricity_pricing, tmp_consumption)
+        self._consumption += tmp_consumption
+        return tmp_consumption
+
+    def _report_contains_id(self):
+        """
+        Whether the report file already has a row for this tracker id.
+        """
+        if not self.file_name or not os.path.isfile(self.file_name):
+            return False
+        try:
+            frame = pd.read_csv(self.file_name, keep_default_na=False)
+        except Exception:
+            return False
+        if frame.empty or "id" not in frame.columns:
+            return False
+        return bool((frame["id"].astype(str) == str(self._id)).any())
+
     def _func_for_sched(self, add_new=False):
         """
         This class method is a function, that is put in a scheduler and
@@ -628,19 +662,7 @@ You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/cou
             Dictionary with all the attributes that should be written to .csv file
 
         """
-        cpu_consumption = self._cpu.calculate_consumption() * self._pue
-        ram_consumption = self._ram.calculate_consumption() * self._pue
-        if self._gpu.is_gpu_available:
-            gpu_consumption = self._gpu.calculate_consumption() * self._pue
-        else:
-            gpu_consumption = 0
-        self._cpu_consumption += cpu_consumption
-        self._gpu_consumption += gpu_consumption
-        self._ram_consumption += ram_consumption
-        tmp_consumption = cpu_consumption + gpu_consumption + ram_consumption
-        if self._electricity_pricing is not None:
-            self._total_price += calculate_price(self._electricity_pricing, tmp_consumption)
-        self._consumption += tmp_consumption
+        self._accumulate_sample()
 
         # self._consumption = 0
         # self._start_time = time.time()
@@ -779,6 +801,14 @@ Please, use the interface for training: ".start_training", ".new_epoch", and "st
 You should run ".start_training" method before ".stop_training" method
                 """
             )
+        added = self._accumulate_sample()
+        # new_epoch already wrote the previous interval and reset the counters.
+        # A stop with no further energy must not append an empty tail row.
+        if not self._report_contains_id() or added > 0:
+            attributes_dict = self._write_to_csv(add_new=True)
+            if self._encode_file is not None:
+                self._func_for_encoding(attributes_dict)
+        self._start_time = None
         self._reset_consumption()
         self._mode = "shut down"
         self._close_gpu()
@@ -799,6 +829,8 @@ You should run ".start_training" method before ".stop_training" method
         No returns
 
         """
+        if self._mode == "shut down":
+            return
         if self._mode == "training":
             self.stop_training()
             return
@@ -806,8 +838,7 @@ You should run ".start_training" method before ".stop_training" method
             raise Exception("Need to first start the tracker by running tracker.start() or tracker.start_training()")
         self._scheduler.remove_job("job")
         self._scheduler.shutdown()
-        self._func_for_sched()
-        attributes_dict = self._write_to_csv()
+        attributes_dict = self._func_for_sched()
         if self._encode_file is not None:
             self._func_for_encoding(attributes_dict)
         self._start_time = None
