@@ -183,9 +183,6 @@ You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/cou
         self.file_name = file_name if file_name is not None else self._params_dict["file_name"]
         self._measure_period = measure_period if measure_period is not None else self._params_dict["measure_period"]
         self._pue = pue if pue is not None else self._params_dict["pue"]
-        self.get_set_params(
-            self.project_name, self.experiment_description, self.file_name, self._measure_period, self._pue
-        )
 
         self._emission_level, self._country = define_carbon_index(emission_level, alpha_2_code, region)
         self._cpu_processes = cpu_processes

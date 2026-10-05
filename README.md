@@ -83,7 +83,7 @@ def train_func(model, dataset, optimizer, epochs):
 train_func(your_model, your_dataset, your_optimizer, your_epochs)
 ```
 
-For your convenience, every time you instantiate the Tracker object with your custom parameters, these settings will be saved until the library is deleted. Each new tracker will be created with your custom settings (if you create a tracker with new parameters, they will be saved instead of the old ones). For example:
+Arguments passed to Tracker apply only to that instance. Persistent defaults are written by set_params and read by the next Tracker that omits those arguments. For example:
 
 ```python
 import eco2ai
@@ -100,14 +100,9 @@ tracker.stop()
 
 ...
 
-# now, we want to create a new tracker for new calculations
+# The names above were not saved. A Tracker with no names uses set_params
+# defaults, or the built-in defaults when set_params was never called.
 tracker = eco2ai.Tracker()
-# now, it's equivalent to:
-# tracker = eco2ai.Tracker(
-#     project_name="YourProjectName", 
-#     experiment_description="training the <your model> model",
-#     file_name="emission.csv"
-# )
 tracker.start()
 <your gpu &(or) cpu calculations>
 tracker.stop()
