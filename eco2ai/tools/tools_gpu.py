@@ -109,8 +109,10 @@ class GPU:
         The first successful read is a baseline and adds nothing.
         If the energy counters cannot be read, energy is power times the
         duration since the previous sample.
-        Power drawn while this process is not running on the GPU is not
-        included. An idle card is not energy of a CPU-only calculation.
+        Power is included only for devices where this process tree has a
+        context. Other cards are left out. When NVML cannot list processes,
+        every device is counted. An idle card is not energy of a CPU-only
+        calculation.
         A negative result is stored as zero.
 
         Parameters
@@ -130,18 +132,21 @@ class GPU:
             energies = self._read_total_energy()
         except Exception:
             energies = None
+        used = self._used_device_indexes()
         if energies is not None:
             self._power_method = "nvml_energy"
-            consumption = self._energy_delta_kwh(energies)
+            consumption = self._energy_delta_kwh(energies, used)
         else:
             self._power_method = "nvml_power"
             consumption = 0
             powers = self.gpu_power() or []
-            for current_power in powers:
+            for index, current_power in enumerate(powers):
+                if used is not None and index not in used:
+                    continue
                 consumption += current_power / FROM_mWATTS_TO_kWATTH * duration
         if consumption < 0:
             consumption = 0
-        if self._process_uses_gpu() is False:
+        if used is not None and len(used) == 0:
             consumption = 0.0
             self._power_method = "nvml_not_used"
         self._consumption += consumption
@@ -203,11 +208,11 @@ class GPU:
             energies.append(pynvml.nvmlDeviceGetTotalEnergyConsumption(handle))
         return energies
 
-    def _process_uses_gpu(self):
+    def _used_device_indexes(self):
         """
-        Whether this process or one of its children has a GPU context.
-        False means the card's power belongs to other programs.
-        None means NVML could not answer, and the sample is kept.
+        Indexes of devices where this process tree has a compute or graphics context.
+        None means NVML could not answer, and every device is counted.
+        An empty set means this process is not running on any device.
         """
         if not any(
             hasattr(pynvml, name)
@@ -219,20 +224,23 @@ class GPU:
             return None
         try:
             ours = _process_tree_pids()
-            for handle in self._handles():
+            used = set()
+            for index, handle in enumerate(self._handles()):
                 if ours.intersection(_gpu_client_pids(handle)):
-                    return True
-            return False
+                    used.add(index)
+            return used
         except Exception:
             return None
 
-    def _energy_delta_kwh(self, energies):
+    def _energy_delta_kwh(self, energies, used):
         previous = self._last_energies
         self._last_energies = list(energies)
         if previous is None:
             return 0.0
         total = 0.0
-        for prev, current in zip(previous, energies):
+        for index, (prev, current) in enumerate(zip(previous, energies)):
+            if used is not None and index not in used:
+                continue
             delta = current - prev
             if delta > 0:
                 total += delta / FROM_mWATTS_TO_kWATTH
