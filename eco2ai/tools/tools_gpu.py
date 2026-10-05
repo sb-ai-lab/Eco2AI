@@ -25,7 +25,7 @@ class GPU:
         Parameters
         ----------
         ignore_warnings: bool
-            If true, then user will be notified of all the warnings. If False, there won't be any warnings.
+            If True, warnings are not shown. If False, warnings are shown.
             The default is False.
 
         Returns
@@ -36,6 +36,9 @@ class GPU:
         """
         self._consumption = 0
         self._ignore_warnings = ignore_warnings
+        self._nvml_open = False
+        self._last_energies = None
+        self._power_method = None
         self.is_gpu_available = is_gpu_available()
 
         if not self.is_gpu_available and not self._ignore_warnings:
@@ -48,7 +51,12 @@ class GPU:
 
     def calculate_consumption(self): 
         """
-        This class method calculates GPU power consumption.
+        GPU energy since the previous sample.
+        NVML total-energy counters are used when every device reports one.
+        The first successful read is a baseline and adds nothing.
+        If the energy counters cannot be read, energy is power times the
+        duration since the previous sample.
+        A negative result is stored as zero.
 
         Parameters
         ----------
@@ -57,15 +65,25 @@ class GPU:
         Returns
         -------
         consumption: float
-            GPU power consumption
+            GPU energy of this sample, in kWh
         """
         if not self.is_gpu_available:
             return 0
         duration = time.time() - self._start
         self._start = time.time()
-        consumption = 0
-        for current_power in self.gpu_power():
-            consumption += current_power / FROM_mWATTS_TO_kWATTH * duration
+        try:
+            energies = self._read_total_energy()
+        except Exception:
+            energies = None
+        if energies is not None:
+            self._power_method = "nvml_energy"
+            consumption = self._energy_delta_kwh(energies)
+        else:
+            self._power_method = "nvml_power"
+            consumption = 0
+            powers = self.gpu_power() or []
+            for current_power in powers:
+                consumption += current_power / FROM_mWATTS_TO_kWATTH * duration
         if consumption < 0:
             consumption = 0
         self._consumption += consumption
@@ -89,6 +107,55 @@ class GPU:
             return 0
         return self._consumption
 
+    def power_method_label(self):
+        """
+            Label of the method used by the latest calculate_consumption call.
+            Before that call the label is method:nvml_power.
+            After a sample it is method:nvml_energy or method:nvml_power.
+        """
+        if not self._power_method:
+            return "method:nvml_power"
+        return f"method:{self._power_method}"
+
+    def close(self):
+        """
+            Shut down NVML once tracking stops.
+        """
+        if self._nvml_open:
+            try:
+                pynvml.nvmlShutdown()
+            except Exception:
+                pass
+            self._nvml_open = False
+
+    def _ensure_nvml(self):
+        if not self._nvml_open:
+            pynvml.nvmlInit()
+            self._nvml_open = True
+
+    def _handles(self):
+        self._ensure_nvml()
+        device_count = pynvml.nvmlDeviceGetCount()
+        return [pynvml.nvmlDeviceGetHandleByIndex(i) for i in range(device_count)]
+
+    def _read_total_energy(self):
+        energies = []
+        for handle in self._handles():
+            energies.append(pynvml.nvmlDeviceGetTotalEnergyConsumption(handle))
+        return energies
+
+    def _energy_delta_kwh(self, energies):
+        previous = self._last_energies
+        self._last_energies = list(energies)
+        if previous is None:
+            return 0.0
+        total = 0.0
+        for prev, current in zip(previous, energies):
+            delta = current - prev
+            if delta > 0:
+                total += delta / FROM_mWATTS_TO_kWATTH
+        return total
+
     def gpu_memory(self):
         """
         This class method returns GPU Memory used. Pynvml library is used.
@@ -106,16 +173,9 @@ class GPU:
         if not self.is_gpu_available:
             return None
         try:
-            pynvml.nvmlInit()
-            deviceCount = pynvml.nvmlDeviceGetCount()
-            gpus_memory = []
-            for i in range(deviceCount):
-                handle = pynvml.nvmlDeviceGetHandleByIndex(i)
-                gpus_memory.append(pynvml.nvmlDeviceGetMemoryInfo(handle))
-            pynvml.nvmlShutdown()
-            return gpus_memory
+            return [pynvml.nvmlDeviceGetMemoryInfo(handle) for handle in self._handles()]
         except Exception:
-            return None  # standardized error return
+            return None
 
     def gpu_temperature(self):
         """
@@ -134,14 +194,10 @@ class GPU:
         if not self.is_gpu_available:
             return None
         try:
-            pynvml.nvmlInit()
-            deviceCount = pynvml.nvmlDeviceGetCount()
-            gpus_temps = []
-            for i in range(deviceCount):
-                handle = pynvml.nvmlDeviceGetHandleByIndex(i)
-                gpus_temps.append(pynvml.nvmlDeviceGetTemperature(handle, pynvml.NVML_TEMPERATURE_GPU))
-            pynvml.nvmlShutdown()
-            return gpus_temps
+            return [
+                pynvml.nvmlDeviceGetTemperature(handle, pynvml.NVML_TEMPERATURE_GPU)
+                for handle in self._handles()
+            ]
         except Exception:
             return None
 
@@ -162,14 +218,7 @@ class GPU:
         if not self.is_gpu_available:
             return None
         try:
-            pynvml.nvmlInit()
-            deviceCount = pynvml.nvmlDeviceGetCount()
-            gpus_powers = []
-            for i in range(deviceCount):
-                handle = pynvml.nvmlDeviceGetHandleByIndex(i)
-                gpus_powers.append(pynvml.nvmlDeviceGetPowerUsage(handle))
-            pynvml.nvmlShutdown()
-            return gpus_powers
+            return [pynvml.nvmlDeviceGetPowerUsage(handle) for handle in self._handles()]
         except Exception:
             return None
 
@@ -190,14 +239,7 @@ class GPU:
         if not self.is_gpu_available:
             return None
         try:
-            pynvml.nvmlInit()
-            deviceCount = pynvml.nvmlDeviceGetCount()
-            gpus_limits = []
-            for i in range(deviceCount):
-                handle = pynvml.nvmlDeviceGetHandleByIndex(i)
-                gpus_limits.append(pynvml.nvmlDeviceGetEnforcedPowerLimit(handle))
-            pynvml.nvmlShutdown()
-            return gpus_limits
+            return [pynvml.nvmlDeviceGetEnforcedPowerLimit(handle) for handle in self._handles()]
         except Exception:
             return None
 
@@ -218,18 +260,16 @@ class GPU:
 
         """
         try:
-            pynvml.nvmlInit()
-            deviceCount = pynvml.nvmlDeviceGetCount()
-            gpus_name = []
-            for i in range(deviceCount):
-                handle = pynvml.nvmlDeviceGetHandleByIndex(i)
+            names = []
+            for handle in self._handles():
                 pynvml.nvmlDeviceGetPowerUsage(handle)
-                gpus_name.append(pynvml.nvmlDeviceGetName(handle))
-            pynvml.nvmlShutdown()
-            if gpus_name:
-                return gpus_name[0].encode().decode("UTF-8")
-            else:
+                names.append(pynvml.nvmlDeviceGetName(handle))
+            if not names:
                 return ""
+            name = names[0]
+            if isinstance(name, bytes):
+                return name.decode("UTF-8")
+            return str(name)
         except Exception:
             return ""
 
@@ -249,13 +289,11 @@ class GPU:
 
         """
         try:
-            pynvml.nvmlInit()
-            deviceCount = pynvml.nvmlDeviceGetCount()
-            for i in range(deviceCount):
-                handle = pynvml.nvmlDeviceGetHandleByIndex(i)
+            device_count = 0
+            for handle in self._handles():
                 pynvml.nvmlDeviceGetPowerUsage(handle)
-            pynvml.nvmlShutdown()
-            return deviceCount
+                device_count += 1
+            return device_count
         except Exception:
             return 0
 
