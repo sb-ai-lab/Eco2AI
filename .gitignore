@@ -1,6 +1,7 @@
 test.ipnb
 venv/*
 .venv/*
+.venvs/
 my_emission_file.csv
 .DS_Store
 PyPiUpdate.md

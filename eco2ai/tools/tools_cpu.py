@@ -8,7 +8,7 @@ import pandas as pd
 import numpy as np
 import warnings
 import platform
-from pkg_resources import resource_stream
+from eco2ai.resource_path import resource_filename
 
 
 CONSTANT_CONSUMPTION = 100.1
@@ -16,7 +16,7 @@ FROM_WATTs_TO_kWATTh = 1000*3600
 FROM_uJOULES_TO_kWATTh = 1000 * 1000 * 3600 * 1000
 RAPL_ROOT = "/sys/class/powercap/intel-rapl"
 NUM_CALCULATION = 200
-CPU_TABLE_NAME = resource_stream('eco2ai', 'data/cpu_names.csv').name
+CPU_TABLE_NAME = resource_filename('eco2ai', 'data/cpu_names.csv')
 FAMILY_PATTERN = (
     "(Core Ultra)|(Ryzen Threadripper)|(Ryzen AI)|(Ryzen)|(EPYC)|(Athlon)|"
     "(Xeon Gold)|(Xeon Bronze)|(Xeon Silver)|(Xeon Platinum)|(Xeon)|"

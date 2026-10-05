@@ -1,6 +1,6 @@
 import os
 import psutil
-from pkg_resources import resource_stream
+from eco2ai.resource_path import resource_filename
 import json
 import pandas as pd
 import string
@@ -115,7 +115,7 @@ def define_carbon_index(
     """
     if alpha_2_code is None and region is not None:
         raise NoCountryCodeError("In order to set 'region' parameter, 'alpha_2_code' parameter should be set")
-    carbon_index_table_name = resource_stream('eco2ai', 'data/carbon_index.csv').name
+    carbon_index_table_name = resource_filename('eco2ai', 'data/carbon_index.csv')
     if alpha_2_code is None:
         try:
             ip_dict = json.loads(requests.get("https://ipinfo.io/").content)  # safer than eval

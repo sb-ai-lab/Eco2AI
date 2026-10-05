@@ -26,7 +26,13 @@ from eco2ai.utils import (
     NotNeededExtensionError,
 )
 
-from pandas.api.types import is_numeric_dtype, is_string_dtype, is_categorical_dtype, is_bool_dtype, is_object_dtype
+from pandas.api.types import is_bool_dtype, is_numeric_dtype, is_object_dtype, is_string_dtype
+
+try:
+    from pandas.api.types import is_categorical_dtype
+except ImportError:  # removed in pandas 3; pandas 1.2-2.x keep the original helper
+    def is_categorical_dtype(dtype):
+        return isinstance(dtype, pd.CategoricalDtype)
 
 FROM_mWATTS_TO_kWATTH = 1000 * 1000 * 3600
 FROM_kWATTH_TO_MWATTH = 1000
@@ -480,7 +486,7 @@ You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/cou
                 if not is_file_opened(self.file_name):
                     # Open the file to prevent other processes from using it
                     with open(self.file_name, "r"):
-                        attributes_dataframe = pd.read_csv(self.file_name)
+                        attributes_dataframe = pd.read_csv(self.file_name, keep_default_na=False).astype(object)
 
                         # Convert attributes_dict values into a flat list
                         attributes_array = []
@@ -797,7 +803,7 @@ You should run ".start_training" method before ".stop_training" method
                 if not is_file_opened(self._encode_file):
                     tmp = open(self._encode_file, "r")
 
-                    attributes_dataframe = pd.read_csv(self._encode_file)
+                    attributes_dataframe = pd.read_csv(self._encode_file, keep_default_na=False).astype(object)
 
                     attributes_dataframe = pd.concat(
                         [

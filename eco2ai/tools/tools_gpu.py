@@ -5,6 +5,16 @@ import warnings
 FROM_mWATTS_TO_kWATTH = 1000 * 1000 * 3600
 
 
+def decode_gpu_name(name):
+    """Return a GPU device name as text.
+
+    pynvml 5.6+ returns bytes from nvmlDeviceGetName. nvidia-ml-py returns str.
+    """
+    if isinstance(name, bytes):
+        return name.decode("UTF-8")
+    return str(name)
+
+
 class NoGPUWarning(Warning):
     pass
 
@@ -266,10 +276,7 @@ class GPU:
                 names.append(pynvml.nvmlDeviceGetName(handle))
             if not names:
                 return ""
-            name = names[0]
-            if isinstance(name, bytes):
-                return name.decode("UTF-8")
-            return str(name)
+            return decode_gpu_name(names[0])
         except Exception:
             return ""
 
@@ -351,7 +358,7 @@ def all_available_gpu():
             gpus_name.append(pynvml.nvmlDeviceGetName(handle))
         if gpus_name:
             string = f"""Seeable gpu device(s):
-        {gpus_name[0].decode("UTF-8")}: {deviceCount} device(s)"""
+        {decode_gpu_name(gpus_name[0])}: {deviceCount} device(s)"""
             print(string)
         else:
             print("There is no any available gpu device(s)")
