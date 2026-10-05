@@ -69,6 +69,10 @@ tracker.start()
 <your gpu &(or) cpu calculations>
 
 tracker.stop()
+
+# The same run as a context manager. Leaving the block stops the tracker.
+with eco2ai.Tracker(project_name="YourProjectName", experiment_description="training the <your model> model") as tracker:
+    <your gpu &(or) cpu calculations>
 ```
 
 The eco2AI also supports decorators. As soon as the decorated function is executed, the information about the emissions will be written to the emission.csv file:

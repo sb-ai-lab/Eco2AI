@@ -895,6 +895,21 @@ You should run ".start_training" method before ".stop_training" method
         if self._gpu is not None and hasattr(self._gpu, "close"):
             self._gpu.close()
 
+    def __enter__(self):
+        """
+        Start the tracker and return it, so a with-block can wrap a run.
+        """
+        self.start()
+        return self
+
+    def __exit__(self, exc_type, exc, tb):
+        """
+        Stop the tracker when the block ends. An exception is not swallowed.
+        """
+        if self._mode != "shut down":
+            self.stop()
+        return False
+
     def _func_for_encoding(self, attributes_dict):
         """
         This function encodes all calculated data and attributes and writes it to file.
