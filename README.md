@@ -81,6 +81,35 @@ def train_func(model, dataset, optimizer, epochs):
     ...
 
 train_func(your_model, your_dataset, your_optimizer, your_epochs)
+
+@track(project_name="Malevich", file_name="run.csv")
+def train_named(model, epochs):
+    ...
+
+train_named(model, 2)
+```
+
+The same run can be a context manager. Leaving the block stops the tracker:
+
+```python
+import eco2ai
+
+with eco2ai.Tracker(project_name="Malevich", file_name="run.csv") as tracker:
+    <your gpu &(or) cpu calculations>
+```
+
+A callable passed as `callback` receives each row after it is written. Lightning users can pass `Eco2AICallback` to `Trainer`. That import needs Lightning (`pip install lightning`) and is not loaded by `import eco2ai`.
+
+```python
+import lightning.pytorch as L
+from eco2ai.lightning import Eco2AICallback
+
+trainer = L.Trainer(callbacks=[
+    Eco2AICallback(project_name="Malevich", file_name="fit.csv")
+])
+trainer.fit(model)
+# One row per training epoch. Fit end stops the tracker.
+# The open interval after the last epoch is written only when it used energy.
 ```
 
 For your convenience, every time you instantiate the Tracker object with your custom parameters, these settings will be saved until the library is deleted. Each new tracker will be created with your custom settings (if you create a tracker with new parameters, they will be saved instead of the old ones). For example:
