@@ -142,7 +142,7 @@ tracker.stop()
 <!-- There is [sber_emission_tracker_guide.ipynb](https://github.com/vladimir-laz/AIRIEmisisonTracker/blob/704ff88468f6ad403d69a63738888e1a3c41f59b/guide/sber_emission_tracker_guide.ipynb)  - useful jupyter notebook with more examples and notes. We highly recommend to check it out beforehand. -->
 ## Important note <a name="4"></a> 
 
-If for some reasons it is not possible to define country, then emission coefficient is set to 458.490 kg/MWh, the 2025 world average. Country rows and this world fallback use Ember Yearly Electricity Data, CO2 intensity (gCO2/kWh, direct CO2, not CO2e). gCO2/kWh and kg/MWh are the same number. The column stays `Emission intensity, kg/MWh`.
+If for some reasons it is not possible to define country, then emission coefficient is set to 458.490 kg/MWh, the 2025 world average. Country rows and this world fallback use Ember Yearly Electricity Data, CO2 intensity (gCO2/kWh, direct CO2, not CO2e). gCO2/kWh and kg/MWh are the same number. Each row records that intensity in `Emission intensity, kg/MWh`, plus the data `year` and a `reference` key. The keys are in [eco2ai/data/SOURCES.md](eco2ai/data/SOURCES.md).
 
 [Ember Yearly Electricity Data](https://ember-energy.org/data/yearly-electricity-data/)
 

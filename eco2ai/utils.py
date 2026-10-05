@@ -155,7 +155,7 @@ def define_carbon_index(
     """
                 )
                 result = result[result['region'] == 'Whole country']
-    result = result.values[0][-1]
+    result = result["Emission intensity, kg/MWh"].values[0]
     return (result, f'{country}/{region}') if region is not None else (result, f'{country}')
 
 

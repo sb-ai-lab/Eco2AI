@@ -1,502 +1,502 @@
-country,region,alternative_name,alpha_2_code,alpha_3_code,un_code,"Emission intensity, kg/MWh"
-Afghanistan,Whole country,N/A,AF,AFG,4,131.310
-Albania,Whole country,N/A,AL,ALB,8,24.482
-Algeria,Whole country,N/A,DZ,DZA,12,632.940
-American Samoa,Whole country,N/A,AS,ASM,16,611.110
-Angola,Whole country,N/A,AO,AGO,24,185.380
-Antigua and Barbuda,Whole country,N/A,AG,ATG,28,594.600
-Argentina,Whole country,N/A,AR,ARG,32,342.910
-Armenia,Whole country,N/A,AM,ARM,51,235.500
-Aruba,Whole country,N/A,AW,ABW,533,550.000
-Australia,Whole country,N/A,AU,AUS,36,524.590
-Australia,Australian Capital Territory,ACT,AU,AUS,36,640.000
-Australia,New South Wales,New South Wales,AU,AUS,36,640.000
-Australia,Northern Territory,Northern Territory,AU,AUS,36,560.000
-Australia,Queensland,Queensland,AU,AUS,36,670.000
-Australia,South Australia,South Australia,AU,AUS,36,220.000
-Australia,Tasmania,Tasmania,AU,AUS,36,200.000
-Australia,Victoria,Victoria,AU,AUS,36,780.000
-Australia,Western Australia,Western Australia,AU,AUS,36,500.000
-Austria,Whole country,N/A,AT,AUT,40,117.220
-Azerbaijan,Whole country,N/A,AZ,AZE,31,647.120
-Bahamas,Whole country,N/A,BS,BHS,44,653.330
-Bahrain,Whole country,N/A,BH,BHR,48,902.240
-Bangladesh,Whole country,N/A,BD,BGD,50,696.130
-Barbados,Whole country,N/A,BB,BRB,52,594.600
-Belarus,Whole country,N/A,BY,BLR,112,312.530
-Belgium,Whole country,N/A,BE,BEL,56,109.300
-Belize,Whole country,N/A,BZ,BLZ,84,170.210
-Benin,Whole country,N/A,BJ,BEN,204,584.160
-Bhutan,Whole country,N/A,BT,BTN,64,23.640
-Bolivia,Whole country,N/A,BO,BOL,68,481.290
-Bosnia and Herzegovina,Whole country,N/A,BA,BIH,70,573.000
-Botswana,Whole country,N/A,BW,BWA,72,851.310
-Brazil,Whole country,N/A,BR,BRA,76,109.950
-Brazil,Acre,Acre,BR,BRA,76,46.100
-Brazil,Alagoas,Alagoas,BR,BRA,76,46.100
-Brazil,Amapá,Amapá,BR,BRA,76,46.100
-Brazil,Amazonas,Amazonas,BR,BRA,76,46.100
-Brazil,Bahia,Bahia,BR,BRA,76,46.100
-Brazil,Ceará,Ceará,BR,BRA,76,46.100
-Brazil,Distrito Federal,Distrito Federal,BR,BRA,76,46.100
-Brazil,Espírito Santo,Espírito Santo,BR,BRA,76,46.100
-Brazil,Goiás,Goiás,BR,BRA,76,46.100
-Brazil,Maranhão,Maranhão,BR,BRA,76,46.100
-Brazil,Mato Grosso,Mato Grosso,BR,BRA,76,46.100
-Brazil,Mato Grosso do Sul,Mato Grosso do Sul,BR,BRA,76,46.100
-Brazil,Minas Gerais,Minas Gerais,BR,BRA,76,46.100
-Brazil,Pará,Pará,BR,BRA,76,46.100
-Brazil,Paraíba,Paraíba,BR,BRA,76,46.100
-Brazil,Paraná,Paraná,BR,BRA,76,46.100
-Brazil,Pernambuco,Pernambuco,BR,BRA,76,46.100
-Brazil,Piauí,Piauí,BR,BRA,76,46.100
-Brazil,Rio de Janeiro,Rio de Janeiro,BR,BRA,76,46.100
-Brazil,Rio Grande do Norte,Rio Grande do Norte,BR,BRA,76,46.100
-Brazil,Rio Grande do Sul,Rio Grande do Sul,BR,BRA,76,46.100
-Brazil,Rondônia,Rondônia,BR,BRA,76,46.100
-Brazil,Santa Catarina,Santa Catarina,BR,BRA,76,46.100
-Brazil,São Paulo,São Paulo,BR,BRA,76,46.100
-Brazil,Sergipe,Sergipe,BR,BRA,76,46.100
-Brazil,Tocantins,Tocantins,BR,BRA,76,46.100
-British Virgin Islands,Whole country,N/A,VG,VGB,92,647.060
-Brunei,Whole country,N/A,BN,BRN,96,892.090
-Bulgaria,Whole country,N/A,BG,BGR,100,275.410
-Burkina Faso,Whole country,N/A,BF,BFA,854,562.130
-Burundi,Whole country,N/A,BI,BDI,108,183.670
-Cambodia,Whole country,N/A,KH,KHM,116,498.870
-Cameroon,Whole country,N/A,CM,CMR,120,225.900
-Canada,Whole country,N/A,CA,CAN,124,190.730
-Canada,Alberta,Alberta,CA,CAN,124,346.102
-Canada,British Columbia,British Columbia,CA,CAN,124,18.064
-Canada,Manitoba,Manitoba,CA,CAN,124,3.045
-Canada,New Brunswick,New Brunswick,CA,CAN,124,375.484
-Canada,Newfoundland and Labrador,Newfoundland and Labrador,CA,CAN,124,17.043
-Canada,Nova Scotia,Nova Scotia,CA,CAN,124,628.347
-Canada,Northwest Territories,Northwest Territories,CA,CAN,124,490.000
-Canada,Nunavut,Nunavut,CA,CAN,124,760.000
-Canada,Ontario,Ontario,CA,CAN,124,73.313
-Canada,Prince Edward Island,Prince Edward Island,CA,CAN,124,264.553
-Canada,Quebec,Québec,CA,CAN,124,2.565
-Canada,Saskatchewan,Saskatchewan,CA,CAN,124,580.720
-Canada,Yukon,Yukon,CA,CAN,124,133.567
-Cape Verde,Whole country,N/A,CV,CPV,132,461.540
-Cayman Islands,Whole country,N/A,KY,CYM,136,633.800
-Central African Republic,Whole country,N/A,CF,CAF,140,0.000
-Chad,Whole country,N/A,TD,TCD,148,621.620
-Chile,Whole country,N/A,CL,CHL,152,290.510
-China,Whole country,N/A,CN,CHN,156,526.190
-China,Beijing,北京,CN,CHN,156,555.400
-China,Tianjin,天津,CN,CHN,156,679.600
-China,Hebei,河北,CN,CHN,156,651.600
-China,Shanxi,山西,CN,CHN,156,663.400
-China,Inner Mongolia,内蒙古,CN,CHN,156,647.900
-China,Liaoning,辽宁,CN,CHN,156,487.800
-China,Jilin,吉林,CN,CHN,156,467.100
-China,Heilongjiang,黑龙江,CN,CHN,156,522.900
-China,Shanghai,上海,CN,CHN,156,573.700
-China,Jiangsu,江苏,CN,CHN,156,582.700
-China,Zhejiang,浙江,CN,CHN,156,497.400
-China,Anhui,安徽,CN,CHN,156,655.300
-China,Fujian,福建,CN,CHN,156,421.100
-China,Jiangxi,江西,CN,CHN,156,583.600
-China,Shandong,山东,CN,CHN,156,619.100
-China,Henan,河南,CN,CHN,156,589.700
-China,Hubei,湖北,CN,CHN,156,404.400
-China,Hunan,湖南,CN,CHN,156,497.600
-China,Guangdong,广东,CN,CHN,156,441.900
-China,Guangxi,广西,CN,CHN,156,447.600
-China,Hainan,海南,CN,CHN,156,364.800
-China,Chongqing,重庆,CN,CHN,156,558.100
-China,Sichuan,四川,CN,CHN,156,156.400
-China,Guizhou,贵州,CN,CHN,156,568.300
-China,Yunnan,云南,CN,CHN,156,133.300
-China,Shaanxi,陕西,CN,CHN,156,633.500
-China,Gansu,甘肃,CN,CHN,156,447.100
-China,Qinghai,青海,CN,CHN,156,179.600
-China,Ningxia,宁夏,CN,CHN,156,618.700
-China,Xinjiang,新疆,CN,CHN,156,602.100
-Colombia,Whole country,N/A,CO,COL,170,186.810
-Comoros,Whole country,N/A,KM,COM,174,642.860
-Congo,Whole country,N/A,CG,COG,178,716.120
-Cook Islands,Whole country,N/A,CK,COK,184,250.000
-Costa Rica,Whole country,N/A,CR,CRI,188,24.200
-Cote d'Ivoire,Whole country,N/A,CI,CIV,384,405.010
-Croatia,Whole country,N/A,HR,HRV,191,158.500
-Cuba,Whole country,N/A,CU,CUB,192,642.820
-Cyprus,Whole country,N/A,CY,CYP,196,489.000
-Czechia,Whole country,N/A,CZ,CZE,203,401.460
-Democratic Republic of Congo,Whole country,N/A,CD,COD,180,27.640
-Denmark,Whole country,N/A,DK,DNK,208,99.620
-Djibouti,Whole country,N/A,DJ,DJI,262,450.000
-Dominica,Whole country,N/A,DM,DMA,212,600.000
-Dominican Republic,Whole country,N/A,DO,DOM,214,537.480
-Ecuador,Whole country,N/A,EC,ECU,218,159.020
-Egypt,Whole country,N/A,EG,EGY,818,563.230
-El Salvador,Whole country,N/A,SV,SLV,222,137.770
-Equatorial Guinea,Whole country,N/A,GQ,GNQ,226,644.300
-Eritrea,Whole country,N/A,ER,ERI,232,577.780
-Estonia,Whole country,N/A,EE,EST,233,316.640
-Eswatini,Whole country,N/A,SZ,SWZ,748,131.150
-Ethiopia,Whole country,N/A,ET,ETH,231,23.080
-Faeroe Islands,Whole country,N/A,FO,FRO,234,346.940
-Falkland Islands,Whole country,N/A,FK,FLK,238,1000.000
-Fiji,Whole country,N/A,FJ,FJI,242,278.260
-Finland,Whole country,N/A,FI,FIN,246,57.470
-France,Whole country,N/A,FR,FRA,250,41.450
-French Guiana,Whole country,N/A,GF,GUF,254,244.900
-French Polynesia,Whole country,N/A,PF,PYF,258,430.560
-Gabon,Whole country,N/A,GA,GAB,266,523.080
-Gambia,Whole country,N/A,GM,GMB,270,666.670
-Georgia,Whole country,N/A,GE,GEO,268,145.930
-Germany,Whole country,N/A,DE,DEU,276,329.650
-Ghana,Whole country,N/A,GH,GHA,288,468.890
-Greece,Whole country,N/A,GR,GRC,300,324.410
-Greenland,Whole country,N/A,GL,GRL,304,150.000
-Grenada,Whole country,N/A,GD,GRD,308,666.670
-Guadeloupe,Whole country,N/A,GP,GLP,312,497.010
-Guam,Whole country,N/A,GU,GUM,316,607.530
-Guatemala,Whole country,N/A,GT,GTM,320,301.460
-Guinea,Whole country,N/A,GN,GIN,324,181.140
-Guinea-Bissau,Whole country,N/A,GW,GNB,624,625.000
-Guyana,Whole country,N/A,GY,GUY,328,644.930
-Haiti,Whole country,N/A,HT,HTI,332,534.880
-Honduras,Whole country,N/A,HN,HND,340,322.120
-Hong Kong,Whole country,N/A,HK,HKG,344,675.480
-Hungary,Whole country,N/A,HU,HUN,348,163.020
-Iceland,Whole country,N/A,IS,ISL,352,27.820
-India,Whole country,N/A,IN,IND,356,670.550
-India,Andaman and Nicobar,AN,IN,IND,356,629.700
-India,Andhra Pradesh,AP,IN,IND,356,654.800
-India,Arunachal Pradesh,AR,IN,IND,356,24.010
-India,Assam,AS,IN,IND,356,586.550
-India,Bihar,BR,IN,IND,356,815.140
-India,Chandigarh,CH,IN,IND,356,48.390
-India,Chhattisgarh,CT,IN,IND,356,806.010
-India,Dadra and Nagar Haveli and Daman and Diu,DH,IN,IND,356,129.000
-India,Delhi,DL,IN,IND,356,421.040
-India,Goa,GA,IN,IND,356,46.740
-India,Gujarat,GJ,IN,IND,356,492.120
-India,Haryana,HR,IN,IND,356,769.880
-India,Himachal Pradesh,HP,IN,IND,356,24.050
-India,Jammu and Kashmir,JK,IN,IND,356,24.000
-India,Jharkhand,JH,IN,IND,356,814.580
-India,Karnataka,KA,IN,IND,356,394.410
-India,Kerala,KL,IN,IND,356,28.920
-India,Ladakh,LA,IN,IND,356,24.000
-India,Lakshadweep,LD,IN,IND,356,818.840
-India,Madhya Pradesh,MP,IN,IND,356,729.910
-India,Maharashtra,MH,IN,IND,356,658.970
-India,Manipur,MN,IN,IND,356,24.320
-India,Meghalaya,ML,IN,IND,356,24.000
-India,Mizoram,MZ,IN,IND,356,25.220
-India,Nagaland,NL,IN,IND,356,23.990
-India,Odisha,OR,IN,IND,356,739.710
-India,Puducherry,PY,IN,IND,356,465.070
-India,Punjab,PB,IN,IND,356,685.130
-India,Rajasthan,RJ,IN,IND,356,437.990
-India,Sikkim,SK,IN,IND,356,24.000
-India,Tamil Nadu,TN,IN,IND,356,493.190
-India,Telangana,TG,IN,IND,356,679.880
-India,Tripura,TR,IN,IND,356,489.500
-India,Uttar Pradesh,UP,IN,IND,356,764.860
-India,Uttarakhand,UT,IN,IND,356,57.630
-India,West Bengal,WB,IN,IND,356,782.950
-Indonesia,Whole country,N/A,ID,IDN,360,681.110
-Iran,Whole country,N/A,IR,IRN,364,659.530
-Iraq,Whole country,N/A,IQ,IRQ,368,683.100
-Ireland,Whole country,N/A,IE,IRL,372,255.900
-Israel,Whole country,N/A,IL,ISR,376,492.690
-Italy,Whole country,N/A,IT,ITA,380,284.630
-Jamaica,Whole country,N/A,JM,JAM,388,563.010
-Japan,Whole country,N/A,JP,JPN,392,477.370
-Japan,Hokkaido,北海道,JP,JPN,392,423.000
-Japan,Aomori,青森県,JP,JPN,392,423.000
-Japan,Iwate,岩手県,JP,JPN,392,423.000
-Japan,Miyagi,宮城県,JP,JPN,392,423.000
-Japan,Akita,秋田県,JP,JPN,392,423.000
-Japan,Yamagata,山形県,JP,JPN,392,423.000
-Japan,Fukushima,福島県,JP,JPN,392,423.000
-Japan,Niigata,新潟県,JP,JPN,392,423.000
-Japan,Ibaraki,茨城県,JP,JPN,392,423.000
-Japan,Tochigi,栃木県,JP,JPN,392,423.000
-Japan,Gunma,群馬県,JP,JPN,392,423.000
-Japan,Saitama,埼玉県,JP,JPN,392,423.000
-Japan,Chiba,千葉県,JP,JPN,392,423.000
-Japan,Tokyo,東京都,JP,JPN,392,423.000
-Japan,Kanagawa,神奈川県,JP,JPN,392,423.000
-Japan,Yamanashi,山梨県,JP,JPN,392,423.000
-Japan,Nagano,長野県,JP,JPN,392,423.000
-Japan,Gifu,岐阜県,JP,JPN,392,423.000
-Japan,Shizuoka,静岡県,JP,JPN,392,423.000
-Japan,Aichi,愛知県,JP,JPN,392,423.000
-Japan,Mie,三重県,JP,JPN,392,423.000
-Japan,Toyama,富山県,JP,JPN,392,423.000
-Japan,Ishikawa,石川県,JP,JPN,392,423.000
-Japan,Fukui,福井県,JP,JPN,392,423.000
-Japan,Shiga,滋賀県,JP,JPN,392,423.000
-Japan,Kyoto,京都府,JP,JPN,392,423.000
-Japan,Osaka,大阪府,JP,JPN,392,423.000
-Japan,Hyogo,兵庫県,JP,JPN,392,423.000
-Japan,Nara,奈良県,JP,JPN,392,423.000
-Japan,Wakayama,和歌山県,JP,JPN,392,423.000
-Japan,Tottori,鳥取県,JP,JPN,392,423.000
-Japan,Shimane,島根県,JP,JPN,392,423.000
-Japan,Okayama,岡山県,JP,JPN,392,423.000
-Japan,Hiroshima,広島県,JP,JPN,392,423.000
-Japan,Yamaguchi,山口県,JP,JPN,392,423.000
-Japan,Tokushima,徳島県,JP,JPN,392,423.000
-Japan,Kagawa,香川県,JP,JPN,392,423.000
-Japan,Ehime,愛媛県,JP,JPN,392,423.000
-Japan,Kochi,高知県,JP,JPN,392,423.000
-Japan,Fukuoka,福岡県,JP,JPN,392,423.000
-Japan,Saga,佐賀県,JP,JPN,392,423.000
-Japan,Nagasaki,長崎県,JP,JPN,392,423.000
-Japan,Kumamoto,熊本県,JP,JPN,392,423.000
-Japan,Oita,大分県,JP,JPN,392,423.000
-Japan,Miyazaki,宮崎県,JP,JPN,392,423.000
-Japan,Kagoshima,鹿児島県,JP,JPN,392,423.000
-Japan,Okinawa,沖縄県,JP,JPN,392,722.000
-Jordan,Whole country,N/A,JO,JOR,400,529.790
-Kazakhstan,Whole country,N/A,KZ,KAZ,398,805.320
-Kenya,Whole country,N/A,KE,KEN,404,95.440
-Kiribati,Whole country,N/A,KI,KIR,296,500.000
-Kuwait,Whole country,N/A,KW,KWT,414,634.720
-Kyrgyzstan,Whole country,N/A,KG,KGZ,417,150.320
-Laos,Whole country,N/A,LA,LAO,418,232.080
-Latvia,Whole country,N/A,LV,LVA,428,134.280
-Lebanon,Whole country,N/A,LB,LBN,422,389.510
-Lesotho,Whole country,N/A,LS,LSO,426,20.830
-Liberia,Whole country,N/A,LR,LBR,430,315.790
-Libya,Whole country,N/A,LY,LBY,434,826.830
-Lithuania,Whole country,N/A,LT,LTU,440,138.510
-Luxembourg,Whole country,N/A,LU,LUX,442,123.380
-Macao,Whole country,N/A,MO,MAC,446,474.360
-Madagascar,Whole country,N/A,MG,MDG,450,432.100
-Malawi,Whole country,N/A,MW,MWI,454,54.650
-Malaysia,Whole country,N/A,MY,MYS,458,603.210
-Maldives,Whole country,N/A,MV,MDV,462,611.770
-Mali,Whole country,N/A,ML,MLI,466,538.590
-Malta,Whole country,N/A,MT,MLT,470,484.020
-Martinique,Whole country,N/A,MQ,MTQ,474,529.800
-Mauritania,Whole country,N/A,MR,MRT,478,512.080
-Mauritius,Whole country,N/A,MU,MUS,480,642.230
-Mexico,Whole country,N/A,MX,MEX,484,474.020
-Moldova,Whole country,N/A,MD,MDA,498,510.350
-Mongolia,Whole country,N/A,MN,MNG,496,823.530
-Montenegro,Whole country,N/A,ME,MNE,499,264.230
-Montserrat,Whole country,N/A,MS,MSR,500,1000.000
-Morocco,Whole country,N/A,MA,MAR,504,602.270
-Mozambique,Whole country,N/A,MZ,MOZ,508,129.360
-Myanmar,Whole country,N/A,MM,MMR,104,502.990
-Namibia,Whole country,N/A,,NAM,516,48.780
-Nauru,Whole country,N/A,NR,NRU,520,600.000
-Nepal,Whole country,N/A,NP,NPL,524,24.260
-Netherlands,Whole country,N/A,NL,NLD,528,253.560
-New Caledonia,Whole country,N/A,NC,NCL,540,560.900
-New Zealand,Whole country,N/A,NZ,NZL,554,92.760
-Nicaragua,Whole country,N/A,NI,NIC,558,300.890
-Niger,Whole country,N/A,NE,NER,562,673.680
-Nigeria,Whole country,N/A,NG,NGA,566,455.710
-North Korea,Whole country,N/A,KP,PRK,408,340.590
-North Macedonia,Whole country,N/A,MK,MKD,807,405.630
-Norway,Whole country,N/A,NO,NOR,578,28.100
-Oman,Whole country,N/A,OM,OMN,512,544.470
-Pakistan,Whole country,N/A,PK,PAK,586,310.190
-Palestine,Whole country,N/A,PS,PSE,275,414.140
-Panama,Whole country,N/A,PA,PAN,591,221.150
-Papua New Guinea,Whole country,N/A,PG,PNG,598,513.740
-Paraguay,Whole country,N/A,PY,PRY,600,24.700
-Peru,Whole country,N/A,PE,PER,604,238.250
-Philippines,Whole country,N/A,PH,PHL,608,595.440
-Poland,Whole country,N/A,PL,POL,616,590.800
-Portugal,Whole country,N/A,PT,PRT,620,128.080
-Puerto Rico,Whole country,N/A,PR,PRI,630,654.750
-Qatar,Whole country,N/A,QA,QAT,634,581.520
-Reunion,Whole country,N/A,RE,REU,638,394.140
-Romania,Whole country,N/A,RO,ROU,642,259.740
-Russia,Whole country,N/A,RU,RUS,643,449.860
-Russia,Belgorod Oblast,Белгородская область,RU,RUS,643,240.560
-Russia,Vladimir,Владимирская область,RU,RUS,643,240.560
-Russia,Voronezj,Воронежская область,RU,RUS,643,240.560
-Russia,Vologda,Вологодская область,RU,RUS,643,240.560
-Russia,Kostroma Oblast,Костромская область,RU,RUS,643,240.560
-Russia,Kursk,Курская область,RU,RUS,643,240.560
-Russia,Orel Oblast,Орловская область,RU,RUS,643,240.560
-Russia,Lipetsk Oblast,Липецкая область,RU,RUS,643,240.560
-Russia,Ryazan Oblast,Рязанская область,RU,RUS,643,240.560
-Russia,Bryansk Oblast,Брянская область,RU,RUS,643,240.560
-Russia,Kaluga,Калужская область,RU,RUS,643,240.560
-Russia,Smolensk,Смоленская область,RU,RUS,643,240.560
-Russia,Tambov,Тамбовская область,RU,RUS,643,240.560
-Russia,Tver Oblast,Тверская область,RU,RUS,643,240.560
-Russia,Tula,Тульская область,RU,RUS,643,240.560
-Russia,Jaroslavl,Ярославская область,RU,RUS,643,240.560
-Russia,Moscow Oblast,Московская область,RU,RUS,643,240.560
-Russia,Ivanovo,Ивановская область,RU,RUS,643,240.560
-Russia,Moscow,Москва,RU,RUS,643,240.560
-Russia,Astrakhan,Астраханская область,RU,RUS,643,218.850
-Russia,Volgograd Oblast,Волгоградская область,RU,RUS,643,218.850
-Russia,Dagestan,Республика Дагестан,RU,RUS,643,218.850
-Russia,Adygeya Republic,Республика Адыгея,RU,RUS,643,218.850
-Russia,Kalmykiya Republic,Республика Калмыкия,RU,RUS,643,218.850
-Russia,Crimea,Республика Крым,RU,RUS,643,218.850
-Russia,Rostov,Ростовская область,RU,RUS,643,218.850
-Russia,Ingushetiya Republic,Республика Ингушетия,RU,RUS,643,218.850
-Russia,Kabardino-Balkariya Republic,Кабардино-Балкарская Республика,RU,RUS,643,218.850
-Russia,Karachayevo-Cherkesiya Republic,Карачаево-Черкесская Республика,RU,RUS,643,218.850
-Russia,North Ossetia,Республика Северная Осетия — Алания,RU,RUS,643,218.850
-Russia,Chechnya,Чеченская Республика,RU,RUS,643,218.850
-Russia,Stavropol Kray,Ставропольский край,RU,RUS,643,218.850
-Russia,Sevastopol City,Севастополь,RU,RUS,643,218.850
-Russia,Penza,Пензенская область,RU,RUS,643,186.070
-Russia,Samara Oblast,Самарская область,RU,RUS,643,186.070
-Russia,Saratovskaya Oblast,Саратовская область,RU,RUS,643,186.070
-Russia,Ulyanovsk,Ульяновская область,RU,RUS,643,186.070
-Russia,Nizhny Novgorod Oblast,Нижегородская область,RU,RUS,643,186.070
-Russia,Chuvashia,Чувашская Республика,RU,RUS,643,186.070
-Russia,Mariy-El Republic,Республика Марий Эл,RU,RUS,643,186.070
-Russia,Mordoviya Republic,Республика Мордовия,RU,RUS,643,186.070
-Russia,Tatarstan Republic,Республика Татарстан,RU,RUS,643,186.070
-Russia,St.-Petersburg,Санкт-Петербург,RU,RUS,643,224.450
-Russia,Murmansk,Мурманская область,RU,RUS,643,53.510
-Russia,Kaliningrad,Калининградская область,RU,RUS,643,387.100
-Russia,Leningradskaya Oblast,Ленинградская область,RU,RUS,643,224.450
-Russia,Novgorod Oblast,Новгородская область,RU,RUS,643,224.450
-Russia,Pskov Oblast,Псковская область,RU,RUS,643,224.450
-Russia,Nenets,Ненецкий автономный округ,RU,RUS,643,600.130
-Russia,Arkhangelsk Oblast,Архангельская область,RU,RUS,643,600.140
-Russia,Karelia,Республика Карелия,RU,RUS,643,224.450
-Russia,Komi,Республика Коми,RU,RUS,643,754.980
-Russia,Bashkortostan Republic,Республика Башкортостан,RU,RUS,643,468.850
-Russia,Udmurtiya Republic,Удмуртская Республика,RU,RUS,643,468.850
-Russia,Khanty-Mansia,Ханты-Мансийский автономный округ — Югра,RU,RUS,643,468.850
-Russia,Yamalo-Nenets,Ямало-Ненецкий автономный округ,RU,RUS,643,468.850
-Russia,Perm,Пермский край,RU,RUS,643,468.850
-Russia,Kirov,Кировская область,RU,RUS,643,468.850
-Russia,Kurgan Oblast,Курганская область,RU,RUS,643,468.850
-Russia,Orenburg Oblast,Оренбургская область,RU,RUS,643,468.850
-Russia,Sverdlovsk,Свердловская область,RU,RUS,643,468.850
-Russia,Tyumen’ Oblast,Тюменская область,RU,RUS,643,468.850
-Russia,Chelyabinsk,Челябинская область,RU,RUS,643,468.850
-Russia,Altai,Республика Алтай,RU,RUS,643,363.410
-Russia,Buryatiya Republic,Республика Бурятия,RU,RUS,643,363.420
-Russia,Tyva Republic,Республика Тыва,RU,RUS,643,363.420
-Russia,Khakasiya Republic,Республика Хакасия,RU,RUS,643,363.420
-Russia,Altay Kray,Алтайский край,RU,RUS,643,363.420
-Russia,Transbaikal Territory,Забайкальский край,RU,RUS,643,363.420
-Russia,Krasnoyarsk Krai,Красноярский край,RU,RUS,643,363.420
-Russia,Irkutsk Oblast,Иркутская область,RU,RUS,643,363.420
-Russia,Kemerovo Oblast,Кемеровская область — Кузбасс,RU,RUS,643,363.420
-Russia,Novosibirsk Oblast,Новосибирская область,RU,RUS,643,363.420
-Russia,Omsk,Омская область,RU,RUS,643,363.420
-Russia,Tomsk Oblast,Томская область,RU,RUS,643,363.420
-Russia,Amur Oblast,Амурская область,RU,RUS,643,443.020
-Russia,Primorskiy Kray,Приморский край,RU,RUS,643,443.020
-Russia,Khabarovsk,Хабаровский край,RU,RUS,643,443.020
-Russia,Jewish Autonomous Oblast,Еврейская автономная область,RU,RUS,643,443.020
-Russia,Sakha,Республика Саха (Якутия),RU,RUS,643,443.020
-Rwanda,Whole country,N/A,RW,RWA,646,353.980
-Saint Kitts and Nevis,Whole country,N/A,KN,KNA,659,608.700
-Saint Lucia,Whole country,N/A,LC,LCA,662,650.000
-Saint Pierre and Miquelon,Whole country,N/A,PM,SPM,666,600.000
-Saint Vincent and the Grenadines,Whole country,N/A,VC,VCT,670,600.000
-Samoa,Whole country,N/A,WS,WSM,882,375.000
-Sao Tome and Principe,Whole country,N/A,ST,STP,678,555.560
-Saudi Arabia,Whole country,N/A,SA,SAU,682,691.950
-Senegal,Whole country,N/A,SN,SEN,686,539.970
-Serbia,Whole country,N/A,RS,SRB,688,695.660
-Seychelles,Whole country,N/A,SC,SYC,690,555.560
-Sierra Leone,Whole country,N/A,SL,SLE,694,47.620
-Singapore,Whole country,N/A,SG,SGP,702,497.090
-Slovakia,Whole country,N/A,SK,SVK,703,94.880
-Slovenia,Whole country,N/A,SI,SVN,705,183.470
-Solomon Islands,Whole country,N/A,SB,SLB,90,636.360
-Somalia,Whole country,N/A,SO,SOM,706,511.630
-South Africa,Whole country,N/A,ZA,ZAF,710,698.960
-South Korea,Whole country,N/A,KR,KOR,410,417.140
-South Sudan,Whole country,N/A,SS,SSD,728,642.860
-Spain,Whole country,N/A,ES,ESP,724,153.560
-Sri Lanka,Whole country,N/A,LK,LKA,144,321.160
-Sudan,Whole country,N/A,SD,SDN,736,153.690
-Suriname,Whole country,N/A,SR,SUR,740,321.840
-Sweden,Whole country,N/A,SE,SWE,752,35.350
-Switzerland,Whole country,N/A,CH,CHE,756,39.220
-Syria,Whole country,N/A,SY,SYR,760,706.190
-Taiwan,Whole country,N/A,TW,TWN,158,634.070
-Tajikistan,Whole country,N/A,TJ,TJK,762,73.940
-Tanzania,Whole country,N/A,TZ,TZA,834,345.020
-Thailand,Whole country,N/A,TH,THA,764,546.320
-Togo,Whole country,N/A,TG,TGO,768,422.540
-Tonga,Whole country,N/A,TO,TON,776,571.430
-Trinidad and Tobago,Whole country,N/A,TT,TTO,780,681.680
-Tunisia,Whole country,N/A,TN,TUN,788,560.290
-Turkey,Whole country,N/A,TR,TUR,792,475.730
-Turkmenistan,Whole country,N/A,TM,TKM,795,1306.270
-Turks and Caicos Islands,Whole country,N/A,TC,TCA,796,629.630
-Uganda,Whole country,N/A,UG,UGA,800,58.520
-Ukraine,Whole country,N/A,UA,UKR,804,250.470
-United Arab Emirates,Whole country,N/A,AE,ARE,784,467.510
-United Kingdom,Whole country,N/A,GB,GBR,826,217.410
-United States,Whole country,N/A,US,USA,840,384.400
-United States,Alaska,Alaska,US,USA,840,367.330
-United States,Alabama,Alabama,US,USA,840,322.499
-United States,Arkansas,Arkansas,US,USA,840,450.605
-United States,Arizona,Arizona,US,USA,840,311.476
-United States,California,California,US,USA,840,178.482
-United States,Colorado,Colorado,US,USA,840,492.157
-United States,Connecticut,Connecticut,US,USA,840,244.153
-United States,Delaware,Delaware,US,USA,840,318.963
-United States,District of Columbia,District of Columbia,US,USA,840,178.760
-United States,Florida,Florida,US,USA,840,356.816
-United States,Georgia,Georgia,US,USA,840,323.788
-United States,Hawaii,Hawaii,US,USA,840,628.285
-United States,Iowa,Iowa,US,USA,840,285.848
-United States,Idaho,Idaho,US,USA,840,142.107
-United States,Illinois,Illinois,US,USA,840,213.962
-United States,Indiana,Indiana,US,USA,840,660.970
-United States,Kansas,Kansas,US,USA,840,330.288
-United States,Kentucky,Kentucky,US,USA,840,786.987
-United States,Louisiana,Louisiana,US,USA,840,345.367
-United States,Massachusetts,Massachusetts,US,USA,840,373.030
-United States,Maryland,Maryland,US,USA,840,235.878
-United States,Maine,Maine,US,USA,840,141.441
-United States,Michigan,Michigan,US,USA,840,359.776
-United States,Minnesota,Minnesota,US,USA,840,339.081
-United States,Missouri,Missouri,US,USA,840,655.050
-United States,Mississippi,Mississippi,US,USA,840,374.819
-United States,Montana,Montana,US,USA,840,479.069
-United States,North Carolina,North Carolina,US,USA,840,283.023
-United States,North Dakota,North Dakota,US,USA,840,584.392
-United States,Nebraska,Nebraska,US,USA,840,461.827
-United States,New Hampshire,New Hampshire,US,USA,840,123.764
-United States,New Jersey,New Jersey,US,USA,840,212.422
-United States,New Mexico,New Mexico,US,USA,840,349.363
-United States,Nevada,Nevada,US,USA,840,291.374
-United States,New York,New York,US,USA,840,210.982
-United States,Ohio,Ohio,US,USA,840,482.551
-United States,Oklahoma,Oklahoma,US,USA,840,293.568
-United States,Oregon,Oregon,US,USA,840,165.181
-United States,Pennsylvania,Pennsylvania,US,USA,840,292.918
-United States,Rhode Island,Rhode Island,US,USA,840,380.626
-United States,South Carolina,South Carolina,US,USA,840,252.729
-United States,South Dakota,South Dakota,US,USA,840,151.514
-United States,Tennessee,Tennessee,US,USA,840,298.131
-United States,Texas,Texas,US,USA,840,348.503
-United States,Utah,Utah,US,USA,840,640.935
-United States,Virginia,Virginia,US,USA,840,243.512
-United States,Vermont,Vermont,US,USA,840,19.496
-United States,Washington,Washington,US,USA,840,120.256
-United States,Wisconsin,Wisconsin,US,USA,840,524.805
-United States,West Virginia,West Virginia,US,USA,840,886.493
-United States,Virgin Islands,Virgin Islands,US,USA,840,693.548
-United States,Wyoming,Wyoming,US,USA,840,825.682
-United States Virgin Islands,Whole country,N/A,VI,VIR,850,632.350
-Uruguay,Whole country,N/A,UY,URY,858,80.400
-Uzbekistan,Whole country,N/A,UZ,UZB,860,1000.000
-Vanuatu,Whole country,N/A,VU,VUT,548,500.000
-Venezuela,Whole country,N/A,VE,VEN,862,85.860
-Vietnam,Whole country,N/A,VN,VNM,704,462.580
-World,Whole country,N/A,WORLD,WORLD,WORLD,458.490
-Yemen,Whole country,N/A,YE,YEM,887,592.380
-Zambia,Whole country,N/A,ZM,ZMB,894,125.760
-Zimbabwe,Whole country,N/A,ZW,ZWE,716,384.020
+country,region,alternative_name,alpha_2_code,alpha_3_code,un_code,year,reference,"Emission intensity, kg/MWh"
+Afghanistan,Whole country,N/A,AF,AFG,4,2024,ember,131.310
+Albania,Whole country,N/A,AL,ALB,8,2021,ger2022,24.482
+Algeria,Whole country,N/A,DZ,DZA,12,2024,ember,632.940
+American Samoa,Whole country,N/A,AS,ASM,16,2024,ember,611.110
+Angola,Whole country,N/A,AO,AGO,24,2024,ember,185.380
+Antigua and Barbuda,Whole country,N/A,AG,ATG,28,2024,ember,594.600
+Argentina,Whole country,N/A,AR,ARG,32,2025,ember,342.910
+Armenia,Whole country,N/A,AM,ARM,51,2025,ember,235.500
+Aruba,Whole country,N/A,AW,ABW,533,2024,ember,550.000
+Australia,Whole country,N/A,AU,AUS,36,2025,ember,524.590
+Australia,Australian Capital Territory,ACT,AU,AUS,36,2025,nga2025,640.000
+Australia,New South Wales,New South Wales,AU,AUS,36,2025,nga2025,640.000
+Australia,Northern Territory,Northern Territory,AU,AUS,36,2025,nga2025,560.000
+Australia,Queensland,Queensland,AU,AUS,36,2025,nga2025,670.000
+Australia,South Australia,South Australia,AU,AUS,36,2025,nga2025,220.000
+Australia,Tasmania,Tasmania,AU,AUS,36,2025,nga2025,200.000
+Australia,Victoria,Victoria,AU,AUS,36,2025,nga2025,780.000
+Australia,Western Australia,Western Australia,AU,AUS,36,2025,nga2025,500.000
+Austria,Whole country,N/A,AT,AUT,40,2025,ember,117.220
+Azerbaijan,Whole country,N/A,AZ,AZE,31,2025,ember,647.120
+Bahamas,Whole country,N/A,BS,BHS,44,2024,ember,653.330
+Bahrain,Whole country,N/A,BH,BHR,48,2024,ember,902.240
+Bangladesh,Whole country,N/A,BD,BGD,50,2025,ember,696.130
+Barbados,Whole country,N/A,BB,BRB,52,2024,ember,594.600
+Belarus,Whole country,N/A,BY,BLR,112,2025,ember,312.530
+Belgium,Whole country,N/A,BE,BEL,56,2025,ember,109.300
+Belize,Whole country,N/A,BZ,BLZ,84,2024,ember,170.210
+Benin,Whole country,N/A,BJ,BEN,204,2024,ember,584.160
+Bhutan,Whole country,N/A,BT,BTN,64,2024,ember,23.640
+Bolivia,Whole country,N/A,BO,BOL,68,2025,ember,481.290
+Bosnia and Herzegovina,Whole country,N/A,BA,BIH,70,2025,ember,573.000
+Botswana,Whole country,N/A,BW,BWA,72,2024,ember,851.310
+Brazil,Whole country,N/A,BR,BRA,76,2025,ember,109.950
+Brazil,Acre,Acre,BR,BRA,76,2025,mcti2025,46.100
+Brazil,Alagoas,Alagoas,BR,BRA,76,2025,mcti2025,46.100
+Brazil,Amapá,Amapá,BR,BRA,76,2025,mcti2025,46.100
+Brazil,Amazonas,Amazonas,BR,BRA,76,2025,mcti2025,46.100
+Brazil,Bahia,Bahia,BR,BRA,76,2025,mcti2025,46.100
+Brazil,Ceará,Ceará,BR,BRA,76,2025,mcti2025,46.100
+Brazil,Distrito Federal,Distrito Federal,BR,BRA,76,2025,mcti2025,46.100
+Brazil,Espírito Santo,Espírito Santo,BR,BRA,76,2025,mcti2025,46.100
+Brazil,Goiás,Goiás,BR,BRA,76,2025,mcti2025,46.100
+Brazil,Maranhão,Maranhão,BR,BRA,76,2025,mcti2025,46.100
+Brazil,Mato Grosso,Mato Grosso,BR,BRA,76,2025,mcti2025,46.100
+Brazil,Mato Grosso do Sul,Mato Grosso do Sul,BR,BRA,76,2025,mcti2025,46.100
+Brazil,Minas Gerais,Minas Gerais,BR,BRA,76,2025,mcti2025,46.100
+Brazil,Pará,Pará,BR,BRA,76,2025,mcti2025,46.100
+Brazil,Paraíba,Paraíba,BR,BRA,76,2025,mcti2025,46.100
+Brazil,Paraná,Paraná,BR,BRA,76,2025,mcti2025,46.100
+Brazil,Pernambuco,Pernambuco,BR,BRA,76,2025,mcti2025,46.100
+Brazil,Piauí,Piauí,BR,BRA,76,2025,mcti2025,46.100
+Brazil,Rio de Janeiro,Rio de Janeiro,BR,BRA,76,2025,mcti2025,46.100
+Brazil,Rio Grande do Norte,Rio Grande do Norte,BR,BRA,76,2025,mcti2025,46.100
+Brazil,Rio Grande do Sul,Rio Grande do Sul,BR,BRA,76,2025,mcti2025,46.100
+Brazil,Rondônia,Rondônia,BR,BRA,76,2025,mcti2025,46.100
+Brazil,Santa Catarina,Santa Catarina,BR,BRA,76,2025,mcti2025,46.100
+Brazil,São Paulo,São Paulo,BR,BRA,76,2025,mcti2025,46.100
+Brazil,Sergipe,Sergipe,BR,BRA,76,2025,mcti2025,46.100
+Brazil,Tocantins,Tocantins,BR,BRA,76,2025,mcti2025,46.100
+British Virgin Islands,Whole country,N/A,VG,VGB,92,2023,ember,647.060
+Brunei,Whole country,N/A,BN,BRN,96,2024,ember,892.090
+Bulgaria,Whole country,N/A,BG,BGR,100,2025,ember,275.410
+Burkina Faso,Whole country,N/A,BF,BFA,854,2024,ember,562.130
+Burundi,Whole country,N/A,BI,BDI,108,2024,ember,183.670
+Cambodia,Whole country,N/A,KH,KHM,116,2025,ember,498.870
+Cameroon,Whole country,N/A,CM,CMR,120,2024,ember,225.900
+Canada,Whole country,N/A,CA,CAN,124,2025,ember,190.730
+Canada,Alberta,Alberta,CA,CAN,124,2024,nir2024,346.102
+Canada,British Columbia,British Columbia,CA,CAN,124,2024,nir2024,18.064
+Canada,Manitoba,Manitoba,CA,CAN,124,2024,nir2024,3.045
+Canada,New Brunswick,New Brunswick,CA,CAN,124,2024,nir2024,375.484
+Canada,Newfoundland and Labrador,Newfoundland and Labrador,CA,CAN,124,2024,nir2024,17.043
+Canada,Nova Scotia,Nova Scotia,CA,CAN,124,2024,nir2024,628.347
+Canada,Northwest Territories,Northwest Territories,CA,CAN,124,2024,nir2024,490.000
+Canada,Nunavut,Nunavut,CA,CAN,124,2024,nir2024,760.000
+Canada,Ontario,Ontario,CA,CAN,124,2024,nir2024,73.313
+Canada,Prince Edward Island,Prince Edward Island,CA,CAN,124,2024,nir2024,264.553
+Canada,Quebec,Québec,CA,CAN,124,2024,nir2024,2.565
+Canada,Saskatchewan,Saskatchewan,CA,CAN,124,2024,nir2024,580.720
+Canada,Yukon,Yukon,CA,CAN,124,2024,nir2024,133.567
+Cape Verde,Whole country,N/A,CV,CPV,132,2024,ember,461.540
+Cayman Islands,Whole country,N/A,KY,CYM,136,2024,ember,633.800
+Central African Republic,Whole country,N/A,CF,CAF,140,2023,ember,0.000
+Chad,Whole country,N/A,TD,TCD,148,2024,ember,621.620
+Chile,Whole country,N/A,CL,CHL,152,2025,ember,290.510
+China,Whole country,N/A,CN,CHN,156,2025,ember,526.190
+China,Beijing,北京,CN,CHN,156,2023,mee2023,555.400
+China,Tianjin,天津,CN,CHN,156,2023,mee2023,679.600
+China,Hebei,河北,CN,CHN,156,2023,mee2023,651.600
+China,Shanxi,山西,CN,CHN,156,2023,mee2023,663.400
+China,Inner Mongolia,内蒙古,CN,CHN,156,2023,mee2023,647.900
+China,Liaoning,辽宁,CN,CHN,156,2023,mee2023,487.800
+China,Jilin,吉林,CN,CHN,156,2023,mee2023,467.100
+China,Heilongjiang,黑龙江,CN,CHN,156,2023,mee2023,522.900
+China,Shanghai,上海,CN,CHN,156,2023,mee2023,573.700
+China,Jiangsu,江苏,CN,CHN,156,2023,mee2023,582.700
+China,Zhejiang,浙江,CN,CHN,156,2023,mee2023,497.400
+China,Anhui,安徽,CN,CHN,156,2023,mee2023,655.300
+China,Fujian,福建,CN,CHN,156,2023,mee2023,421.100
+China,Jiangxi,江西,CN,CHN,156,2023,mee2023,583.600
+China,Shandong,山东,CN,CHN,156,2023,mee2023,619.100
+China,Henan,河南,CN,CHN,156,2023,mee2023,589.700
+China,Hubei,湖北,CN,CHN,156,2023,mee2023,404.400
+China,Hunan,湖南,CN,CHN,156,2023,mee2023,497.600
+China,Guangdong,广东,CN,CHN,156,2023,mee2023,441.900
+China,Guangxi,广西,CN,CHN,156,2023,mee2023,447.600
+China,Hainan,海南,CN,CHN,156,2023,mee2023,364.800
+China,Chongqing,重庆,CN,CHN,156,2023,mee2023,558.100
+China,Sichuan,四川,CN,CHN,156,2023,mee2023,156.400
+China,Guizhou,贵州,CN,CHN,156,2023,mee2023,568.300
+China,Yunnan,云南,CN,CHN,156,2023,mee2023,133.300
+China,Shaanxi,陕西,CN,CHN,156,2023,mee2023,633.500
+China,Gansu,甘肃,CN,CHN,156,2023,mee2023,447.100
+China,Qinghai,青海,CN,CHN,156,2023,mee2023,179.600
+China,Ningxia,宁夏,CN,CHN,156,2023,mee2023,618.700
+China,Xinjiang,新疆,CN,CHN,156,2023,mee2023,602.100
+Colombia,Whole country,N/A,CO,COL,170,2025,ember,186.810
+Comoros,Whole country,N/A,KM,COM,174,2023,ember,642.860
+Congo,Whole country,N/A,CG,COG,178,2024,ember,716.120
+Cook Islands,Whole country,N/A,CK,COK,184,2024,ember,250.000
+Costa Rica,Whole country,N/A,CR,CRI,188,2025,ember,24.200
+Cote d'Ivoire,Whole country,N/A,CI,CIV,384,2024,ember,405.010
+Croatia,Whole country,N/A,HR,HRV,191,2025,ember,158.500
+Cuba,Whole country,N/A,CU,CUB,192,2024,ember,642.820
+Cyprus,Whole country,N/A,CY,CYP,196,2025,ember,489.000
+Czechia,Whole country,N/A,CZ,CZE,203,2025,ember,401.460
+Democratic Republic of Congo,Whole country,N/A,CD,COD,180,2024,ember,27.640
+Denmark,Whole country,N/A,DK,DNK,208,2025,ember,99.620
+Djibouti,Whole country,N/A,DJ,DJI,262,2024,ember,450.000
+Dominica,Whole country,N/A,DM,DMA,212,2023,ember,600.000
+Dominican Republic,Whole country,N/A,DO,DOM,214,2025,ember,537.480
+Ecuador,Whole country,N/A,EC,ECU,218,2025,ember,159.020
+Egypt,Whole country,N/A,EG,EGY,818,2025,ember,563.230
+El Salvador,Whole country,N/A,SV,SLV,222,2025,ember,137.770
+Equatorial Guinea,Whole country,N/A,GQ,GNQ,226,2024,ember,644.300
+Eritrea,Whole country,N/A,ER,ERI,232,2024,ember,577.780
+Estonia,Whole country,N/A,EE,EST,233,2025,ember,316.640
+Eswatini,Whole country,N/A,SZ,SWZ,748,2024,ember,131.150
+Ethiopia,Whole country,N/A,ET,ETH,231,2025,ember,23.080
+Faeroe Islands,Whole country,N/A,FO,FRO,234,2023,ember,346.940
+Falkland Islands,Whole country,N/A,FK,FLK,238,2023,ember,1000.000
+Fiji,Whole country,N/A,FJ,FJI,242,2024,ember,278.260
+Finland,Whole country,N/A,FI,FIN,246,2025,ember,57.470
+France,Whole country,N/A,FR,FRA,250,2025,ember,41.450
+French Guiana,Whole country,N/A,GF,GUF,254,2023,ember,244.900
+French Polynesia,Whole country,N/A,PF,PYF,258,2024,ember,430.560
+Gabon,Whole country,N/A,GA,GAB,266,2024,ember,523.080
+Gambia,Whole country,N/A,GM,GMB,270,2024,ember,666.670
+Georgia,Whole country,N/A,GE,GEO,268,2025,ember,145.930
+Germany,Whole country,N/A,DE,DEU,276,2025,ember,329.650
+Ghana,Whole country,N/A,GH,GHA,288,2024,ember,468.890
+Greece,Whole country,N/A,GR,GRC,300,2025,ember,324.410
+Greenland,Whole country,N/A,GL,GRL,304,2024,ember,150.000
+Grenada,Whole country,N/A,GD,GRD,308,2024,ember,666.670
+Guadeloupe,Whole country,N/A,GP,GLP,312,2023,ember,497.010
+Guam,Whole country,N/A,GU,GUM,316,2024,ember,607.530
+Guatemala,Whole country,N/A,GT,GTM,320,2024,ember,301.460
+Guinea,Whole country,N/A,GN,GIN,324,2024,ember,181.140
+Guinea-Bissau,Whole country,N/A,GW,GNB,624,2024,ember,625.000
+Guyana,Whole country,N/A,GY,GUY,328,2024,ember,644.930
+Haiti,Whole country,N/A,HT,HTI,332,2024,ember,534.880
+Honduras,Whole country,N/A,HN,HND,340,2024,ember,322.120
+Hong Kong,Whole country,N/A,HK,HKG,344,2024,ember,675.480
+Hungary,Whole country,N/A,HU,HUN,348,2025,ember,163.020
+Iceland,Whole country,N/A,IS,ISL,352,2024,ember,27.820
+India,Whole country,N/A,IN,IND,356,2025,ember,670.550
+India,Andaman and Nicobar,AN,IN,IND,356,2024,ember-india,629.700
+India,Andhra Pradesh,AP,IN,IND,356,2024,ember-india,654.800
+India,Arunachal Pradesh,AR,IN,IND,356,2024,ember-india,24.010
+India,Assam,AS,IN,IND,356,2024,ember-india,586.550
+India,Bihar,BR,IN,IND,356,2024,ember-india,815.140
+India,Chandigarh,CH,IN,IND,356,2024,ember-india,48.390
+India,Chhattisgarh,CT,IN,IND,356,2024,ember-india,806.010
+India,Dadra and Nagar Haveli and Daman and Diu,DH,IN,IND,356,2024,ember-india,129.000
+India,Delhi,DL,IN,IND,356,2024,ember-india,421.040
+India,Goa,GA,IN,IND,356,2024,ember-india,46.740
+India,Gujarat,GJ,IN,IND,356,2024,ember-india,492.120
+India,Haryana,HR,IN,IND,356,2024,ember-india,769.880
+India,Himachal Pradesh,HP,IN,IND,356,2024,ember-india,24.050
+India,Jammu and Kashmir,JK,IN,IND,356,2024,ember-india,24.000
+India,Jharkhand,JH,IN,IND,356,2024,ember-india,814.580
+India,Karnataka,KA,IN,IND,356,2024,ember-india,394.410
+India,Kerala,KL,IN,IND,356,2024,ember-india,28.920
+India,Ladakh,LA,IN,IND,356,2024,ember-india,24.000
+India,Lakshadweep,LD,IN,IND,356,2024,ember-india,818.840
+India,Madhya Pradesh,MP,IN,IND,356,2024,ember-india,729.910
+India,Maharashtra,MH,IN,IND,356,2024,ember-india,658.970
+India,Manipur,MN,IN,IND,356,2024,ember-india,24.320
+India,Meghalaya,ML,IN,IND,356,2024,ember-india,24.000
+India,Mizoram,MZ,IN,IND,356,2024,ember-india,25.220
+India,Nagaland,NL,IN,IND,356,2024,ember-india,23.990
+India,Odisha,OR,IN,IND,356,2024,ember-india,739.710
+India,Puducherry,PY,IN,IND,356,2024,ember-india,465.070
+India,Punjab,PB,IN,IND,356,2024,ember-india,685.130
+India,Rajasthan,RJ,IN,IND,356,2024,ember-india,437.990
+India,Sikkim,SK,IN,IND,356,2024,ember-india,24.000
+India,Tamil Nadu,TN,IN,IND,356,2024,ember-india,493.190
+India,Telangana,TG,IN,IND,356,2024,ember-india,679.880
+India,Tripura,TR,IN,IND,356,2024,ember-india,489.500
+India,Uttar Pradesh,UP,IN,IND,356,2024,ember-india,764.860
+India,Uttarakhand,UT,IN,IND,356,2024,ember-india,57.630
+India,West Bengal,WB,IN,IND,356,2024,ember-india,782.950
+Indonesia,Whole country,N/A,ID,IDN,360,2024,ember,681.110
+Iran,Whole country,N/A,IR,IRN,364,2025,ember,659.530
+Iraq,Whole country,N/A,IQ,IRQ,368,2024,ember,683.100
+Ireland,Whole country,N/A,IE,IRL,372,2025,ember,255.900
+Israel,Whole country,N/A,IL,ISR,376,2025,ember,492.690
+Italy,Whole country,N/A,IT,ITA,380,2025,ember,284.630
+Jamaica,Whole country,N/A,JM,JAM,388,2024,ember,563.010
+Japan,Whole country,N/A,JP,JPN,392,2025,ember,477.370
+Japan,Hokkaido,北海道,JP,JPN,392,2026,moej2026,423.000
+Japan,Aomori,青森県,JP,JPN,392,2026,moej2026,423.000
+Japan,Iwate,岩手県,JP,JPN,392,2026,moej2026,423.000
+Japan,Miyagi,宮城県,JP,JPN,392,2026,moej2026,423.000
+Japan,Akita,秋田県,JP,JPN,392,2026,moej2026,423.000
+Japan,Yamagata,山形県,JP,JPN,392,2026,moej2026,423.000
+Japan,Fukushima,福島県,JP,JPN,392,2026,moej2026,423.000
+Japan,Niigata,新潟県,JP,JPN,392,2026,moej2026,423.000
+Japan,Ibaraki,茨城県,JP,JPN,392,2026,moej2026,423.000
+Japan,Tochigi,栃木県,JP,JPN,392,2026,moej2026,423.000
+Japan,Gunma,群馬県,JP,JPN,392,2026,moej2026,423.000
+Japan,Saitama,埼玉県,JP,JPN,392,2026,moej2026,423.000
+Japan,Chiba,千葉県,JP,JPN,392,2026,moej2026,423.000
+Japan,Tokyo,東京都,JP,JPN,392,2026,moej2026,423.000
+Japan,Kanagawa,神奈川県,JP,JPN,392,2026,moej2026,423.000
+Japan,Yamanashi,山梨県,JP,JPN,392,2026,moej2026,423.000
+Japan,Nagano,長野県,JP,JPN,392,2026,moej2026,423.000
+Japan,Gifu,岐阜県,JP,JPN,392,2026,moej2026,423.000
+Japan,Shizuoka,静岡県,JP,JPN,392,2026,moej2026,423.000
+Japan,Aichi,愛知県,JP,JPN,392,2026,moej2026,423.000
+Japan,Mie,三重県,JP,JPN,392,2026,moej2026,423.000
+Japan,Toyama,富山県,JP,JPN,392,2026,moej2026,423.000
+Japan,Ishikawa,石川県,JP,JPN,392,2026,moej2026,423.000
+Japan,Fukui,福井県,JP,JPN,392,2026,moej2026,423.000
+Japan,Shiga,滋賀県,JP,JPN,392,2026,moej2026,423.000
+Japan,Kyoto,京都府,JP,JPN,392,2026,moej2026,423.000
+Japan,Osaka,大阪府,JP,JPN,392,2026,moej2026,423.000
+Japan,Hyogo,兵庫県,JP,JPN,392,2026,moej2026,423.000
+Japan,Nara,奈良県,JP,JPN,392,2026,moej2026,423.000
+Japan,Wakayama,和歌山県,JP,JPN,392,2026,moej2026,423.000
+Japan,Tottori,鳥取県,JP,JPN,392,2026,moej2026,423.000
+Japan,Shimane,島根県,JP,JPN,392,2026,moej2026,423.000
+Japan,Okayama,岡山県,JP,JPN,392,2026,moej2026,423.000
+Japan,Hiroshima,広島県,JP,JPN,392,2026,moej2026,423.000
+Japan,Yamaguchi,山口県,JP,JPN,392,2026,moej2026,423.000
+Japan,Tokushima,徳島県,JP,JPN,392,2026,moej2026,423.000
+Japan,Kagawa,香川県,JP,JPN,392,2026,moej2026,423.000
+Japan,Ehime,愛媛県,JP,JPN,392,2026,moej2026,423.000
+Japan,Kochi,高知県,JP,JPN,392,2026,moej2026,423.000
+Japan,Fukuoka,福岡県,JP,JPN,392,2026,moej2026,423.000
+Japan,Saga,佐賀県,JP,JPN,392,2026,moej2026,423.000
+Japan,Nagasaki,長崎県,JP,JPN,392,2026,moej2026,423.000
+Japan,Kumamoto,熊本県,JP,JPN,392,2026,moej2026,423.000
+Japan,Oita,大分県,JP,JPN,392,2026,moej2026,423.000
+Japan,Miyazaki,宮崎県,JP,JPN,392,2026,moej2026,423.000
+Japan,Kagoshima,鹿児島県,JP,JPN,392,2026,moej2026,423.000
+Japan,Okinawa,沖縄県,JP,JPN,392,2026,moej2026,722.000
+Jordan,Whole country,N/A,JO,JOR,400,2024,ember,529.790
+Kazakhstan,Whole country,N/A,KZ,KAZ,398,2025,ember,805.320
+Kenya,Whole country,N/A,KE,KEN,404,2025,ember,95.440
+Kiribati,Whole country,N/A,KI,KIR,296,2024,ember,500.000
+Kuwait,Whole country,N/A,KW,KWT,414,2025,ember,634.720
+Kyrgyzstan,Whole country,N/A,KG,KGZ,417,2025,ember,150.320
+Laos,Whole country,N/A,LA,LAO,418,2024,ember,232.080
+Latvia,Whole country,N/A,LV,LVA,428,2025,ember,134.280
+Lebanon,Whole country,N/A,LB,LBN,422,2024,ember,389.510
+Lesotho,Whole country,N/A,LS,LSO,426,2022,ember,20.830
+Liberia,Whole country,N/A,LR,LBR,430,2024,ember,315.790
+Libya,Whole country,N/A,LY,LBY,434,2024,ember,826.830
+Lithuania,Whole country,N/A,LT,LTU,440,2025,ember,138.510
+Luxembourg,Whole country,N/A,LU,LUX,442,2025,ember,123.380
+Macao,Whole country,N/A,MO,MAC,446,2024,ember,474.360
+Madagascar,Whole country,N/A,MG,MDG,450,2024,ember,432.100
+Malawi,Whole country,N/A,MW,MWI,454,2024,ember,54.650
+Malaysia,Whole country,N/A,MY,MYS,458,2025,ember,603.210
+Maldives,Whole country,N/A,MV,MDV,462,2024,ember,611.770
+Mali,Whole country,N/A,ML,MLI,466,2024,ember,538.590
+Malta,Whole country,N/A,MT,MLT,470,2025,ember,484.020
+Martinique,Whole country,N/A,MQ,MTQ,474,2023,ember,529.800
+Mauritania,Whole country,N/A,MR,MRT,478,2024,ember,512.080
+Mauritius,Whole country,N/A,MU,MUS,480,2024,ember,642.230
+Mexico,Whole country,N/A,MX,MEX,484,2025,ember,474.020
+Moldova,Whole country,N/A,MD,MDA,498,2025,ember,510.350
+Mongolia,Whole country,N/A,MN,MNG,496,2025,ember,823.530
+Montenegro,Whole country,N/A,ME,MNE,499,2025,ember,264.230
+Montserrat,Whole country,N/A,MS,MSR,500,2024,ember,1000.000
+Morocco,Whole country,N/A,MA,MAR,504,2025,ember,602.270
+Mozambique,Whole country,N/A,MZ,MOZ,508,2024,ember,129.360
+Myanmar,Whole country,N/A,MM,MMR,104,2024,ember,502.990
+Namibia,Whole country,N/A,,NAM,516,2024,ember,48.780
+Nauru,Whole country,N/A,NR,NRU,520,2024,ember,600.000
+Nepal,Whole country,N/A,NP,NPL,524,2024,ember,24.260
+Netherlands,Whole country,N/A,NL,NLD,528,2025,ember,253.560
+New Caledonia,Whole country,N/A,NC,NCL,540,2024,ember,560.900
+New Zealand,Whole country,N/A,NZ,NZL,554,2025,ember,92.760
+Nicaragua,Whole country,N/A,NI,NIC,558,2024,ember,300.890
+Niger,Whole country,N/A,NE,NER,562,2024,ember,673.680
+Nigeria,Whole country,N/A,NG,NGA,566,2025,ember,455.710
+North Korea,Whole country,N/A,KP,PRK,408,2024,ember,340.590
+North Macedonia,Whole country,N/A,MK,MKD,807,2025,ember,405.630
+Norway,Whole country,N/A,NO,NOR,578,2025,ember,28.100
+Oman,Whole country,N/A,OM,OMN,512,2025,ember,544.470
+Pakistan,Whole country,N/A,PK,PAK,586,2025,ember,310.190
+Palestine,Whole country,N/A,PS,PSE,275,2024,ember,414.140
+Panama,Whole country,N/A,PA,PAN,591,2024,ember,221.150
+Papua New Guinea,Whole country,N/A,PG,PNG,598,2024,ember,513.740
+Paraguay,Whole country,N/A,PY,PRY,600,2025,ember,24.700
+Peru,Whole country,N/A,PE,PER,604,2025,ember,238.250
+Philippines,Whole country,N/A,PH,PHL,608,2025,ember,595.440
+Poland,Whole country,N/A,PL,POL,616,2025,ember,590.800
+Portugal,Whole country,N/A,PT,PRT,620,2025,ember,128.080
+Puerto Rico,Whole country,N/A,PR,PRI,630,2025,ember,654.750
+Qatar,Whole country,N/A,QA,QAT,634,2025,ember,581.520
+Reunion,Whole country,N/A,RE,REU,638,2023,ember,394.140
+Romania,Whole country,N/A,RO,ROU,642,2025,ember,259.740
+Russia,Whole country,N/A,RU,RUS,643,2025,ember,449.860
+Russia,Belgorod Oblast,Белгородская область,RU,RUS,643,2021,russia,240.560
+Russia,Vladimir,Владимирская область,RU,RUS,643,2021,russia,240.560
+Russia,Voronezj,Воронежская область,RU,RUS,643,2021,russia,240.560
+Russia,Vologda,Вологодская область,RU,RUS,643,2021,russia,240.560
+Russia,Kostroma Oblast,Костромская область,RU,RUS,643,2021,russia,240.560
+Russia,Kursk,Курская область,RU,RUS,643,2021,russia,240.560
+Russia,Orel Oblast,Орловская область,RU,RUS,643,2021,russia,240.560
+Russia,Lipetsk Oblast,Липецкая область,RU,RUS,643,2021,russia,240.560
+Russia,Ryazan Oblast,Рязанская область,RU,RUS,643,2021,russia,240.560
+Russia,Bryansk Oblast,Брянская область,RU,RUS,643,2021,russia,240.560
+Russia,Kaluga,Калужская область,RU,RUS,643,2021,russia,240.560
+Russia,Smolensk,Смоленская область,RU,RUS,643,2021,russia,240.560
+Russia,Tambov,Тамбовская область,RU,RUS,643,2021,russia,240.560
+Russia,Tver Oblast,Тверская область,RU,RUS,643,2021,russia,240.560
+Russia,Tula,Тульская область,RU,RUS,643,2021,russia,240.560
+Russia,Jaroslavl,Ярославская область,RU,RUS,643,2021,russia,240.560
+Russia,Moscow Oblast,Московская область,RU,RUS,643,2021,russia,240.560
+Russia,Ivanovo,Ивановская область,RU,RUS,643,2021,russia,240.560
+Russia,Moscow,Москва,RU,RUS,643,2021,russia,240.560
+Russia,Astrakhan,Астраханская область,RU,RUS,643,2021,russia,218.850
+Russia,Volgograd Oblast,Волгоградская область,RU,RUS,643,2021,russia,218.850
+Russia,Dagestan,Республика Дагестан,RU,RUS,643,2021,russia,218.850
+Russia,Adygeya Republic,Республика Адыгея,RU,RUS,643,2021,russia,218.850
+Russia,Kalmykiya Republic,Республика Калмыкия,RU,RUS,643,2021,russia,218.850
+Russia,Crimea,Республика Крым,RU,RUS,643,2021,russia,218.850
+Russia,Rostov,Ростовская область,RU,RUS,643,2021,russia,218.850
+Russia,Ingushetiya Republic,Республика Ингушетия,RU,RUS,643,2021,russia,218.850
+Russia,Kabardino-Balkariya Republic,Кабардино-Балкарская Республика,RU,RUS,643,2021,russia,218.850
+Russia,Karachayevo-Cherkesiya Republic,Карачаево-Черкесская Республика,RU,RUS,643,2021,russia,218.850
+Russia,North Ossetia,Республика Северная Осетия — Алания,RU,RUS,643,2021,russia,218.850
+Russia,Chechnya,Чеченская Республика,RU,RUS,643,2021,russia,218.850
+Russia,Stavropol Kray,Ставропольский край,RU,RUS,643,2021,russia,218.850
+Russia,Sevastopol City,Севастополь,RU,RUS,643,2021,russia,218.850
+Russia,Penza,Пензенская область,RU,RUS,643,2021,russia,186.070
+Russia,Samara Oblast,Самарская область,RU,RUS,643,2021,russia,186.070
+Russia,Saratovskaya Oblast,Саратовская область,RU,RUS,643,2021,russia,186.070
+Russia,Ulyanovsk,Ульяновская область,RU,RUS,643,2021,russia,186.070
+Russia,Nizhny Novgorod Oblast,Нижегородская область,RU,RUS,643,2021,russia,186.070
+Russia,Chuvashia,Чувашская Республика,RU,RUS,643,2021,russia,186.070
+Russia,Mariy-El Republic,Республика Марий Эл,RU,RUS,643,2021,russia,186.070
+Russia,Mordoviya Republic,Республика Мордовия,RU,RUS,643,2021,russia,186.070
+Russia,Tatarstan Republic,Республика Татарстан,RU,RUS,643,2021,russia,186.070
+Russia,St.-Petersburg,Санкт-Петербург,RU,RUS,643,2021,russia,224.450
+Russia,Murmansk,Мурманская область,RU,RUS,643,2021,russia,53.510
+Russia,Kaliningrad,Калининградская область,RU,RUS,643,2021,russia,387.100
+Russia,Leningradskaya Oblast,Ленинградская область,RU,RUS,643,2021,russia,224.450
+Russia,Novgorod Oblast,Новгородская область,RU,RUS,643,2021,russia,224.450
+Russia,Pskov Oblast,Псковская область,RU,RUS,643,2021,russia,224.450
+Russia,Nenets,Ненецкий автономный округ,RU,RUS,643,2021,russia,600.130
+Russia,Arkhangelsk Oblast,Архангельская область,RU,RUS,643,2021,russia,600.140
+Russia,Karelia,Республика Карелия,RU,RUS,643,2021,russia,224.450
+Russia,Komi,Республика Коми,RU,RUS,643,2021,russia,754.980
+Russia,Bashkortostan Republic,Республика Башкортостан,RU,RUS,643,2021,russia,468.850
+Russia,Udmurtiya Republic,Удмуртская Республика,RU,RUS,643,2021,russia,468.850
+Russia,Khanty-Mansia,Ханты-Мансийский автономный округ — Югра,RU,RUS,643,2021,russia,468.850
+Russia,Yamalo-Nenets,Ямало-Ненецкий автономный округ,RU,RUS,643,2021,russia,468.850
+Russia,Perm,Пермский край,RU,RUS,643,2021,russia,468.850
+Russia,Kirov,Кировская область,RU,RUS,643,2021,russia,468.850
+Russia,Kurgan Oblast,Курганская область,RU,RUS,643,2021,russia,468.850
+Russia,Orenburg Oblast,Оренбургская область,RU,RUS,643,2021,russia,468.850
+Russia,Sverdlovsk,Свердловская область,RU,RUS,643,2021,russia,468.850
+Russia,Tyumen’ Oblast,Тюменская область,RU,RUS,643,2021,russia,468.850
+Russia,Chelyabinsk,Челябинская область,RU,RUS,643,2021,russia,468.850
+Russia,Altai,Республика Алтай,RU,RUS,643,2021,russia,363.410
+Russia,Buryatiya Republic,Республика Бурятия,RU,RUS,643,2021,russia,363.420
+Russia,Tyva Republic,Республика Тыва,RU,RUS,643,2021,russia,363.420
+Russia,Khakasiya Republic,Республика Хакасия,RU,RUS,643,2021,russia,363.420
+Russia,Altay Kray,Алтайский край,RU,RUS,643,2021,russia,363.420
+Russia,Transbaikal Territory,Забайкальский край,RU,RUS,643,2021,russia,363.420
+Russia,Krasnoyarsk Krai,Красноярский край,RU,RUS,643,2021,russia,363.420
+Russia,Irkutsk Oblast,Иркутская область,RU,RUS,643,2021,russia,363.420
+Russia,Kemerovo Oblast,Кемеровская область — Кузбасс,RU,RUS,643,2021,russia,363.420
+Russia,Novosibirsk Oblast,Новосибирская область,RU,RUS,643,2021,russia,363.420
+Russia,Omsk,Омская область,RU,RUS,643,2021,russia,363.420
+Russia,Tomsk Oblast,Томская область,RU,RUS,643,2021,russia,363.420
+Russia,Amur Oblast,Амурская область,RU,RUS,643,2021,russia,443.020
+Russia,Primorskiy Kray,Приморский край,RU,RUS,643,2021,russia,443.020
+Russia,Khabarovsk,Хабаровский край,RU,RUS,643,2021,russia,443.020
+Russia,Jewish Autonomous Oblast,Еврейская автономная область,RU,RUS,643,2021,russia,443.020
+Russia,Sakha,Республика Саха (Якутия),RU,RUS,643,2021,russia,443.020
+Rwanda,Whole country,N/A,RW,RWA,646,2024,ember,353.980
+Saint Kitts and Nevis,Whole country,N/A,KN,KNA,659,2024,ember,608.700
+Saint Lucia,Whole country,N/A,LC,LCA,662,2024,ember,650.000
+Saint Pierre and Miquelon,Whole country,N/A,PM,SPM,666,2023,ember,600.000
+Saint Vincent and the Grenadines,Whole country,N/A,VC,VCT,670,2024,ember,600.000
+Samoa,Whole country,N/A,WS,WSM,882,2024,ember,375.000
+Sao Tome and Principe,Whole country,N/A,ST,STP,678,2023,ember,555.560
+Saudi Arabia,Whole country,N/A,SA,SAU,682,2024,ember,691.950
+Senegal,Whole country,N/A,SN,SEN,686,2024,ember,539.970
+Serbia,Whole country,N/A,RS,SRB,688,2025,ember,695.660
+Seychelles,Whole country,N/A,SC,SYC,690,2024,ember,555.560
+Sierra Leone,Whole country,N/A,SL,SLE,694,2024,ember,47.620
+Singapore,Whole country,N/A,SG,SGP,702,2025,ember,497.090
+Slovakia,Whole country,N/A,SK,SVK,703,2025,ember,94.880
+Slovenia,Whole country,N/A,SI,SVN,705,2025,ember,183.470
+Solomon Islands,Whole country,N/A,SB,SLB,90,2024,ember,636.360
+Somalia,Whole country,N/A,SO,SOM,706,2024,ember,511.630
+South Africa,Whole country,N/A,ZA,ZAF,710,2025,ember,698.960
+South Korea,Whole country,N/A,KR,KOR,410,2025,ember,417.140
+South Sudan,Whole country,N/A,SS,SSD,728,2024,ember,642.860
+Spain,Whole country,N/A,ES,ESP,724,2025,ember,153.560
+Sri Lanka,Whole country,N/A,LK,LKA,144,2025,ember,321.160
+Sudan,Whole country,N/A,SD,SDN,736,2024,ember,153.690
+Suriname,Whole country,N/A,SR,SUR,740,2024,ember,321.840
+Sweden,Whole country,N/A,SE,SWE,752,2025,ember,35.350
+Switzerland,Whole country,N/A,CH,CHE,756,2025,ember,39.220
+Syria,Whole country,N/A,SY,SYR,760,2024,ember,706.190
+Taiwan,Whole country,N/A,TW,TWN,158,2025,ember,634.070
+Tajikistan,Whole country,N/A,TJ,TJK,762,2025,ember,73.940
+Tanzania,Whole country,N/A,TZ,TZA,834,2024,ember,345.020
+Thailand,Whole country,N/A,TH,THA,764,2025,ember,546.320
+Togo,Whole country,N/A,TG,TGO,768,2024,ember,422.540
+Tonga,Whole country,N/A,TO,TON,776,2024,ember,571.430
+Trinidad and Tobago,Whole country,N/A,TT,TTO,780,2024,ember,681.680
+Tunisia,Whole country,N/A,TN,TUN,788,2025,ember,560.290
+Turkey,Whole country,N/A,TR,TUR,792,2025,ember,475.730
+Turkmenistan,Whole country,N/A,TM,TKM,795,2024,ember,1306.270
+Turks and Caicos Islands,Whole country,N/A,TC,TCA,796,2024,ember,629.630
+Uganda,Whole country,N/A,UG,UGA,800,2024,ember,58.520
+Ukraine,Whole country,N/A,UA,UKR,804,2022,ember,250.470
+United Arab Emirates,Whole country,N/A,AE,ARE,784,2024,ember,467.510
+United Kingdom,Whole country,N/A,GB,GBR,826,2025,ember,217.410
+United States,Whole country,N/A,US,USA,840,2025,ember,384.400
+United States,Alaska,Alaska,US,USA,840,2023,egrid2023,367.330
+United States,Alabama,Alabama,US,USA,840,2023,egrid2023,322.499
+United States,Arkansas,Arkansas,US,USA,840,2023,egrid2023,450.605
+United States,Arizona,Arizona,US,USA,840,2023,egrid2023,311.476
+United States,California,California,US,USA,840,2023,egrid2023,178.482
+United States,Colorado,Colorado,US,USA,840,2023,egrid2023,492.157
+United States,Connecticut,Connecticut,US,USA,840,2023,egrid2023,244.153
+United States,Delaware,Delaware,US,USA,840,2023,egrid2023,318.963
+United States,District of Columbia,District of Columbia,US,USA,840,2023,egrid2023,178.760
+United States,Florida,Florida,US,USA,840,2023,egrid2023,356.816
+United States,Georgia,Georgia,US,USA,840,2023,egrid2023,323.788
+United States,Hawaii,Hawaii,US,USA,840,2023,egrid2023,628.285
+United States,Iowa,Iowa,US,USA,840,2023,egrid2023,285.848
+United States,Idaho,Idaho,US,USA,840,2023,egrid2023,142.107
+United States,Illinois,Illinois,US,USA,840,2023,egrid2023,213.962
+United States,Indiana,Indiana,US,USA,840,2023,egrid2023,660.970
+United States,Kansas,Kansas,US,USA,840,2023,egrid2023,330.288
+United States,Kentucky,Kentucky,US,USA,840,2023,egrid2023,786.987
+United States,Louisiana,Louisiana,US,USA,840,2023,egrid2023,345.367
+United States,Massachusetts,Massachusetts,US,USA,840,2023,egrid2023,373.030
+United States,Maryland,Maryland,US,USA,840,2023,egrid2023,235.878
+United States,Maine,Maine,US,USA,840,2023,egrid2023,141.441
+United States,Michigan,Michigan,US,USA,840,2023,egrid2023,359.776
+United States,Minnesota,Minnesota,US,USA,840,2023,egrid2023,339.081
+United States,Missouri,Missouri,US,USA,840,2023,egrid2023,655.050
+United States,Mississippi,Mississippi,US,USA,840,2023,egrid2023,374.819
+United States,Montana,Montana,US,USA,840,2023,egrid2023,479.069
+United States,North Carolina,North Carolina,US,USA,840,2023,egrid2023,283.023
+United States,North Dakota,North Dakota,US,USA,840,2023,egrid2023,584.392
+United States,Nebraska,Nebraska,US,USA,840,2023,egrid2023,461.827
+United States,New Hampshire,New Hampshire,US,USA,840,2023,egrid2023,123.764
+United States,New Jersey,New Jersey,US,USA,840,2023,egrid2023,212.422
+United States,New Mexico,New Mexico,US,USA,840,2023,egrid2023,349.363
+United States,Nevada,Nevada,US,USA,840,2023,egrid2023,291.374
+United States,New York,New York,US,USA,840,2023,egrid2023,210.982
+United States,Ohio,Ohio,US,USA,840,2023,egrid2023,482.551
+United States,Oklahoma,Oklahoma,US,USA,840,2023,egrid2023,293.568
+United States,Oregon,Oregon,US,USA,840,2023,egrid2023,165.181
+United States,Pennsylvania,Pennsylvania,US,USA,840,2023,egrid2023,292.918
+United States,Rhode Island,Rhode Island,US,USA,840,2023,egrid2023,380.626
+United States,South Carolina,South Carolina,US,USA,840,2023,egrid2023,252.729
+United States,South Dakota,South Dakota,US,USA,840,2023,egrid2023,151.514
+United States,Tennessee,Tennessee,US,USA,840,2023,egrid2023,298.131
+United States,Texas,Texas,US,USA,840,2023,egrid2023,348.503
+United States,Utah,Utah,US,USA,840,2023,egrid2023,640.935
+United States,Virginia,Virginia,US,USA,840,2023,egrid2023,243.512
+United States,Vermont,Vermont,US,USA,840,2023,egrid2023,19.496
+United States,Washington,Washington,US,USA,840,2023,egrid2023,120.256
+United States,Wisconsin,Wisconsin,US,USA,840,2023,egrid2023,524.805
+United States,West Virginia,West Virginia,US,USA,840,2023,egrid2023,886.493
+United States,Virgin Islands,Virgin Islands,US,USA,840,2021,ger2022,693.548
+United States,Wyoming,Wyoming,US,USA,840,2023,egrid2023,825.682
+United States Virgin Islands,Whole country,N/A,VI,VIR,850,2023,ember,632.350
+Uruguay,Whole country,N/A,UY,URY,858,2025,ember,80.400
+Uzbekistan,Whole country,N/A,UZ,UZB,860,2025,ember,1000.000
+Vanuatu,Whole country,N/A,VU,VUT,548,2023,ember,500.000
+Venezuela,Whole country,N/A,VE,VEN,862,2024,ember,85.860
+Vietnam,Whole country,N/A,VN,VNM,704,2025,ember,462.580
+World,Whole country,N/A,WORLD,WORLD,WORLD,2025,ember,458.490
+Yemen,Whole country,N/A,YE,YEM,887,2024,ember,592.380
+Zambia,Whole country,N/A,ZM,ZMB,894,2024,ember,125.760
+Zimbabwe,Whole country,N/A,ZW,ZWE,716,2024,ember,384.020
