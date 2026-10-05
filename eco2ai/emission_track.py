@@ -76,6 +76,7 @@ class Tracker:
         ignore_warnings=False,
         timezone=False,
         device_consumption=False,
+        callback=None,
     ):
         """
         This class method initializes a Tracker object and creates fields of class object
@@ -144,6 +145,10 @@ class Tracker:
             missing device columns are added as N/A, and device columns already
             in the table are kept.
             The default is False.
+        callback: callable
+            Called with the written row after each successful CSV write.
+            The argument is a dict of column name to the value stored in that row.
+            The default is None.
 
         Returns
         -------
@@ -151,6 +156,9 @@ class Tracker:
             Object of class Tracker
 
         """
+        if callback is not None and not callable(callback):
+            raise TypeError("'callback' must be a callable")
+        self._callback = callback
         self._ignore_warnings = ignore_warnings
         if not self._ignore_warnings:
             warnings.warn(
@@ -556,7 +564,18 @@ You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/cou
             self._release_report_lock(lock_fd, lock_path)
 
         self._mode = "run time" if self._mode != "training" else "training"
+        if self._callback is not None:
+            self._callback(self._written_row(attributes_dict))
         return attributes_dict
+
+    def _written_row(self, attributes_dict):
+        """
+        One CSV row as a dict of column name to the stored value.
+        """
+        row = {}
+        for column, values in attributes_dict.items():
+            row[column] = values[0] if isinstance(values, (list, tuple)) else values
+        return row
 
     def _update_to_new_version(self, attributes_dataframe, new_columns):
         """
