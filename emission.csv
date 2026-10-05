@@ -1,2 +1,0 @@
-id,project_name,experiment_description,epoch,start_time,duration(s),power_consumption(kWh),CO2_emissions(kg),CPU_name,GPU_name,OS,region/country,cost
-6abc598e-c680-4e99-a9ee-4d02a9be656f,Default project name,no experiment description,N/A,2026-10-06 01:17:23,0.007401227951049805,0.002,7.844e-05,"CPU/1 device(s), TDP:45 method:tdp",CPU 0 device(s),Windows,CH/Ticino,0
