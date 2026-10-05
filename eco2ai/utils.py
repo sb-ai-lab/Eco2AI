@@ -78,7 +78,7 @@ class NoCountryCodeError(Exception):
     pass
 
 
-def define_carbon_index(
+def _carbon_factors(
     emission_level=None, 
     alpha_2_code=None,
     region=None
@@ -126,7 +126,14 @@ def define_carbon_index(
     else:
         country = alpha_2_code
     if emission_level is not None:
-        return (emission_level, f'({country}/{region})') if region is not None else (emission_level, f'({country})')
+        label = f'({country}/{region})' if region is not None else f'({country})'
+        return {
+            "level": emission_level,
+            "label": label,
+            "year": "N/A",
+            "source": "user",
+            "basis": "user",
+        }
     data = pd.read_csv(carbon_index_table_name)
     result = data[data['alpha_2_code'] == country]
     if result.shape[0] < 1:
@@ -155,8 +162,42 @@ def define_carbon_index(
     """
                 )
                 result = result[result['region'] == 'Whole country']
-    result = result["Emission intensity, kg/MWh"].values[0]
-    return (result, f'{country}/{region}') if region is not None else (result, f'{country}')
+    row = result.iloc[0]
+    reference = str(row["reference"])
+    basis = "CO2e" if reference in ("nga2025", "nir2024") else "CO2"
+    label = f'{country}/{region}' if region is not None else f'{country}'
+    return {
+        "level": float(row["Emission intensity, kg/MWh"]),
+        "label": label,
+        "year": str(int(row["year"])),
+        "source": reference,
+        "basis": basis,
+    }
+
+
+def define_carbon_index(
+    emission_level=None,
+    alpha_2_code=None,
+    region=None
+):
+    """
+    Emission intensity and the country or country/region label.
+    """
+    factors = carbon_factors(emission_level, alpha_2_code, region)
+    return (factors["level"], factors["label"])
+
+
+def carbon_factors(
+    emission_level=None,
+    alpha_2_code=None,
+    region=None
+):
+    """
+    Intensity, label, data year, reference key, and CO2 or CO2e basis
+    for the resolved carbon row. A user emission_level has year N/A
+    and source and basis "user".
+    """
+    return _carbon_factors(emission_level, alpha_2_code, region)
 
 
 class IncorrectPricingDict(Exception):

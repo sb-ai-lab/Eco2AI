@@ -12,7 +12,7 @@ from eco2ai.tools.tools_gpu import GPU, all_available_gpu
 from eco2ai.tools.tools_cpu import CPU, all_available_cpu
 from eco2ai.tools.tools_ram import RAM
 from eco2ai.utils import (
-    define_carbon_index,
+    carbon_factors,
     get_params,
     set_params,
     # calculate_money,
@@ -187,7 +187,12 @@ You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/cou
             self.project_name, self.experiment_description, self.file_name, self._measure_period, self._pue
         )
 
-        self._emission_level, self._country = define_carbon_index(emission_level, alpha_2_code, region)
+        factors = carbon_factors(emission_level, alpha_2_code, region)
+        self._emission_level = factors["level"]
+        self._country = factors["label"]
+        self._carbon_year = factors["year"]
+        self._carbon_source = factors["source"]
+        self._carbon_basis = factors["basis"]
         self._cpu_processes = cpu_processes
         if not timezone:
             timezone = str(tzlocal.get_localzone())
@@ -418,6 +423,21 @@ You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/cou
         attributes_dict["OS"] = [f"{self._os}"]
         attributes_dict["region/country"] = [f"{self._country}"]
         attributes_dict["cost"] = [f"{self._total_price}"]
+        cpu_method = self._cpu.power_method_label()
+        if cpu_method.startswith("method:"):
+            cpu_method = cpu_method[len("method:"):]
+        if self._gpu.is_gpu_available:
+            gpu_method = self._gpu.power_method_label()
+            if gpu_method.startswith("method:"):
+                gpu_method = gpu_method[len("method:"):]
+        else:
+            gpu_method = ""
+        attributes_dict["eco2ai_version"] = [__version__]
+        attributes_dict["cpu_power_method"] = [cpu_method]
+        attributes_dict["gpu_power_method"] = [gpu_method]
+        attributes_dict["carbon_year"] = [self._carbon_year]
+        attributes_dict["carbon_source"] = [self._carbon_source]
+        attributes_dict["carbon_basis"] = [self._carbon_basis]
         if self._device_consumption:
             attributes_dict["CPU_consumption(kWh)"] = [f"{self._cpu_consumption}"]
             attributes_dict["GPU_consumption(kWh)"] = [f"{self._gpu_consumption}"]
