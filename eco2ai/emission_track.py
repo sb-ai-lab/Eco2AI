@@ -36,7 +36,7 @@ except ImportError:  # removed in pandas 3; pandas 1.2-2.x keep the original hel
 
 FROM_mWATTS_TO_kWATTH = 1000 * 1000 * 3600
 FROM_kWATTH_TO_MWATTH = 1000
-__version__ = '0.3.12'
+__version__ = '0.3.13'
 
 class IncorrectMethodSequenceError(Exception):
     pass
