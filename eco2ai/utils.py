@@ -330,9 +330,18 @@ def calculate_price(
     return electricity_price
 
 
+def user_config_path():
+    """
+        Path of the tracker defaults file in the user home directory.
+        The installed package data file is not writable for a non-root user.
+    """
+    return os.path.join(os.path.expanduser("~"), ".eco2ai", "config.txt")
+
+
 def set_params(**params):
     """
-        This function sets default Tracker attributes values to internal file:
+        This function sets default Tracker attributes values to a file in the
+        user home directory (~/.eco2ai/config.txt):
         project_name = ...
         experiment_description = ...
         file_name = ...
@@ -342,8 +351,10 @@ def set_params(**params):
         Parameters
         ----------
         params: dict
-            Dictionary of Tracker parameters: project_name, experiment_description, file_name. 
-            Other parameters in dictionary are ignored
+            Keyword arguments stored in the defaults file.
+            project_name, experiment_description, file_name, measure_period, and pue
+            are filled with built-in values when omitted.
+            Any other keyword is stored as given.
         
         Returns
         -------
@@ -351,7 +362,8 @@ def set_params(**params):
 
     """
     dictionary = dict()
-    filename = resource_stream('eco2ai', 'data/config.txt').name
+    filename = user_config_path()
+    os.makedirs(os.path.dirname(filename), exist_ok=True)
     for param in params:
         dictionary[param] = params[param]
     if "project_name" not in dictionary:
@@ -370,7 +382,9 @@ def set_params(**params):
 
 def get_params():
     """
-        This function returns default Tracker attributes values:
+        This function returns default Tracker attributes values from
+        ~/.eco2ai/config.txt. A missing file returns built-in defaults and
+        does not create or write the copy shipped inside the package.
         project_name = ...
         experiment_description = ...
         file_name = ...
@@ -388,21 +402,17 @@ def get_params():
             Dictionary of Tracker parameters: project_name, experiment_description, file_name, measure_period and pue
 
     """
-    filename = resource_stream('eco2ai', 'data/config.txt').name
-    if not os.path.isfile(filename):
-        with open(filename, "w"):
-            pass
+    filename = user_config_path()
+    if not os.path.isfile(filename) or os.path.getsize(filename) == 0:
+        return {
+            "project_name": "Default project name",
+            "experiment_description": "no experiment description",
+            "file_name": "emission.csv",
+            "measure_period": 10,
+            "pue": 1,
+        }
     with open(filename, "r") as json_file:
-        if os.path.getsize(filename):
-            dictionary = json.loads(json_file.read())
-        else:
-            dictionary = {
-                "project_name": "Default project name",
-                "experiment_description": "no experiment description",
-                "file_name": "emission.csv",
-                "measure_period": 10,
-                "pue": 1,
-                }
+        dictionary = json.loads(json_file.read())
     return dictionary
 
 
