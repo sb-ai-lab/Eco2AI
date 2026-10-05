@@ -576,15 +576,38 @@ def utilization_from_cpu_percent(cpu_percent, cpu_count):
     return fraction
 
 
+# psutil stores the cpu_percent baseline on the Process object.
+# A new Process(pid) returns 0 on every first cpu_percent() call, so the
+# same object has to be reused for the sample that covers the run.
+_CPU_PERCENT_PROCESSES = {}
+
+
+def _reuse_cpu_percent_process(proc):
+    pid = getattr(proc, "pid", None)
+    if not isinstance(pid, int):
+        return proc
+    cached = _CPU_PERCENT_PROCESSES.get(pid)
+    if cached is None:
+        _CPU_PERCENT_PROCESSES[pid] = proc
+        return proc
+    try:
+        if cached.is_running():
+            return cached
+    except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
+        pass
+    _CPU_PERCENT_PROCESSES[pid] = proc
+    return proc
+
+
 def _iter_process_tree(pid=None):
-    proc = psutil.Process(os.getpid() if pid is None else pid)
+    proc = _reuse_cpu_percent_process(psutil.Process(os.getpid() if pid is None else pid))
     yield proc
     try:
         children = proc.children(recursive=True)
     except (psutil.NoSuchProcess, psutil.AccessDenied):
         return
     for child in children:
-        yield child
+        yield _reuse_cpu_percent_process(child)
 
 
 def process_tree_cpu_seconds(pid=None):

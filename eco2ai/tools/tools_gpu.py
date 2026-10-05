@@ -1,8 +1,51 @@
-import pynvml
+import os
 import time
 import warnings
 
+import psutil
+import pynvml
+
 FROM_mWATTS_TO_kWATTH = 1000 * 1000 * 3600
+
+
+def _process_tree_pids():
+    proc = psutil.Process(os.getpid())
+    pids = {proc.pid}
+    try:
+        for child in proc.children(recursive=True):
+            pids.add(child.pid)
+    except (psutil.NoSuchProcess, psutil.AccessDenied):
+        pass
+    return pids
+
+
+def _gpu_client_pids(handle):
+    """
+    Process ids with a compute or graphics context on this GPU.
+    A query that this device does not support is skipped.
+    """
+    pids = set()
+    for name in (
+        "nvmlDeviceGetComputeRunningProcesses",
+        "nvmlDeviceGetGraphicsRunningProcesses",
+    ):
+        getter = getattr(pynvml, name, None)
+        if getter is None:
+            continue
+        try:
+            infos = getter(handle) or []
+        except pynvml.NVMLError as error:
+            if getattr(error, "value", None) in (
+                getattr(pynvml, "NVML_ERROR_NOT_FOUND", None),
+                getattr(pynvml, "NVML_ERROR_NOT_SUPPORTED", None),
+            ):
+                continue
+            raise
+        for info in infos:
+            pid = getattr(info, "pid", info if isinstance(info, int) else None)
+            if pid:
+                pids.add(int(pid))
+    return pids
 
 
 def decode_gpu_name(name):
@@ -66,6 +109,8 @@ class GPU:
         The first successful read is a baseline and adds nothing.
         If the energy counters cannot be read, energy is power times the
         duration since the previous sample.
+        Power drawn while this process is not running on the GPU is not
+        included. An idle card is not energy of a CPU-only calculation.
         A negative result is stored as zero.
 
         Parameters
@@ -96,6 +141,9 @@ class GPU:
                 consumption += current_power / FROM_mWATTS_TO_kWATTH * duration
         if consumption < 0:
             consumption = 0
+        if self._process_uses_gpu() is False:
+            consumption = 0.0
+            self._power_method = "nvml_not_used"
         self._consumption += consumption
         return consumption
 
@@ -121,7 +169,8 @@ class GPU:
         """
             Label of the method used by the latest calculate_consumption call.
             Before that call the label is method:nvml_power.
-            After a sample it is method:nvml_energy or method:nvml_power.
+            After a sample it is method:nvml_energy, method:nvml_power,
+            or method:nvml_not_used when this process is not running on the GPU.
         """
         if not self._power_method:
             return "method:nvml_power"
@@ -153,6 +202,29 @@ class GPU:
         for handle in self._handles():
             energies.append(pynvml.nvmlDeviceGetTotalEnergyConsumption(handle))
         return energies
+
+    def _process_uses_gpu(self):
+        """
+        Whether this process or one of its children has a GPU context.
+        False means the card's power belongs to other programs.
+        None means NVML could not answer, and the sample is kept.
+        """
+        if not any(
+            hasattr(pynvml, name)
+            for name in (
+                "nvmlDeviceGetComputeRunningProcesses",
+                "nvmlDeviceGetGraphicsRunningProcesses",
+            )
+        ):
+            return None
+        try:
+            ours = _process_tree_pids()
+            for handle in self._handles():
+                if ours.intersection(_gpu_client_pids(handle)):
+                    return True
+            return False
+        except Exception:
+            return None
 
     def _energy_delta_kwh(self, energies):
         previous = self._last_energies

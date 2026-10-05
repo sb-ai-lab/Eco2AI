@@ -12,7 +12,6 @@ from eco2ai.tools.tools_gpu import GPU, all_available_gpu
 from eco2ai.tools.tools_cpu import CPU, all_available_cpu
 from eco2ai.tools.tools_ram import RAM
 from eco2ai.utils import (
-    is_file_opened,
     define_carbon_index,
     get_params,
     set_params,
@@ -490,78 +489,71 @@ You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/cou
         # but after all, such verification should be deleted
         # self.check_for_older_versions()
         attributes_dict = self._construct_attributes_dict()
+        # A separate lock file serializes writers. Opening the csv does not
+        # stop another process from reading and replacing it.
+        lock_fd, lock_path = self._acquire_report_lock(self.file_name)
+        try:
+            if not os.path.isfile(self.file_name):
+                open(self.file_name, "w").close()
+                tmp = open(self.file_name, "w")
+                pd.DataFrame(attributes_dict).to_csv(self.file_name, index=False)
+                tmp.close()
+            else:
+                with open(self.file_name, "r"):
+                    attributes_dataframe = pd.read_csv(self.file_name, keep_default_na=False).astype(object)
 
-        if not os.path.isfile(self.file_name):
-            while True:
-                if not is_file_opened(self.file_name):
-                    open(self.file_name, "w").close()
-                    tmp = open(self.file_name, "w")
-                    pd.DataFrame(attributes_dict).to_csv(self.file_name, index=False)
-                    tmp.close()
-                    break
-                else:
-                    time.sleep(0.5)
+                    # Append columns this run has and the table does not.
+                    # Existing columns stay in place. Older rows get N/A
+                    # in a column that was not there before.
+                    columns = list(attributes_dataframe.columns)
+                    for column in attributes_dict:
+                        if column not in columns:
+                            columns.append(column)
+                    if columns != list(attributes_dataframe.columns):
+                        attributes_dataframe = self._update_to_new_version(attributes_dataframe, columns)
 
-        else:
-            while True:
-                if not is_file_opened(self.file_name):
-                    # Open the file to prevent other processes from using it
-                    with open(self.file_name, "r"):
-                        attributes_dataframe = pd.read_csv(self.file_name, keep_default_na=False).astype(object)
+                    # One value per table column. A column this run does not
+                    # fill stays N/A, so a table written with device columns
+                    # can later be extended with the option turned off.
+                    attributes_array = [
+                        attributes_dict[column][0] if column in attributes_dict else "N/A"
+                        for column in attributes_dataframe.columns
+                    ]
 
-                        # Append columns this run has and the table does not.
-                        # Existing columns stay in place. Older rows get N/A
-                        # in a column that was not there before.
-                        columns = list(attributes_dataframe.columns)
-                        for column in attributes_dict:
-                            if column not in columns:
-                                columns.append(column)
-                        if columns != list(attributes_dataframe.columns):
-                            attributes_dataframe = self._update_to_new_version(attributes_dataframe, columns)
+                    # # Ensure consistent types
+                    # attributes_array = [
+                    #     self.align_value_to_dtype(val, dtype)
+                    #     for val, dtype in zip(attributes_array, attributes_dataframe.dtypes)
+                    # ]
 
-                        # One value per table column. A column this run does not
-                        # fill stays N/A, so a table written with device columns
-                        # can later be extended with the option turned off.
-                        attributes_array = [
-                            attributes_dict[column][0] if column in attributes_dict else "N/A"
-                            for column in attributes_dataframe.columns
-                        ]
+                    if attributes_dataframe[attributes_dataframe["id"] == self._id].shape[0] == 0:
+                        # Adding a new row
+                        attributes_dataframe.loc[len(attributes_dataframe)] = attributes_array
+                    else:
+                        # Updating or inserting a row
+                        row_index = attributes_dataframe[attributes_dataframe["id"] == self._id].index.values[-1]
 
-                        # # Ensure consistent types
-                        # attributes_array = [
-                        #     self.align_value_to_dtype(val, dtype)
-                        #     for val, dtype in zip(attributes_array, attributes_dataframe.dtypes)
-                        # ]
-
-                        if attributes_dataframe[attributes_dataframe["id"] == self._id].shape[0] == 0:
-                            # Adding a new row
-                            attributes_dataframe.loc[len(attributes_dataframe)] = attributes_array
+                        # check, if it's necessary to add a new row to the dataframe
+                        if add_new:
+                            # Insert a new row
+                            attributes_dataframe = pd.DataFrame(
+                                np.vstack(
+                                    (
+                                        attributes_dataframe.values[: row_index + 1],
+                                        attributes_array,
+                                        attributes_dataframe.values[row_index + 1 :],
+                                    )
+                                ),
+                                columns=attributes_dataframe.columns,
+                            )
                         else:
-                            # Updating or inserting a row
-                            row_index = attributes_dataframe[attributes_dataframe["id"] == self._id].index.values[-1]
+                            # Update the existing row
+                            attributes_dataframe.loc[row_index] = attributes_array
 
-                            # check, if it's necessary to add a new row to the dataframe
-                            if add_new:
-                                # Insert a new row
-                                attributes_dataframe = pd.DataFrame(
-                                    np.vstack(
-                                        (
-                                            attributes_dataframe.values[: row_index + 1],
-                                            attributes_array,
-                                            attributes_dataframe.values[row_index + 1 :],
-                                        )
-                                    ),
-                                    columns=attributes_dataframe.columns,
-                                )
-                            else:
-                                # Update the existing row
-                                attributes_dataframe.loc[row_index] = attributes_array
-
-                        # Save updated DataFrame to file
-                        attributes_dataframe.to_csv(self.file_name, index=False)
-                    break
-                else:
-                    time.sleep(0.5)
+                    # Save updated DataFrame to file
+                    attributes_dataframe.to_csv(self.file_name, index=False)
+        finally:
+            self._release_report_lock(lock_fd, lock_path)
 
         self._mode = "run time" if self._mode != "training" else "training"
         return attributes_dict
@@ -590,6 +582,33 @@ You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/cou
         attributes_dataframe = attributes_dataframe[new_columns]
 
         return attributes_dataframe
+
+    def _acquire_report_lock(self, path):
+        """
+        Take an exclusive lock for one report file.
+        Two trackers in different processes can then update that file
+        one after the other instead of replacing each other's rows.
+        A lock left behind by a crashed process is removed after 15 seconds.
+        """
+        lock_path = path + ".lock"
+        while True:
+            try:
+                return os.open(lock_path, os.O_CREAT | os.O_EXCL | os.O_RDWR), lock_path
+            except OSError:
+                try:
+                    if time.time() - os.path.getmtime(lock_path) > 15:
+                        os.remove(lock_path)
+                        continue
+                except OSError:
+                    pass
+                time.sleep(0.05)
+
+    def _release_report_lock(self, lock_fd, lock_path):
+        os.close(lock_fd)
+        try:
+            os.remove(lock_path)
+        except OSError:
+            pass
 
     def _func_for_sched(self, add_new=False):
         """
@@ -659,6 +678,7 @@ You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/cou
         self._ram = RAM(ignore_warnings=self._ignore_warnings)
         self._id = str(uuid.uuid4())
         self._start_time = time.time()
+        self._take_device_baselines()
 
     def new_epoch(self, parameters_dict):
         """
@@ -732,6 +752,7 @@ Please, use the interface for training: ".start_training", ".new_epoch", and "st
         self._id = str(uuid.uuid4())
         self._mode = "first_time"
         self._start_time = time.time()
+        self._take_device_baselines()
         self._scheduler.add_job(self._func_for_sched, "interval", seconds=self._measure_period, id="job")
         self._scheduler.start()
 
@@ -794,6 +815,22 @@ You should run ".start_training" method before ".stop_training" method
         self._mode = "shut down"
         self._close_gpu()
 
+    def _take_device_baselines(self):
+        """
+        Take the first device sample before user code runs, and do not record it.
+        The GPU energy counter and psutil's CPU percent both return a baseline
+        on the first read: the GPU delta is 0, and cpu_percent() is 0.
+        A short run sampled only at stop() would otherwise store no CPU energy
+        and no GPU energy for the work itself.
+        The sample at stop() then covers the run. CPU energy follows the process
+        utilization. GPU energy is counted only when this process is running
+        on the GPU. Idle card power is not part of a CPU-only calculation.
+        """
+        if self._cpu is not None:
+            self._cpu.calculate_consumption()
+        if self._gpu is not None and self._gpu.is_gpu_available:
+            self._gpu.calculate_consumption()
+
     def _reset_consumption(self):
         """
         Clear the run total and the per-device totals.
@@ -829,39 +866,32 @@ You should run ".start_training" method before ".stop_training" method
             # attributes_dict[key] = [encode(str(attributes_dict[key][0]))]
             attributes_dict[key] = [encode(str(value)) for value in attributes_dict[key]]
 
-        if not os.path.isfile(self._encode_file):
-            while True:
-                if not is_file_opened(self._encode_file):
-                    open(self._encode_file, "w").close()
-                    tmp = open(self._encode_file, "r")
-                    pd.DataFrame(attributes_dict).to_csv(self._encode_file, index=False)
+        lock_fd, lock_path = self._acquire_report_lock(self._encode_file)
+        try:
+            if not os.path.isfile(self._encode_file):
+                open(self._encode_file, "w").close()
+                tmp = open(self._encode_file, "r")
+                pd.DataFrame(attributes_dict).to_csv(self._encode_file, index=False)
 
-                    tmp.close()
-                    break
-                else:
-                    time.sleep(0.5)
+                tmp.close()
+            else:
+                tmp = open(self._encode_file, "r")
 
-        else:
-            while True:
-                if not is_file_opened(self._encode_file):
-                    tmp = open(self._encode_file, "r")
+                attributes_dataframe = pd.read_csv(self._encode_file, keep_default_na=False).astype(object)
 
-                    attributes_dataframe = pd.read_csv(self._encode_file, keep_default_na=False).astype(object)
+                attributes_dataframe = pd.concat(
+                    [
+                        attributes_dataframe,
+                        pd.DataFrame(attributes_dict),
+                    ],
+                    ignore_index=True,
+                    axis=0,
+                )
 
-                    attributes_dataframe = pd.concat(
-                        [
-                            attributes_dataframe,
-                            pd.DataFrame(attributes_dict),
-                        ],
-                        ignore_index=True,
-                        axis=0,
-                    )
-
-                    attributes_dataframe.to_csv(self._encode_file, index=False)
-                    tmp.close()
-                    break
-                else:
-                    time.sleep(0.5)
+                attributes_dataframe.to_csv(self._encode_file, index=False)
+                tmp.close()
+        finally:
+            self._release_report_lock(lock_fd, lock_path)
 
 
 def track(func):
