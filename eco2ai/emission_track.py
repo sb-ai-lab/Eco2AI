@@ -125,7 +125,7 @@ class Tracker:
                 Instance of inconsistent intervals: "8:30-20:00", "18:00-3:00", "6:00-12:30"
                 3) Total duration of time intervals in hours must be 24 hours(1 day).
         ignore_warnings: bool
-            If true, then user will be notified of all the warnings. If False, there won't be any warnings.
+            If True, warnings are not shown. If False, warnings are shown.
             The default is False.
         timezone: directly set defauls timezone. Can be useful if timezone can not be automatically detected
 
@@ -388,8 +388,11 @@ You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/cou
         attributes_dict["duration(s)"] = [f"{time.time() - self._start_time}"]
         attributes_dict["power_consumption(kWh)"] = [f"{self._consumption}"]
         attributes_dict["CO2_emissions(kg)"] = [f"{self._consumption * self._emission_level / FROM_kWATTH_TO_MWATTH}"]
-        attributes_dict["CPU_name"] = [f"{self._cpu.name()}/{self._cpu.cpu_num()} device(s), TDP:{self._cpu.tdp()}"]
-        attributes_dict["GPU_name"] = [f"{self._gpu.name()} {self._gpu.gpu_num()} device(s)"]
+        attributes_dict["CPU_name"] = [
+            f"{self._cpu.name()}/{self._cpu.cpu_num()} device(s), TDP:{self._cpu.tdp()} {self._cpu.power_method_label()}"
+        ]
+        gpu_method = f" {self._gpu.power_method_label()}" if self._gpu.is_gpu_available else ""
+        attributes_dict["GPU_name"] = [f"{self._gpu.name()} {self._gpu.gpu_num()} device(s){gpu_method}"]
         attributes_dict["OS"] = [f"{self._os}"]
         attributes_dict["region/country"] = [f"{self._country}"]
         attributes_dict["cost"] = [f"{self._total_price}"]
@@ -611,6 +614,7 @@ You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/cou
         self._mode = "training"
 
         self._current_epoch = start_epoch
+        self._close_gpu()
         self._cpu = CPU(cpu_processes=self._cpu_processes, ignore_warnings=self._ignore_warnings)
         self._gpu = GPU(ignore_warnings=self._ignore_warnings)
         self._ram = RAM(ignore_warnings=self._ignore_warnings)
@@ -682,6 +686,7 @@ Please, use the interface for training: ".start_training", ".new_epoch", and "st
             except:
                 pass
             self._scheduler = BackgroundScheduler(job_defaults={"max_instances": 10}, misfire_grace_time=None)
+        self._close_gpu()
         self._cpu = CPU(cpu_processes=self._cpu_processes, ignore_warnings=self._ignore_warnings)
         self._gpu = GPU(ignore_warnings=self._ignore_warnings)
         self._ram = RAM(ignore_warnings=self._ignore_warnings)
@@ -716,6 +721,7 @@ You should run ".start_training" method before ".stop_training" method
             )
         self._consumption = 0
         self._mode = "shut down"
+        self._close_gpu()
 
     def stop(
         self,
@@ -747,6 +753,11 @@ You should run ".start_training" method before ".stop_training" method
         self._start_time = None
         self._consumption = 0
         self._mode = "shut down"
+        self._close_gpu()
+
+    def _close_gpu(self):
+        if self._gpu is not None and hasattr(self._gpu, "close"):
+            self._gpu.close()
 
     def _func_for_encoding(self, attributes_dict):
         """
