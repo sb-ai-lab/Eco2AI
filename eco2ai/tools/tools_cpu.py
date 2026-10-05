@@ -256,8 +256,11 @@ def all_available_cpu():
 
 def number_of_cpu(ignore_warnings=True):
     """
-        This function returns number of CPU sockets(physical CPU processors)
-        If the body of the function runs with error, number of available cpu devices will be set to 1
+        This function returns the number of CPU sockets (physical CPU processors).
+        On macOS a positive hw.packages value is that socket count.
+        If the package count is missing or not positive, hw.physicalcpu
+        (physical cores) is used.
+        If the count cannot be read, the number of CPU devices is set to 1.
         
         Parameters
         ----------
@@ -268,7 +271,7 @@ def number_of_cpu(ignore_warnings=True):
         Returns
         -------
         cpu_num: int
-            Number of CPU sockets(physical CPU processors)
+            Socket count, or physical cores on macOS when the package count is missing
 
     """
     operating_system = platform.system()
@@ -324,25 +327,40 @@ def number_of_cpu(ignore_warnings=True):
                     )
             cpu_num = 1
     elif operating_system == "Darwin":
+        cpu_num = 0
         try:
-            # Try to get the number of physical CPU packages
+            """
+            Physical CPU packages from hw.packages.
+            A positive count is kept.
+            A failed probe, or a count that is not positive, is not a socket count.
+            The physical-core fallback below is used in both of those cases.
+            """
             out = subprocess.check_output(
-            ["sysctl", "-n", "hw.packages"], text=True).strip()
+                ["sysctl", "-n", "hw.packages"], text=True
+            ).strip()
             cpu_num = int(out)
-        except (subprocess.CalledProcessError, ValueError): cpu_num = 0
+        except (subprocess.CalledProcessError, ValueError, OSError):
+            cpu_num = 0
 
         if cpu_num <= 0:
             try:
-                # Fallback: number of physical cores
-                out = subprocess.check_output(["sysctl", "-n", "hw.physicalcpu"], text=True).strip()
+                """
+                Fallback: physical cores from hw.physicalcpu.
+                This is used only when the package count is missing or not positive.
+                """
+                out = subprocess.check_output(
+                    ["sysctl", "-n", "hw.physicalcpu"], text=True
+                ).strip()
                 cpu_num = int(out)
-            except (subprocess.CalledProcessError, ValueError):
+            except (subprocess.CalledProcessError, ValueError, OSError):
+                cpu_num = 0
+            if cpu_num <= 0:
                 if not ignore_warnings:
                     warnings.warn(
-                        "Unable to determine the number of CPU sockets on Darwin; defaulting to 1",
-                        category=UserWarning
+                        message="Unable to determine the number of CPU sockets on Darwin; defaulting to 1",
+                        category=UserWarning,
                     )
-        cpu_num = 1
+                cpu_num = 1
     else: 
         cpu_num = 1
     return cpu_num
