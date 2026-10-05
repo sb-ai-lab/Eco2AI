@@ -78,6 +78,72 @@ class NoCountryCodeError(Exception):
     pass
 
 
+def _location_cache_path():
+    """
+    Cached IP country next to the user config file.
+    """
+    return os.path.join(os.path.dirname(user_config_path()), "location.json")
+
+
+def _read_location_cache():
+    path = _location_cache_path()
+    if not os.path.isfile(path):
+        return None
+    try:
+        with open(path, "r", encoding="utf-8") as handle:
+            payload = json.load(handle)
+    except (OSError, ValueError):
+        return None
+    country = payload.get("country")
+    if not country:
+        return None
+    return country, payload.get("region")
+
+
+def _write_location_cache(country, region):
+    path = _location_cache_path()
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as handle:
+        json.dump({"country": country, "region": region}, handle)
+
+
+def _ip_location():
+    """
+    One IP lookup. None when the request fails or returns no country.
+    """
+    try:
+        response = requests.get("https://ipinfo.io/", timeout=3)
+        response.raise_for_status()
+        payload = response.json()
+    except Exception:
+        return None
+    country = payload.get("country")
+    if not country:
+        return None
+    return country, payload.get("region")
+
+
+def _resolve_country_without_code():
+    """
+    Country and region when the caller did not pass alpha_2_code.
+    Order: ECO2AI_ALPHA2, one IP request (then cache it), the cache, then World.
+    """
+    env_code = os.environ.get("ECO2AI_ALPHA2")
+    if env_code:
+        return env_code, None
+    located = _ip_location()
+    if located is not None:
+        _write_location_cache(located[0], located[1])
+        return located
+    cached = _read_location_cache()
+    if cached is not None:
+        return cached
+    warnings.warn(
+        message="Country could not be resolved from ECO2AI_ALPHA2, the network, or the location cache. Using the World emission factor, 458.490 kg/MWh."
+    )
+    return "WORLD", None
+
+
 def define_carbon_index(
     emission_level=None, 
     alpha_2_code=None,
@@ -117,12 +183,7 @@ def define_carbon_index(
         raise NoCountryCodeError("In order to set 'region' parameter, 'alpha_2_code' parameter should be set")
     carbon_index_table_name = resource_filename('eco2ai', 'data/carbon_index.csv')
     if alpha_2_code is None:
-        try:
-            ip_dict = json.loads(requests.get("https://ipinfo.io/").content)  # safer than eval
-        except:
-            ip_dict = json.loads(requests.get("https://ipinfo.io/").content.decode('ascii'))
-        country = ip_dict.get('country', None)
-        region = ip_dict.get('region', None)
+        country, region = _resolve_country_without_code()
     else:
         country = alpha_2_code
     if emission_level is not None:
