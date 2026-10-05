@@ -20,7 +20,7 @@ class RAM():
             Parameters
             ----------
             ignore_warnings: bool
-                If true, then user will be notified of all the warnings. If False, there won't be any warnings.
+                If True, warnings are not shown. If False, warnings are shown.
                 The default is False.
 
             Returns
@@ -53,7 +53,9 @@ class RAM():
 
     def _get_memory_used(self,):
         """
-            This class method calculates amount of virtual memory(RAM) used.
+            Resident memory of the current process and its child processes.
+            The result is gigabytes of RSS, not virtual address space
+            and not memory used by other processes.
 
             Parameters
             ----------
@@ -62,22 +64,20 @@ class RAM():
             Returns
             -------
             total_memory_used: float
-                Total amount of virtual memory(RAM) used in gigabytes.
+                Resident memory of this process tree, in gigabytes.
 
         """
-        current_pid = os.getpid()
-        memory_percent = 0
-        
-        for proc in psutil.process_iter():
-            try:
-                pinfo = proc.as_dict(attrs=['name', 'pid', 'memory_percent'])
-                if pinfo['pid'] == current_pid:
-                    memory_percent = float(pinfo['memory_percent'])
-            except (psutil.NoSuchProcess, psutil.AccessDenied , psutil.ZombieProcess) :
-                pass
-
-        total_memory = psutil.virtual_memory().total / (1024 ** 3)
-        return memory_percent * total_memory / 100
+        try:
+            proc = psutil.Process(os.getpid())
+            rss_bytes = proc.memory_info().rss
+            for child in proc.children(recursive=True):
+                try:
+                    rss_bytes += child.memory_info().rss
+                except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
+                    pass
+        except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
+            return 0
+        return rss_bytes / (1024 ** 3)
 
 
     def calculate_consumption(self) -> float:
