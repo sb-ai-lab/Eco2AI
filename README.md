@@ -81,6 +81,12 @@ def train_func(model, dataset, optimizer, epochs):
     ...
 
 train_func(your_model, your_dataset, your_optimizer, your_epochs)
+
+@track(project_name="Malevich", file_name="run.csv")
+def train_named(model, epochs):
+    ...
+
+train_named(model, 2)
 ```
 
 For your convenience, every time you instantiate the Tracker object with your custom parameters, these settings will be saved until the library is deleted. Each new tracker will be created with your custom settings (if you create a tracker with new parameters, they will be saved instead of the old ones). For example:
