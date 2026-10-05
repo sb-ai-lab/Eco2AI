@@ -20,7 +20,8 @@ setup(
         "eco2ai": [
             "data/cpu_names.csv",
             "data/config.txt",
-            "data/carbon_index.csv"
+            "data/carbon_index.csv",
+            "data/SOURCES.md"
         ]
     },
     include_package_data=True,
