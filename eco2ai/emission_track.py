@@ -959,45 +959,40 @@ You should run ".start_training" method before ".stop_training" method
             self._release_report_lock(lock_fd, lock_path)
 
 
-def track(func):
+def track(func=None, **tracker_kwargs):
     """
-    This function is a decorator, that modifies any function by creating Tracker object and
-    running Tracker.start() in the beginning of the function and Tracker.stop() in the end of function.
+    Decorate a function so a Tracker starts before it and stops after it.
+    Use @track or @track(project_name=..., file_name=...).
+    Keyword arguments are passed to Tracker, not to the wrapped function.
+    stop() runs once, including when the function raises, and the original
+    exception propagates.
 
     Parameters
     ----------
     func: function
-        Any function user wants to modify.
+        Any function user wants to modify. None when the decorator is called
+        with Tracker keyword arguments.
+    tracker_kwargs:
+        Arguments forwarded to Tracker.
 
     Returns
     -------
-    No returns.
+    function
+        The wrapped function, or a decorator when Tracker arguments were given.
 
     """
 
-    # def inner(*args, **kwargs):
-    #     tracker = Tracker()
-    #     tracker.start()
-    #     try:
-    #         returned = func(*args, **kwargs)
-    #     except Exception:
-    #         tracker.stop()
-    #         del tracker
-    #         raise Exception
-    #     tracker.stop()
-    #     del tracker
-    #     return returned
+    def decorator(wrapped):
+        def inner(*args, **kwargs):
+            tracker = Tracker(**tracker_kwargs)
+            tracker.start()
+            try:
+                return wrapped(*args, **kwargs)
+            finally:
+                tracker.stop()
 
-    def inner(*args, **kwargs):
-        tracker = Tracker()
-        tracker.start()
-        try:
-            returned = func(*args, **kwargs)
-        except Exception as e:
-            tracker.stop()  # Ensure the tracker stops even on an exception
-            raise  # Re-raise the original exception with full context
-        finally:
-            tracker.stop()  # Ensure the tracker stops no matter what
-        return returned
+        return inner
 
-    return inner
+    if func is not None:
+        return decorator(func)
+    return decorator
