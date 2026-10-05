@@ -13,8 +13,15 @@ from pkg_resources import resource_stream
 
 CONSTANT_CONSUMPTION = 100.1
 FROM_WATTs_TO_kWATTh = 1000*3600
+FROM_uJOULES_TO_kWATTh = 1000 * 1000 * 3600 * 1000
+RAPL_ROOT = "/sys/class/powercap/intel-rapl"
 NUM_CALCULATION = 200
 CPU_TABLE_NAME = resource_stream('eco2ai', 'data/cpu_names.csv').name
+FAMILY_PATTERN = (
+    "(Core Ultra)|(Ryzen Threadripper)|(Ryzen AI)|(Ryzen)|(EPYC)|(Athlon)|"
+    "(Xeon Gold)|(Xeon Bronze)|(Xeon Silver)|(Xeon Platinum)|(Xeon)|"
+    "(Core)|(Celeron)|(Atom)|(Pentium)|(Snapdragon)"
+)
 
 class NoCPUinTableWarning(Warning):
     pass
@@ -29,7 +36,7 @@ class CPU():
         The CPU class is not intended for separate usage, outside the Tracker class
 
     """
-    def __init__(self, cpu_processes="current", ignore_warnings=False):
+    def __init__(self, cpu_processes="current", ignore_warnings=False, rapl_root=None):
         """
             This class method initializes CPU object.
             Creates fields of class object. All the fields are private variables
@@ -40,7 +47,7 @@ class CPU():
                 if cpu_processes == "current", then calculates CPU utilization percent only for the current running process
                 if cpu_processes == "all", then calculates full CPU utilization percent(sum of all running processes)
             ignore_warnings: bool
-                If true, then user will be notified of all the warnings. If False, there won't be any warnings.
+                If True, warnings are not shown. If False, warnings are shown.
 
             Returns
             -------
@@ -52,11 +59,16 @@ class CPU():
         self._cpu_processes = cpu_processes
         self._cpu_dict = get_cpu_info()
         self._name = self._cpu_dict["brand_raw"]
-        self._tdp = find_tdp_value(self._name, CPU_TABLE_NAME, self._ignore_warnings)
+        self._tdp = find_tdp_value(self._name, CPU_TABLE_NAME, ignore_warnings=self._ignore_warnings)
         self._consumption = 0
         self._cpu_num = number_of_cpu(self._ignore_warnings)
         self._start = time.time()
         self._operating_system = platform.system()
+        self._power_method = "tdp"
+        self._rapl_root = RAPL_ROOT if rapl_root is None else rapl_root
+        self._last_rapl_uj = None
+        self._last_process_cpu_seconds = None
+        self._last_system_cpu_seconds = None
 
 
     def tdp(self):
@@ -74,6 +86,14 @@ class CPU():
 
         """
         return self._tdp
+
+    def power_method_label(self):
+        """
+            Label of the method used by the latest calculate_consumption call.
+            Before that call the label is method:tdp.
+            After a sample it is method:rapl or method:tdp.
+        """
+        return f"method:{self._power_method}"
 
     def set_consumption_zero(self):
         """
@@ -135,7 +155,10 @@ class CPU():
 
     def calculate_consumption(self):
         """
-            This class method calculates CPU power consumption.
+            CPU energy for the interval since the previous sample.
+            Intel RAPL package energy is used when the counters can be read.
+            Otherwise the estimate is TDP times utilization, socket count, and duration.
+            The first successful RAPL read is a baseline and adds nothing.
             
             Parameters
             ----------
@@ -144,9 +167,17 @@ class CPU():
             Returns
             -------
             consumption: float
-                CPU power consumption
+                CPU energy of this sample, in kWh
         
         """
+        rapl_kwh = self._rapl_delta_kwh()
+        if rapl_kwh is not None:
+            self._power_method = "rapl"
+            if rapl_kwh < 0:
+                rapl_kwh = 0
+            self._consumption += rapl_kwh
+            return rapl_kwh
+        self._power_method = "tdp"
         time_period = time.time() - self._start
         self._start = time.time()
         consumption = self._tdp * self.get_cpu_percent() * self._cpu_num * time_period / FROM_WATTs_TO_kWATTh
@@ -154,6 +185,44 @@ class CPU():
             consumption = 0
         self._consumption += consumption
         return consumption
+
+    def _rapl_delta_kwh(self):
+        """
+            Package energy since the previous sample, in kWh.
+            None when RAPL cannot be read.
+            The first successful read is a baseline and returns 0.
+            When cpu_processes is "current", later samples are scaled
+            by this process tree's share of system CPU time.
+        """
+        try:
+            current = read_rapl_package_energy_uj(self._rapl_root)
+        except (OSError, ValueError):
+            return None
+        previous = self._last_rapl_uj
+        self._last_rapl_uj = current
+        if previous is None:
+            if self._cpu_processes == "current":
+                self._last_process_cpu_seconds = process_tree_cpu_seconds()
+                self._last_system_cpu_seconds = system_cpu_seconds()
+            return 0.0
+        delta = current - previous
+        if delta < 0:
+            return 0.0
+        kwh = delta / FROM_uJOULES_TO_kWATTh
+        if self._cpu_processes == "current":
+            kwh *= self._cpu_time_share()
+        return kwh
+
+    def _cpu_time_share(self):
+        process_seconds = process_tree_cpu_seconds()
+        system_seconds = system_cpu_seconds()
+        previous_process = self._last_process_cpu_seconds
+        previous_system = self._last_system_cpu_seconds
+        self._last_process_cpu_seconds = process_seconds
+        self._last_system_cpu_seconds = system_seconds
+        if previous_process is None or previous_system is None:
+            return 0.0
+        return cpu_time_share(process_seconds - previous_process, system_seconds - previous_system)
 
     def name(self,):
         return self._name
@@ -193,7 +262,7 @@ def number_of_cpu(ignore_warnings=True):
         Parameters
         ----------
         ignore_warnings: bool
-            If true, then user will be notified of all the warnings. If False, there won't be any warnings.
+            If True, warnings are not shown. If False, warnings are shown.
             The default is True.
         
         Returns
@@ -255,24 +324,6 @@ def number_of_cpu(ignore_warnings=True):
                     )
             cpu_num = 1
     elif operating_system == "Darwin":
-        # try:
-        #     # running terminal command, getting output
-        #     string = os.popen("sysctl hw.packages")
-        #     output = string.read()
-        #     # Extract the number of physical CPU packages (sockets)
-        #     cpu_num = int(output.split(':')[1].strip())
-            
-        #     # If packages info not available, try alternative
-        #     if cpu_num <= 0:
-        #         string = os.popen("sysctl -n hw.physicalcpu")
-        #         output = string.read().strip()
-        #         cpu_num = int(output)
-        # except:
-        #     if not ignore_warnings:
-        #         warnings.warn(
-        #             message="\nIt's impossible to determine cpu number correctly\nFor now, number of cpu devices is set to 1\n\n", 
-        #             category=NoNeededLibrary
-        #             )
         try:
             # Try to get the number of physical CPU packages
             out = subprocess.check_output(
@@ -292,7 +343,6 @@ def number_of_cpu(ignore_warnings=True):
                         category=UserWarning
                     )
         cpu_num = 1
-
     else: 
         cpu_num = 1
     return cpu_num
@@ -318,7 +368,7 @@ def transform_cpu_name(cpu_name):
 
     """
     # dropping all the waste tokens and patterns:
-    cpu_name = re.sub(r'(\(R\))|(®)|(™)|(\(TM\))|(@.*)|(\S*GHz\S*)|(\[.*\])|( \d-Core)|(\(.*\))', '', cpu_name)
+    cpu_name = re.sub(r'(\(R\))|(®)|(™)|(\(TM\))|(@.*)|(\S*GHz\S*)|(\[.*\])|( \d+-Cores?)|(\(.*\))', '', cpu_name)
 
     # dropping all the waste words:
     array = re.split(" ", cpu_name)
@@ -326,54 +376,7 @@ def transform_cpu_name(cpu_name):
         if ("CPU" in i) or ("Processor" in i) or (i == ''):
             array.remove(i)
     cpu_name = " ".join(array)
-    patterns = re.findall(r"(\S*\d+\S*)", cpu_name)
-    for i in re.findall(
-        "(Ryzen Threadripper)|(Ryzen)|(EPYC)|(Athlon)|(Xeon Gold)|(Xeon Bronze)|(Xeon Silver)|(Xeon Platinum)|(Xeon)|(Core)|(Celeron)|(Atom)|(Pentium)", 
-        cpu_name
-        ):
-        patterns += i
-    patterns = list(set(patterns))
-    if '' in patterns:
-        patterns.remove('')
-    return cpu_name, patterns
-
-def transform_cpu_name_2(cpu_name):
-    """
-        This function drops all the waste tokens, and words from a cpu name
-        It finds patterns. Patterns include processor's family and 
-        some certain specifications like 9400F in Intel Core i5-9400F
-        
-        Parameters
-        ----------
-        cpu_name: str
-            A string, containing CPU name, taken from psutil library
-        
-        Returns
-        -------
-        cpu_name: str
-            Modified CPU name, containing patterns only
-        patterns: list of str
-            Array with all the patterns
-
-    """
-    # dropping all the waste tokens and patterns:
-    cpu_name = re.sub(r'(\(R\))|(®)|(™)|(\(TM\))|(@.*)|(\S*GHz\S*)|(\[.*\])|( \d-Core)|(\(.*\))', '', cpu_name)
-
-    # dropping all the waste words:
-    array = re.split(" ", cpu_name)
-    for i in array[::-1]:
-        if ("CPU" in i) or ("Processor" in i) or (i == ''):
-            array.remove(i)
-    cpu_name = " ".join(array)
-    patterns = re.findall(r"(\S*\d+\S*)", cpu_name)
-    for i in re.findall(
-        "(Ryzen Threadripper)|(Ryzen)|(EPYC)|(Athlon)|(Xeon Gold)|(Xeon Bronze)|(Xeon Silver)|(Xeon Platinum)|(Xeon)|(Core)|(Celeron)|(Atom)|(Pentium)", 
-        cpu_name
-        ):
-        patterns += i
-    patterns = list(set(patterns))
-    if '' in patterns:
-        patterns.remove('')
+    patterns = get_patterns(cpu_name)
     return cpu_name, patterns
 
 
@@ -395,10 +398,7 @@ def get_patterns(cpu_name):
 
     """
     patterns = re.findall(r"(\S*\d+\S*)", cpu_name)
-    for i in re.findall(
-        "(Ryzen Threadripper)|(Ryzen)|(EPYC)|(Athlon)|(Xeon Gold)|(Xeon Bronze)|(Xeon Silver)|(Xeon Platinum)|(Xeon)|(Core)|(Celeron)|(Atom)|(Pentium)",
-        cpu_name
-        ):
+    for i in re.findall(FAMILY_PATTERN, cpu_name):
         patterns += i
     patterns = list(set(patterns))
     if '' in patterns:
@@ -452,7 +452,7 @@ def find_tdp_value(cpu_name, f_table_name, constant_value=CONSTANT_CONSUMPTION, 
             The default is CONSTANT_CONSUMPTION(a global value, initialized in the beginning of the file)
 
         ignore_warnings: bool
-            If true, then user will be notified of all the warnings. If False, there won't be any warnings.
+            If True, warnings are not shown. If False, warnings are shown.
             The default is True.
         
         Returns
@@ -461,141 +461,140 @@ def find_tdp_value(cpu_name, f_table_name, constant_value=CONSTANT_CONSUMPTION, 
             TDP of user CPU device
 
     """
-    # firstly, we try to find transformed cpu name in the cpu table:
     f_table = pd.read_csv(f_table_name)
     cpu_name_mod, patterns = transform_cpu_name(cpu_name)
-    f_table = f_table[["Model", "TDP"]].values
-    suitable_elements = f_table[f_table[:, 0] == cpu_name_mod]
+    rows = f_table[["Model", "TDP"]].values
+    suitable_elements = rows[rows[:, 0] == cpu_name_mod]
     if suitable_elements.shape[0] > 0:
-        # if there are more than one suitable elements, return one with maximum TDP value
         return find_max_tdp(suitable_elements)
-    # secondly, if needed element isn't found in the table,
-    # then we try to find patterns in cpu names and return suitable values:
-    # if there is no any patterns in cpu name, we simply return constant consumption value
-    if len(patterns) == 0:
+    tokens = sku_tokens(cpu_name_mod)
+    if len(tokens) == 0:
         if not ignore_warnings:
             warnings.warn(
-                message="\n\nYour CPU device is not found in our database\nCPU TDP is set to constant value 100\n", 
+                message="\n\nYour CPU device is not found in our database\nCPU TDP is set to constant value 100\n",
                 category=NoCPUinTableWarning
                 )
         return constant_value
-    # appending to array all suitable for at least one of the patterns elements
-    suitable_elements = []
-    for element in f_table:
-        flag = 0
-        tmp_patterns = get_patterns(element[0])
-        for pattern in patterns:
-            if pattern in tmp_patterns:
-                flag += 1
-        if flag:
-            # suitable_elements.append(element)
-            suitable_elements.append((element, flag))
-
-    # if there is only one suitable element, we return this element.
-    # If there is no suitable elements, we return constant value
-    # If there are more than one element, we check existence of elements suitable for all the patterns simultaneously.
-    # If there are such elements(one or more), we return the value with maximum TDP among them.
-    # If there is no, we return the value with maximum TDP among all the suitable elements
-    if len(suitable_elements) == 0:
+    families = [pattern for pattern in patterns if not re.search(r"\d", pattern)]
+    matches = []
+    for element in rows:
+        row_tokens = set(sku_tokens(str(element[0])))
+        if not all(token in row_tokens for token in tokens):
+            continue
+        if families:
+            row_families = [pattern for pattern in get_patterns(str(element[0])) if not re.search(r"\d", pattern)]
+            if not set(families).issubset(row_families):
+                continue
+        matches.append(element)
+    if len(matches) == 0:
         if not ignore_warnings:
             warnings.warn(
-                message="\n\nYour CPU device is not found in our database\nCPU TDP is set to constant value 100\n", 
+                message="\n\nYour CPU device is not found in our database\nCPU TDP is set to constant value 100\n",
                 category=NoCPUinTableWarning
                 )
-        return CONSTANT_CONSUMPTION
-    elif len(suitable_elements) == 1:
-        return float(suitable_elements[0][0][1])
-    else:
-        suitable_elements.sort(key=lambda x: x[1], reverse=True)
-        max_coincidence = suitable_elements[0][1]
+        return constant_value
+    return find_max_tdp(matches)
 
-        tmp_elements = []
-        for element in suitable_elements:
-            if element[1] == max_coincidence:
-                tmp_elements.append(element[0])
-        return find_max_tdp(tmp_elements)
-
-# searching cpu name in cpu table
-def find_tdp_value_2(cpu_name, f_table_name, constant_value=CONSTANT_CONSUMPTION, ignore_warnings=True):
+def sku_tokens(cpu_name):
     """
-        This function finds and returns TDP of user CPU device.
-        
-        Parameters
-        ----------
-        cpu_name: str
-            Name of user CPU device, taken from psutil library
-
-        f_table_name: str
-            A file name of CPU TDP values Database
-
-        constant_value: constant_value
-            The value, that is assigned to CPU TDP if 
-            user CPU device is not found in CPU TDP database
-            The default is CONSTANT_CONSUMPTION(a global value, initialized in the beginning of the file)
-
-        ignore_warnings: bool
-            If true, then user will be notified of all the warnings. If False, there won't be any warnings.
-            The default is True.
-        
-        Returns
-        -------
-        CPU TDP: float
-            TDP of user CPU device
-
+        Distinctive model tokens such as 285K or 9995WX.
+        Short series numbers and family words are not included.
     """
-    # firstly, we try to find transformed cpu name in the cpu table:
-    f_table = pd.read_csv(f_table_name)
-    cpu_name_mod, patterns = transform_cpu_name(cpu_name)
-    f_table = f_table[["Model", "TDP"]].values
-    suitable_elements = f_table[f_table[:, 0] == cpu_name_mod]
-    if suitable_elements.shape[0] > 0:
-        # if there are more than one suitable elements, return one with maximum TDP value
-        return find_max_tdp(suitable_elements), cpu_name_mod, "in_table"
-    # secondly, if needed element isn't found in the table,
-    # then we try to find patterns in cpu names and return suitable values:
-    # if there is no any patterns in cpu name, we simply return constant consumption value
-    if len(patterns) == 0:
-        if not ignore_warnings:
-            warnings.warn(
-                message="\n\nYour CPU device is not found in our database\nCPU TDP is set to constant value 100\n", 
-                category=NoCPUinTableWarning
-                )
-        return constant_value, cpu_name_mod, "not_in_table"
-    # appending to array all suitable for at least one of the patterns elements
-    suitable_elements = []
-    for element in f_table:
-        flag = 0
-        tmp_patterns = get_patterns(element[0])
-        for pattern in patterns:
-            if pattern in tmp_patterns:
-                flag += 1
-        if flag:
-            # suitable_elements.append(element)
-            suitable_elements.append((element, flag))
+    tokens = []
+    for token in re.findall(r"[A-Za-z0-9]+", str(cpu_name)):
+        if not re.search(r"\d", token):
+            continue
+        if re.fullmatch(r"\d{1,2}", token):
+            continue
+        tokens.append(token.lower())
+    return tokens
 
-    # if there is only one suitable element, we return this element.
-    # If there is no suitable elements, we return constant value
-    # If there are more than one element, we check existence of elements suitable for all the patterns simultaneously.
-    # If there are such elements(one or more), we return the value with maximum TDP among them.
-    # If there is no, we return the value with maximum TDP among all the suitable elements
-    if len(suitable_elements) == 0:
-        if not ignore_warnings:
-            warnings.warn(
-                message="\n\nYour CPU device is not found in our database\nCPU TDP is set to constant value 100\n", 
-                category=NoCPUinTableWarning
-                )
-        return CONSTANT_CONSUMPTION, cpu_name_mod, "no_suitable_elements"
-    elif len(suitable_elements) == 1:
-        return float(suitable_elements[0][0][1]), cpu_name_mod, "one_in_table"
-    else:
-        suitable_elements.sort(key=lambda x: x[1], reverse=True)
-        max_coincidence = suitable_elements[0][1]
 
-        tmp_elements = []
-        for element in suitable_elements:
-            if element[1] == max_coincidence:
-                tmp_elements.append(element[0])
-        return find_max_tdp(tmp_elements), cpu_name_mod, "many_in_table"
+def read_rapl_package_energy_uj(root):
+    """
+        Sum energy_uj for top-level RAPL package domains.
+        DRAM and other child domains are not included.
+    """
+    if not root or not os.path.isdir(root):
+        raise OSError("RAPL root is not available")
+    total = 0
+    found = False
+    for entry in os.listdir(root):
+        domain = os.path.join(root, entry)
+        name_path = os.path.join(domain, "name")
+        energy_path = os.path.join(domain, "energy_uj")
+        if not os.path.isdir(domain) or not os.path.isfile(name_path):
+            continue
+        with open(name_path, "r", encoding="utf-8") as handle:
+            name = handle.read().strip()
+        if not name.startswith("package"):
+            continue
+        with open(energy_path, "r", encoding="utf-8") as handle:
+            total += int(handle.read().strip())
+        found = True
+    if not found:
+        raise OSError("No RAPL package energy file")
+    return total
+
+
+def cpu_time_share(process_delta, system_delta):
+    """
+        Fraction of system CPU time, including idle, used by a process tree.
+    """
+    if system_delta <= 0 or process_delta <= 0:
+        return 0.0
+    return min(1.0, process_delta / system_delta)
+
+
+def utilization_from_cpu_percent(cpu_percent, cpu_count):
+    """
+        Convert a psutil-style CPU percent into a fraction of machine capacity.
+    """
+    if not cpu_count:
+        return 0.0
+    fraction = float(cpu_percent) / (float(cpu_count) * 100.0)
+    if fraction < 0:
+        return 0.0
+    return fraction
+
+
+def _iter_process_tree(pid=None):
+    proc = psutil.Process(os.getpid() if pid is None else pid)
+    yield proc
+    try:
+        children = proc.children(recursive=True)
+    except (psutil.NoSuchProcess, psutil.AccessDenied):
+        return
+    for child in children:
+        yield child
+
+
+def process_tree_cpu_seconds(pid=None):
+    total = 0.0
+    for proc in _iter_process_tree(pid):
+        try:
+            times = proc.cpu_times()
+            total += float(times.user) + float(times.system)
+        except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
+            continue
+    return total
+
+
+def system_cpu_seconds():
+    return float(sum(psutil.cpu_times()))
+
+
+def process_tree_cpu_percent(pid=None):
+    total = 0.0
+    for proc in _iter_process_tree(pid):
+        try:
+            value = proc.cpu_percent(interval=None)
+            if value is not None:
+                total += float(value)
+        except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
+            continue
+    return total
+
 
 def get_cpu_percent_mac_os(cpu_processes="current"):
     """
@@ -614,17 +613,7 @@ def get_cpu_percent_mac_os(cpu_processes="current"):
 
     """
     if cpu_processes == "current":
-        strings = os.popen('top -stats "command,cpu,pgrp" -l 2| grep -E "(python)|(%CPU)"').read().split('\n')
-        strings.pop()
-        # number of cpu cores
-        cpu_num = psutil.cpu_count()
-        current_pid = os.getpid()
-        cpu_percent = 0
-        strings = strings[int(len(strings) / 2) + 1:]
-        for index in range(len(strings)):
-            if int(strings[index].split()[-1]) == current_pid:
-                cpu_percent = float(strings[index].split()[1]) / cpu_num
-                break
+        return utilization_from_cpu_percent(process_tree_cpu_percent(), psutil.cpu_count() or 1)
     elif cpu_processes == "all":
         strings = os.popen('top -stats "command,cpu,pgrp" -l 2| grep -E "(CPU usage:)"').read().split("\n")
         strings.pop()
@@ -649,11 +638,8 @@ def get_cpu_percent_linux(cpu_processes="current"):
             CPU utilization fraction. 'cpu_percent' is in [0, 1]. 
 
     """
-    # number of cpu cores
     if cpu_processes == "current":
-        pid = os.getpid()
-        # execute the top command with the pid filter 
-        output = subprocess.run(["top", "-b", "-n1", "-p", str(pid)], capture_output=True, text=True)
+        return utilization_from_cpu_percent(process_tree_cpu_percent(), psutil.cpu_count() or 1)
     elif cpu_processes == "all":
         # execute the top command with the grep command to filter the output
         output = subprocess.run(["top", "-b", "-n1"], capture_output=True, text=True)
@@ -705,25 +691,10 @@ def get_cpu_percent_windows(cpu_processes="current"):
             CPU utilization fraction. 'cpu_percent' is in [0, 1]. 
 
     """
-    cpu_percent = 0
     if cpu_processes == "current":
-        current_pid = os.getpid()
-        sum_all = 0
-        #Iterate over the all running processes
-        for proc in psutil.process_iter():
-            try:
-                pinfo = proc.as_dict(attrs=['name', 'cpu_percent', 'pid'])
-            # Check if process pid equals to the current one.
-                if pinfo['cpu_percent'] is not None:
-                    sum_all += pinfo['cpu_percent']
-                    if pinfo['pid'] == current_pid:
-                        cpu_percent = pinfo['cpu_percent']
-            except (psutil.NoSuchProcess, psutil.AccessDenied , psutil.ZombieProcess) :
-                pass
-        if sum_all != 0:
-            cpu_percent /= sum_all
-        else:
-            cpu_percent = 0
+        return utilization_from_cpu_percent(process_tree_cpu_percent(), psutil.cpu_count() or 1)
     elif cpu_processes == "all":
         cpu_percent = psutil.cpu_percent()/100
+    else:
+        raise ValueError(f"'cpu_processes' parameter can be only 'current' or 'all', now it is '{cpu_processes}'")
     return cpu_percent
