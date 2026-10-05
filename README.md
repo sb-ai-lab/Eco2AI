@@ -51,6 +51,8 @@ To install the eco2AI library, run the following command:
 pip install eco2ai
 ```
 
+Accelerators are read from the driver already on the machine. eco2ai installs no GPU package. NVIDIA is read from the driver NVML library, with `nvidia-smi` as a power fallback. AMD, Intel discrete GPUs, Huawei Ascend, and Google TPU are read from `rocm-smi` or `amd-smi`, `xpu-smi`, `npu-smi`, and `tpu-info` when those tools shipped with the device.
+
 ## Use examples <a name="3"></a> 
 
 Example usage eco2AI [![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1hn0DQiKHeyXwvOOR3UEXaGsD6DqVm6b7?authuser=1)

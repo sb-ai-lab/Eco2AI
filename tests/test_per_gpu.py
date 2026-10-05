@@ -1,113 +1,85 @@
 import os
 import unittest
-from unittest.mock import patch
 
+from eco2ai.tools.gpu.nvidia import NvidiaBackend
 from eco2ai.tools.tools_gpu import GPU
 
 ONE_WH_MJ = 3_600_000
 
 
-class FakeNvml:
+class TwoDevices:
+    """NVML stand-in with a separate client set on each device."""
+
     def __init__(self):
         self.energies = [0, 0]
         self.powers = [0, 0]
-        self.count = 2
-        self.names = [b"NVIDIA A100", b"NVIDIA A100"]
         self.clients = [set(), set()]
+        self.fail_pids = False
 
-    def nvmlInit(self):
+    def device_count(self):
+        return 2
+
+    def device_name(self, index):
+        return b"NVIDIA A100"
+
+    def energy_mj(self, index):
+        return self.energies[index]
+
+    def power_mw(self, index):
+        return self.powers[index]
+
+    def client_pids(self, index):
+        if self.fail_pids:
+            return None
+        return set(self.clients[index])
+
+    def close(self):
         return None
 
-    def nvmlShutdown(self):
-        return None
 
-    def nvmlDeviceGetCount(self):
-        return self.count
-
-    def nvmlDeviceGetHandleByIndex(self, index):
-        return index
-
-    def nvmlDeviceGetTotalEnergyConsumption(self, handle):
-        return self.energies[handle]
-
-    def nvmlDeviceGetPowerUsage(self, handle):
-        return self.powers[handle]
-
-    def nvmlDeviceGetName(self, handle):
-        return self.names[handle]
-
-    def nvmlDeviceGetComputeRunningProcesses(self, handle):
-        return [type("Info", (), {"pid": pid})() for pid in self.clients[handle]]
-
-    def nvmlDeviceGetGraphicsRunningProcesses(self, handle):
-        return []
-
-
-def open_gpu(fake):
-    names = (
-        "nvmlInit",
-        "nvmlShutdown",
-        "nvmlDeviceGetCount",
-        "nvmlDeviceGetHandleByIndex",
-        "nvmlDeviceGetTotalEnergyConsumption",
-        "nvmlDeviceGetPowerUsage",
-        "nvmlDeviceGetName",
-        "nvmlDeviceGetComputeRunningProcesses",
-        "nvmlDeviceGetGraphicsRunningProcesses",
-    )
-    started = []
-    with patch("eco2ai.tools.tools_gpu.is_gpu_available", return_value=True):
-        gpu = GPU(ignore_warnings=True)
-    for name in names:
-        item = patch("eco2ai.tools.tools_gpu.pynvml." + name, getattr(fake, name))
-        item.start()
-        started.append(item)
-    return gpu, started
+def open_gpu(library):
+    return GPU(ignore_warnings=True, backends=[NvidiaBackend(library)])
 
 
 class PerGpuTests(unittest.TestCase):
     def test_only_the_device_this_process_uses_is_counted(self):
-        fake = FakeNvml()
-        gpu, started = open_gpu(fake)
-        try:
-            fake.clients = [{os.getpid()}, set()]
-            gpu.calculate_consumption()
-            fake.energies = [ONE_WH_MJ, ONE_WH_MJ]
-            self.assertAlmostEqual(gpu.calculate_consumption(), 0.001, delta=1e-12)
-            self.assertEqual(gpu.power_method_label(), "method:nvml_energy")
-            self.assertEqual(gpu.gpu_num(), 2)
-        finally:
-            for item in started:
-                item.stop()
+        library = TwoDevices()
+        library.clients = [{os.getpid()}, set()]
+        gpu = open_gpu(library)
+        gpu.calculate_consumption()
+        library.energies = [ONE_WH_MJ, ONE_WH_MJ]
+        self.assertAlmostEqual(gpu.calculate_consumption(), 0.001, delta=1e-12)
+        self.assertEqual(gpu.power_method_label(), "method:nvml_energy")
+        self.assertEqual(gpu.gpu_num(), 2)
 
     def test_no_context_records_zero(self):
-        fake = FakeNvml()
-        gpu, started = open_gpu(fake)
-        try:
-            gpu.calculate_consumption()
-            fake.energies = [ONE_WH_MJ, ONE_WH_MJ]
-            self.assertEqual(gpu.calculate_consumption(), 0.0)
-            self.assertEqual(gpu.power_method_label(), "method:nvml_not_used")
-        finally:
-            for item in started:
-                item.stop()
+        library = TwoDevices()
+        gpu = open_gpu(library)
+        gpu.calculate_consumption()
+        library.energies = [ONE_WH_MJ, ONE_WH_MJ]
+        self.assertEqual(gpu.calculate_consumption(), 0.0)
+        self.assertEqual(gpu.power_method_label(), "method:nvml_not_used")
+
+    def test_power_fallback_skips_the_unused_device(self):
+        library = TwoDevices()
+        library.clients = [{os.getpid()}, set()]
+        library.powers = [1000, 1000]
+
+        def no_energy(index):
+            raise RuntimeError("no energy")
+
+        library.energy_mj = no_energy
+        sample = NvidiaBackend(library).sample(3600)
+        self.assertEqual(sample.method, "nvml_power")
+        self.assertAlmostEqual(sample.kwh, 0.001, delta=1e-12)
 
     def test_unknown_process_list_keeps_every_device(self):
-        fake = FakeNvml()
-        gpu, started = open_gpu(fake)
-        query = patch(
-            "eco2ai.tools.tools_gpu.GPU._used_device_indexes",
-            return_value=None,
-        )
-        query.start()
-        try:
-            gpu.calculate_consumption()
-            fake.energies = [ONE_WH_MJ, ONE_WH_MJ]
-            self.assertAlmostEqual(gpu.calculate_consumption(), 0.002, delta=1e-12)
-        finally:
-            query.stop()
-            for item in started:
-                item.stop()
+        library = TwoDevices()
+        library.fail_pids = True
+        gpu = open_gpu(library)
+        gpu.calculate_consumption()
+        library.energies = [ONE_WH_MJ, ONE_WH_MJ]
+        self.assertAlmostEqual(gpu.calculate_consumption(), 0.002, delta=1e-12)
 
 
 if __name__ == "__main__":
