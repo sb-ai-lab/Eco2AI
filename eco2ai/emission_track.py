@@ -76,6 +76,7 @@ class Tracker:
         electricity_pricing=None,
         ignore_warnings=False,
         timezone=False,
+        device_consumption=False,
     ):
         """
         This class method initializes a Tracker object and creates fields of class object
@@ -134,6 +135,16 @@ class Tracker:
             If True, warnings are not shown. If False, warnings are shown.
             The default is False.
         timezone: directly set defauls timezone. Can be useful if timezone can not be automatically detected
+        device_consumption: bool
+            If True, the report also stores CPU, GPU, and RAM energy in
+            CPU_consumption(kWh), GPU_consumption(kWh), and RAM_consumption(kWh).
+            The columns are appended after the current columns.
+            Each value includes PUE, so the three columns sum to power_consumption(kWh).
+            If False, a new report keeps the current columns.
+            An existing report stays readable and writable with the option either way:
+            missing device columns are added as N/A, and device columns already
+            in the table are kept.
+            The default is False.
 
         Returns
         -------
@@ -191,7 +202,11 @@ You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/cou
         self._ram = None
         self._id = None
         self._current_epoch = "N/A"
+        self._device_consumption = bool(device_consumption)
         self._consumption = 0
+        self._cpu_consumption = 0
+        self._gpu_consumption = 0
+        self._ram_consumption = 0
         self._encode_file = encode_file if not encode_file else "encoded_" + file_name
         electricity_pricing_check(electricity_pricing)
         self._electricity_pricing = electricity_pricing
@@ -369,6 +384,8 @@ You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/cou
             GPU_name
             OS
             region/country
+            CPU_consumption(kWh), GPU_consumption(kWh), RAM_consumption(kWh)
+                appended only when device_consumption is True
 
         Parameters
         ----------
@@ -402,6 +419,10 @@ You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/cou
         attributes_dict["OS"] = [f"{self._os}"]
         attributes_dict["region/country"] = [f"{self._country}"]
         attributes_dict["cost"] = [f"{self._total_price}"]
+        if self._device_consumption:
+            attributes_dict["CPU_consumption(kWh)"] = [f"{self._cpu_consumption}"]
+            attributes_dict["GPU_consumption(kWh)"] = [f"{self._gpu_consumption}"]
+            attributes_dict["RAM_consumption(kWh)"] = [f"{self._ram_consumption}"]
 
         return attributes_dict
 
@@ -488,10 +509,23 @@ You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/cou
                     with open(self.file_name, "r"):
                         attributes_dataframe = pd.read_csv(self.file_name, keep_default_na=False).astype(object)
 
-                        # Convert attributes_dict values into a flat list
-                        attributes_array = []
-                        for element in attributes_dict.values():
-                            attributes_array += element
+                        # Append columns this run has and the table does not.
+                        # Existing columns stay in place. Older rows get N/A
+                        # in a column that was not there before.
+                        columns = list(attributes_dataframe.columns)
+                        for column in attributes_dict:
+                            if column not in columns:
+                                columns.append(column)
+                        if columns != list(attributes_dataframe.columns):
+                            attributes_dataframe = self._update_to_new_version(attributes_dataframe, columns)
+
+                        # One value per table column. A column this run does not
+                        # fill stays N/A, so a table written with device columns
+                        # can later be extended with the option turned off.
+                        attributes_array = [
+                            attributes_dict[column][0] if column in attributes_dict else "N/A"
+                            for column in attributes_dataframe.columns
+                        ]
 
                         # # Ensure consistent types
                         # attributes_array = [
@@ -575,17 +609,16 @@ You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/cou
             Dictionary with all the attributes that should be written to .csv file
 
         """
-        cpu_consumption = self._cpu.calculate_consumption()
-        ram_consumption = self._ram.calculate_consumption()
+        cpu_consumption = self._cpu.calculate_consumption() * self._pue
+        ram_consumption = self._ram.calculate_consumption() * self._pue
         if self._gpu.is_gpu_available:
-            gpu_consumption = self._gpu.calculate_consumption()
+            gpu_consumption = self._gpu.calculate_consumption() * self._pue
         else:
             gpu_consumption = 0
-        tmp_consumption = 0
-        tmp_consumption += cpu_consumption
-        tmp_consumption += gpu_consumption
-        tmp_consumption += ram_consumption
-        tmp_consumption *= self._pue
+        self._cpu_consumption += cpu_consumption
+        self._gpu_consumption += gpu_consumption
+        self._ram_consumption += ram_consumption
+        tmp_consumption = cpu_consumption + gpu_consumption + ram_consumption
         if self._electricity_pricing is not None:
             self._total_price += calculate_price(self._electricity_pricing, tmp_consumption)
         self._consumption += tmp_consumption
@@ -657,12 +690,12 @@ You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/cou
             self._func_for_encoding(attributes_dict)
         self._current_epoch += 1
         self._parameters_to_save = ""
-        self._consumption = 0
+        self._reset_consumption()
         self._total_price = 0
         self._start_time = time.time()
         if self._encode_file is not None:
             self._func_for_encoding(attributes_dict)
-        self._consumption = 0
+        self._reset_consumption()
 
     def start(self):
         """
@@ -725,7 +758,7 @@ Please, use the interface for training: ".start_training", ".new_epoch", and "st
 You should run ".start_training" method before ".stop_training" method
                 """
             )
-        self._consumption = 0
+        self._reset_consumption()
         self._mode = "shut down"
         self._close_gpu()
 
@@ -757,9 +790,19 @@ You should run ".start_training" method before ".stop_training" method
         if self._encode_file is not None:
             self._func_for_encoding(attributes_dict)
         self._start_time = None
-        self._consumption = 0
+        self._reset_consumption()
         self._mode = "shut down"
         self._close_gpu()
+
+    def _reset_consumption(self):
+        """
+        Clear the run total and the per-device totals.
+        The per-device totals are what the optional report columns store.
+        """
+        self._consumption = 0
+        self._cpu_consumption = 0
+        self._gpu_consumption = 0
+        self._ram_consumption = 0
 
     def _close_gpu(self):
         if self._gpu is not None and hasattr(self._gpu, "close"):
