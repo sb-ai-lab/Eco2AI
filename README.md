@@ -51,6 +51,8 @@ To install the eco2AI library, run the following command:
 pip install eco2ai
 ```
 
+`pip install` does not ask questions. `eco2ai` with no arguments prints the settings folder and the results folder for this worktree and writes nothing. `eco2ai --settings-dir C:/Users/User/.eco2ai` stores that directory in `.eco2ai/config.json`. The first country lookup and the first CPU socket count are written to `config.json` inside the settings folder, as `country`, `region`, and `cpu_sockets`. With no `settings_dir`, that folder is `~/.eco2ai`. `Tracker(alpha_2_code=..., region=..., cpu_sockets=...)` overrides those values for one run and does not change the file. `project_name`, `experiment_description`, and `file_name` stay Tracker arguments and `set_params` values: the first two are columns in the results CSV, and `file_name` is that CSV. One file holds many experiments. A relative `file_name` is written in the process working directory. `eco2ai --results-dir D:/project/results` sends every relative results file in this worktree to that directory. An absolute `file_name` is used as given.
+
 Accelerators are read from the driver already on the machine. eco2ai installs no GPU package. NVIDIA is read from the driver NVML library, with `nvidia-smi` as a power fallback. AMD, Intel discrete GPUs, Huawei Ascend, and Google TPU are read from `rocm-smi` or `amd-smi`, `xpu-smi`, `npu-smi`, and `tpu-info` when those tools shipped with the device.
 
 ## Use examples <a name="3"></a> 
@@ -166,6 +168,20 @@ tracker.start()
 <your code>
 tracker.stop()
 ```
+
+A second run with another `experiment_description` and the same `file_name` appends another row. `eco2ai --results-dir` changes only where a relative `file_name` is written:
+
+```
+eco2ai --results-dir D:/project/results
+```
+
+```python
+with eco2ai.Tracker(project_name="demo", experiment_description="baseline", file_name="emission.csv"):
+    train()
+# writes D:/project/results/emission.csv
+```
+
+Omit `results_dir` and `emission.csv` stays in the process working directory. `eco2ai` prints `(working directory)` in that case.
 
 
 

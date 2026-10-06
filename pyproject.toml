@@ -63,6 +63,9 @@ py-cpuinfo = [
     {version = "<11",python = ">=3.7"}
     ]
 
+[tool.poetry.scripts]
+eco2ai = "eco2ai.configure:main"
+
 [tool.poetry.dev-dependencies]
 
 [build-system]

@@ -23,6 +23,7 @@ from eco2ai.utils import (
     calculate_price,
     FileDoesNotExistsError,
     NotNeededExtensionError,
+    resolve_results_file,
 )
 
 from pandas.api.types import is_bool_dtype, is_numeric_dtype, is_object_dtype, is_string_dtype
@@ -77,6 +78,7 @@ class Tracker:
         timezone=False,
         device_consumption=False,
         callback=None,
+        cpu_sockets=None,
     ):
         """
         This class method initializes a Tracker object and creates fields of class object
@@ -91,6 +93,9 @@ class Tracker:
             The default is None
         file_name: str
             Name of file to save the the results of calculations.
+            A relative name stays relative to the process working directory.
+            If the nearest .eco2ai/config.json sets results_dir, a relative name
+            is joined to that directory. An absolute path is used as given.
             The default is None
         measure_period: float
             Period of power consumption measurements in seconds.
@@ -106,6 +111,10 @@ class Tracker:
         region: str
             User specified country region/state/district.
             Default is None
+        cpu_sockets: int
+            Socket count for this run only.
+            When set, the home config is not read or written for the socket count.
+            The default is None.
         cpu_processes: str
             if cpu_processes == "current", then calculates CPU utilization percent only for the current running process
             if cpu_processes == "all", then calculates full CPU utilization percent(sum of all running processes)
@@ -189,6 +198,8 @@ You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/cou
             else self._params_dict["experiment_description"]
         )
         self.file_name = file_name if file_name is not None else self._params_dict["file_name"]
+        self.file_name = resolve_results_file(self.file_name)
+        self._cpu_sockets = cpu_sockets
         self._measure_period = measure_period if measure_period is not None else self._params_dict["measure_period"]
         self._pue = pue if pue is not None else self._params_dict["pue"]
 
@@ -731,7 +742,11 @@ You can find the ISO-Alpha-2 code of your country here: https://www.iban.com/cou
 
         self._current_epoch = start_epoch
         self._close_gpu()
-        self._cpu = CPU(cpu_processes=self._cpu_processes, ignore_warnings=self._ignore_warnings)
+        self._cpu = CPU(
+            cpu_processes=self._cpu_processes,
+            ignore_warnings=self._ignore_warnings,
+            cpu_sockets=self._cpu_sockets,
+        )
         self._gpu = GPU(ignore_warnings=self._ignore_warnings)
         self._ram = RAM(ignore_warnings=self._ignore_warnings)
         self._id = str(uuid.uuid4())
@@ -804,7 +819,11 @@ Please, use the interface for training: ".start_training", ".new_epoch", and "st
                 pass
             self._scheduler = BackgroundScheduler(job_defaults={"max_instances": 10}, misfire_grace_time=None)
         self._close_gpu()
-        self._cpu = CPU(cpu_processes=self._cpu_processes, ignore_warnings=self._ignore_warnings)
+        self._cpu = CPU(
+            cpu_processes=self._cpu_processes,
+            ignore_warnings=self._ignore_warnings,
+            cpu_sockets=self._cpu_sockets,
+        )
         self._gpu = GPU(ignore_warnings=self._ignore_warnings)
         self._ram = RAM(ignore_warnings=self._ignore_warnings)
         self._id = str(uuid.uuid4())

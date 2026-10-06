@@ -78,33 +78,30 @@ class NoCountryCodeError(Exception):
     pass
 
 
-def _location_cache_path():
-    """
-    Cached IP country next to the user config file.
-    """
-    return os.path.join(os.path.dirname(user_config_path()), "location.json")
-
-
 def _read_location_cache():
-    path = _location_cache_path()
-    if not os.path.isfile(path):
+    """
+        Country and region from the home config.
+        An old location.json is copied into that file once and then removed.
+    """
+    data = _load_user_config_raw()
+    location = os.path.join(os.path.dirname(user_config_path()), "location.json")
+    if data.get("country"):
+        _remove_file(location)
+        return data.get("country"), data.get("region")
+    old = _read_json_object(location)
+    if not old or not old.get("country"):
         return None
-    try:
-        with open(path, "r", encoding="utf-8") as handle:
-            payload = json.load(handle)
-    except (OSError, ValueError):
-        return None
-    country = payload.get("country")
-    if not country:
-        return None
-    return country, payload.get("region")
+    data["country"] = old["country"]
+    data["region"] = old.get("region")
+    _store_user_config(data)
+    return data["country"], data.get("region")
 
 
 def _write_location_cache(country, region):
-    path = _location_cache_path()
-    os.makedirs(os.path.dirname(path), exist_ok=True)
-    with open(path, "w", encoding="utf-8") as handle:
-        json.dump({"country": country, "region": region}, handle)
+    data = _load_user_config_raw()
+    data["country"] = country
+    data["region"] = region
+    _store_user_config(data)
 
 
 def _ip_location():
@@ -432,18 +429,237 @@ def calculate_price(
     return electricity_price
 
 
+def home_config_dir():
+    """
+        Directory of the machine-wide config, under the user home.
+        The directory is created only when a config file is written.
+    """
+    return os.path.join(os.path.expanduser("~"), ".eco2ai")
+
+
 def user_config_path():
     """
-        Path of the tracker defaults file in the user home directory.
+        Path of the config that holds tracker defaults plus country, region, and cpu_sockets.
+        A worktree settings_dir selects <settings_dir>/config.json.
+        Otherwise the file is ~/.eco2ai/config.json.
         The installed package data file is not writable for a non-root user.
     """
-    return os.path.join(os.path.expanduser("~"), ".eco2ai", "config.txt")
+    settings = project_settings_dir()
+    if settings:
+        return os.path.join(settings, "config.json")
+    return os.path.join(home_config_dir(), "config.json")
+
+
+def project_config_dir(start=None):
+    """
+        Nearest directory that already contains .eco2ai/config.json or config.txt.
+        The walk starts at start, or the current directory, and stops at the
+        filesystem root. The home directory itself is not a project config.
+        None when no project config exists.
+    """
+    found = _project_config_file(start)
+    if found is None:
+        return None
+    return os.path.dirname(found)
+
+
+def _project_config_file(start=None):
+    home = os.path.normcase(os.path.abspath(home_config_dir()))
+    current = os.path.abspath(start or os.getcwd())
+    while True:
+        directory = os.path.join(current, ".eco2ai")
+        if os.path.normcase(os.path.abspath(directory)) != home:
+            for name in ("config.json", "config.txt"):
+                candidate = os.path.join(directory, name)
+                if os.path.isfile(candidate):
+                    return candidate
+        parent = os.path.dirname(current)
+        if parent == current:
+            return None
+        current = parent
+
+
+def _read_json_object(path):
+    if not path or not os.path.isfile(path) or os.path.getsize(path) == 0:
+        return None
+    try:
+        with open(path, "r", encoding="utf-8") as handle:
+            payload = json.load(handle)
+    except (OSError, ValueError):
+        return None
+    if not isinstance(payload, dict):
+        return None
+    return payload
+
+
+def _remove_file(path):
+    if os.path.isfile(path):
+        try:
+            os.remove(path)
+        except OSError:
+            pass
+
+
+def _legacy_config_path(config_path):
+    return os.path.join(os.path.dirname(config_path), "config.txt")
+
+
+def _same_path(left, right):
+    return os.path.normcase(os.path.abspath(left)) == os.path.normcase(os.path.abspath(right))
+
+
+def _load_user_config_raw():
+    """
+        Home config.json, or a sibling config.txt when the json file is absent.
+        A missing file is an empty dict and is not created.
+    """
+    path = user_config_path()
+    loaded = _read_json_object(path)
+    if loaded is not None:
+        return loaded
+    legacy = _legacy_config_path(path)
+    if _same_path(legacy, path):
+        return {}
+    loaded = _read_json_object(legacy)
+    if loaded is None:
+        return {}
+    return loaded
+
+
+def _absorb_sidecar_files(data, directory):
+    location = os.path.join(directory, "location.json")
+    old_location = _read_json_object(location)
+    if old_location is not None:
+        if not data.get("country") and old_location.get("country"):
+            data["country"] = old_location["country"]
+            if "region" not in data:
+                data["region"] = old_location.get("region")
+        _remove_file(location)
+    hardware = os.path.join(directory, "hardware.json")
+    old_hardware = _read_json_object(hardware)
+    if old_hardware is not None:
+        if _positive_int(data.get("cpu_sockets")) is None:
+            count = _positive_int(old_hardware.get("cpu_sockets"))
+            if count is not None:
+                data["cpu_sockets"] = count
+        _remove_file(hardware)
+    return data
+
+
+def _store_user_config(data):
+    """
+        Write the home config and drop a sibling config.txt after that write.
+        location.json and hardware.json are folded in and removed.
+    """
+    path = user_config_path()
+    directory = os.path.dirname(path)
+    payload = _absorb_sidecar_files(dict(data), directory)
+    os.makedirs(directory, exist_ok=True)
+    temporary = path + ".tmp"
+    with open(temporary, "w", encoding="utf-8") as handle:
+        json.dump(payload, handle)
+    os.replace(temporary, path)
+    legacy = _legacy_config_path(path)
+    if not _same_path(legacy, path):
+        _remove_file(legacy)
+    return path
+
+
+def _project_directory_value(key, start=None):
+    path = _project_config_file(start)
+    if path is None:
+        return None
+    loaded = _read_json_object(path)
+    if not loaded:
+        return None
+    value = loaded.get(key)
+    if not isinstance(value, str) or not value.strip():
+        return None
+    return os.path.abspath(os.path.expanduser(value.strip()))
+
+
+def project_settings_dir(start=None):
+    """
+        settings_dir from the nearest project .eco2ai config, or None.
+        That directory's config.json holds country, region, cpu_sockets, and set_params defaults.
+    """
+    return _project_directory_value("settings_dir", start)
+
+
+def project_results_dir(start=None):
+    """
+        results_dir from the nearest project .eco2ai config, or None.
+    """
+    return _project_directory_value("results_dir", start)
+
+
+def describe_folders(start=None):
+    """
+        Two lines naming the active settings folder and results folder.
+        A missing settings_dir is the user home .eco2ai directory.
+        A missing results_dir is the process working directory.
+    """
+    settings = project_settings_dir(start)
+    if not settings:
+        settings = os.path.abspath(home_config_dir())
+    results = project_results_dir(start)
+    if not results:
+        results = "(working directory)"
+    return "settings_dir: %s\nresults_dir: %s\n" % (settings, results)
+
+
+def resolve_results_file(file_name):
+    """
+        Join a relative file_name to results_dir when that setting exists.
+        An absolute file_name is returned unchanged.
+        A missing results_dir leaves a relative file_name unchanged.
+    """
+    if not file_name or os.path.isabs(file_name):
+        return file_name
+    results_dir = project_results_dir()
+    if not results_dir:
+        return file_name
+    resolved = os.path.join(results_dir, file_name)
+    parent = os.path.dirname(resolved)
+    if parent:
+        os.makedirs(parent, exist_ok=True)
+    return resolved
+
+
+def _default_config():
+    return {
+        "project_name": "default project name",
+        "experiment_description": "default experiment description",
+        "file_name": "emission.csv",
+        "measure_period": 10,
+        "pue": 1,
+    }
+
+
+def _config_dictionary(params):
+    dictionary = dict(params)
+    for key, value in _default_config().items():
+        if key not in dictionary:
+            dictionary[key] = value
+    return dictionary
+
+
+def write_config_file(path, params):
+    """
+        Replace one config file with params.
+        Missing tracker defaults are filled in. Other keys, including
+        cpu_sockets, are stored as given. The replace is atomic for readers.
+    """
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    temporary = path + ".tmp"
+    with open(temporary, "w", encoding="utf-8") as handle:
+        handle.write(json.dumps(_config_dictionary(params)))
+    os.replace(temporary, path)
 
 
 def set_params(**params):
     """
-        This function sets default Tracker attributes values to a file in the
-        user home directory (~/.eco2ai/config.txt):
+        This function sets default Tracker attributes values in ~/.eco2ai/config.json:
         project_name = ...
         experiment_description = ...
         file_name = ...
@@ -453,40 +669,31 @@ def set_params(**params):
         Parameters
         ----------
         params: dict
-            Keyword arguments stored in the defaults file.
+            Keyword arguments stored in the home config.
             project_name, experiment_description, file_name, measure_period, and pue
             are filled with built-in values when omitted.
             Any other keyword is stored as given.
+            country, region, and cpu_sockets already in the file are kept.
         
         Returns
         -------
         No return
 
     """
-    dictionary = dict()
-    filename = user_config_path()
-    os.makedirs(os.path.dirname(filename), exist_ok=True)
-    for param in params:
-        dictionary[param] = params[param]
-    if "project_name" not in dictionary:
-        dictionary["project_name"] = "default project name"
-    if "experiment_description" not in dictionary:
-        dictionary["experiment_description"] = "default experiment description"
-    if "file_name" not in dictionary:
-        dictionary["file_name"] = "emission.csv"
-    if "measure_period" not in dictionary:
-        dictionary["measure_period"] = 10
-    if "pue" not in dictionary:
-        dictionary["pue"] = 1
-    with open(filename, 'w') as json_file:
-        json_file.write(json.dumps(dictionary))
+    current = _load_user_config_raw()
+    current.update(params)
+    write_config_file(user_config_path(), current)
+    legacy = _legacy_config_path(user_config_path())
+    if not _same_path(legacy, user_config_path()):
+        _remove_file(legacy)
 
 
 def get_params():
     """
         This function returns default Tracker attributes values from
-        ~/.eco2ai/config.txt. A missing file returns built-in defaults and
-        does not create or write the copy shipped inside the package.
+        ~/.eco2ai/config.json. An old config.txt is read when the json file
+        is absent. A missing file returns built-in defaults and does not
+        create a file.
         project_name = ...
         experiment_description = ...
         file_name = ...
@@ -504,18 +711,65 @@ def get_params():
             Dictionary of Tracker parameters: project_name, experiment_description, file_name, measure_period and pue
 
     """
-    filename = user_config_path()
-    if not os.path.isfile(filename) or os.path.getsize(filename) == 0:
-        return {
-            "project_name": "Default project name",
-            "experiment_description": "no experiment description",
-            "file_name": "emission.csv",
-            "measure_period": 10,
-            "pue": 1,
-        }
-    with open(filename, "r") as json_file:
-        dictionary = json.loads(json_file.read())
-    return dictionary
+    loaded = _load_user_config_raw()
+    if not loaded:
+        return _builtin_tracker_defaults()
+    result = _builtin_tracker_defaults()
+    result.update(loaded)
+    return result
+
+
+def _builtin_tracker_defaults():
+    return {
+        "project_name": "Default project name",
+        "experiment_description": "no experiment description",
+        "file_name": "emission.csv",
+        "measure_period": 10,
+        "pue": 1,
+    }
+
+
+def _positive_int(value):
+    if isinstance(value, bool) or value is None:
+        return None
+    try:
+        number = int(value)
+    except (TypeError, ValueError):
+        return None
+    if number <= 0:
+        return None
+    return number
+
+
+def read_cpu_socket_cache():
+    """
+        Cached socket count from the home config, or None.
+        An old hardware.json is copied into that file once and then removed.
+    """
+    data = _load_user_config_raw()
+    hardware = os.path.join(os.path.dirname(user_config_path()), "hardware.json")
+    count = _positive_int(data.get("cpu_sockets"))
+    if count is not None:
+        _remove_file(hardware)
+        return count
+    old = _read_json_object(hardware)
+    if not old:
+        return None
+    count = _positive_int(old.get("cpu_sockets"))
+    if count is None:
+        return None
+    data["cpu_sockets"] = count
+    _store_user_config(data)
+    return count
+
+
+def write_cpu_socket_cache(count):
+    """
+        Store one probed socket count in the home config.
+    """
+    data = _load_user_config_raw()
+    data["cpu_sockets"] = int(count)
+    _store_user_config(data)
 
 
 def encode(f_string):

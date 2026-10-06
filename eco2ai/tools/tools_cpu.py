@@ -1,4 +1,5 @@
 from cpuinfo import get_cpu_info
+import ctypes
 import psutil
 import time
 import subprocess
@@ -36,7 +37,7 @@ class CPU():
         The CPU class is not intended for separate usage, outside the Tracker class
 
     """
-    def __init__(self, cpu_processes="current", ignore_warnings=False, rapl_root=None):
+    def __init__(self, cpu_processes="current", ignore_warnings=False, rapl_root=None, cpu_sockets=None):
         """
             This class method initializes CPU object.
             Creates fields of class object. All the fields are private variables
@@ -61,7 +62,7 @@ class CPU():
         self._name = self._cpu_dict["brand_raw"]
         self._tdp = find_tdp_value(self._name, CPU_TABLE_NAME, ignore_warnings=self._ignore_warnings)
         self._consumption = 0
-        self._cpu_num = number_of_cpu(self._ignore_warnings)
+        self._cpu_num = number_of_cpu(self._ignore_warnings, cpu_sockets=cpu_sockets)
         self._start = time.time()
         self._operating_system = platform.system()
         self._power_method = "tdp"
@@ -254,9 +255,17 @@ def all_available_cpu():
         print("There is no any available cpu device(s)")
 
 
-def number_of_cpu(ignore_warnings=True):
+RELATION_PROCESSOR_PACKAGE = 3
+LINUX_CPU_SYSFS = "/sys/devices/system/cpu"
+CREATE_NO_WINDOW = 0x08000000
+
+
+def number_of_cpu(ignore_warnings=True, cpu_sockets=None):
     """
         This function returns the number of CPU sockets (physical CPU processors).
+        A positive cpu_sockets argument is used for this call and is not stored.
+        Otherwise the count is read from ~/.eco2ai/config.json.
+        The first miss probes this machine once and stores the result there.
         On macOS a positive hw.packages value is that socket count.
         If the package count is missing or not positive, hw.physicalcpu
         (physical cores) is used.
@@ -267,6 +276,9 @@ def number_of_cpu(ignore_warnings=True):
         ignore_warnings: bool
             If True, warnings are not shown. If False, warnings are shown.
             The default is True.
+        cpu_sockets: int
+            Socket count for this call only. The home config is not changed.
+            The default is None.
         
         Returns
         -------
@@ -274,96 +286,335 @@ def number_of_cpu(ignore_warnings=True):
             Socket count, or physical cores on macOS when the package count is missing
 
     """
-    operating_system = platform.system()
-    cpu_num = None
+    from eco2ai.utils import _positive_int, read_cpu_socket_cache, write_cpu_socket_cache, user_config_path
 
-    if operating_system == "Linux":
-        try:
-            # running terminal command, getting output
-            string = os.popen("lscpu")
-            output = string.read()
-            output
-            # dictionary creation
-            dictionary = dict()
-            for i in output.split('\n'):
-                tmp = i.split(':')
-                if len(tmp) == 2:
-                    dictionary[tmp[0]] = tmp[1]
-            cpu_num = min(int(dictionary["Socket(s)"]), int(dictionary["NUMA node(s)"]))
-        except:
-            if not ignore_warnings:
-                warnings.warn(
-                    message="\nYou probably should have installed 'util-linux' to determine cpu number correctly\nFor now, number of cpu devices is set to 1\n\n", 
-                    category=NoNeededLibrary
-                    )
-            cpu_num = 1
-    elif operating_system == "Windows":
-        try:
-            # running cmd command, getting output
-            string = os.popen("systeminfo")
-            output = string.read()
-            output
-            # dictionary creation
-            dictionary = dict()
-            for i in output.split('\n'):
-                tmp = i.split(':')
-                if len(tmp) == 2:
-                    dictionary[tmp[0]] = tmp[1]
-            processor_string = 'something'
-            if 'Processor(s)' in dictionary:
-                processor_string = dictionary['Processor(s)']
-            if 'Џа®жҐбб®а(л)' in dictionary:
-                processor_string = dictionary['Џа®жҐбб®а(л)']
-            if 'Процессор(ы)' in dictionary:
-                processor_string = dictionary['Процессор(ы)']
-            # Use regex for multi-digit CPU numbers
-            match = re.findall(r'- (\d+)\.', processor_string)
-            cpu_num = int(match[0]) if match else 1
-        except:
-            if not ignore_warnings:
-                warnings.warn(
-                    message="\nIt's impossible to determine cpu number correctly\nFor now, number of cpu devices is set to 1\n\n", 
-                    category=NoNeededLibrary
-                    )
-            cpu_num = 1
-    elif operating_system == "Darwin":
-        cpu_num = 0
-        try:
-            """
-            Physical CPU packages from hw.packages.
-            A positive count is kept.
-            A failed probe, or a count that is not positive, is not a socket count.
-            The physical-core fallback below is used in both of those cases.
-            """
-            out = subprocess.check_output(
-                ["sysctl", "-n", "hw.packages"], text=True
-            ).strip()
-            cpu_num = int(out)
-        except (subprocess.CalledProcessError, ValueError, OSError):
-            cpu_num = 0
+    override = _positive_int(cpu_sockets)
+    if override is not None:
+        return override
+    cached = read_cpu_socket_cache()
+    if cached is not None:
+        return cached
+    return _probe_sockets_once(user_config_path(), ignore_warnings, write_cpu_socket_cache, read_cpu_socket_cache)
 
-        if cpu_num <= 0:
+
+def _probe_sockets_once(path, ignore_warnings, write_cache, read_cache):
+    """
+        Probe under an exclusive lock and store the count.
+        A process that arrives while the lock is held waits, then reads the file.
+    """
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    lock_path = path + ".lock"
+    while True:
+        try:
+            lock_fd = os.open(lock_path, os.O_CREAT | os.O_EXCL | os.O_RDWR)
+        except OSError:
             try:
-                """
-                Fallback: physical cores from hw.physicalcpu.
-                This is used only when the package count is missing or not positive.
-                """
-                out = subprocess.check_output(
-                    ["sysctl", "-n", "hw.physicalcpu"], text=True
-                ).strip()
-                cpu_num = int(out)
-            except (subprocess.CalledProcessError, ValueError, OSError):
-                cpu_num = 0
-            if cpu_num <= 0:
-                if not ignore_warnings:
-                    warnings.warn(
-                        message="Unable to determine the number of CPU sockets on Darwin; defaulting to 1",
-                        category=UserWarning,
-                    )
-                cpu_num = 1
-    else: 
-        cpu_num = 1
-    return cpu_num
+                if time.time() - os.path.getmtime(lock_path) > 15:
+                    os.remove(lock_path)
+                    continue
+            except OSError:
+                pass
+            cached = read_cache()
+            if cached is not None:
+                return cached
+            time.sleep(0.05)
+            continue
+        try:
+            cached = read_cache()
+            if cached is not None:
+                return cached
+            count = _probe_cpu_sockets(ignore_warnings)
+            write_cache(count)
+            return count
+        finally:
+            os.close(lock_fd)
+            try:
+                os.remove(lock_path)
+            except OSError:
+                pass
+
+
+def _probe_cpu_sockets(ignore_warnings):
+    operating_system = platform.system()
+    count = None
+    if operating_system == "Linux":
+        count = _linux_package_count()
+        if count is None and not ignore_warnings:
+            warnings.warn(
+                message="\nYou probably should have installed 'util-linux' to determine cpu number correctly\nFor now, number of cpu devices is set to 1\n\n",
+                category=NoNeededLibrary,
+            )
+    elif operating_system == "Windows":
+        count = _windows_package_count()
+        if count is None and not ignore_warnings:
+            warnings.warn(
+                message="\nIt's impossible to determine cpu number correctly\nFor now, number of cpu devices is set to 1\n\n",
+                category=NoNeededLibrary,
+            )
+    elif operating_system == "Darwin":
+        count = _darwin_package_count()
+        if count is None and not ignore_warnings:
+            warnings.warn(
+                message="Unable to determine the number of CPU sockets on Darwin; defaulting to 1",
+                category=UserWarning,
+            )
+    if count is None or count <= 0:
+        return 1
+    return count
+
+
+def count_processor_package_records(buffer):
+    """
+        Count RelationProcessorPackage records in a GetLogicalProcessorInformationEx buffer.
+        Each record's Size covers every processor group that package owns, so a
+        machine with more than 64 logical processors still counts every socket.
+    """
+    view = bytes(buffer)
+    count = 0
+    offset = 0
+    total = len(view)
+    while offset + 8 <= total:
+        relationship, size = struct_unpack_header(view, offset)
+        if size < 8 or offset + size > total:
+            break
+        if relationship == RELATION_PROCESSOR_PACKAGE:
+            count += 1
+        offset += size
+    return count
+
+
+def struct_unpack_header(view, offset):
+    relationship = int.from_bytes(view[offset:offset + 4], "little")
+    size = int.from_bytes(view[offset + 4:offset + 8], "little")
+    return relationship, size
+
+
+def _windows_package_count():
+    count = _windows_packages_ex()
+    if count is not None and count > 0:
+        return count
+    count = _windows_packages_legacy()
+    if count is not None and count > 0:
+        return count
+    return _windows_systeminfo_sockets()
+
+
+def _windows_packages_ex():
+    if platform.system() != "Windows":
+        return None
+    try:
+        kernel32 = ctypes.WinDLL("kernel32", use_last_error=True)
+        function = kernel32.GetLogicalProcessorInformationEx
+    except (AttributeError, OSError):
+        return None
+    function.argtypes = [
+        ctypes.c_int,
+        ctypes.c_void_p,
+        ctypes.POINTER(ctypes.c_uint),
+    ]
+    function.restype = ctypes.c_int
+    length = ctypes.c_uint(0)
+    function(RELATION_PROCESSOR_PACKAGE, None, ctypes.byref(length))
+    if length.value == 0:
+        return None
+    for _attempt in range(2):
+        raw = ctypes.create_string_buffer(length.value)
+        returned = ctypes.c_uint(length.value)
+        ok = function(RELATION_PROCESSOR_PACKAGE, raw, ctypes.byref(returned))
+        if ok:
+            count = count_processor_package_records(raw.raw[:returned.value])
+            return count if count > 0 else None
+        if ctypes.get_last_error() != 122 or returned.value <= length.value:
+            return None
+        length = returned
+    return None
+
+
+def _windows_packages_legacy():
+    if platform.system() != "Windows":
+        return None
+    try:
+        kernel32 = ctypes.WinDLL("kernel32", use_last_error=True)
+        function = kernel32.GetLogicalProcessorInformation
+    except (AttributeError, OSError):
+        return None
+    function.argtypes = [ctypes.c_void_p, ctypes.POINTER(ctypes.c_uint)]
+    function.restype = ctypes.c_int
+    length = ctypes.c_uint(0)
+    function(None, ctypes.byref(length))
+    if length.value == 0:
+        return None
+    raw = ctypes.create_string_buffer(length.value)
+    returned = ctypes.c_uint(length.value)
+    if not function(raw, ctypes.byref(returned)):
+        return None
+    mask_type = ctypes.c_ulonglong if ctypes.sizeof(ctypes.c_void_p) == 8 else ctypes.c_uint
+
+    class _Information(ctypes.Structure):
+        _fields_ = [
+            ("ProcessorMask", mask_type),
+            ("Relationship", ctypes.c_uint),
+            ("Reserved", ctypes.c_ulonglong * 2),
+        ]
+
+    record_size = ctypes.sizeof(_Information)
+    if record_size <= 0:
+        return None
+    count = 0
+    for offset in range(0, returned.value - record_size + 1, record_size):
+        record = _Information.from_buffer_copy(raw.raw[offset:offset + record_size])
+        if record.Relationship == RELATION_PROCESSOR_PACKAGE:
+            count += 1
+    return count if count > 0 else None
+
+
+def _windows_systeminfo_sockets():
+    try:
+        completed = subprocess.run(
+            ["systeminfo"],
+            capture_output=True,
+            text=True,
+            check=False,
+            creationflags=CREATE_NO_WINDOW,
+        )
+    except (OSError, ValueError):
+        return None
+    return sockets_from_systeminfo_text(completed.stdout or "")
+
+
+def sockets_from_systeminfo_text(output):
+    """
+        Socket count from one systeminfo report.
+        The value is the integer in a line such as 'Processor(s): ... - 12.'
+    """
+    dictionary = {}
+    for line in output.split("\n"):
+        parts = line.split(":")
+        if len(parts) == 2:
+            dictionary[parts[0]] = parts[1]
+    processor_string = "something"
+    if "Processor(s)" in dictionary:
+        processor_string = dictionary["Processor(s)"]
+    if "Џа®жҐбб®а(л)" in dictionary:
+        processor_string = dictionary["Џа®жҐбб®а(л)"]
+    if "Процессор(ы)" in dictionary:
+        processor_string = dictionary["Процессор(ы)"]
+    match = re.findall(r"- (\d+)\.", processor_string)
+    if not match:
+        return None
+    return int(match[0])
+
+
+def _linux_package_count():
+    packages = _linux_sysfs_packages(LINUX_CPU_SYSFS)
+    if packages is not None:
+        return packages
+    return _linux_lscpu_sockets()
+
+
+def _linux_sysfs_packages(root):
+    if not root or not os.path.isdir(root):
+        return None
+    packages = set()
+    found = False
+    try:
+        names = os.listdir(root)
+    except OSError:
+        return None
+    for name in names:
+        if not name.startswith("cpu") or not name[3:].isdigit():
+            continue
+        path = os.path.join(root, name, "topology", "physical_package_id")
+        if not os.path.isfile(path):
+            continue
+        try:
+            with open(path, "r", encoding="utf-8") as handle:
+                packages.add(int(handle.read().strip()))
+        except (OSError, ValueError):
+            continue
+        found = True
+    if not found or not packages:
+        return None
+    return len(packages)
+
+
+def _linux_lscpu_sockets():
+    try:
+        completed = subprocess.run(
+            ["lscpu"],
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+    except (OSError, ValueError):
+        return None
+    for line in (completed.stdout or "").split("\n"):
+        parts = line.split(":")
+        if len(parts) == 2 and parts[0].strip() == "Socket(s)":
+            try:
+                return int(parts[1].strip())
+            except ValueError:
+                return None
+    return None
+
+
+def _darwin_package_count():
+    """
+        Physical CPU packages from hw.packages.
+        A positive count is kept.
+        A failed probe, or a count that is not positive, is not a socket count.
+        The physical-core fallback below is used in both of those cases.
+    """
+    packages = _darwin_sysctl_int("hw.packages")
+    if packages is not None and packages > 0:
+        return packages
+    cores = _darwin_sysctl_int("hw.physicalcpu")
+    if cores is not None and cores > 0:
+        return cores
+    return None
+
+
+def _darwin_sysctl_int(name):
+    value = _darwin_sysctlbyname(name)
+    if value is not None:
+        return value
+    try:
+        completed = subprocess.run(
+            ["sysctl", "-n", name],
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+    except (OSError, ValueError):
+        return None
+    try:
+        return int((completed.stdout or "").strip())
+    except ValueError:
+        return None
+
+
+def _darwin_sysctlbyname(name):
+    if platform.system() != "Darwin":
+        return None
+    try:
+        libc = ctypes.CDLL("libc.dylib", use_errno=True)
+        function = libc.sysctlbyname
+    except (AttributeError, OSError):
+        return None
+    function.argtypes = [
+        ctypes.c_char_p,
+        ctypes.c_void_p,
+        ctypes.POINTER(ctypes.c_size_t),
+        ctypes.c_void_p,
+        ctypes.c_size_t,
+    ]
+    function.restype = ctypes.c_int
+    value = ctypes.c_int()
+    size = ctypes.c_size_t(ctypes.sizeof(value))
+    code = function(name.encode("ascii"), ctypes.byref(value), ctypes.byref(size), None, 0)
+    if code != 0:
+        return None
+    return int(value.value)
 
 
 def transform_cpu_name(cpu_name):

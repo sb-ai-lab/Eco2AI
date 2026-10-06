@@ -32,5 +32,10 @@ setup(
         ]
     },
     include_package_data=True,
-    version=__version__
+    version=__version__,
+    entry_points={
+        "console_scripts": [
+            "eco2ai=eco2ai.configure:main",
+        ],
+    },
 )
